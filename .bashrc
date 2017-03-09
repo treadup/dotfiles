@@ -143,3 +143,8 @@ alias venv='source env/bin/activate'
 # Week of year
 alias week='date +%W'
 
+# Git aliases
+git config --global alias.last 'log -1 HEAD'
+git config --global alias.unstage 'reset HEAD --'
+git config --global alias.undo 'reset --soft HEAD^'
+git config --global alias.amend 'commit --amend -C HEAD'
