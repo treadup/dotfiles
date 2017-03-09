@@ -2,6 +2,12 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# For some reason I needed to set these on OSX.
+# I do not remember why. I think it had something to do with
+## sshing in to a linux box.
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -131,4 +137,9 @@ transfer() {
     rm -f $tmpfile;
 }
 
+# Python virtualenv launcher
+alias venv='source env/bin/activate'
+
+# Week of year
+alias week='date +%W'
 
