@@ -36,3 +36,9 @@ git config --global alias.undo 'reset --soft HEAD^'
 git config --global alias.amend 'commit --amend -C HEAD'
 git config --global alias.heroku 'push heroku master'
 
+apt-installed() {
+  (zcat $(ls -tr /var/log/apt/history.log*.gz); cat /var/log/apt/history.log) 2>/dev/null | \
+  egrep '^(Start-Date:|Commandline:)' | \
+  grep -v aptdaemon | \
+  egrep '^Commandline:'
+}
