@@ -1,0 +1,5 @@
+# The emacs folder.
+[.]emacs[.]d
+
+# The password store for pass
+[.]password-store
