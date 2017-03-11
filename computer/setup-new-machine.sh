@@ -16,7 +16,8 @@ apt-get --force-yes --yes install language-pack-en pass git emacs24-nox vim tras
         httpie virtualenv silversearcher-ag xzdec screen whois pwgen \
         python3-dev python3-pip python3-setuptools \
         awscli pandoc texlive-full \
-        heroku certbot
+        heroku certbot \
+        docker
 apt-get --force-yes -yes autoremove
 
 # Setup the dot files from git repo
