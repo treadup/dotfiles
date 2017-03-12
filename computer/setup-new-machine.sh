@@ -14,6 +14,9 @@ cd ~/.emacs.d/
 git remote set-url origin git@github.com:treadup/.emacs.d.git
 cd ~/
 
+# Install the VIM package manger Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 # Install the moderncv latex package
 tlmgr -v init-usertree
 tlmgr install moderncv
