@@ -1,0 +1,11 @@
+[user]
+	email = henrik.treadup@gmail.com
+	name = Henrik Treadup
+[push]
+	default = simple
+[alias]
+	last = log -1 HEAD
+	unstage = reset HEAD --
+	undo = reset --soft HEAD^
+	amend = commit --amend -C HEAD
+	heroku = push heroku master
