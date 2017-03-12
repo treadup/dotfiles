@@ -30,6 +30,7 @@ alias venv='source env/bin/activate'
 alias week='date +%W'
 
 # Git aliases
+# TODO: I should put these in the .gitconfig file instead of recreating them each time.
 git config --global alias.last 'log -1 HEAD'
 git config --global alias.unstage 'reset HEAD --'
 git config --global alias.undo 'reset --soft HEAD^'
@@ -41,4 +42,9 @@ apt-installed() {
   egrep '^(Start-Date:|Commandline:)' | \
   grep -v aptdaemon | \
   egrep '^Commandline:'
+}
+
+github-create-repo() {
+    echo Creating github repo $1
+    curl -u 'treadup' https://api.github.com/user/repos -d '{"name":"'$1'"}'
 }
