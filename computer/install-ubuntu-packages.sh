@@ -19,6 +19,9 @@ apt-get --force-yes --yes install emacs24-nox vim
 # Install cli trash command
 apt-get --force-yes --yes install trash-cli
 
+# Install zip
+apt-get --force-yes --yes install zip
+
 # Install node and npm
 apt-get --force-yes --yes install nodejs npm
 
