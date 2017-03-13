@@ -25,7 +25,7 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-shopt -s globstar
+# shopt -s globstar
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -114,5 +114,5 @@ if ! shopt -oq posix; then
 fi
 
 # Add the users bin folder to the path.
-export PATH=$PATH:~/bin
+export PATH=~/bin:$PATH
 

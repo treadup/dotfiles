@@ -48,3 +48,6 @@ github-create-repo() {
     echo Creating github repo $1
     curl -u 'treadup' https://api.github.com/user/repos -d '{"name":"'$1'"}'
 }
+
+# Lockscreen for OSX.
+alias lockscreen='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
