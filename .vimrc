@@ -44,3 +44,30 @@ let g:airline_powerline_fonts=1
 
 " Use the solarized airline theme
 let g:ariline_theme='solarized'
+
+" No backup files
+set nobackup
+
+" No swap files. We have enough memory
+set noswapfile
+
+" Turn off the startup message.
+set shortmess+=I
+
+" Open new splits on the right or below.
+set splitbelow
+set splitright
+
+" Disable arrow keys in normal mode.
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+" Disable ex mode activation
+noremap Q <Nop>
+
+" Have jk and kj act as escape.
+inoremap jk <Esc>
+inoremap kj <Esc>
+
