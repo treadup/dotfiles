@@ -57,6 +57,9 @@ Plugin 'JulesWang/css.vim'
 " Plugin 'jmcantrell/vim-virtualenv'
 " https://github.com/jmcantrell/vim-virtualenv
 
+" NGINX syntax file
+Plugin 'nginx.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
