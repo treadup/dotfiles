@@ -28,6 +28,9 @@ Plugin 'vim-airline/vim-airline-themes'
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 
+" fugitive for working with Git
+Plugin 'tpope/vim-fugitive'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -75,6 +78,7 @@ inoremap jk <Esc>
 inoremap kj <Esc>
 
 " Automatically start NERDTree when you open a file.
-autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree | wincmd p
+
 
 
