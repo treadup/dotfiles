@@ -23,6 +23,7 @@ Plugin 'airblade/vim-gitgutter'
 
 " Airline status bar
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -41,4 +42,5 @@ colorscheme solarized
 set laststatus=2
 let g:airline_powerline_fonts=1
 
-
+" Use the solarized airline theme
+let g:ariline_theme='solarized'
