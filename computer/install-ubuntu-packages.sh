@@ -74,5 +74,8 @@ apt-get --force-yes --yes install gambc
 # Install Go
 apt-get --force-yes --yes install golang
 
-# Remove pacakges that are no longer needed
+# Install weechat
+apt-get --force-yes --yes install weechat
+
+# Remove packages that are no longer needed
 apt-get --force-yes --yes autoremove
