@@ -65,6 +65,9 @@ Plugin 'nginx.vim'
 " The jshint plugin.
 Plugin 'walm/jshint.vim'
 
+" Mustache and Handlebars plugin.
+Plugin 'mustache/vim-mustache-handlebars'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
