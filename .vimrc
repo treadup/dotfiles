@@ -53,6 +53,10 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " CSS syntax file
 Plugin 'JulesWang/css.vim'
 
+" Python virtualenv plugin for vim
+" Plugin 'jmcantrell/vim-virtualenv'
+" https://github.com/jmcantrell/vim-virtualenv
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
