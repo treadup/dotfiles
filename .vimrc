@@ -122,7 +122,13 @@ inoremap jk <Esc>
 inoremap kj <Esc>
 
 " Automatically start NERDTree when you open a file.
-autocmd vimenter * NERDTree | wincmd p
+" autocmd vimenter * NERDTree | wincmd p
+
+" Use Ctrl-n to toggle NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+" Quit VIM if NERDTree is the only open window left.
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Use ag for the ack VIM plugin.
 let g:ackprg = 'ag --vimgrep'
