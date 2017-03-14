@@ -18,6 +18,18 @@ cd ~/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall # Install all the plugins
 
+case "$OSTYPE" in
+  darwin*)  echo "OSX" ;; 
+  linux*)   echo "LINUX" ;;
+  *)        echo "unknown: $OSTYPE. Do not know how to install the powerline fonts on this system" ;;
+esac
+
+# Install the fonts needed to correctly display VIM powerline/airline.
+mkdir powerline_fonts
+git clone https://github.com/powerline/fonts.git powerline_fonts
+~/powerline_fonts/install.sh
+rm -rf ~/powerline_fonts
+
 # Install the moderncv latex package
 tlmgr -v init-usertree
 tlmgr install moderncv
