@@ -68,6 +68,12 @@ Plugin 'walm/jshint.vim'
 " Mustache and Handlebars plugin.
 Plugin 'mustache/vim-mustache-handlebars'
 
+" Fireplace the Clojure REPL for VIM.
+Plugin 'tpope/vim-fireplace'
+
+" vim clojure static
+Plugin 'guns/vim-clojure-static'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -83,7 +89,8 @@ colorscheme solarized
 " Instructions for this are in setup new machine.
 " The font I like to use is 'Meslo LG S DZ'.
 set laststatus=2
-let g:airline_powerline_fonts=1
+" Do not use the powerline fonts.
+" let g:airline_powerline_fonts=1
 
 " Use the solarized airline theme
 let g:ariline_theme='solarized'
