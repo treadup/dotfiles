@@ -37,6 +37,19 @@ Plugin 'tpope/vim-fugitive'
 " Ag searching
 Plugin 'mileszs/ack.vim'
 
+" Better whitespace plugin
+Plugin 'ntpeters/vim-better-whitespace' 
+
+" Move lines up and down with A-j and A-k
+Plugin 'matze/vim-move'
+
+" The vim easymotion plugin.
+" This looks really interesting but I will not enable it for now.
+" https://github.com/easymotion/vim-easymotion
+
+" Fuzzy file finder
+Plugin 'ctrlpvim/ctrlp.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
