@@ -1,5 +1,7 @@
 "VIM configuration file
 
+" A good place to find VIM plugins is the vimawesome.com site.
+
 " The first thing we do is setup Vundle.
 " The parts marked with 'required' are required
 " for Vundle to work.
@@ -59,6 +61,9 @@ Plugin 'JulesWang/css.vim'
 
 " NGINX syntax file
 Plugin 'nginx.vim'
+
+" The jshint plugin.
+Plugin 'walm/jshint.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
