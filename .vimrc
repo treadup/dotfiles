@@ -31,6 +31,12 @@ Plugin 'scrooloose/nerdtree'
 " fugitive for working with Git
 Plugin 'tpope/vim-fugitive'
 
+" Syntastic syntax checker for VIM.
+" Plugin 'vim-syntastic/syntasti'
+
+" Ag searching
+Plugin 'mileszs/ack.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -80,5 +86,6 @@ inoremap kj <Esc>
 " Automatically start NERDTree when you open a file.
 autocmd vimenter * NERDTree | wincmd p
 
-
+" Use ag for the ack VIM plugin.
+let g:ackprg = 'ag --vimgrep'
 
