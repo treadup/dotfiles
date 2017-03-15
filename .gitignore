@@ -1,5 +1,21 @@
-# The emacs folder.
-[.]emacs[.]d
+# Ignore all files by default
+*
 
-# The password store for pass
-[.]password-store
+# Using the ! character we can exclude files and folders
+# from being ingored by the above statement.
+
+# Git files
+!.gitignore
+!.gitconfig
+
+# Bash files
+!.bash_profile
+!.bashrc
+
+# Vim files
+!.vimrc
+
+# Setup scripts for the computer go in the /computer folder.
+!/computer
+
+
