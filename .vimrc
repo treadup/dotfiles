@@ -126,6 +126,7 @@ inoremap kj <Esc>
 
 " Use Ctrl-n to toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>
+map <F8> :NERDTreeToggle<CR>
 
 " Quit VIM if NERDTree is the only open window left.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -136,4 +137,7 @@ let g:ackprg = 'ag --vimgrep'
 " Remove scrollbar in gui.
 set guioptions-=r
 set guioptions-=L
+
+" Make backspace behave in a more sane manner.
+set backspace=indent,eol,start
 
