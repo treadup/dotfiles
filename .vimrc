@@ -128,6 +128,10 @@ inoremap kj <Esc>
 map <C-n> :NERDTreeToggle<CR>
 map <F8> :NERDTreeToggle<CR>
 
+" It would be nice if I could set up the following keybindings.
+" Ctrl-h Jump to NERDTree
+" Ctrl-l Jump to Viewer
+
 " Quit VIM if NERDTree is the only open window left.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
