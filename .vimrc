@@ -133,3 +133,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Use ag for the ack VIM plugin.
 let g:ackprg = 'ag --vimgrep'
 
+" Remove scrollbar in gui.
+set guioptions-=r
+set guioptions-=L
+
