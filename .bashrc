@@ -116,3 +116,7 @@ fi
 # Add the users bin folder to the path.
 export PATH=~/bin:$PATH
 
+# Start
+function venv() {
+    source env/bin/activate
+}
