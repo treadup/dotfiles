@@ -20,4 +20,7 @@
 !computer/*
 !computer/iterm/*
 
+# Spacemacs
+!.spacemacs.d/
+!.spacemacs.d/init.el
 
