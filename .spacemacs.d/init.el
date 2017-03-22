@@ -36,20 +36,54 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+
+     ;; Completion
      helm
-     ;; auto-completion
-     ;; better-defaults
+
+     ;; Email
+     mu4e
+
+     ;; Source control
+     git
+
+     ;; Emacs
+     org
+     (shell :variables
+             shell-default-height 30
+             shell-default-position 'bottom)
+
+     ;; Checkers
+     spell-checking
+     syntax-checking
+
+     ;; Tools
+     spotify
+     restclient
+     docker
+
+     ;; Programming languages
+     asciidoc
+     asm
+     c-c++
+     clojure
+     common-lisp
+     elixir
      emacs-lisp
-     ;; git
-     ;; markdown
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
+     go
+     html
+     java
+     javascript
+     react
+     latex
+     lua
+     markdown
+     php
      python
+     django
+     racket
+     ruby
+     scheme
+     shell-scripts
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
