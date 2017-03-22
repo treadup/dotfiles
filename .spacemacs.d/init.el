@@ -60,6 +60,7 @@ values."
      spotify
      restclient
      docker
+     nginx
 
      ;; Programming languages
      asciidoc
