@@ -326,6 +326,16 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  ;; Right now Spacemacs stores customization information in the dotspacemacs
+  ;; file. This makes working with source control for the dotspacemacs file
+  ;; kind of a pain.
+  ;; The fix for this was merged into the develop branch around March 12 2017.
+  ;; Not sure when it will reach master. However once it does we need to set
+  ;; the location of the custom file. This is done by setting the custom-file
+  ;; variable
+  ;; https://github.com/syl20bnr/spacemacs/issues/7891
+  (setq custom-file "~/.spaceemacs.d/custom.el") 
   )
 
 (defun dotspacemacs/user-config ()
