@@ -335,7 +335,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; the location of the custom file. This is done by setting the custom-file
   ;; variable
   ;; https://github.com/syl20bnr/spacemacs/issues/7891
-  (setq custom-file "~/.spaceemacs.d/custom.el") 
+  (setq custom-file "~/.spacemacs.d/custom.el") 
   )
 
 (defun dotspacemacs/user-config ()
