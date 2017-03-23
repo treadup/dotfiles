@@ -27,6 +27,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+" Editorconfig for Vim
+Plugin 'editorconfig/editorconfig-vim'
+
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 
