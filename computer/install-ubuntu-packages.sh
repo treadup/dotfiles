@@ -74,6 +74,9 @@ apt-get --force-yes --yes install sbcl
 # Install Gambit Scheme
 apt-get --force-yes --yes install gambc
 
+# Install MIT Scheme
+apt-get --force-yes --yes install mit-scheme
+
 # Install Go
 apt-get --force-yes --yes install golang
 
