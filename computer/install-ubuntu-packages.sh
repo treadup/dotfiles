@@ -59,6 +59,9 @@ apt-get --force-yes --yes install awscli
 # Install GCC and make among other things
 apt-get --force-yes --yes install build-essential
 
+## Install LLVM and CLang
+apt-get --force-yes --yes install llvm clang
+
 # Install docker
 apt-get --force-yes --yes install docker.io
 
