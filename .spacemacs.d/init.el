@@ -39,6 +39,7 @@ values."
 
      ;; Completion
      helm
+     auto-completion
 
      ;; Email
      mu4e
