@@ -80,6 +80,9 @@ apt-get --force-yes --yes install mit-scheme
 # Install Go
 apt-get --force-yes --yes install golang
 
+# Install Guile Scheme
+apt-get --force-yes --yes install guile-2.0
+
 # Install weechat
 apt-get --force-yes --yes install weechat
 
