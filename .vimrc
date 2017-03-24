@@ -87,7 +87,7 @@ Plugin 'davidhalter/jedi-vim'
 
 " You complete me
 " http://valloric.github.io/YouCompleteMe/
-Plugin 'valloric/youcompleteme'
+" Plugin 'valloric/youcompleteme'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
