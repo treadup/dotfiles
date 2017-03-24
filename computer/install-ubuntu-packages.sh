@@ -23,7 +23,10 @@ apt-get --force-yes --yes install trash-cli
 apt-get --force-yes --yes install zip unzip
 
 # Install node and npm
+# The node ecosystem expects the node executable to be called node.
+# Therefore create a symlink to the correct name.
 apt-get --force-yes --yes install nodejs npm
+ln -s /usr/bin/nodejs /usr/local/bin/node
 
 # Install texlive
 # For some reason xzdec is needed to get tlmgr to work
