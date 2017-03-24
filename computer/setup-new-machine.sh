@@ -9,13 +9,13 @@ git checkout -b master --force --track origin/master
 git remote set-url origin git@github.com:treadup/DotFiles.git # Change to using ssh
 
 # Download .emacs.d repo
-# git clone https://github.com/treadup/.emacs.d.git
-# cd ~/.emacs.d/
-# git remote set-url origin git@github.com:treadup/.emacs.d.git
-# cd ~/
+git clone https://github.com/treadup/.emacs.d.git
+cd ~/.emacs.d/
+git remote set-url origin git@github.com:treadup/.emacs.d.git
+cd ~/
 
 # Download Spacemacs
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+# git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # Install the VIM package manger Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -44,6 +44,15 @@ mkdir -p ~/bin
 curl -o ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
 chmod 755 ~/bin/lein
 ~/bin/lein
+
+# Install node programs
+
+# Set the prefix to the home folder. This will make npm install things
+# in the ~/bin folder which is already in the path.
+npm config set prefix ~
+npm install -g jshint
+npm install -g js-beautify
+npm install -g tern
 
 # Setup the password store
 echo Remember that you now have to setup gpg and pass
