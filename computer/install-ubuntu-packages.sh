@@ -19,6 +19,9 @@ apt-get --force-yes --yes install emacs24-nox vim
 # Install cli trash command
 apt-get --force-yes --yes install trash-cli
 
+# Install ubuntu make
+apt-get --force-yes --yes install ubuntu-make
+
 # Install zip
 apt-get --force-yes --yes install zip unzip
 
@@ -70,6 +73,11 @@ apt-get --force-yes --yes install docker.io
 
 # Install Java8 SDK
 apt-get --force-yes --yes install default-jdk
+
+# Set the JAVA_HOME environment variable. You need to log out and
+# then log back in again for the /etc/environment file to be reloaded.
+JAVA_HOME="$(dirname $(dirname $(readlink -e $(which javac))))"
+printf "JAVA_HOME=$JAVA_HOME\n" >> /etc/environment 
 
 # Install Steel Bank Common Lisp
 apt-get --force-yes --yes install sbcl
