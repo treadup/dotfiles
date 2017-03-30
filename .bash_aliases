@@ -51,3 +51,9 @@ github-create-repo() {
 
 # Lockscreen for OSX.
 alias lockscreen='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+
+# Grep notes folder recursively
+
+notesgrep() {
+    grep -r --exclude-dir=".git/" $1 ~/notes
+}
