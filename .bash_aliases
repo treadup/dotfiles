@@ -53,7 +53,11 @@ github-create-repo() {
 alias lockscreen='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 
 # Grep notes folder recursively
-
 notesgrep() {
     grep -r --exclude-dir=".git/" $1 ~/notes
+}
+
+# Touch all files in the given folder. 
+function touchall() {
+    find $1 -exec touch {} \;
 }
