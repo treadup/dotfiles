@@ -114,7 +114,7 @@ if ! shopt -oq posix; then
 fi
 
 # Add the users bin folder to the path.
-export PATH=~/bin:$PATH
+export PATH=~/bin:~/.npm-global/bin:$PATH
 
 # Start
 function venv() {
