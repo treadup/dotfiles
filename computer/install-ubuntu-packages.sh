@@ -13,8 +13,15 @@ apt-get --force-yes --yes install git
 # Install password utilities
 apt-get --force-yes --yes install pass pwgen
 
-# Install editors
-apt-get --force-yes --yes install emacs24-nox vim
+# Install Emacs
+if [ -z $DISPLAY ]; then
+    apt-get --force-yes --yes install emacs24-nox
+else
+    apt-get --force-yes --yes install emacs24
+fi
+
+# Install Vim
+apt-get --force-yes --yes install vim
 
 # Install cli trash command
 apt-get --force-yes --yes install trash-cli
