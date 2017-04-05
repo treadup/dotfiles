@@ -20,7 +20,9 @@ cd ~/
 
 # Install the VIM package manger Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall # Install all the plugins
+
+# It is better to install the Vim plugins the first time you open Vim.
+# vim +PluginInstall +qall # Install all the plugins
 
 # Install the fonts needed to correctly display VIM powerline/airline.
 mkdir powerline_fonts
@@ -56,7 +58,6 @@ npm install -g jshint
 npm install -g js-beautify
 npm install -g tern
 npm install -g eslint
-eslint --init
 
 # Setup the password store
 echo Remember that you now have to setup gpg and pass
