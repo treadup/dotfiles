@@ -54,3 +54,12 @@ dnf -y install golang
 # Install weechat
 dnf -y install weechat
 
+# Use the RPM fusion repo
+dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+# Install freeworld freetype fonts. This is needed to fix the horrible fonts in Fedora.
+# The patent for this should expire in 2019 and things might be better then.
+dnf -y install freetype-freeworld
+
+
+
