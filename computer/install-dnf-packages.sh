@@ -61,5 +61,11 @@ dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-releas
 # The patent for this should expire in 2019 and things might be better then.
 dnf -y install freetype-freeworld
 
+# Install VLC media player
+dnf -y install vlc
+
+# Install VLC based browser video plugin
+dnf -y install npapi-vlc-gtk
+
 
 
