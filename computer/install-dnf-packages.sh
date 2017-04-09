@@ -67,5 +67,7 @@ dnf -y install vlc
 # Install VLC based browser video plugin
 dnf -y install npapi-vlc-gtk
 
+# Install WindowMaker window manager
+dnf -y install WindowMaker
 
 
