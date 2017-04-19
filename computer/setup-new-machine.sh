@@ -62,3 +62,9 @@ npm install -g eslint
 # Setup the password store
 echo Remember that you now have to setup gpg and pass
 echo To set up pass remember to use pass git init instead of pass init
+echo
+echo To install PyCharm on Ubuntu use the following command.
+echo     umake ide pycharm
+echo
+echo To install IntelliJ IDEA on Ubuntu use the following command.
+echo     umake ide idea
