@@ -1,0 +1,12 @@
+#!/usr/bin/python
+
+import sys
+import wikipedia
+
+page_name = ' '.join(sys.argv[1:])
+
+p = wikipedia.page(page_name)
+
+print(p.title + "\n\n")
+
+print(p.content)
