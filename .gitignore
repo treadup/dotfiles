@@ -24,3 +24,6 @@
 !.spacemacs.d/
 !.spacemacs.d/init.el
 
+# Users bin folder.
+!/bin
+!/bin/*
