@@ -59,6 +59,15 @@ npm install -g js-beautify
 npm install -g tern
 npm install -g eslint
 
+# OS X specific setup
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # airport
+    ln -sf /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport ~/bin/airport
+
+    # emacs
+    ln -sf ~/bin/emacs-on-mac.sh ~/bin/emacs
+fi
+
 # Setup the password store
 echo Remember that you now have to setup gpg and pass
 echo To set up pass remember to use pass git init instead of pass init
@@ -68,3 +77,7 @@ echo     umake ide pycharm
 echo
 echo To install IntelliJ IDEA on Ubuntu use the following command.
 echo     umake ide idea
+echo
+echo To install the Atom text editor on Ubuntu use the following command.
+echo     umake ide atom
+echo
