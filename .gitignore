@@ -17,8 +17,11 @@
 
 # Setup scripts for the computer go in the /computer folder.
 !/computer
-!computer/*
-!computer/iterm/*
+!/computer/*
+!/computer/iterm
+!/computer/iterm/*
+!/computer/atom
+!/computer/atom/*
 
 # Spacemacs
 !.spacemacs.d/
