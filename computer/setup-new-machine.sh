@@ -68,6 +68,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     ln -sf ~/bin/emacs-on-mac.sh ~/bin/emacs
 fi
 
+# Setup the Go workspace
+mkdir ~/go
+
 # Setup the password store
 echo Remember that you now have to setup gpg and pass
 echo To set up pass remember to use pass git init instead of pass init
