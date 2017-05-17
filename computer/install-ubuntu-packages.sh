@@ -104,5 +104,8 @@ apt-get --yes install guile-2.0
 # Install weechat
 apt-get --yes install weechat
 
+# Install nginx
+apt install -y nginx
+
 # Remove packages that are no longer needed
 apt-get --yes autoremove
