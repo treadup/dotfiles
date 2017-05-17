@@ -113,8 +113,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Go lang
+export GOPATH=~/go
+
 # Add the users bin folder to the path.
-export PATH=~/bin:~/.npm-global/bin:$PATH
+export PATH=~/bin:~/.npm-global/bin:$PATH:$GOPATH/bin
 
 # Start
 function venv() {
