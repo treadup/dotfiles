@@ -9,3 +9,4 @@
 	undo = reset --soft HEAD^
 	amend = commit --amend -C HEAD
 	heroku = push heroku master
+        ls-untracked = ls-files --others --exclude-standard
