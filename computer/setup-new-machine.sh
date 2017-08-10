@@ -58,6 +58,7 @@ npm install -g jshint
 npm install -g js-beautify
 npm install -g tern
 npm install -g eslint
+npm install -g jsonlint
 
 # OS X specific setup
 if [[ "$OSTYPE" == "darwin"* ]]; then
