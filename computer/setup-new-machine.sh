@@ -44,6 +44,10 @@ tlmgr install moderncv
 # Create the bin folder.
 mkdir -p ~/bin
 
+# Install Python packages
+pip3 install virtualenv
+pip3 install httpie
+
 # Install Clojure
 curl -o ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
 chmod 755 ~/bin/lein

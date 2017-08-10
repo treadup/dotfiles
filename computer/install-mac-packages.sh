@@ -37,7 +37,6 @@ brew install screen
 # Install programming languages
 brew install python
 brew install python3
-pip install virtualenv
 brew cask install java
 brew install node
 brew install go

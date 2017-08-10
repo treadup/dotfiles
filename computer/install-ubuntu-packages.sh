@@ -52,7 +52,7 @@ apt --yes install silversearcher-ag
 apt --yes install screen
 
 # Install Python related things
-apt --yes install python3-pip virtualenv python3-dev
+apt --yes install python3-pip python3-dev
 
 # Install network tools
 apt --yes install whois
