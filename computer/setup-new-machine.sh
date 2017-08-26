@@ -30,13 +30,6 @@ git clone https://github.com/powerline/fonts.git powerline_fonts
 ~/powerline_fonts/install.sh
 rm -rf ~/powerline_fonts
 
-# Create the .bookmarks repo. Remember to import these bookmarks into Firefox.
-mkdir ~/.bookmarks/
-cd ~/.bookmarks/
-git init
-git remote add origin git@github.com:treadup/.bookmarks.git
-cd ~/
-
 # Install the moderncv latex package
 tlmgr -v init-usertree
 tlmgr install moderncv
