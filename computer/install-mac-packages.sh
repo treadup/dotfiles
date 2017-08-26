@@ -11,6 +11,9 @@ xcode-select --install
 # Update homebrew
 brew update
 
+# Install Cask
+brew tap caskroom/cask
+
 # Install core stuff
 brew install pass
 brew install git
@@ -20,9 +23,8 @@ brew install gnupg2
 # Install editors
 brew install emacs
 brew install vim
-
-# Install Cask
-brew tap caskroom/cask
+brew cask install atom
+brew cask install sublime-text
 
 # Install utilities
 brew install tree
@@ -48,3 +50,6 @@ brew install nginx
 # Install hosting utils
 brew install heroku
 brew install awscli
+
+# Install TeX
+brew cask install basictex
