@@ -4,5 +4,5 @@
 
 # Create a symlink from ~/bin/emacs to this file.
 
-/Applications/Emacs.app/Contents/MacOS/Emacs "$@" &
+$(/Applications/Emacs.app/Contents/MacOS/Emacs "$@") &
 
