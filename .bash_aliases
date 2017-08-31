@@ -23,8 +23,7 @@ transfer() {
     rm -f $tmpfile;
 }
 
-# Python virtualenv launcher
-alias venv='source env/bin/activate'
+# Create Python virtualenv
 alias mkvenv='virtualenv -p python3 env'
 
 # Week of year

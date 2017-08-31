@@ -119,7 +119,10 @@ export GOPATH=~/go
 # Add the users bin folder to the path.
 export PATH=~/bin:~/.npm-global/bin:$PATH:$GOPATH/bin
 
-# Start
+# Activate virutal environment
 function venv() {
     source env/bin/activate
 }
+
+# Use Python 3 by default when creating a virtualenv. 
+export VIRTUALENV_PYTHON=python3
