@@ -25,6 +25,7 @@ transfer() {
 
 # Python virtualenv launcher
 alias venv='source env/bin/activate'
+alias mkvenv='virtualenv -p python3 env'
 
 # Week of year
 alias week='date +%W'
