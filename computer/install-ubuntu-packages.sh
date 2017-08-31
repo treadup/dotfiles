@@ -111,5 +111,8 @@ apt --yes install weechat
 # Install nginx
 apt install -y nginx
 
+# Install alpine email client
+apt install -y alpine
+
 # Remove packages that are no longer needed
 apt --yes autoremove
