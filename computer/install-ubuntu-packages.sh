@@ -111,11 +111,18 @@ apt --yes install weechat
 # Install nginx
 apt install -y nginx
 
+#
+# Email
+#
+
 # Install alpine email client
 apt install -y alpine
 
 # Install msmtp smtp client
-apt install msmtp
+apt install -y msmtp
+
+# Install isync package which contains mbsync.
+apt install -y isync
 
 # Remove packages that are no longer needed
 apt --yes autoremove
