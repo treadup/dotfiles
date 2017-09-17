@@ -15,6 +15,9 @@
 # Vim files
 !.vimrc
 
+# msmtp config file
+.msmtprc
+
 # Setup scripts for the computer go in the /computer folder.
 !/computer
 !/computer/*
