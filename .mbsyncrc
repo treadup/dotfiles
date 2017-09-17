@@ -1,0 +1,41 @@
+#
+# Accounts
+#
+IMAPAccount henriktreadup
+  Host imappro.zoho.eu
+  User henrik@henriktreadup.com
+  PassCmd "pass zoho/henrik | head -n 1"
+  CertificateFile /etc/ssl/certs/ca-certificates.crt
+  SSLType IMAPS
+
+#
+# Stores
+#
+IMAPStore henriktreadup-remote
+  Account henriktreadup
+
+MaildirStore henriktreadup-local
+  Path ~/.mail/henriktreadup/
+  Inbox ~/.mail/henriktreadup/Inbox
+
+# The trailing / in the path name is important
+
+#
+# Channels
+#
+Channel sync-henriktreadup
+  Master :henriktreadup-remote:
+  Slave :henriktreadup-local:
+  Patterns *
+  Create Slave
+  SyncState *
+
+#
+# Groups
+#
+Group mail
+Channel sync-henriktreadup
+
+# To sync all the folders call the following command:
+#
+#     mbsync mail
