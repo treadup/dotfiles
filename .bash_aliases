@@ -61,3 +61,19 @@ notesgrep() {
 function touchall() {
     find $1 -exec touch {} \;
 }
+
+# On OSX add ability to launch Google Chrome, Firefox and Safari from the command line. 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Mac OSX specific configuration
+    function firefox() {
+        open -a Firefox $@
+    }
+
+    function google-chrome() {
+        open -a "Google Chrome" $@
+    }
+
+    function safari() {
+        open -a Safari $@
+    }
+fi
