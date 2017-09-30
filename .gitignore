@@ -15,6 +15,12 @@
 # Vim files
 !.vimrc
 
+# msmtp config file
+!.msmtprc
+
+# mbsync config file
+!.mbsyncrc
+
 # Setup scripts for the computer go in the /computer folder.
 !/computer
 !/computer/*
