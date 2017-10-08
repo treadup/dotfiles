@@ -23,8 +23,8 @@ brew install gnupg2
 # Install editors
 brew install emacs
 brew install vim
-brew cask install atom
-brew cask install sublime-text
+# brew cask install atom
+# brew cask install sublime-text
 
 # Install utilities
 brew install tree
