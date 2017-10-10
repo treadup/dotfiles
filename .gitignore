@@ -11,9 +11,13 @@
 # Bash files
 !.bash_profile
 !.bashrc
+!.bash_aliases
 
 # Vim files
 !.vimrc
+
+# EditorConfig
+!.editorconfig
 
 # msmtp config file
 !.msmtprc
