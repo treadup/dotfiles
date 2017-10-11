@@ -1,14 +1,26 @@
 [user]
-	email = henrik.treadup@gmail.com
 	name = Henrik Treadup
+	email = henrik.treadup@gmail.com
+
 [push]
 	default = simple
+
 [alias]
 	last = log -1 HEAD
 	unstage = reset HEAD --
 	undo = reset --soft HEAD^
 	amend = commit --amend -C HEAD
 	heroku = push heroku master
-        ls-untracked = ls-files --others --exclude-standard
+	ls-untracked = ls-files --others --exclude-standard
+
 [core]
 	editor = vim
+
+[includeIf "gitdir:~/work/"]
+	path = .gitconfig-work
+
+[url "https://github.com/"]
+    insteadOf = gh:
+
+[url "https://github.com/treadup/"]
+    insteadOf = ght:

@@ -13,10 +13,13 @@ git remote set-url origin git@github.com:treadup/DotFiles.git # Change to using 
 source ~/.bashrc
 
 # Download .emacs.d repo
-git clone https://github.com/treadup/.emacs.d.git
-cd ~/.emacs.d/
-git remote set-url origin git@github.com:treadup/.emacs.d.git
-cd ~/
+git clone https://github.com/treadup/.emacs.d.git ~/computer/emacs
+
+# Download the spacemacs repo.
+git clone https://github.com/syl20bnr/spacemacs ~/computer/spacemacs
+
+# Set which Emacs distribution to use.
+ln -s ~/computer/spacemacs ~/.emacs.d
 
 # Install the VIM package manger Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -72,13 +75,25 @@ mkdir ~/go
 # Setup the password store
 echo Remember that you now have to setup gpg and pass
 echo To set up pass remember to use pass git init instead of pass init
+echo Start vim and install the plugins
 echo
-echo To install PyCharm on Ubuntu use the following command.
-echo     umake ide pycharm
-echo
-echo To install IntelliJ IDEA on Ubuntu use the following command.
-echo     umake ide idea
-echo
-echo To install the Atom text editor on Ubuntu use the following command.
-echo     umake ide atom
-echo
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    echo To install PyCharm on Ubuntu use the following command.
+    echo     umake ide pycharm
+    echo
+    echo To install IntelliJ IDEA on Ubuntu use the following command.
+    echo     umake ide idea
+    echo
+    echo To install the Atom text editor on Ubuntu use the following command.
+    echo     umake ide atom
+    echo
+fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    echo Remember to configure the keyboard.
+    echo Use F1, F2, etc keys as function keys 
+    echo Key Repeat should be Fast
+    echo Delay Until Repeat should be Short
+    echo Modifier Keys use Caps Lock as Control
+fi
