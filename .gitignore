@@ -40,3 +40,12 @@
 # Users bin folder.
 !/bin
 !/bin/*
+
+# Work
+!/work
+!/work/notes
+!/work/code
+/work/notes/*
+/work/code/*
+!/work/notes/\.gitkeep
+!/work/code/\.gitkeep
