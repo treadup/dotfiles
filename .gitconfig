@@ -1,6 +1,6 @@
 [user]
-	email = henrik.treadup@gmail.com
 	name = Henrik Treadup
+	email = henrik.treadup@gmail.com
 [push]
 	default = simple
 [alias]
@@ -9,6 +9,8 @@
 	undo = reset --soft HEAD^
 	amend = commit --amend -C HEAD
 	heroku = push heroku master
-        ls-untracked = ls-files --others --exclude-standard
+	ls-untracked = ls-files --others --exclude-standard
 [core]
 	editor = vim
+[includeIf "gitdir:~/work/"]
+	path = .gitconfig-work
