@@ -100,7 +100,7 @@ apt --yes install gambc
 apt --yes install mit-scheme
 
 # Install Go
-apt --yes install golang
+apt --yes install golang-go
 
 # Install Guile Scheme
 apt --yes install guile-2.0
