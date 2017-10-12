@@ -72,6 +72,13 @@ fi
 # Setup the Go workspace
 mkdir ~/go
 
+# Install Go programs
+go get -u -v github.com/nsf/gocode
+go get -u -v github.com/rogpeppe/godef
+go get -u -v golang.org/x/tools/cmd/guru
+go get -u -v golang.org/x/tools/cmd/gorename
+go get -u -v golang.org/x/tools/cmd/goimports
+
 # Setup the password store
 echo Remember that you now have to setup gpg and pass
 echo To set up pass remember to use pass git init instead of pass init
