@@ -41,9 +41,6 @@ values."
      helm
      auto-completion
 
-     ;; Email
-     mu4e
-
      ;; Source control
      git
 
@@ -57,32 +54,21 @@ values."
      spell-checking
      syntax-checking
 
-     ;; Tools
-     spotify
-     restclient
-     docker
-     nginx
-
      ;; Programming languages
-     asciidoc
-     asm
      c-c++
      clojure
      common-lisp
-     elixir
      emacs-lisp
-     go
+     (go :variables go-tab-width 4)
      html
      java
      javascript
      react
      latex
-     lua
      markdown
      php
      python
      django
-     racket
      ruby
      scheme
      shell-scripts
@@ -292,7 +278,7 @@ values."
    ;; If non nil line numbers are turned on in all `prog-mode' and `text-mode'
    ;; derivatives. If set to `relative', also turns on relative line numbers.
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -355,6 +341,8 @@ you should place your code here."
 
   ;; Turn on editorconfig mode globally.
   (editorconfig-mode 1)
+  (setq coding-system-for-read 'utf-8 )	; use utf-8 by default
+  (setq coding-system-for-write 'utf-8 )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
