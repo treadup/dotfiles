@@ -65,7 +65,9 @@ values."
      javascript
      react
      latex
-     markdown
+     (markdown :variables
+               fill-column 80
+               auto-fill-function 'do-auto-fill)
      php
      python
      django
@@ -343,6 +345,7 @@ you should place your code here."
   (editorconfig-mode 1)
   (setq coding-system-for-read 'utf-8 )	; use utf-8 by default
   (setq coding-system-for-write 'utf-8 )
+  (set-face-attribute 'default nil :height 140)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
