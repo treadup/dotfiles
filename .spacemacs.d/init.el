@@ -65,9 +65,7 @@ values."
      javascript
      react
      latex
-     (markdown :variables
-               fill-column 80
-               auto-fill-function 'do-auto-fill)
+     markdown
      php
      python
      django
@@ -333,6 +331,10 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq custom-file "~/.spacemacs.d/custom.el") 
   )
 
+(defun autofill-all-the-things ()
+  (setq-default fill-column 80)
+  (setq-default auto-fill-function 'do-auto-fill))
+
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
@@ -346,6 +348,7 @@ you should place your code here."
   (setq coding-system-for-read 'utf-8 )	; use utf-8 by default
   (setq coding-system-for-write 'utf-8 )
   (set-face-attribute 'default nil :height 140)
+  (add-hook 'text-mode-hook 'autofill-all-the-things)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
