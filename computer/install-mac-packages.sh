@@ -20,8 +20,11 @@ brew install git
 brew install pwgen
 brew install gnupg2
 
+# Install Iterm2
+brew cask install iterm2
+
 # Install editors
-brew install emacs
+brew cask install emacs
 brew install vim
 # brew cask install atom
 # brew cask install sublime-text
@@ -53,3 +56,9 @@ brew install awscli
 
 # Install TeX
 brew cask install basictex
+
+# Install PostgreSQL
+brew install postgresql
+
+# Install RabbitMQ
+brew install rabbitmq
