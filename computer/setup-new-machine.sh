@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Make sure that we are in the home folder.
+cd ~/
+
 # Setup the dot files from git repo
 # The following is to get around the fact that we cannot clone into a non empty directory.
 git init
@@ -28,8 +31,8 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # vim +PluginInstall +qall # Install all the plugins
 
 # Install the fonts needed to correctly display VIM powerline/airline.
-mkdir powerline_fonts
-git clone https://github.com/powerline/fonts.git powerline_fonts
+mkdir ~/powerline_fonts
+git clone https://github.com/powerline/fonts.git ~/powerline_fonts
 ~/powerline_fonts/install.sh
 rm -rf ~/powerline_fonts
 
