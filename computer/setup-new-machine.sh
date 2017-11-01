@@ -29,6 +29,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # It is better to install the Vim plugins the first time you open Vim.
 # vim +PluginInstall +qall # Install all the plugins
+# This is done using the :PluginInstall command inside Vim.
 
 # Install the fonts needed to correctly display VIM powerline/airline.
 mkdir ~/powerline_fonts
@@ -83,9 +84,19 @@ go get -u -v golang.org/x/tools/cmd/gorename
 go get -u -v golang.org/x/tools/cmd/goimports
 
 # Setup the password store
-echo Remember that you now have to setup gpg and pass
-echo To set up pass remember to use pass git init instead of pass init
-echo Start vim and install the plugins
+echo Either generate a new GPG key or import an existing GPG key.
+echo To generate a new GPG key use the following command.
+echo
+echo    gpg --gen-key
+echo
+echo Next initialize pass by executing the following commands.
+echo
+echo     pass init \<email\>
+echo     pass git init
+echo
+echo Use the email address associated with the GPG key that should be used.
+echo
+echo Install Vim plugins by running the :PluginInstall command inside Vim.
 echo
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
