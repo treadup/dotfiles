@@ -126,3 +126,20 @@ function venv() {
 
 # Use Python 3 by default when creating a virtualenv. 
 export VIRTUALENV_PYTHON=python3
+
+# Connects to the running Emacs server called galaxy.
+# Creates a new graphical frame.
+function em() {
+    emacsclient -s galaxy -c $@
+}
+
+# Connects to the running Emacs server called galaxy.
+# Creates a new client frame on the current text terminal. 
+function emt() {
+    emacsclient -s galaxy -t $@
+}
+
+# Starts a new Emacs server called galaxy.
+function emacsserver() {
+    emacs --eval '(setq server-name "galaxy")' --daemon
+}
