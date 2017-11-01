@@ -62,3 +62,6 @@ brew install postgresql
 
 # Install RabbitMQ
 brew install rabbitmq
+
+echo You should install docker using the Docker for Mac installer.
+echo Do NOT use brew to install docker!
