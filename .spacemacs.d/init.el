@@ -72,6 +72,7 @@ values."
      ruby
      scheme
      shell-scripts
+     shaders
      sql
      )
    ;; List of additional packages that will be installed without being
@@ -328,7 +329,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   ;; the location of the custom file. This is done by setting the custom-file
   ;; variable
   ;; https://github.com/syl20bnr/spacemacs/issues/7891
-  (setq custom-file "~/.spacemacs.d/custom.el") 
+  (setq custom-file "~/.spacemacs.d/custom.el")
   )
 
 (defun autofill-all-the-things ()
