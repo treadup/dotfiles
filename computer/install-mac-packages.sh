@@ -19,6 +19,7 @@ brew install pass
 brew install git
 brew install pwgen
 brew install gnupg2
+brew install coreutils
 
 # Install Iterm2
 brew cask install iterm2
