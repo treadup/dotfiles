@@ -73,7 +73,9 @@ values."
      scheme
      shell-scripts
      shaders
+     spotify
      sql
+     yaml
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -350,7 +352,13 @@ you should place your code here."
   (setq coding-system-for-write 'utf-8 )
   (set-face-attribute 'default nil :height 140)
   (add-hook 'text-mode-hook 'autofill-all-the-things)
-  )
+
+  ;; There seems to be a problem with readline support in the default python
+  ;; interpreter on macOS. To fix this point python-shell-interpreter any
+  ;; version of python that has been installed via Homebrew. Using ipython might
+  ;; also fix the problem. Switching to using python3 fixes the problem since
+  ;; macOS does not come with Python 3 by default.
+  (setq python-shell-interpreter "python3"))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
