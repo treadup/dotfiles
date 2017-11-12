@@ -64,5 +64,9 @@ brew install postgresql
 # Install RabbitMQ
 brew install rabbitmq
 
+# Install Source Code Pro font
+brew tap caskroom/fonts
+brew cask install font-source-code-pro
+
 echo You should install docker using the Docker for Mac installer.
 echo Do NOT use brew to install docker!
