@@ -133,5 +133,10 @@ apt install -y isync
 git clone --depth 1 --branch release https://github.com/adobe-fonts/source-code-pro.git /usr/share/fonts/opentype/scp
 fc-cache -f -v
 
+#
+# The python-dbus is required by the spotify cli
+#
+apt install -y python-dbus
+
 # Remove packages that are no longer needed
 apt --yes autoremove
