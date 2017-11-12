@@ -64,7 +64,7 @@ apt --yes install pandoc
 ## Add repo for heroku cli program
 add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
 curl -L https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
-apt update 
+apt update
 apt --yes install heroku
 
 # Install certbot
@@ -88,7 +88,7 @@ apt --yes install default-jdk
 # Set the JAVA_HOME environment variable. You need to log out and
 # then log back in again for the /etc/environment file to be reloaded.
 JAVA_HOME="$(dirname $(dirname $(readlink -e $(which javac))))"
-printf "JAVA_HOME=$JAVA_HOME\n" >> /etc/environment 
+printf "JAVA_HOME=$JAVA_HOME\n" >> /etc/environment
 
 # Install Steel Bank Common Lisp
 apt --yes install sbcl
@@ -123,6 +123,15 @@ apt install -y msmtp
 
 # Install isync package which contains mbsync.
 apt install -y isync
+
+#
+# Fonts
+#
+
+# Install Source Code Pro
+[ -d /usr/share/fonts/opentype ] || mkdir /usr/share/fonts/opentype
+git clone --depth 1 --branch release https://github.com/adobe-fonts/source-code-pro.git /usr/share/fonts/opentype/scp
+fc-cache -f -v
 
 # Remove packages that are no longer needed
 apt --yes autoremove
