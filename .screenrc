@@ -1,2 +1,13 @@
 # Do not show the startup message.
-startup_message off
+# startup_message off
+startup_message on
+
+# Use Ctrl-b as the prefix. This is the same as in tmux.
+escape ^B^B
+
+# Bind o to other. Doing Ctrl-a o will switch to the other window.
+bind o other
+
+# Display the status on the last line
+hardstatus on
+hardstatus alwayslastline
