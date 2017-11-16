@@ -1,13 +1,14 @@
 # Do not show the startup message.
-# startup_message off
-startup_message on
+startup_message off
 
-# Use Ctrl-b as the prefix. This is the same as in tmux.
-escape ^B^B
-
-# Bind o to other. Doing Ctrl-a o will switch to the other window.
-bind o other
+# Use Ctrl-t as the prefix.
+escape ^T^T
 
 # Display the status on the last line
 hardstatus on
 hardstatus alwayslastline
+
+# Set the statusline
+# http://www.kilobitspersecond.com/2014/02/10/understanding-gnu-screens-hardstatus-strings/
+# https://www.gnu.org/software/screen/manual/screen.html#String-Escapes
+hardstatus string "%{= kW}%H | %-w %{+b}%n %t%{-b}%+w%=%c"
