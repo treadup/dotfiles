@@ -84,7 +84,7 @@ go get -u -v golang.org/x/tools/cmd/gorename
 go get -u -v golang.org/x/tools/cmd/goimports
 
 # Download Spotify Cli
-if [["$OSTYPE" == "linux-gnu"]]; then
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
     curl -o ~/bin/spotify-cli https://raw.githubusercontent.com/pwittchen/spotify-cli-linux/master/spotify-cli
     chmod u+x ~/bin/spotify-cli
 fi
@@ -119,8 +119,18 @@ fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     echo Remember to configure the keyboard.
-    echo Use F1, F2, etc keys as function keys 
+    echo Use F1, F2, etc keys as function keys
     echo Key Repeat should be Fast
     echo Delay Until Repeat should be Short
     echo Modifier Keys use Caps Lock as Control
 fi
+
+# Solarized color scheme for Mate Terminal on Linux
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    git clone https://github.com/oz123/solarized-mate-terminal.git ~/solarized-mate-terminal/
+    bash ~/solarized-mate-terminal/solarized-mate.sh
+    rm -rf ~/solarized-mate-terminal/
+fi
+
+git clone https://github.com/oh-my-fish/oh-my-fish ~/computer/oh-my-fish
+~/computer/oh-my-fish/bin/install --noninteractive
