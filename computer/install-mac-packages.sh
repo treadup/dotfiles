@@ -24,6 +24,9 @@ brew install coreutils
 # Install Iterm2
 brew cask install iterm2
 
+# Install fish
+brew install fish
+
 # Install editors
 brew cask install emacs
 brew install vim
@@ -36,6 +39,9 @@ brew install wget
 brew install the_silver_searcher
 brew install tldr
 brew install ispell
+
+# Install tmux
+brew install tmux
 
 # Network stuff
 brew install screen

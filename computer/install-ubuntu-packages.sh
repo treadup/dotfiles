@@ -23,6 +23,9 @@ fi
 # Install Vim
 apt --yes install vim
 
+# Install Fish shell
+apt --yes install fish
+
 # Install cli trash command
 apt --yes install trash-cli
 
@@ -50,6 +53,7 @@ apt --yes install silversearcher-ag
 
 # Install screen
 apt --yes install screen
+apt --yes install tmux
 
 # Install Python related things
 apt --yes install python3-pip python3-dev
