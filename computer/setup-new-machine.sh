@@ -37,6 +37,11 @@ git clone https://github.com/powerline/fonts.git ~/powerline_fonts
 ~/powerline_fonts/install.sh
 rm -rf ~/powerline_fonts
 
+# Install nerd fonts
+git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git ~/nerd_fonts
+chmod u+x ~/nerd_fonts/install.sh
+~/nerd_fonts/install.sh
+
 # Install the moderncv latex package
 tlmgr -v init-usertree
 tlmgr install moderncv
