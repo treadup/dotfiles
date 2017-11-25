@@ -59,6 +59,7 @@ values."
      clojure
      common-lisp
      emacs-lisp
+     docker
      (go :variables go-tab-width 4)
      html
      java
