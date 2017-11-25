@@ -5,11 +5,10 @@ cd ~/
 
 # Setup the dot files from git repo
 # The following is to get around the fact that we cannot clone into a non empty directory.
-git init
-git remote add origin https://github.com/treadup/dotfiles.git
-git fetch origin
-git checkout -b master --force --track origin/master
-git remote set-url origin git@github.com:treadup/DotFiles.git # Change to using ssh
+yadm init
+yadm remote add origin git@github.com:treadup/dotfiles.git
+yadm fetch origin
+yadm checkout -b master --force --track origin/master
 
 # Source the downloaded bashrc file. Bash should now be in sync with the configuration
 # in the DotFiles repo.

@@ -21,6 +21,9 @@ brew install pwgen
 brew install gnupg2
 brew install coreutils
 
+# Install yet another dotfiles manager
+brew install yadm
+
 # Install Iterm2
 brew cask install iterm2
 
