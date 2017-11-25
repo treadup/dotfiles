@@ -165,7 +165,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -358,7 +358,41 @@ you should place your code here."
   ;; version of python that has been installed via Homebrew. Using ipython might
   ;; also fix the problem. Switching to using python3 fixes the problem since
   ;; macOS does not come with Python 3 by default.
-  (setq python-shell-interpreter "python3"))
+  (setq python-shell-interpreter "python3")
+
+  (defun create-shell ()
+    "creates a shell with a given name"
+    (interactive);; "Prompt\n shell name:")
+    (let ((shell-name (read-string "shell name: " nil)))
+      (shell (concat "*" shell-name "*"))))
+
+  ;; This is quite an interesting page
+  ;; https://www.emacswiki.org/emacs/EshellMultipleEshellBuffers
+  ;; https://github.com/DamienCassou/shell-switcher
+  
+  (defun create-eshell ()
+    "creates an eshell with a given name"
+    (interactive);; "Prompt\n shell name:")
+    (let ((eshell-name (read-string "eshell name: " nil)))
+      (eshell (concat "*" eshell-name "*"))))
+
+  ;; http://emacsredux.com/blog/2013/03/29/terminal-at-your-fingertips/
+  (defun visit-term-buffer ()
+    "Create or visit a terminal buffer."
+    (interactive)
+    (if (not (get-buffer "*ansi-term*"))
+      (progn
+        (split-window-sensibly (selected-window))
+        (other-window 1)
+        (ansi-term (getenv "SHELL")))
+      (switch-to-buffer-other-window "*ansi-term*")))
+
+  (defun create-term ()
+    "creates a term with a given name"
+    (interactive);; "Prompt\n shell name:")
+    (let ((term-name (read-string "term name: " nil)))
+      (term (concat "*" term-name "*"))))
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
