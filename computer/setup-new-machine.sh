@@ -9,6 +9,7 @@ yadm init
 yadm remote add origin git@github.com:treadup/dotfiles.git
 yadm fetch origin
 yadm checkout -b master --force --track origin/master
+yadm config status.showUntrackedFiles no
 
 # Source the downloaded bashrc file. Bash should now be in sync with the configuration
 # in the DotFiles repo.
