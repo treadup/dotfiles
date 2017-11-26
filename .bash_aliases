@@ -9,7 +9,7 @@ transfer() {
         echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md";
         return 1;
     fi
-    
+
     tmpfile=$( mktemp -t transferXXX );
 
     if tty -s; then
@@ -25,6 +25,11 @@ transfer() {
 
 # Create Python virtualenv
 alias mkvenv='virtualenv -p python3 env'
+
+# Activate virutal environment
+function venv() {
+    source env/bin/activate
+}
 
 # Week of year
 alias week='date +%W'
@@ -57,12 +62,12 @@ notesgrep() {
     grep -r --exclude-dir=".git/" $1 ~/notes
 }
 
-# Touch all files in the given folder. 
+# Touch all files in the given folder.
 function touchall() {
     find $1 -exec touch {} \;
 }
 
-# On OSX add ability to launch Google Chrome, Firefox and Safari from the command line. 
+# On OSX add ability to launch Google Chrome, Firefox and Safari from the command line.
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX specific configuration
     function firefox() {
@@ -77,3 +82,22 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         open -a Safari $@
     }
 fi
+
+# Connects to the running Emacs server.
+# Creates a new graphical frame.
+function em() {
+    emacsclient -a '' $@
+}
+
+
+# Connects to the running Emacs server.
+# Creates a new graphical frame.
+function emc() {
+    emacsclient -a '' -c $@
+}
+
+# Connects to the running Emacs server.
+# Creates a new client frame on the current text terminal.
+function emt() {
+    emacsclient -a '' -t $@
+}

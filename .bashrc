@@ -113,33 +113,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Go lang
-export GOPATH=~/go
+# Export all variables defined in the ~/.environment file.
+set -o allexport
+source ~/.environment
+set +o allexport
 
-# Add the users bin folder to the path.
-export PATH=~/bin:~/.npm-global/bin:$PATH:$GOPATH/bin
 
-# Activate virutal environment
-function venv() {
-    source env/bin/activate
-}
 
-# Use Python 3 by default when creating a virtualenv. 
-export VIRTUALENV_PYTHON=python3
-
-# Connects to the running Emacs server called galaxy.
-# Creates a new graphical frame.
-function em() {
-    emacsclient -s galaxy -c $@
-}
-
-# Connects to the running Emacs server called galaxy.
-# Creates a new client frame on the current text terminal. 
-function emt() {
-    emacsclient -s galaxy -t $@
-}
-
-# Starts a new Emacs server called galaxy.
-function emacsserver() {
-    emacs --eval '(setq server-name "galaxy")' --daemon
-}
