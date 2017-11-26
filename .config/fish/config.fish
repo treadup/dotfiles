@@ -1,3 +1,7 @@
+#
+# Load environment variables
+#
+dotenv
 
 #
 # Configure bobthefish
