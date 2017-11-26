@@ -27,6 +27,9 @@ ln -s ~/computer/spacemacs ~/.emacs.d
 # Install the VIM package manger Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+# Download git-prompt
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+
 # It is better to install the Vim plugins the first time you open Vim.
 # vim +PluginInstall +qall # Install all the plugins
 # This is done using the :PluginInstall command inside Vim.
