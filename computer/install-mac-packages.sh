@@ -36,6 +36,9 @@ brew install vim
 # brew cask install atom
 # brew cask install sublime-text
 
+# Install Firefox
+brew cask install firefox
+
 # Install utilities
 brew install tree
 brew install wget
@@ -73,9 +76,10 @@ brew install postgresql
 # Install RabbitMQ
 brew install rabbitmq
 
-# Install Source Code Pro font
+# Install fonts
 brew tap caskroom/fonts
 brew cask install font-source-code-pro
+brew cask install font-firacode-nerd-font
 
 echo You should install docker using the Docker for Mac installer.
 echo Do NOT use brew to install docker!
