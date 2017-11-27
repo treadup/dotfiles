@@ -17,8 +17,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" Solarized color theme
-Plugin 'altercation/vim-colors-solarized'
+" Color theme
+Plugin 'jnurmine/zenburn'
+" Plugin 'altercation/vim-colors-solarized'
 
 " Vim git-gutter
 Plugin 'airblade/vim-gitgutter'
@@ -93,11 +94,11 @@ Plugin 'davidhalter/jedi-vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Enable solarized color theme
+" Enable color theme
 set term=xterm-256color
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme zenburn
 
 " Needed for airline
 " You also need to remember to install the powerline fonts.
@@ -108,7 +109,7 @@ set laststatus=2
 " let g:airline_powerline_fonts=1
 
 " Use the solarized airline theme
-let g:ariline_theme='solarized'
+" let g:ariline_theme='solarized'
 
 " No backup files
 set nobackup
