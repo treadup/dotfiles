@@ -76,6 +76,7 @@ values."
      shaders
      spotify
      sql
+     vimscript
      yaml
      )
    ;; List of additional packages that will be installed without being
