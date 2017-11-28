@@ -101,3 +101,15 @@ function emc() {
 function emt() {
     emacsclient -a '' -t $@
 }
+
+function automute() {
+
+    case $1 in
+        "on" )
+            amixer -c 0 sset 'Auto-Mute Mode' Enabled ;;
+        "off" )
+            amixer -c 0 sset 'Auto-Mute Mode' Disabled ;;
+        "show" )
+            amixer -c 0 sget 'Auto-Mute Mode' ;;
+    esac
+}
