@@ -1,8 +1,9 @@
 # Go lang
-GOPATH=~/go
+GOPATH=$HOME/go
 
 # Add the users bin folder to the path.
-PATH=~/bin:~/.local/bin:/usr/local/sbin:~/.npm-global/bin:$PATH:$GOPATH/bin
+PATH=$GOPATH/bin:$HOME/bin:$HOME/.local/bin:/usr/local/sbin:$HOME/.npm-global/bin:$PATH
 
+# Do not do this. It breaks vex and pew
 # Use Python 3 by default when creating a virtualenv.
-VIRTUALENV_PYTHON=python3
+# VIRTUALENV_PYTHON=python3
