@@ -56,6 +56,7 @@ mkdir -p ~/bin
 pip3 install pipsi
 pip3 install virtualenv
 pip3 install httpie
+pip3 install html2text
 
 # Install pyenv
 pipsi install pew
