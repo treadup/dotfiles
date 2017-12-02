@@ -45,22 +45,88 @@ if [ -n "$force_color_prompt" ]; then
 	# We have color support; assume it's compliant with Ecma-48
 	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
 	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+  	  color_prompt=yes
     else
-	color_prompt=
+	    color_prompt=
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    if [[ ${EUID} == 0 ]] ; then
-        PS1='\[\033[01;31m\]\h\[\033[01;34m\] \W \$\[\033[00m\] '
+# Color definitions
+BLACK_COLOR='\001\033[01;30m\002'
+RED_COLOR='\001\033[01;31m\002'
+GREEN_COLOR='\001\033[01;32m\002'
+YELLOW_COLOR='\001\033[01;33m\002'
+BLUE_COLOR='\001\033[01;34m\002'
+MAGENTA_COLOR='\001\033[01;35m\002'
+CYAN_COLOR='\001\033[01;36m\002'
+WHITE_COLOR='\001\033[01;37m\002'
+RESET_COLOR='\001\033[0m\002'
+
+function the_virtualenv {
+    if [ -n "$VIRTUAL_ENV" ]; then
+        if [ "$color_prompt" = yes ]; then
+            echo -e "${CYAN_COLOR}$(basename $VIRTUAL_ENV)${RESET_COLOR} "
+        else
+            echo "$(basename $VIRTUAL_ENV) "
+        fi
     else
-        PS1='\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[35m\]$(__git_ps1 "%s ")\[\033[01;00m\]\w \$ '
+        echo ""
     fi
-else
-    PS1='\u@\h $(__git_ps1 "%s ")\w$ \$ '
-fi
-unset color_prompt force_color_prompt
+}
+
+function the_git_branch {
+    CURRENT_GIT_BRANCH="$(__git_ps1 '%s')"
+
+    if [ -n "$CURRENT_GIT_BRANCH" ]; then
+        if [ "$color_prompt" = yes ]; then
+            echo -e "${MAGENTA_COLOR}${CURRENT_GIT_BRANCH}${RESET_COLOR} "
+        else
+            echo "$CURRENT_GIT_BRANCH "
+        fi
+    else
+        echo ""
+    fi
+}
+
+function the_location {
+    if [ "$color_prompt" = yes ]; then
+        if [[ ${EUID} == 0 ]]; then
+            echo -e "${RED_COLOR}\u@\h${RESET_COLOR}"
+        else
+            echo -e "${GREEN_COLOR}\u@\h${RESET_COLOR}"
+        fi
+    else
+        echo "\u@\h"
+    fi
+}
+
+function the_folder {
+    if [ "$color_prompt = yes" ]; then
+        echo -e "${WHITE_COLOR}\w${RESET_COLOR}"
+    else
+        echo "\w"
+    fi
+}
+
+THE_LOCATION="$(the_location)"
+THE_FOLDER="$(the_folder)"
+
+function the_prompt_command {
+    THE_VIRTUALENV="$(the_virtualenv)"
+    THE_GIT_BRANCH="$(the_git_branch)"
+
+    if [ "$color_prompt" = yes ]; then
+        if [[ ${EUID} == 0 ]] ; then
+            PS1="${THE_LOCATION} ${THE_FOLDER} # "
+        else
+            PS1="${THE_VIRTUALENV}${THE_LOCATION} ${THE_GIT_BRANCH}${THE_FOLDER} \$ "
+        fi
+    else
+        PS1="${THE_VIRTUALENV}${THE_LOCATION} ${THE_GIT_BRANCH}${THE_FOLDER} \$ "
+    fi
+}
+
+PROMPT_COMMAND=the_prompt_command
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -120,6 +186,3 @@ fi
 set -o allexport
 source ~/.environment
 set +o allexport
-
-
-
