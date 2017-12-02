@@ -113,3 +113,13 @@ function automute() {
             amixer -c 0 sget 'Auto-Mute Mode' ;;
     esac
 }
+
+function web() {
+    http --follow $1 | html2text | less
+}
+
+# Django
+alias djr='python manage.py runserver'
+alias djm='python manage.py migrate'
+alias djmm='python manage.py makemigrations'
+alias djs='python manage.py shell'
