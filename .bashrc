@@ -186,3 +186,8 @@ fi
 set -o allexport
 source ~/.environment
 set +o allexport
+
+# added by Pew
+if command -v pew >/dev/null; then
+    source $(pew shell_config)
+fi
