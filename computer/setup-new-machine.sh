@@ -53,14 +53,11 @@ tlmgr install moderncv
 mkdir -p ~/bin
 
 # Install Python packages
-pip3 install pipsi
 pip3 install virtualenv
+pip3 install pew
+pip3 install pipenv
 pip3 install httpie
 pip3 install html2text
-
-# Install pyenv
-pipsi install pew
-pipsi install pipenv
 
 # Install Clojure
 curl -o ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
