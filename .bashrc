@@ -117,12 +117,12 @@ function the_prompt_command {
 
     if [ "$color_prompt" = yes ]; then
         if [[ ${EUID} == 0 ]] ; then
-            PS1="${THE_LOCATION} ${THE_FOLDER} # "
+            PS1="${THE_FOLDER} ${THE_LOCATION}\n# "
         else
-            PS1="${THE_VIRTUALENV}${THE_LOCATION} ${THE_GIT_BRANCH}${THE_FOLDER} \$ "
+            PS1="${THE_VIRTUALENV}${THE_FOLDER} ${THE_GIT_BRANCH}${THE_LOCATION}\n\$ "
         fi
     else
-        PS1="${THE_VIRTUALENV}${THE_LOCATION} ${THE_GIT_BRANCH}${THE_FOLDER} \$ "
+        PS1="${THE_VIRTUALENV}${THE_FOLDER} ${THE_GIT_BRANCH}${THE_LOCATION}\n\$ "
     fi
 }
 
