@@ -29,6 +29,10 @@ apt --yes install vim
 # Install Fish shell
 apt --yes install fish
 
+# Install bash completion
+# This might already be installed...
+apt --yes install bash-completion
+
 # Install cli trash command
 apt --yes install trash-cli
 

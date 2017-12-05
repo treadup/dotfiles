@@ -30,6 +30,9 @@ brew cask install iterm2
 # Install fish
 brew install fish
 
+# Install bash completion
+brew install bash-completion
+
 # Install editors
 brew cask install emacs
 brew install vim
