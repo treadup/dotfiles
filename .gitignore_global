@@ -1,0 +1,7 @@
+# Globally ignore the following files.
+
+# Emacs files
+*~
+\#*\#
+.\#*
+

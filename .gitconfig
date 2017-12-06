@@ -15,6 +15,7 @@
 
 [core]
 	editor = vim
+	excludesfile = /home/henrik/.gitignore_global
 
 [includeIf "gitdir:~/work/"]
 	path = .gitconfig-work
