@@ -167,7 +167,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 14
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -371,7 +371,7 @@ you should place your code here."
   ;; This is quite an interesting page
   ;; https://www.emacswiki.org/emacs/EshellMultipleEshellBuffers
   ;; https://github.com/DamienCassou/shell-switcher
-  
+
   (defun create-eshell ()
     "creates an eshell with a given name"
     (interactive);; "Prompt\n shell name:")
@@ -394,6 +394,17 @@ you should place your code here."
     (interactive);; "Prompt\n shell name:")
     (let ((term-name (read-string "term name: " nil)))
       (term (concat "*" term-name "*"))))
+
+  (defun oak-shell ()
+    (interactive)
+    (let ((default-directory "/ssh:henrik@oak:"))
+      (create-shell)))
+
+  (defun oak-eshell ()
+    (interactive)
+    (let ((default-directory "/ssh:henrik@oak:"))
+      (create-eshell)))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
