@@ -52,15 +52,15 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 # Color definitions
-BLACK_COLOR='\001\033[01;30m\002'
-RED_COLOR='\001\033[01;31m\002'
-GREEN_COLOR='\001\033[01;32m\002'
-YELLOW_COLOR='\001\033[01;33m\002'
-BLUE_COLOR='\001\033[01;34m\002'
-MAGENTA_COLOR='\001\033[01;35m\002'
-CYAN_COLOR='\001\033[01;36m\002'
-WHITE_COLOR='\001\033[01;37m\002'
-RESET_COLOR='\001\033[0m\002'
+BLACK_COLOR='\[\033[01;30m\]'
+RED_COLOR='\[\033[01;31m\]'
+GREEN_COLOR='\[\033[01;32m\]'
+YELLOW_COLOR='\[\033[01;33m\]'
+BLUE_COLOR='\[\033[01;34m\]'
+MAGENTA_COLOR='\[\033[01;35m\]'
+CYAN_COLOR='\[\033[01;36m\]'
+WHITE_COLOR='\[\033[01;37m\]'
+RESET_COLOR='\[\033[0m\]'
 
 function the_virtualenv {
     if [ -n "$VIRTUAL_ENV" ]; then
@@ -117,12 +117,12 @@ function the_prompt_command {
 
     if [ "$color_prompt" = yes ]; then
         if [[ ${EUID} == 0 ]] ; then
-            PS1="${THE_FOLDER} ${THE_LOCATION}\n# "
+            PS1="${THE_LOCATION} ${THE_FOLDER}\n# "
         else
-            PS1="${THE_VIRTUALENV}${THE_FOLDER} ${THE_GIT_BRANCH}${THE_LOCATION}\n\$ "
+            PS1="${THE_VIRTUALENV}${THE_LOCATION} ${THE_GIT_BRANCH}${THE_FOLDER}\n\$ "
         fi
     else
-        PS1="${THE_VIRTUALENV}${THE_FOLDER} ${THE_GIT_BRANCH}${THE_LOCATION}\n\$ "
+        PS1="${THE_VIRTUALENV}${THE_LOCATION} ${THE_GIT_BRANCH}${THE_FOLDER}\n\$ "
     fi
 }
 
@@ -175,7 +175,10 @@ fi
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
+  # Homebrew on macOS
+  if [ -f /usr/local/etc/bash_completion ]; then
+    . /usr/local/etc/bash_completion
+  elif [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
@@ -187,7 +190,7 @@ set -o allexport
 source ~/.environment
 set +o allexport
 
-# added by Pew
+# Source Pew bash completions
 if command -v pew >/dev/null; then
     source $(pew shell_config)
 fi
