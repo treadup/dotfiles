@@ -27,8 +27,9 @@ brew install yadm
 # Install Iterm2
 brew cask install iterm2
 
-# Install fish
+# Install shells
 brew install fish
+brew install tcsh
 
 # Install bash completion
 brew install bash-completion

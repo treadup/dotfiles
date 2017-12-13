@@ -26,8 +26,9 @@ fi
 # Install Vim
 apt --yes install vim
 
-# Install Fish shell
+# Install Shells
 apt --yes install fish
+apt --yes install tcsh
 
 # Install bash completion
 # This might already be installed...
