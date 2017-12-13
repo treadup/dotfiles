@@ -1,7 +1,7 @@
-function create_backup
-  set -l BACKUP_FILENAME /backup/backup_(date +"%Y%m%d_%H%M").tar.gz
+function create_encrypted_backup
+  set -l BACKUP_FILENAME /backup/backup_(date +"%Y%m%d_%H%M").tgz.gpg
   cd $HOME
-  tar -cvpzf $BACKUP_FILENAME \
+  tar -cpz \
   --exclude './Downloads' \
   --exclude './Videos' \
   --exclude './VirtualBox VMs' \
@@ -14,5 +14,5 @@ function create_backup
   --exclude './linux' \
   --exclude './node_modules' \
   --exclude './nerd_fonts' \
-  .
+  . | gpg --output $BACKUP_FILENAME --encrypt --recipient 'henrik.treadup@gmail.com' 
 end
