@@ -1,7 +1,6 @@
-#
-# Load environment variables
-#
-dotenv
+
+# Set the  environment
+source ~/.environment
 
 #
 # Configure bobthefish

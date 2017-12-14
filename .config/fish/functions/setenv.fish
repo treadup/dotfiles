@@ -4,7 +4,7 @@ function setenv
     for item in (echo $argv[2] | tr ': ' \n)
       if [ $item != "\$PATH" ]
         if not contains $item $PATH
-          set -g PATH $PATH (eval echo $item)
+          set -gx PATH $PATH (eval echo $item)
         end
       end
     end

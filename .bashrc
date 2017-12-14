@@ -153,6 +153,9 @@ fi
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
+# Define setenv for bash
+function setenv() { export "$1=$2"; }
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -186,9 +189,7 @@ if ! shopt -oq posix; then
 fi
 
 # Export all variables defined in the ~/.environment file.
-set -o allexport
 source ~/.environment
-set +o allexport
 
 # Source Pew bash completions
 if command -v pew >/dev/null; then
