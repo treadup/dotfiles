@@ -146,6 +146,11 @@ git clone --depth 1 --branch release https://github.com/adobe-fonts/source-code-
 fc-cache -f -v
 
 #
+# Window Managers
+#
+apt install --yes i3
+
+#
 # The python-dbus is required by the spotify cli
 #
 apt install -y python-dbus
