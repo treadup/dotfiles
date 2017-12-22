@@ -69,9 +69,6 @@ Plugin 'nginx.vim'
 " The jshint plugin.
 Plugin 'walm/jshint.vim'
 
-" Mustache and Handlebars plugin.
-Plugin 'mustache/vim-mustache-handlebars'
-
 " Fireplace the Clojure REPL for VIM.
 Plugin 'tpope/vim-fireplace'
 
