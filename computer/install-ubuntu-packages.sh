@@ -91,6 +91,9 @@ apt --yes install build-essential
 ## Install LLVM and CLang
 apt --yes install llvm clang
 
+# Install gdb
+apt --yes install gdb
+
 # Install docker
 apt --yes install docker.io
 
