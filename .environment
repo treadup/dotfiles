@@ -1,3 +1,9 @@
+# Set locale
+# We need to set LC_ALL to get around a bug on macOS. Otherwise
+# the locale will be messed up in the fish shell.
+setenv LC_ALL en_US.UTF-8
+setenv LANG en_US.UTF-8
+
 # Go lang
 setenv GOPATH $HOME/go
 
