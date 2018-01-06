@@ -143,5 +143,5 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     rm -rf ~/solarized-mate-terminal/
 fi
 
-git clone https://github.com/oh-my-fish/oh-my-fish ~/computer/oh-my-fish
-~/computer/oh-my-fish/bin/install --noninteractive
+# git clone https://github.com/oh-my-fish/oh-my-fish ~/computer/oh-my-fish
+# ~/computer/oh-my-fish/bin/install --noninteractive
