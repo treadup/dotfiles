@@ -61,13 +61,13 @@ values."
      emacs-lisp
      docker
      (go :variables go-tab-width 4)
+     elixir
      html
      java
      javascript
      react
      latex
      markdown
-     php
      python
      django
      ruby
