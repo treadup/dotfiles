@@ -123,3 +123,8 @@ alias djr='python manage.py runserver'
 alias djm='python manage.py migrate'
 alias djmm='python manage.py makemigrations'
 alias djs='python manage.py shell'
+
+# Anaconda
+function acp() {
+    export PATH=$HOME/anaconda3/bin:$PATH
+}
