@@ -1,4 +1,11 @@
 function fish_prompt
+   # Conda does not use the virtualenv variable.
+   if test -n "$CONDA_DEFAULT_ENV"
+      set_color cyan
+      printf '%s ' (basename $CONDA_DEFAULT_ENV)
+      set_color normal
+   end
+
    if test -n "$VIRTUAL_ENV"
        set_color cyan
        printf '%s ' (basename $VIRTUAL_ENV)
