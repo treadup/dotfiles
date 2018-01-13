@@ -65,12 +65,26 @@ CYAN_COLOR='\[\033[01;36m\]'
 WHITE_COLOR='\[\033[01;37m\]'
 RESET_COLOR='\[\033[0m\]'
 
-function the_virtualenv {
+function the_environment_name {
     if [ -n "$VIRTUAL_ENV" ]; then
+        echo $(basename $VIRTUAL_ENV)
+    elif [ -n "$CONDA_DEFAULT_ENV" ]; then
+        echo "$CONDA_DEFAULT_ENV"
+    else
+        echo ""
+    fi
+}
+
+function the_virtualenv {
+    ENVIRONMENT_NAME=$(the_environment_name)
+
+    if [ -n "$ENVIRONMENT_NAME" ]; then
+        echo "Has environment name ,$ENVIRONMENT_NAME,"
+
         if [ "$color_prompt" = yes ]; then
-            echo -e "${CYAN_COLOR}$(basename $VIRTUAL_ENV)${RESET_COLOR} "
+            echo -e "${CYAN_COLOR}$(the_environment_name)${RESET_COLOR} "
         else
-            echo "$(basename $VIRTUAL_ENV) "
+            echo "$(the_environment_name) "
         fi
     else
         echo ""
