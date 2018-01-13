@@ -2,6 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# This is to fix the problem with pew bash completions.
+SHELL=/bin/bash
+
 # For some reason I needed to set these on OSX.
 # I do not remember why. I think it had something to do with
 ## sshing in to a linux box.
