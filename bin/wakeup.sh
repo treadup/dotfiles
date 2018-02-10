@@ -4,7 +4,7 @@
 amixer -c 0 sset 'Auto-Mute Mode' Disabled
 
 # Set master volume to something that will wake me up
-amixer set 'Master' 80%
+amixer set 'Master' 60%
 
 # Launch Spotify
 (spotify 1>/dev/null 2>&1 &) || exit 1
