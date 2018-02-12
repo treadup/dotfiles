@@ -118,7 +118,7 @@ function the_location {
 }
 
 function the_folder {
-    if [ "$color_prompt = yes" ]; then
+    if [ "$color_prompt" = yes ]; then
         echo -e "${WHITE_COLOR}\w${RESET_COLOR}"
     else
         echo "\w"
