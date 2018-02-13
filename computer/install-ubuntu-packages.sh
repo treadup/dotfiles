@@ -117,6 +117,9 @@ apt --yes install mit-scheme
 # Install Go
 apt --yes install golang-go
 
+# Install Ruby
+apt --yes install ruby
+
 # Install Guile Scheme
 apt --yes install guile-2.0
 
