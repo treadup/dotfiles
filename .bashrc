@@ -79,8 +79,6 @@ function the_virtualenv {
     ENVIRONMENT_NAME=$(the_environment_name)
 
     if [ -n "$ENVIRONMENT_NAME" ]; then
-        echo "Has environment name ,$ENVIRONMENT_NAME,"
-
         if [ "$color_prompt" = yes ]; then
             echo -e "${CYAN_COLOR}$(the_environment_name)${RESET_COLOR} "
         else
