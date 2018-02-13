@@ -11,7 +11,7 @@ setenv TERM xterm-256color
 setenv GOPATH $HOME/go
 
 # Add the users bin folder to the path.
-setenv PATH $HOME/anaconda3/bin:$GOPATH/bin:$HOME/bin:$HOME/.local/bin:/usr/local/sbin:$HOME/.npm-global/bin:$PATH
+setenv PATH $GOPATH/bin:$HOME/bin:$HOME/.local/bin:/usr/local/sbin:$HOME/.npm-global/bin:$PATH
 
 # Do not do this. It breaks vex and pew
 # Use Python 3 by default when creating a virtualenv.
