@@ -59,6 +59,10 @@ pip3 install pipenv
 pip3 install httpie
 pip3 install html2text
 
+# Install tmuxp
+pew new tmuxp
+pew in tmuxp pip install tmuxp
+
 # Install Clojure
 curl -o ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
 chmod 755 ~/bin/lein
