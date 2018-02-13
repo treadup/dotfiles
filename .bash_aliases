@@ -128,3 +128,6 @@ alias djs='python manage.py shell'
 function acp() {
     export PATH=$HOME/anaconda3/bin:$PATH
 }
+
+# tmuxp
+alias tmuxp='pew in tmuxp tmuxp'
