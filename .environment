@@ -4,9 +4,6 @@
 setenv LC_ALL en_US.UTF-8
 setenv LANG en_US.UTF-8
 
-# Use 256 color terminal
-setenv TERM xterm-256color
-
 # Go lang
 setenv GOPATH $HOME/go
 
