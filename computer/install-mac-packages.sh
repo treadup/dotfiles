@@ -14,11 +14,14 @@ brew update
 # Install Cask
 brew tap caskroom/cask
 
+# Install GPG
+brew install gnupg2
+brew install pinentry-mac
+
 # Install core stuff
 brew install pass
 brew install git
 brew install pwgen
-brew install gnupg2
 brew install coreutils
 
 # Install yet another dotfiles manager
