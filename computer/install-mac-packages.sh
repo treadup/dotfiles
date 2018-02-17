@@ -52,6 +52,7 @@ brew install wget
 brew install the_silver_searcher
 brew install tldr
 brew install ispell
+brew install fd
 
 # Install tmux
 brew install tmux
