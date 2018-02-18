@@ -12,6 +12,7 @@
 	amend = commit --amend -C HEAD
 	heroku = push heroku master
 	ls-untracked = ls-files --others --exclude-standard
+        lu = ls-files --others --exclude-standard
 
 [core]
 	editor = vim
