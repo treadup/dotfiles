@@ -29,3 +29,9 @@ set -U fish_user_abbreviations ''
 
 # List untracked files
 abbr -a glsu git ls-files --others --exclude-standard
+
+# TODO: Abbreviations for navigating to project folders.
+# TODO: Abbreviations for navigating to project folders
+#       and activating a virtual environment.
+# TODO: Abbreviations for django. Should be able to run
+#       djr in any folder
