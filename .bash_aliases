@@ -42,23 +42,26 @@ git config --global alias.undo 'reset --soft HEAD^'
 git config --global alias.amend 'commit --amend -C HEAD'
 git config --global alias.heroku 'push heroku master'
 
-apt-installed() {
+function apt-installed() {
   (zcat $(ls -tr /var/log/apt/history.log*.gz); cat /var/log/apt/history.log) 2>/dev/null | \
   egrep '^(Start-Date:|Commandline:)' | \
   grep -v aptdaemon | \
   egrep '^Commandline:'
 }
 
-github-create-repo() {
+function github-create-repo() {
     echo Creating github repo $1
     curl -u 'treadup' https://api.github.com/user/repos -d '{"name":"'$1'"}'
 }
 
 # Lockscreen for OSX.
-alias lockscreen='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+function lockscreen {
+    echo "Ctrl-Cmd-Q to lock the screen"
+    /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
+}
 
 # Grep notes folder recursively
-notesgrep() {
+function notesgrep() {
     grep -r --exclude-dir=".git/" $1 ~/notes
 }
 
