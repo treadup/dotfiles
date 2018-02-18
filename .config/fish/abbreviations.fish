@@ -35,3 +35,4 @@ abbr -a glsu git ls-files --others --exclude-standard
 #       and activating a virtual environment.
 # TODO: Abbreviations for django. Should be able to run
 #       djr in any folder
+# TODO: Abbreviations for yadm.
