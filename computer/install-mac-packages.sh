@@ -84,10 +84,13 @@ brew install postgresql
 # Install RabbitMQ
 brew install rabbitmq
 
+# Install VirtualBox
+brew cask install virtualbox
+
+# Install Docker
+brew cask install docker
+
 # Install fonts
 brew tap caskroom/fonts
 brew cask install font-source-code-pro
 brew cask install font-firacode-nerd-font
-
-echo You should install docker using the Docker for Mac installer.
-echo Do NOT use brew to install docker!
