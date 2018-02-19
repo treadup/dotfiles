@@ -98,10 +98,9 @@ go get -u -v golang.org/x/tools/cmd/guru
 go get -u -v golang.org/x/tools/cmd/gorename
 go get -u -v golang.org/x/tools/cmd/goimports
 
-# Download Spotify Cli
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    curl -o ~/bin/spotify-cli https://raw.githubusercontent.com/pwittchen/spotify-cli-linux/master/spotify-cli
-    chmod u+x ~/bin/spotify-cli
+# Symplink gpg-agent.conf on macos.
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    ln -s $HOME/.gnupg/gpg-agent.conf.macos $HOME/.gnupg/gpg-agent.conf
 fi
 
 # Setup the password store
