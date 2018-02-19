@@ -46,14 +46,6 @@ brew install vim
 # Install Firefox
 brew cask install firefox
 
-# Install utilities
-brew install tree
-brew install wget
-brew install the_silver_searcher
-brew install tldr
-brew install ispell
-brew install fd
-
 # Install tmux
 brew install tmux
 
@@ -89,6 +81,16 @@ brew cask install virtualbox
 
 # Install Docker
 brew cask install docker
+
+
+# Install utilities
+brew install tree
+brew install wget
+brew install the_silver_searcher
+brew install tldr
+brew install ispell
+brew install fd
+brew install fzf
 
 # Install fonts
 brew tap caskroom/fonts
