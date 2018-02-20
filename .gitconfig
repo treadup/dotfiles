@@ -36,12 +36,14 @@
         unmerged = branch --no-merged
         unstash = stash pop
         grab = git pull --rebase
-        amend = commit --amend --no-edit
-        message = commit --amend
+        touchup = commit --amend --no-edit
+#        touchup = commit --amend --reuse-message=HEAD
+        edit = commit --amend --only
         contributors = shortlog -s -n --no-merges
         file-trail = log --follow -p -w
         merge-trail = log --ancestry-path --merges
         patch = add --patch
+        fastforward = merge --ff-only
 [core]
 	editor = vim
 	excludesfile = /home/henrik/.gitignore_global
