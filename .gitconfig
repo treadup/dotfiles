@@ -6,14 +6,42 @@
 	default = simple
 
 [alias]
+# Git Aliases for Humans
+# https://gggritso.com/human-git-aliases
+        discard = checkout --
 	last = log -1 HEAD
 	unstage = reset HEAD --
+        uncommit = reset --mixed HEAD~
 	undo = reset --soft HEAD^
 	amend = commit --amend -C HEAD
 	heroku = push heroku master
-	ls-untracked = ls-files --others --exclude-standard
-        lu = ls-files --others --exclude-standard
-
+	untracked = ls-files --others --exclude-standard
+        mylog = log --author Treadup
+        nevermind = !git reset --hard HEAD; and git clean -d -f
+        graph = graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
+        branches = branch -a
+        tags = tag
+        stashes = stash list
+        remotes = remote -v
+        precommit = diff --cached --diff-algorithm=minimal -w
+        unmerged = diff --name-only --diff-filter=U
+        save = commit -m
+        copy-last-hash = !git last | pbcopy
+        summary = status -u -s
+        history = log -10 --format=format:'%Cgreen%h %Creset%s (%aN, %ar)'
+        new-branch = checkout -b
+        rename-branch = branch -m
+        delete-branch = branch -D
+        track = branch --set-upstream-to
+        unmerged = branch --no-merged
+        unstash = stash pop
+        grab = git pull --rebase
+        amend = commit --amend --no-edit
+        message = commit --amend
+        contributors = shortlog -s -n --no-merges
+        file-trail = log --follow -p -w
+        merge-trail = log --ancestry-path --merges
+        patch = add --patch
 [core]
 	editor = vim
 	excludesfile = /home/henrik/.gitignore_global
