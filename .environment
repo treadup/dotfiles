@@ -13,3 +13,6 @@ setenv PATH $GOPATH/bin:$HOME/bin:$HOME/.local/bin:/usr/local/sbin:$HOME/.npm-gl
 # Do not do this. It breaks vex and pew
 # Use Python 3 by default when creating a virtualenv.
 # setenv VIRTUALENV_PYTHON python3
+
+# The WORKON_HOME variable is used by the pyvenv Emacs package.
+setenv WORKON_HOME ~/.local/share/virtualenvs/

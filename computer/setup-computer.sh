@@ -59,6 +59,9 @@ pip3 install pipenv
 pip3 install httpie
 pip3 install html2text
 
+# Install vritualfish
+pip3 install virtualfish
+
 # Install tmuxp
 pew new tmuxp
 pew in tmuxp pip install tmuxp
