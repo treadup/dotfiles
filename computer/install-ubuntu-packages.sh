@@ -157,9 +157,19 @@ fc-cache -f -v
 apt install --yes i3
 
 #
+# Install flatpak
+#
+apt install --yes flatpak
+
+# Snap is already available in Ubuntu without having to install anything.
+# Just use the command snap from the cli.
+
+#
 # The python-dbus is required by the spotify cli
 #
 apt install -y python-dbus
+
+
 
 # Remove packages that are no longer needed
 apt --yes autoremove
