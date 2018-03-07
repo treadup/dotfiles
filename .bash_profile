@@ -2,7 +2,10 @@
 # This should work on both Linux and OSX. Place any customizations
 # in the .bashrc file.
 
+if [ -f ~/.profile ]; then
+    source ~/.profile
+fi
+
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
-
