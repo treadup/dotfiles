@@ -1,6 +1,25 @@
+#
+# Path and Environment variables
+#
 
-# Set the  environment
-source ~/.environment
+# Set locale
+# We need to set LC_ALL to get around a bug on macOS. Otherwise
+# the locale will be messed up in the fish shell.
+set -gx LC_ALL en_US.UTF-8
+set -gx LANG en_US.UTF-8
+
+# Go lang
+set -gx GOPATH $HOME/go
+
+# Add the users bin folder to the path.
+set -gx PATH $GOPATH/bin $HOME/bin $HOME/.local/bin /usr/local/sbin $HOME/.npm-global/bin $PATH
+
+# Do not do this. It breaks vex and pew
+# Use Python 3 by default when creating a virtualenv.
+# set -gx VIRTUALENV_PYTHON python3
+
+# The WORKON_HOME variable is used by the pyvenv Emacs package.
+set -gx WORKON_HOME ~/.local/share/virtualenvs/
 
 #
 # Directory navigation
