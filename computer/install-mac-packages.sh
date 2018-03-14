@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 # To use this script you have to have at least the XCode command line tools installed.
 # The following command will install XCode command line tools if they are not already
@@ -87,6 +87,7 @@ brew cask install docker
 brew install tree
 brew install wget
 brew install the_silver_searcher
+brew install ripgrep
 brew install tldr
 brew install ispell
 brew install fd
