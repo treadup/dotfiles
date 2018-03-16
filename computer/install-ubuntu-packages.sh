@@ -69,6 +69,9 @@ apt --yes install python3-pip python3-dev
 # Install network tools
 apt --yes install whois
 
+# Install mosh
+apt --yes install mosh
+
 # Install pandoc
 apt --yes install pandoc
 
