@@ -101,6 +101,9 @@ go get -u -v golang.org/x/tools/cmd/guru
 go get -u -v golang.org/x/tools/cmd/gorename
 go get -u -v golang.org/x/tools/cmd/goimports
 
+# Install pd
+go get github.com/treadup/pd
+
 # Symplink gpg-agent.conf on macos.
 if [[ "$OSTYPE" == "darwin"* ]]; then
     ln -s $HOME/.gnupg/gpg-agent.conf.macos $HOME/.gnupg/gpg-agent.conf
