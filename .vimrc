@@ -37,6 +37,9 @@ Plugin 'scrooloose/nerdtree'
 " fugitive for working with Git
 Plugin 'tpope/vim-fugitive'
 
+" For Go code
+Plugin 'fatih/vim-go'
+
 " Syntastic syntax checker for VIM.
 " Plugin 'vim-syntastic/syntasti'
 
