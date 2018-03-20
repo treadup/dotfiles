@@ -8,42 +8,123 @@
 [alias]
 # Git Aliases for Humans
 # https://gggritso.com/human-git-aliases
+# https://github.com/GitAlias/gitalias
+# https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
+
+        # Discard changes to a file or folder
         discard = checkout --
+
+        # Show the log for the last commit
 	last = log -1 HEAD
+
+        # Unstage a file or folder
 	unstage = reset HEAD --
+
+        # Undo a single commit. The changed files are removed from the staging area.
         uncommit = reset --mixed HEAD~
-	undo = reset --soft HEAD^
-	amend = commit --amend -C HEAD
+
+        # Undo a single commit. The changed files stay in the staging area.
+        undo = reset --soft HEAD^
+
+        # Amends the current HEAD commit by adding the files in the staging area.
+	# amend = commit --amend -C HEAD
+        amend = commit --amend --no-edit
+
+        # Publish the code on heroku
 	heroku = push heroku master
+
+        # List untracked files
 	untracked = ls-files --others --exclude-standard
-        mylog = log --author Treadup
+
+        # Show the log containing the commits that I have made.
+        henrik = log --author Treadup
+
+        # Perform a hard reset and then delete the untracked files.
         nevermind = !git reset --hard HEAD; and git clean -d -f
-        graph = graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
+
+        # Shows a graph of the branches. Commits are shown as nodes on the branches.
+        graph = log --graph --all --decorate --stat --date=iso
+
+        # Shows a graph with more condensed information
+        smallgraph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
+
+        # List branches
         branches = branch -a
+
+        # List tags
         tags = tag
+
+        # List stashes
         stashes = stash list
+
+        # List remotes
         remotes = remote -v
+
+        # List all changes that have been added to the staging area
         precommit = diff --cached --diff-algorithm=minimal -w
-        unmerged = diff --name-only --diff-filter=U
-        save = commit -m
-        copy-last-hash = !git last | pbcopy
+
+        # List status of files
         summary = status -u -s
+
+        # List git commit history
         history = log -10 --format=format:'%Cgreen%h %Creset%s (%aN, %ar)'
+
+        # Create a new branch
         new-branch = checkout -b
+
+        # Rename a branch
         rename-branch = branch -m
+
+        # Delete the given branch
         delete-branch = branch -D
+
+        # Set the remote branch that this branch should track
         track = branch --set-upstream-to
+
+        # List unmerged branches
         unmerged = branch --no-merged
+
+        # Unstash previously stashed changes
         unstash = stash pop
-        grab = git pull --rebase
-        touchup = commit --amend --no-edit
-#        touchup = commit --amend --reuse-message=HEAD
-        edit = commit --amend --only
-        contributors = shortlog -s -n --no-merges
-        file-trail = log --follow -p -w
-        merge-trail = log --ancestry-path --merges
-        patch = add --patch
+
+        # Perform a pull rebase
+        grab = pull --rebase
+
+        # Edit the commit message for the latest commit.
+	edit = commit --amend --only
+
+	# List of contributors and the number of commits they have made.
+	contributors = shortlog -s -n --no-merges
+
+	# Show the commits that the file has been involved in.
+	file-trail = log --follow -p -w
+
+        # Interactively choose hunks of patch between the index and the work tree and add them to the index.
+	patch = add --patch
+
+	# Merge by performing a fast forward only
         fastforward = merge --ff-only
+
+        # Get the root folder of the git project. This is usually the folder that contains the .git folder.
+	root = rev-parse --show-toplevel
+
+        # Show the number of commits each commiter has made. Sorted by number of commits.
+        leaderboard = shortlog -sn --all --no-merges
+
+        # Word diff instead of line diff
+        word-diff = diff --word-diff
+
+        # Show a list of the branches that we have recently been working in.
+        recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+
+        # Show a list of the commits that you have made in all branches.
+        recap = log --all --oneline --no-merges --author=Treadup
+
+        # Show a list of the allt the commits in all branches that all commiters have made.
+        overview = log --all --oneline --no-merges
+
+        # Show a list of the commits that I have made today.
+        today = log --since=00:00:00 --all --no-merges --oneline --author=Treadup
 [core]
 	editor = vim
 	excludesfile = /home/henrik/.gitignore_global
