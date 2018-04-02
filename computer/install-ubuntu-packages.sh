@@ -132,6 +132,9 @@ apt --yes install weechat
 # Install nginx
 apt install -y nginx
 
+# Install direnv
+apt install -y direnv
+
 #
 # Email
 #
