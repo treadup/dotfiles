@@ -5,6 +5,13 @@
 # This is to fix the problem with pew bash completions.
 SHELL=/bin/bash
 
+# This is a hack to get 256 color support in Emacs. If you open a shell
+# in Emacs it will report the terminal type as dumb. This snippet changes
+# the terminal type to xterm-256color.
+if [ "$INSIDE_EMACS" != "" ]; then
+    export TERM=xterm-256color
+fi
+
 # For some reason I needed to set these on OSX.
 # I do not remember why. I think it had something to do with
 ## sshing in to a linux box.
