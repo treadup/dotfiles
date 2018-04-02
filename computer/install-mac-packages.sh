@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 # To use this script you have to have at least the XCode command line tools installed.
 # The following command will install XCode command line tools if they are not already
@@ -42,6 +42,9 @@ brew cask install emacs
 brew install vim
 # brew cask install atom
 # brew cask install sublime-text
+
+# Install direnv
+brew install direnv
 
 # Install Firefox
 brew cask install firefox
