@@ -52,6 +52,8 @@ pip3 install pew
 pip3 install pipenv
 pip3 install httpie
 pip3 install html2text
+pip3 install pylint
+pip3 install flake8
 
 # Install vritualfish
 pip3 install virtualfish
