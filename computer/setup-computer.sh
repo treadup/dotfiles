@@ -98,7 +98,7 @@ go get -u -v golang.org/x/tools/cmd/gorename
 go get -u -v golang.org/x/tools/cmd/goimports
 
 # Install pd
-go get github.com/treadup/pd
+go get github.com/treadup/ppd
 
 # Install lns
 curl -o ~/bin/lns http://interglacial.com/~sburke/pub/lns
