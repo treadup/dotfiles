@@ -99,12 +99,15 @@ go get -u -v golang.org/x/tools/cmd/guru
 go get -u -v golang.org/x/tools/cmd/gorename
 go get -u -v golang.org/x/tools/cmd/goimports
 
-# Install pd
+# Install ppd
 go get github.com/treadup/ppd
 
 # Install lns
 curl -o ~/bin/lns http://interglacial.com/~sburke/pub/lns
 chmod u+x ~/bin/lns
+
+# Install circleci
+curl -o ~/bin/circleci https://circle-downloads.s3.amazonaws.com/releases/build_agent_wrapper/circleci && chmod u+x ~/bin/circleci
 
 # Symplink gpg-agent.conf on macos.
 if [[ "$OSTYPE" == "darwin"* ]]; then
