@@ -65,8 +65,6 @@ apt --yes install tmux
 
 # Install Python related things
 apt --yes install python3-pip python3-dev
-apt --yes install pylint
-
 
 # Install network tools
 apt --yes install whois
