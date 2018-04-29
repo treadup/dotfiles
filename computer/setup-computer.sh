@@ -16,13 +16,7 @@ yadm config status.showUntrackedFiles no
 source ~/.bashrc
 
 # Download .emacs.d repo
-git clone https://github.com/treadup/.emacs.d.git ~/computer/emacs
-
-# Download the spacemacs repo.
-git clone https://github.com/syl20bnr/spacemacs ~/computer/spacemacs
-
-# Set which Emacs distribution to use.
-ln -s ~/computer/spacemacs ~/.emacs.d
+git clone https://github.com/treadup/.emacs.d.git ~/.emacs.d
 
 # Install the VIM package manger Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
