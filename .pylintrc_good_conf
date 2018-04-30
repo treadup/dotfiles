@@ -1,0 +1,10 @@
+# This is the start of a good pylint configuration.
+# Having all the default rules for pylint enabled
+# generates warnings that we might not care about.
+# A better approach is to test out a small subset
+# of the rules by adding a small batch of rules
+# to the config every two weeks or so.
+
+# The following is a good article on this.
+# https://codewithoutrules.com/2016/10/19/pylint/
+
