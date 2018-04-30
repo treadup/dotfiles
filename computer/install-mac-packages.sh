@@ -85,6 +85,8 @@ brew cask install virtualbox
 # Install Docker
 brew cask install docker
 
+# Install multimarkdown
+brew install multimarkdown
 
 # Install utilities
 brew install tree
