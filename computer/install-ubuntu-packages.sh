@@ -160,7 +160,7 @@ fc-cache -f -v
 #
 # Window Managers
 #
-apt install --yes i3
+apt install --yes stumpwm
 
 #
 # Install flatpak
