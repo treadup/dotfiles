@@ -1,0 +1,9 @@
+# The .inputrc file is the configuration file for the
+# readline library.
+
+# The bell-style property is used to control the bell.
+# The allowed values are none, visible or audible
+set bell-style none
+
+
+
