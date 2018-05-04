@@ -1,5 +1,13 @@
 
 !
+! Terminal Emulators
+!
+
+! In stumpwm when we launch a new terminal emulator with C-t c we will
+! not start xterm but instead uxterm. There is a script somewhere that
+! decides which terminal emulator to launch based on certain criteria.
+
+!
 ! XTerm
 !
 
@@ -12,4 +20,14 @@ XTerm*foreground: lightgray
 ! Make XTerm render true type fonts itself.
 XTerm*renderFont: true
 
+!
+! UXTerm
+!
 
+UXTerm*faceName: Source Code Pro Semibold
+UXTerm*faceSize: 16
+UXTerm*background: black
+UXTerm*foreground: lightgray
+
+! Make UXTerm render true type fonts itself.
+UXTerm*renderFont: true
