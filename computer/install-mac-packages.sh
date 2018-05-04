@@ -62,6 +62,7 @@ brew cask install java
 brew install node
 brew install go
 brew install ruby
+brew install sbcl
 
 # Install web server
 brew install nginx
