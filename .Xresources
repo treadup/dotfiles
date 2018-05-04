@@ -12,6 +12,7 @@
 !
 
 ! XTerm*faceName: Source Code Pro,Source Code Pro Semibold
+XTerm*termName: xterm-256color
 XTerm*faceName: Source Code Pro Semibold
 XTerm*faceSize: 16
 XTerm*background: black
@@ -24,6 +25,7 @@ XTerm*renderFont: true
 ! UXTerm
 !
 
+UXTerm*termName: xterm-256color
 UXTerm*faceName: Source Code Pro Semibold
 UXTerm*faceSize: 16
 UXTerm*background: black
