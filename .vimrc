@@ -158,6 +158,9 @@ let g:ackprg = 'ag --vimgrep'
 set guioptions-=r
 set guioptions-=L
 
+" Disable the bell.
+set belloff=all
+
 " Make backspace behave in a more sane manner.
 set backspace=indent,eol,start
 
