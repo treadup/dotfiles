@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Map CapsLock to Ctrl.
+setxkbmap -option ctrl:nocaps
+
+# Load the .Xresoures file.
+xrdb -merge ~/.Xresources
