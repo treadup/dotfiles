@@ -78,14 +78,6 @@ Plugin 'tpope/vim-fireplace'
 " vim clojure static
 Plugin 'guns/vim-clojure-static'
 
-" Python jedi
-" https://github.com/davidhalter/jedi
-Plugin 'davidhalter/jedi'
-
-" Python auto completion.
-" https://github.com/davidhalter/jedi-vim
-Plugin 'davidhalter/jedi-vim'
-
 " You complete me
 " http://valloric.github.io/YouCompleteMe/
 " Plugin 'valloric/youcompleteme'
