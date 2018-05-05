@@ -1,0 +1,8 @@
+
+# Sets default device and control to the first card.
+# Card numbering starts at 0.
+defaults.ctl.card 0;
+defaults.pcm.card 0;
+
+# To list the cards use the following command.
+# cat /proc/asound/cards
