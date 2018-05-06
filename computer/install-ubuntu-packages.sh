@@ -56,6 +56,9 @@ apt --yes install texlive-full xzdec
 # Install http cli clients
 apt --yes install curl wget httpie
 
+# Install aria2
+apt --yes install aria2
+
 # Install ag
 apt --yes install silversearcher-ag
 
@@ -174,8 +177,6 @@ apt install --yes flatpak
 # The python-dbus is required by the spotify cli
 #
 apt install -y python-dbus
-
-
 
 # Remove packages that are no longer needed
 apt --yes autoremove
