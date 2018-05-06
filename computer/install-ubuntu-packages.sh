@@ -81,13 +81,6 @@ apt --yes install mosh
 # Install pandoc
 apt --yes install pandoc
 
-# Install heroku
-## Add repo for heroku cli program
-add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
-curl -L https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
-apt update
-apt --yes install heroku
-
 # Install aws cli command
 apt --yes install awscli
 
