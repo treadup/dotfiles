@@ -1,5 +1,9 @@
 "VIM configuration file
 
+" The following things might be useful to add.
+" YouCompleteMe
+" UltiSnips
+
 " A good place to find VIM plugins is the vimawesome.com site.
 
 " The first thing we do is setup Vundle.
@@ -82,6 +86,9 @@ Plugin 'guns/vim-clojure-static'
 " http://valloric.github.io/YouCompleteMe/
 " Plugin 'valloric/youcompleteme'
 
+" UltiSnips
+"https://github.com/SirVer/ultisnips
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -91,6 +98,9 @@ set term=xterm-256color
 syntax enable
 set background=dark
 colorscheme zenburn
+
+" Set the maximum text width. The purpose is to wrap lines automatically.
+set textwidth=80
 
 " Needed for airline
 " You also need to remember to install the powerline fonts.
