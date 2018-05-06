@@ -7,8 +7,13 @@ set -e
 set -u
 
 # Install packages.
+echo Updating apt
 apt --yes update
+
+echo Upgrading system
 apt --yes upgrade
+
+echo Installing packages
 
 # Install english language pack
 apt --yes install language-pack-en
@@ -23,10 +28,10 @@ apt --yes install pass pwgen
 apt --yes install yadm
 
 # Install Emacs
-if [ -z $DISPLAY ]; then
-    apt --yes install emacs-nox
-else
+if [ -v DISPLAY ]; then
     apt --yes install emacs
+else
+    apt --yes install emacs-nox
 fi
 
 # Install Vim
@@ -169,3 +174,6 @@ apt install --yes stumpwm
 
 # Remove packages that are no longer needed
 apt --yes autoremove
+
+echo Finished installing packages
+echo The installation script ran successfully.
