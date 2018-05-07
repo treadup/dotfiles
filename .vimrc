@@ -1,8 +1,6 @@
 "VIM configuration file
 
-" The following things might be useful to add.
-" YouCompleteMe
-" UltiSnips
+" Figure out how abbreviations work in vim.
 
 " A good place to find VIM plugins is the vimawesome.com site.
 
@@ -11,7 +9,7 @@
 " for Vundle to work.
 " https://github.com/VundleVim/Vundle.vim
 
-set nocompatible              " be iMproved, required
+set nocompatible              " Run as vim and not as vi compatible, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -35,20 +33,11 @@ Plugin 'vim-airline/vim-airline-themes'
 " Editorconfig for Vim
 Plugin 'editorconfig/editorconfig-vim'
 
-" NERDTree
-Plugin 'scrooloose/nerdtree'
-
 " fugitive for working with Git
 Plugin 'tpope/vim-fugitive'
 
 " For Go code
 Plugin 'fatih/vim-go'
-
-" Syntastic syntax checker for VIM.
-" Plugin 'vim-syntastic/syntasti'
-
-" Ag searching
-Plugin 'mileszs/ack.vim'
 
 " Better whitespace plugin
 Plugin 'ntpeters/vim-better-whitespace'
@@ -56,19 +45,11 @@ Plugin 'ntpeters/vim-better-whitespace'
 " Move lines up and down with A-j and A-k
 Plugin 'matze/vim-move'
 
-" The vim easymotion plugin.
-" This looks really interesting but I will not enable it for now.
-" https://github.com/easymotion/vim-easymotion
-
 " Fuzzy file finder
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " CSS syntax file
 Plugin 'JulesWang/css.vim'
-
-" Python virtualenv plugin for vim
-" Plugin 'jmcantrell/vim-virtualenv'
-" https://github.com/jmcantrell/vim-virtualenv
 
 " NGINX syntax file
 Plugin 'nginx.vim'
@@ -81,13 +62,6 @@ Plugin 'tpope/vim-fireplace'
 
 " vim clojure static
 Plugin 'guns/vim-clojure-static'
-
-" You complete me
-" http://valloric.github.io/YouCompleteMe/
-" Plugin 'valloric/youcompleteme'
-
-" UltiSnips
-"https://github.com/SirVer/ultisnips
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -138,23 +112,6 @@ noremap Q <Nop>
 " Have jk and kj act as escape.
 inoremap jk <Esc>
 inoremap kj <Esc>
-
-" Automatically start NERDTree when you open a file.
-" autocmd vimenter * NERDTree | wincmd p
-
-" Use Ctrl-n to toggle NERDTree
-map <C-n> :NERDTreeToggle<CR>
-map <F8> :NERDTreeToggle<CR>
-
-" It would be nice if I could set up the following keybindings.
-" Ctrl-h Jump to NERDTree
-" Ctrl-l Jump to Viewer
-
-" Quit VIM if NERDTree is the only open window left.
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Use ag for the ack VIM plugin.
-let g:ackprg = 'ag --vimgrep'
 
 " Remove scrollbar in gui.
 set guioptions-=r
