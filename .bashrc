@@ -186,18 +186,18 @@ function the_prompt_command {
     else
         PS1="${THE_VIRTUALENV}${THE_LOCATION} ${THE_GIT_BRANCH}${THE_FOLDER}\n\$ "
     fi
+
+    # If this is an xterm set the title to user@host:dir
+    case "$TERM" in
+	xterm*|rxvt*)
+	    PS1="\[\e]0;\u@\h \w\a\]$PS1"
+	    ;;
+	*)
+	    ;;
+    esac
 }
 
 PROMPT_COMMAND=the_prompt_command
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-    PS1="\[\e]0;\u@\h \w\a\]$PS1"
-    ;;
-*)
-    ;;
-esac
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     if [ -x /usr/bin/dircolors ]; then
