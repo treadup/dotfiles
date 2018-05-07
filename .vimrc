@@ -123,3 +123,15 @@ set belloff=all
 " Make backspace behave in a more sane manner.
 set backspace=indent,eol,start
 
+"
+" Abbreviations
+"
+
+" Fix common typos
+iabbr teh the
+
+" Bookmark related
+iabbr bmk {"text": "", "url": ""}<esc>12hi
+iabbr bkm {"text": "", "url": ""}<esc>12hi
+iabbr ctg {<CR>"category": "",<CR>"slug": "",<CR>"visibility": "public",<CR>"bookmarks": []<CR>},<esc>4kA
+
