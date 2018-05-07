@@ -2,13 +2,24 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# The set -e and set -u are useful when debugging this script. However we do
+# not want them to be on in general since we might be running scripts of unknown
+# quality.
+
+# Exit this script if there are any errors.
+# set -e
+
+# Exit script if it tries to use an uninitialized variable.
+# set -u
+
 # This is to fix the problem with pew bash completions.
 SHELL=/bin/bash
 
 # This is a hack to get 256 color support in Emacs. If you open a shell
 # in Emacs it will report the terminal type as dumb. This snippet changes
 # the terminal type to xterm-256color.
-if [ "$INSIDE_EMACS" != "" ]; then
+if [ ! -z ${INSIDE_EMACS+x} ]; then
+    # We are inside emacs. Set the TERM to not be dumb.
     export TERM=xterm-256color
 fi
 
@@ -72,11 +83,40 @@ CYAN_COLOR='\[\033[01;36m\]'
 WHITE_COLOR='\[\033[01;37m\]'
 RESET_COLOR='\[\033[0m\]'
 
+# Returns the name of the Python virtual environment or an empty string if there
+# is no python virtual environment.
+function the_virtual_environment_name {
+    if [ -z ${VIRTUAL_ENV+x} ]; then
+	# Does not have virtual environment name.
+	echo ""
+    else
+	# Has virtual environment name.
+	echo $(basename ${VIRTUAL_ENV})
+    fi
+}
+
+# Returns the name of the Conda virtual environment or an empty string if there
+# is no conda virtual environment.
+function the_conda_environment_name {
+    if [ -z ${CONDA_DEFAULT_ENV+x} ]; then
+	# Does not have conda environment name.
+	echo ""
+    else
+	# Has conda environment name.
+	echo "${CONDA_DEFAULT_ENV}"
+    fi
+}
+
+# Returns the environment name. The supported environment types are
+# different kinds of Python environments.
 function the_environment_name {
-    if [ -n "$VIRTUAL_ENV" ]; then
-        echo $(basename $VIRTUAL_ENV)
-    elif [ -n "$CONDA_DEFAULT_ENV" ]; then
-        echo "$CONDA_DEFAULT_ENV"
+    THE_VIRTUAL_ENV=$(the_virtual_environment_name)
+    THE_CONDA_ENV=$(the_conda_environment_name)
+
+    if [ -n "${THE_VIRTUAL_ENV}" ]; then
+        echo "${THE_VIRTUAL_ENV}"
+    elif [ -n "${THE_CONDA_ENV}" ]; then
+        echo "${THE_CONDA_ENV}"
     else
         echo ""
     fi
@@ -205,9 +245,4 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
-fi
-
-# Source Pew bash completions
-if command -v pew >/dev/null; then
-    source $(pew shell_config)
 fi
