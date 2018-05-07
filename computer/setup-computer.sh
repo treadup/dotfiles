@@ -17,6 +17,9 @@ yadm fetch origin
 yadm checkout -b master --force --track origin/master
 yadm config status.showUntrackedFiles no
 
+# Download git-prompt
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+
 # Source the downloaded bashrc file. Bash should now be in sync with the configuration
 # in the DotFiles repo.
 source ~/.bashrc
@@ -26,9 +29,6 @@ git clone https://github.com/treadup/.emacs.d.git ~/.emacs.d
 
 # Install the VIM package manger Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-# Download git-prompt
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 
 # It is better to install the Vim plugins the first time you open Vim.
 # vim +PluginInstall +qall # Install all the plugins
