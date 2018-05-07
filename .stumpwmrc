@@ -1,0 +1,35 @@
+;; This is the user configuration file for StumpVM.
+
+(in-package :stumpwm)
+
+;; Map the CapsLock key to Ctrl
+(setf *caps-lock-behavior* :ctrl)
+
+;; Ctrl-Alt-Backspace should kill Xor.
+
+;;
+;; Stump WM
+;;
+
+(define-key *root-map* (kbd "q") "keyboard-quit")
+
+;; It would be good if we had some way of reloading the init file.
+;; Kind of like eval-buffer in Emacs.
+
+;;
+;; Applications
+;;
+
+;; Firefox
+(defcommand firefox () ()
+  (run-or-raise  "firefox" '(:class "Firefox")))
+
+(define-key *root-map* (kbd "f") "firefox")
+
+;; Spotify
+(defcommand spotify () ()
+  (run-or-raise "spotify" '(:class "Spotify")))
+
+;; Google Chrome
+(defcommand chrome () ()
+  (run-or-raise "google-chrome" '(:class "Google-chrome")))

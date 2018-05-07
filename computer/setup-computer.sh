@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Exit this script if there are any errors.
+set -e
+
+# Exit script if it tries to use an uninitialized variable.
+set -u
+
 # Make sure that we are in the home folder.
 cd ~/
 
@@ -38,6 +44,7 @@ rm -rf ~/powerline_fonts
 git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git ~/nerd_fonts
 chmod u+x ~/nerd_fonts/install.sh
 ~/nerd_fonts/install.sh
+rm -rf ~/nerd_fonts
 
 # Install the moderncv latex package
 tlmgr -v init-usertree
@@ -48,7 +55,6 @@ mkdir -p ~/bin
 
 # Install Python packages
 pip3 install virtualenv
-pip3 install pew
 pip3 install pipenv
 pip3 install httpie
 pip3 install html2text
@@ -59,14 +65,9 @@ pip3 install yamllint
 # Install vritualfish
 pip3 install virtualfish
 
-# Install tmuxp
-pew new tmuxp
-pew in tmuxp pip install tmuxp
-
 # Install Clojure
 curl -o ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
 chmod 755 ~/bin/lein
-~/bin/lein
 
 # Install node programs
 # https://docs.npmjs.com/getting-started/fixing-npm-permissions
@@ -79,15 +80,6 @@ npm install -g tern
 npm install -g eslint
 npm install -g jsonlint
 npm install -g js-yaml
-
-# OS X specific setup
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    # airport
-    ln -sf /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport ~/bin/airport
-
-    # emacs
-    ln -sf ~/bin/emacs-on-mac.sh ~/bin/emacs
-fi
 
 # Setup the Go workspace
 mkdir ~/go
@@ -149,13 +141,3 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     echo Delay Until Repeat should be Short
     echo Modifier Keys use Caps Lock as Control
 fi
-
-# Solarized color scheme for Mate Terminal on Linux
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    git clone https://github.com/oz123/solarized-mate-terminal.git ~/solarized-mate-terminal/
-    bash ~/solarized-mate-terminal/solarized-mate.sh
-    rm -rf ~/solarized-mate-terminal/
-fi
-
-# git clone https://github.com/oh-my-fish/oh-my-fish ~/computer/oh-my-fish
-# ~/computer/oh-my-fish/bin/install --noninteractive

@@ -1,8 +1,19 @@
 #!/bin/bash
 
+# Exit this script if there are any errors.
+set -e
+
+# Exit script if it tries to use an uninitialized variable.
+set -u
+
 # Install packages.
+echo Updating apt
 apt --yes update
+
+echo Upgrading system
 apt --yes upgrade
+
+echo Installing packages
 
 # Install english language pack
 apt --yes install language-pack-en
@@ -17,10 +28,10 @@ apt --yes install pass pwgen
 apt --yes install yadm
 
 # Install Emacs
-if [ -z $DISPLAY ]; then
-    apt --yes install emacs-nox
-else
+if [ -v DISPLAY ]; then
     apt --yes install emacs
+else
+    apt --yes install emacs-nox
 fi
 
 # Install Vim
@@ -28,7 +39,6 @@ apt --yes install vim
 
 # Install Shells
 apt --yes install fish
-apt --yes install tcsh
 
 # Install bash completion
 # This might already be installed...
@@ -54,17 +64,13 @@ ln -s /usr/bin/nodejs /usr/local/bin/node
 apt --yes install texlive-full xzdec
 
 # Install http cli clients
-apt --yes install curl wget httpie
+apt --yes install curl wget httpie aria2
 
 # Install ag
 apt --yes install silversearcher-ag
 
-# Install screen
-apt --yes install screen
+# Install tmux
 apt --yes install tmux
-
-# Install Python related things
-apt --yes install python3-pip python3-dev
 
 # Install network tools
 apt --yes install whois
@@ -74,16 +80,6 @@ apt --yes install mosh
 
 # Install pandoc
 apt --yes install pandoc
-
-# Install heroku
-## Add repo for heroku cli program
-add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
-curl -L https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
-apt update
-apt --yes install heroku
-
-# Install certbot
-apt --yes install certbot
 
 # Install aws cli command
 apt --yes install awscli
@@ -109,7 +105,7 @@ JAVA_HOME="$(dirname $(dirname $(readlink -e $(which javac))))"
 printf "JAVA_HOME=$JAVA_HOME\n" >> /etc/environment
 
 # Install Steel Bank Common Lisp
-apt --yes install sbcl
+apt --yes install sbcl sbcl-doc sbcl-source
 
 # Install Gambit Scheme
 apt --yes install gambc
@@ -123,9 +119,6 @@ apt --yes install golang-go
 # Install Ruby
 apt --yes install ruby
 
-# Install Guile Scheme
-apt --yes install guile-2.0
-
 # Install weechat
 apt --yes install weechat
 
@@ -138,9 +131,6 @@ apt install -y direnv
 #
 # Email
 #
-
-# Install alpine email client
-apt install -y alpine
 
 # Install msmtp smtp client
 apt install -y msmtp
@@ -165,7 +155,7 @@ apt install --yes stumpwm
 #
 # Install flatpak
 #
-apt install --yes flatpak
+# apt install --yes flatpak
 
 # Snap is already available in Ubuntu without having to install anything.
 # Just use the command snap from the cli.
@@ -173,9 +163,10 @@ apt install --yes flatpak
 #
 # The python-dbus is required by the spotify cli
 #
-apt install -y python-dbus
-
-
+# apt install -y python-dbus
 
 # Remove packages that are no longer needed
 apt --yes autoremove
+
+echo Finished installing packages
+echo The installation script ran successfully.
