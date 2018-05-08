@@ -23,7 +23,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Color theme
-Plugin 'jnurmine/zenburn'
+Plugin 'dracula/vim'
+" Plugin 'jnurmine/zenburn'
 " Plugin 'altercation/vim-colors-solarized'
 
 " Vim git-gutter
@@ -74,7 +75,9 @@ filetype plugin indent on    " required
 set term=xterm-256color
 syntax enable
 set background=dark
-colorscheme zenburn
+
+colorscheme dracula
+" colorscheme zenburn
 
 " Set the maximum text width. The purpose is to wrap lines automatically.
 set textwidth=80
