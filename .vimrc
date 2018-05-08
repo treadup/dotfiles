@@ -12,6 +12,9 @@
 set nocompatible              " Run as vim and not as vi compatible, required
 filetype off                  " required
 
+" The fish shell seems to cause issues with Vundle so we use bash instead.
+set shell=/bin/bash
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
