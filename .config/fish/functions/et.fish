@@ -2,10 +2,6 @@
 # The et function opens the given arguments in Emacs
 # in the terminal.
 
-# Currently this script only works if you are running Emacs
-# in a window-system. It will break things if you try to run
-# it from the terminal.
-
 # The values that make sense for the alternate editor are
 # emacs and "".
 
