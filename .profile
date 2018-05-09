@@ -16,3 +16,8 @@ export PATH=$GOPATH/bin:$HOME/bin:$HOME/.local/bin:/usr/local/sbin:$HOME/.npm-gl
 
 # The WORKON_HOME variable is used by the pyvenv Emacs package.
 export WORKON_HOME=~/.local/share/virtualenvs/
+
+# Editor settings
+export ALTERNATE_EDITOR="emacs"        # Open emacs as non daemon as alternative
+export EDITOR="emacsclient -t"         # $EDITOR should open in terminal
+export VISUAL="emacsclient -c"         # $VISUAL opens in GUI
