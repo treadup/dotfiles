@@ -128,6 +128,9 @@ apt install -y nginx
 # Install direnv
 apt install -y direnv
 
+# Install markdown
+apt install -y markdown
+
 #
 # Email
 #
