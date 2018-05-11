@@ -32,9 +32,9 @@ alias ..... 'cd ../../../..'
 #
 # Editor
 #
-set -gx ALTERNATE_EDITOR="emacs"        # Open emacs as non daemon as alternative
-set -gx EDITOR="emacsclient -t"         # $EDITOR should open in terminal
-set -gx VISUAL="emacsclient -c"         # $VISUAL opens in GUI
+set -gx ALTERNATE_EDITOR "emacs"        # Open emacs as non daemon as alternative
+set -gx EDITOR "emacsclient -t"         # $EDITOR should open in terminal
+set -gx VISUAL "emacsclient -c"         # $VISUAL opens in GUI
 
 #
 # Setup virtualfish
