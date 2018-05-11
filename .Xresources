@@ -33,3 +33,16 @@ UXTerm*foreground: lightgray
 
 ! Make UXTerm render true type fonts itself.
 UXTerm*renderFont: true
+
+!
+! Emacs
+!
+
+! Get rid of the menu bar
+emacs.menuBar: off
+
+! Get rid of the toolbar
+emacs.toolBar: off
+
+! Get rid of the vertical scroll bars
+emacs.verticalScrollBars: off
