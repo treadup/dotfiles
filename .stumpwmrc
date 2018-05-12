@@ -5,13 +5,14 @@
 ;; Map the CapsLock key to Ctrl
 (setf *caps-lock-behavior* :ctrl)
 
-;; Ctrl-Alt-Backspace should kill Xor.
+;; Ctrl-Alt-Backspace should kill Xorg.
 
 ;;
 ;; Stump WM
 ;;
 
-(define-key *root-map* (kbd "q") "keyboard-quit")
+(define-key *root-map* (kbd "M-q") "quit")
+(define-key *root-map* (kbd "q") "quit")
 
 ;; It would be good if we had some way of reloading the init file.
 ;; Kind of like eval-buffer in Emacs.
@@ -30,6 +31,16 @@
 (defcommand spotify () ()
   (run-or-raise "spotify" '(:class "Spotify")))
 
+(define-key *root-map* (kbd "s") "spotify")
+
 ;; Google Chrome
 (defcommand chrome () ()
   (run-or-raise "google-chrome" '(:class "Google-chrome")))
+
+(define-key *root-map* (kbd "g") "chrome")
+
+;; VLC
+(defcommand vlc () ()
+  (run-or-raise "vlc" '(:class "Vlc")))
+
+(define-key *root-map* (kbd "v") "vlc")
