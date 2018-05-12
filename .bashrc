@@ -220,6 +220,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias lc='ls -F'
 
+alias config='/usr/bin/git --git-dir=$HOME/.dotconf/ --work-tree=$HOME'
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
