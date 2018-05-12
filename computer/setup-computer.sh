@@ -12,11 +12,10 @@ cd ~/
 # Setup the dot files from git repo
 # The following is to get around the fact that we cannot clone into a non empty directory.
 echo Cloning dot files repo
-yadm init
-yadm remote add origin git@github.com:treadup/dotfiles.git
-yadm fetch origin
-yadm checkout -b master --force --track origin/master
-yadm config status.showUntrackedFiles no
+alias config='/usr/bin/git --git-dir=$HOME/.dotconf/ --work-tree=$HOME'
+git clone --separate-git-dir=$HOME/.dotconf https://github.com/treadup/dotfiles.git $HOME/dotconf-tmp
+rm -r ~/dotconf-tmp/
+config status.showUntrackedFiles no
 echo Finished cloning dot files repo
 
 # Download git-prompt
