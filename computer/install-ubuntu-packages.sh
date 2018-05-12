@@ -24,9 +24,6 @@ apt --yes install git
 # Install password utilities
 apt --yes install pass pwgen
 
-# Install Yet Another Dotfiles Manager
-apt --yes install yadm
-
 # Install Emacs
 if [ -v DISPLAY ]; then
     apt --yes install emacs
