@@ -6,5 +6,5 @@
 # Clone dotfiles into a temporary directory which is then removed.
 # This is to get around the fact that the home folder is usually not
 # empty.
-git clone --separate-git-dir=$HOME/.dotconf /path/to/repo $HOME/dotconf-tmp
+git clone --separate-git-dir=$HOME/.dotconf https://github.com/treadup/dotfiles.git $HOME/dotconf-tmp
 rm -r ~/dotconf-tmp/
