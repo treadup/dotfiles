@@ -58,12 +58,6 @@ chmod u+x ~/nerd_fonts/install.sh
 rm -rf ~/nerd_fonts
 echo Finished installing nerd fonts
 
-# Install the moderncv latex package
-echo Installing TeX packages
-tlmgr -v init-usertree
-tlmgr install moderncv
-echo Finished installing TeX packages
-
 # Create the bin folder.
 mkdir -p ~/bin
 
