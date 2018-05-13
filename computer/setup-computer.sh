@@ -64,7 +64,6 @@ mkdir -p ~/bin
 # Install Python packages
 echo Installing Python packages
 pip3 install virtualenv
-pip3 install pipenv
 pip3 install httpie
 pip3 install html2text
 pip3 install pylint
