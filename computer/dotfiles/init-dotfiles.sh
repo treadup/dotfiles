@@ -5,5 +5,4 @@
 
 # Initializes a new dotfiles repo
 git init --bare $HOME/.dotconf
-alias config='/usr/bin/git --git-dir=$HOME/.dotconf/ --work-tree=$HOME'
-config config status.showUntrackedFiles no
+/usr/bin/git --git-dir=$HOME/.dotconf/ --work-tree=$HOME config status.showUntrackedFiles no
