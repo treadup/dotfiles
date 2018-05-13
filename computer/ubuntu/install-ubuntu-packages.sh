@@ -114,7 +114,7 @@ apt --yes install mit-scheme
 apt --yes install golang-go
 
 # Install Python
-apt --yes install python3-pip python3-dev python3-setuptools python3-wheel
+apt --yes install python-pip python3-pip python3-dev python3-setuptools python3-wheel
 
 # Install Ruby
 apt --yes install ruby
