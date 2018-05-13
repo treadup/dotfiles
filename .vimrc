@@ -55,6 +55,12 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " CSS syntax file
 Plugin 'JulesWang/css.vim'
 
+" Needed for the markdown plugin.
+Plugin 'godlygeek/tabular'
+
+" Markdown syntax plugin.
+Plugin 'plasticboy/vim-markdown'
+
 " NGINX syntax file
 Plugin 'nginx.vim'
 
@@ -128,6 +134,13 @@ set belloff=all
 
 " Make backspace behave in a more sane manner.
 set backspace=indent,eol,start
+
+"
+" Folding
+"
+
+" Make it so that files that are opened are fully unfolded.
+set foldlevelstart=99
 
 "
 " Abbreviations
