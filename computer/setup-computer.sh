@@ -12,7 +12,7 @@ cd ~/
 # Setup the dot files from git repo
 # The following is to get around the fact that we cannot clone into a non empty directory.
 echo Cloning dot files repo
-alias config='/usr/bin/git --git-dir=$HOME/.dotconf/ --work-tree=$HOME'
+alias config='/usr/bin/git' --git-dir=$HOME/.dotconf/ --work-tree=$HOME
 git clone --separate-git-dir=$HOME/.dotconf https://github.com/treadup/dotfiles.git $HOME/dotconf-tmp
 rm -r ~/dotconf-tmp/
 config status.showUntrackedFiles no
