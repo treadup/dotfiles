@@ -1,0 +1,8 @@
+
+# This is the folder definition file for the Wanderlust email
+# client for Emacs.
+# https://box.matto.nl/emacs_gmail.html
+
+%inbox  "inbox"
++trash  "Trash"
++draft  "Drafts"
