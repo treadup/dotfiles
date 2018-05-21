@@ -93,6 +93,7 @@ npm install -g tern
 npm install -g eslint
 npm install -g jsonlint
 npm install -g js-yaml
+npm install -g nd
 echo Finished installing node.js programs
 
 # Setup the Go workspace
