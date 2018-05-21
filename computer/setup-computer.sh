@@ -71,6 +71,9 @@ curl -o ~/.quicklisp/quicklisp.lisp https://beta.quicklisp.org/quicklisp.lisp
 curl -o ~/.quicklisp/quicklisp.lisp.asc https://beta.quicklisp.org/quicklisp.lisp.asc
 sbcl --script ~/.quicklisp/install-quicklisp.lisp
 
+# Install quicklisp-slime-helper
+sbcl --eval '(ql:quickload :quicklisp-slime-helper)' --quit
+
 # Install Python packages
 echo Installing Python packages
 pip3 install virtualenv
