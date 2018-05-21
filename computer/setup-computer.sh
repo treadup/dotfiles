@@ -62,6 +62,15 @@ echo Finished installing nerd fonts
 # Create the bin folder.
 mkdir -p ~/bin
 
+#
+# Common Lisp
+#
+
+# Install Quicklisp
+curl -o ~/.quicklisp/quicklisp.lisp https://beta.quicklisp.org/quicklisp.lisp
+curl -o ~/.quicklisp/quicklisp.lisp.asc https://beta.quicklisp.org/quicklisp.lisp.asc
+sbcl --script ~/.quicklisp/install-quicklisp.lisp
+
 # Install Python packages
 echo Installing Python packages
 pip3 install virtualenv
