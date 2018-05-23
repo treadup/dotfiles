@@ -43,22 +43,6 @@ echo Finished cloning Vundle repo
 # vim +PluginInstall +qall # Install all the plugins
 # This is done using the :PluginInstall command inside Vim.
 
-# Install the fonts needed to correctly display VIM powerline/airline.
-echo Installing powerline fonts
-mkdir ~/powerline_fonts
-git clone https://github.com/powerline/fonts.git ~/powerline_fonts
-~/powerline_fonts/install.sh
-rm -rf ~/powerline_fonts
-echo Finished installing powerline fonts
-
-# Install nerd fonts
-echo Installing nerd fonts
-git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git ~/nerd_fonts
-chmod u+x ~/nerd_fonts/install.sh
-~/nerd_fonts/install.sh
-rm -rf ~/nerd_fonts
-echo Finished installing nerd fonts
-
 # Create the bin folder.
 mkdir -p ~/bin
 

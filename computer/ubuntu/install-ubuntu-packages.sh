@@ -145,10 +145,8 @@ apt install -y isync
 # Fonts
 #
 
-# Install Source Code Pro
-[ -d /usr/share/fonts/opentype ] || mkdir /usr/share/fonts/opentype
-git clone --depth 1 --branch release https://github.com/adobe-fonts/source-code-pro.git /usr/share/fonts/opentype/scp
-fc-cache -f -v
+# Install powerline fonts
+apt install -y fonts-powerline
 
 #
 # Window Managers
