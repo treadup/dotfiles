@@ -1,0 +1,12 @@
+[Desktop Entry]
+
+# This is the xsession file for StumpWM.
+# Place this file in the /usr/share/xsessions/ folder
+# to be able to start a StumpWM session from GDM.
+# You might have to restart GDM for the available
+# session list to be updated.
+
+Name=StumpWM
+Comment=This session launches StumpWM
+Type=Application
+Exec=sbcl --load /home/henrik/.stumpwm.d/startstumpwm.lisp
