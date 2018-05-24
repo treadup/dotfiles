@@ -52,6 +52,16 @@ sbcl --script ~/.quicklisp/install-quicklisp.lisp
 # Install quicklisp-slime-helper
 sbcl --eval '(ql:quickload :quicklisp-slime-helper)' --quit
 
+# Install StumpWM dependencies
+# I'm not sure this is really needed. Just installing "stumpwm" below will probably
+# pull in all the required dependencies.
+sbcl --eval '(ql:quickload "clx")' --quit
+sbcl --eval ' (ql:quickload "cl-ppcre")' --quit
+sbcl --eval ' (ql:quickload "alexandria")' --quit
+
+# Install StumpWM
+sbcl --eval '(ql:quickload "stumpwm")' --quit
+
 # Install Python packages
 echo Installing Python packages
 pip3 install virtualenv
