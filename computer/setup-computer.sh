@@ -23,12 +23,6 @@ echo Downloading git prompt
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 echo Finished downloading git prompt
 
-# Source the downloaded bashrc file. Bash should now be in sync with the configuration
-# in the DotFiles repo.
-echo Sourcing .bashrc
-source ~/.bashrc
-echo Sourcing .bashrc complete
-
 # Download .emacs.d repo
 echo Cloning Emacs init file repo
 git clone https://github.com/treadup/.emacs.d.git ~/.emacs.d
