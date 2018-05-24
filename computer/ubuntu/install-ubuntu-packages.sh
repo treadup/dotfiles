@@ -155,12 +155,6 @@ apt install -y fonts-powerline
 # Install stumpwm using quicklisp instead.
 # apt install -y stumpwm
 
-# Install OpenBox
-apt install -y openbox
-
-# Install MATE desktop environment
-apt install -y mate-desktop-environment-extras
-
 #
 # Install flatpak
 #
