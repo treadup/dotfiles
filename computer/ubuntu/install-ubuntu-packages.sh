@@ -145,7 +145,24 @@ apt install -y isync
 # Fonts
 #
 
+# Install Fira Code fonts
+apt install -y fonts-firacode
+
+# Install DejaVu fonts
+apt install -y fonts-dejavu
+
+# Install Liberation fonts
+apt install -y fonts-liberation
+
+# Install Inconsolata font
+apt install -y fonts-inconsolata
+
 # Install powerline fonts
+# This package provides the fonts used by powerline. This package
+# also contains the fontconfig settings that make these symbols
+# available as part of other installed fonts.
+# In other words the fonts-powerline only modifies existing fonts.
+# It does not install complete new font families.
 apt install -y fonts-powerline
 
 #
