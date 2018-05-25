@@ -62,6 +62,13 @@ sbcl --eval ' (ql:quickload "alexandria")' --quit
 # Install StumpWM
 sbcl --eval '(ql:quickload "stumpwm")' --quit
 
+# Install Swank
+sbcl --eval '(ql:quickload "swank")' --quit
+
+#
+# Python
+#
+
 # Install Python packages
 echo Installing Python packages
 pip3 install virtualenv
