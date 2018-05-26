@@ -62,6 +62,9 @@ sbcl --eval ' (ql:quickload "alexandria")' --quit
 # Install StumpWM
 sbcl --eval '(ql:quickload "stumpwm")' --quit
 
+# Fetch stumpwm-contrib
+git clone https://github.com/stumpwm/stumpwm-contrib.git ~/.stumpwm.d/modules
+
 # Install Swank
 sbcl --eval '(ql:quickload "swank")' --quit
 
