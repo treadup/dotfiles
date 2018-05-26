@@ -1,0 +1,3 @@
+* Pinentry
+Pinentry using stumpwm
+https://github.com/stumpwm/stumnpwm-contrib/tree/nmaster/util/pinentry
