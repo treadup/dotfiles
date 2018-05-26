@@ -2,6 +2,13 @@
 
 (in-package :stumpwm)
 
+;; Swank listening on port 4004
+(require :swank)
+(swank-loader:init)
+(swank:create-server :port 4004
+                     :style swank:*communication-style*
+                     :dont-close t)
+
 ;; Map the CapsLock key to Ctrl
 (setf *caps-lock-behavior* :ctrl)
 
