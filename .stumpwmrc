@@ -1,7 +1,5 @@
 ;; This is the user configuration file for StumpVM.
 
-(in-package :stumpwm)
-
 ;;
 ;; Swank
 ;;
@@ -12,28 +10,12 @@
 (swank:create-server :port 4004
                      :style swank:*communication-style*
                      :dont-close t)
-
-;;
-;; Keyboard
-;;
-
-;; The following contains information about how to use modules.
-;; https://stumpwm.github.io/git/stumpwm-git_15.html
-
-(load-module "kbd-layouts")
-
-;; Use US or Swedish keyboard layout.
-;; To switch keyboard layout use the S-SPC key chord.
-;; (keyboard-layouts-list "us" "se")
-
-;; Map the CapsLock key to Ctrl
-(setf *caps-lock-behavior* :ctrl)
-
-;; Ctrl-Alt-Backspace should kill Xorg.
-
 ;;
 ;; Stump WM
 ;;
+(in-package :stumpwm)
+
+;; Ctrl-Alt-Backspace should kill Xorg.
 
 (define-key *root-map* (kbd "M-q") "quit")
 (define-key *root-map* (kbd "q") "quit")
@@ -68,3 +50,25 @@
   (run-or-raise "vlc" '(:class "Vlc")))
 
 (define-key *root-map* (kbd "v") "vlc")
+
+;;
+;; Modules
+;;
+
+;; The following contains information about how to use modules.
+;; https://stumpwm.github.io/git/stumpwm-git_15.html
+
+;;
+;; Keyboard
+;;
+
+(load-module "kbd-layouts")
+
+(in-package :kbd-layouts)
+
+;; Use US or Swedish keyboard layout.
+;; To switch keyboard layout use the S-SPC key chord.
+(keyboard-layout-list "us" "se")
+
+;; Map the CapsLock key to Ctrl
+(setf *caps-lock-behavior* :ctrl)
