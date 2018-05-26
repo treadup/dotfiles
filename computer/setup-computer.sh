@@ -58,6 +58,7 @@ sbcl --eval '(ql:quickload :quicklisp-slime-helper)' --quit
 sbcl --eval '(ql:quickload "clx")' --quit
 sbcl --eval ' (ql:quickload "cl-ppcre")' --quit
 sbcl --eval ' (ql:quickload "alexandria")' --quit
+sbcl --eval '(ql:quickload "xembed")' --quit  # Needed by stumptray
 
 # Install StumpWM
 sbcl --eval '(ql:quickload "stumpwm")' --quit
