@@ -1,3 +1,66 @@
 * Pinentry
 Pinentry using stumpwm
 https://github.com/stumpwm/stumnpwm-contrib/tree/nmaster/util/pinentry
+
+Or perhaps we should see if we can hook into the Gnome way of handling
+the GPG agent?
+
+* End session
+Use the end session module to provide a logout, reboot, shutdown menu.
+https://github.com/stumpwm/stumpwm-contrib/tree/master/util/end-session
+
+* Notify
+Show notifications in StumpWM.
+https://github.com/stumpwm/stumpwm-contrib/tree/master/util/notify
+
+* Volume control
+Figure out volume control in StumpWM.
+
+* WiFi
+Figure out a better way of connecting to WiFi networks. Using the
+command line works but perhaps there is a better way?
+
+* Raise XTerm
+See if I can get C-t c to raise an existing XTerm instead of launching
+a new XTerm each time.
+
+* Pass
+Pass support for StumpWM.
+https://github.com/stumpwm/stumpwm-contrib/tree/master/util/pass
+
+* Screenshot
+Screenshot module for stumpwm.
+https://github.com/stumpwm/stumpwm-contrib/blob/master/util/screenshot/screenshot.lisp
+
+* Search engines
+Checkout the search engines module.
+https://github.com/stumpwm/stumpwm-contrib/tree/master/util/searchengines
+
+* Alfred for StumpWM
+See if I can find something like Alfred for StumpWM. I might have to
+write it myself.
+
+* Stumpish
+See what stumpish is all about.
+https://github.com/stumpwm/stumpwm-contrib/blob/master/util/stumpish/stumpish
+
+* System tray
+See if the system tray is something that I want to use.
+https://github.com/stumpwm/stumpwm-contrib/tree/master/util/stumptray
+
+* Surfraw
+Checkout the surfraw module. Perhaps this should be used instead of
+the search engines module?
+https://github.com/stumpwm/stumpwm-contrib/tree/master/util/surfraw
+
+* Modeline
+See if using a modeline would be a good idea.
+
+* Fonts
+Change the size of the font.
+
+Look into if using true type fonts is a good idea.
+https://github.com/stumpwm/stumpwm-contrib/tree/master/util/ttf-fonts
+* Winner mode
+Winner mode for StumpWM.
+https://github.com/stumpwm/stumpwm-contrib/tree/master/util/winner-mode
