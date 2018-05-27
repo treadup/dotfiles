@@ -169,6 +169,9 @@ apt install -y fonts-powerline
 # Window Managers
 #
 
+# Install wmctrl. This is needed by the end-session module for StumpWM.
+apt install -y wmctrl
+
 # Install stumpwm using quicklisp instead.
 # apt install -y stumpwm
 
