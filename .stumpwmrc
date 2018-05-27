@@ -24,6 +24,14 @@
 ;; Kind of like eval-buffer in Emacs.
 
 ;;
+;; Mode line
+;;
+
+;; Always show the mode line.
+(unless (head-mode-line (current-head))
+  (toggle-mode-line (current-screen) (current-head)))
+
+;;
 ;; Applications
 ;;
 
@@ -72,3 +80,9 @@
 
 ;; Map the CapsLock key to Ctrl
 (setf *caps-lock-behavior* :ctrl)
+
+;;
+;; Tray
+;;
+
+;; (load-module "stumptray")
