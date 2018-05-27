@@ -15,8 +15,16 @@
 ;;
 (in-package :stumpwm)
 
-;; Ctrl-Alt-Backspace should kill Xorg.
+;; Show messages in the center of the screen.
+(setf *message-window-gravity* :center)
 
+;; Show input box in the center of the screen
+(setf *input-window-gravity* :center)
+
+;; Show messages for 10 seconds
+(setf *timeout-wait* 10)
+
+;; Quit stumpwm using the C-t q or C-t M-q key chord.
 (define-key *root-map* (kbd "M-q") "quit")
 (define-key *root-map* (kbd "q") "quit")
 
