@@ -1,0 +1,6 @@
+#!/bin/bash
+wmctrl -x -a "$1" || $2
+
+# To run or raise Emacs use the following command.
+#
+# run-or-raise Emacs emacs
