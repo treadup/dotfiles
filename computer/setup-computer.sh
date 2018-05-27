@@ -59,6 +59,7 @@ sbcl --eval '(ql:quickload "clx")' --quit
 sbcl --eval ' (ql:quickload "cl-ppcre")' --quit
 sbcl --eval ' (ql:quickload "alexandria")' --quit
 sbcl --eval '(ql:quickload "xembed")' --quit  # Needed by stumptray
+sbcl --eval '(ql:quickload "clx-truetype")' --quit # Needed by ttf-fonts
 
 # Install StumpWM
 sbcl --eval '(ql:quickload "stumpwm")' --quit
