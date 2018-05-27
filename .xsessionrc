@@ -1,7 +1,10 @@
 #!/bin/sh
 
-# Map CapsLock to Ctrl.
-setxkbmap -option ctrl:nocaps
-
 # Load the .Xresoures file.
 xrdb -merge ~/.Xresources
+
+# Map CapsLock to Ctrl. Terminate Xorg with Ctrl-Alt-Backspace.
+setxkbmap -option ctrl:nocaps,terminate:ctrl_alt_bksp
+
+# Increase keyboard sensitivity.
+xset r rate 250 60
