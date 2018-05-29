@@ -1,0 +1,14 @@
+
+# This file contains configuration settings for MacOS that are settable
+# via the command line.
+
+# This file is based on the following.
+# https://driesvints.com/blog/getting-started-with-dotfiles/
+# https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+
+# Source this file once to update the settings.
+# source ~/.macos
+
+# It is also possible to have your Spectacle configuration as a dotfile.
+# Perhaps it can even be stored in the .config directory.
+# https://github.com/mathiasbynens/dotfiles/blob/master/init/spectacle.json
