@@ -172,8 +172,9 @@ apt install -y fonts-powerline
 # Install wmctrl. This is needed by the end-session module for StumpWM.
 apt install -y wmctrl
 
-# Install stumpwm using quicklisp instead.
-# apt install -y stumpwm
+# Install i3
+apt install -y i3 feh
+# This will install i3status and i3lock as well.
 
 #
 # Install flatpak
