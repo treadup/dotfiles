@@ -1,0 +1,3 @@
+function touchpad-disable
+    xinput disable "SynPS/2 Synaptics TouchPad"
+end
