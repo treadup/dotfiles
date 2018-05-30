@@ -173,7 +173,7 @@ apt install -y fonts-powerline
 apt install -y wmctrl
 
 # Install i3
-apt install -y i3 feh
+apt install -y i3 feh xbacklight
 # This will install i3status and i3lock as well.
 
 #
