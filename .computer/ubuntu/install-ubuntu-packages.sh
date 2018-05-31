@@ -176,6 +176,15 @@ apt install -y wmctrl
 apt install -y i3 feh xbacklight
 # This will install i3status and i3lock as well.
 
+# Install Awesome window manager
+apt install -y awesome awesome-doc
+
+# Install light-locker
+apt install -y light-locker
+
+# Install arandr
+apt install -y arandr
+
 #
 # Install flatpak
 #
