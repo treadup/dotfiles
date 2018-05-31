@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Run light-locker
+light-locker &
+
 # Load the .Xresoures file.
 xrdb -merge ~/.Xresources
 
