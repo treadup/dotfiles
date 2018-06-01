@@ -185,6 +185,9 @@ apt install -y light-locker
 # Install arandr
 apt install -y arandr
 
+# Volume control applet
+apt install -y pasystray
+
 #
 # Install flatpak
 #

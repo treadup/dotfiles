@@ -593,3 +593,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Start network manager applet
 awful.util.spawn_with_shell("nm-applet")
+
+-- Start volume control applet
+awful.util.spawn_with_shell("pasystray")
