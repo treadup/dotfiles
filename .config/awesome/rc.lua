@@ -57,6 +57,9 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
+-- Set background image
+beautiful.get().wallpaper = "/home/henrik/Pictures/wallpapers/rainforest_bridge.png"
+
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
 editor = os.getenv("EDITOR") or "editor"
