@@ -1,0 +1,3 @@
+
+# Show background image
+feh --bg-scale /home/henrik/Pictures/wallpapers/rainforest_bridge.png
