@@ -169,15 +169,14 @@ apt install -y fonts-powerline
 # Window Managers
 #
 
-# Install wmctrl. This is needed by the end-session module for StumpWM.
+# Install OpenBox
+apt install -y openbox
+
+# Install wmctrl. This is needed for my run-and-raise script.
 apt install -y wmctrl
 
-# Install i3
-apt install -y i3 feh xbacklight
-# This will install i3status and i3lock as well.
-
-# Install Awesome window manager
-apt install -y awesome awesome-doc
+# I use feh to display a backround image under X.
+apt install -y feh
 
 # Install light-locker
 apt install -y light-locker
@@ -187,6 +186,9 @@ apt install -y arandr
 
 # Volume control applet
 apt install -y pasystray
+
+# Panel
+apt install -y tint2
 
 #
 # Install flatpak
