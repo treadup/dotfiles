@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# Run light-locker
+light-locker &
 
 # Show background image
 feh --bg-scale /home/henrik/Pictures/wallpapers/rainforest_bridge.png
@@ -8,3 +12,13 @@ tint2 &
 
 # Increase the keyboard repeat rate to something better for development.
 xset r rate 250 60
+
+# Load the .Xresoures file.
+xrdb -merge ~/.Xresources
+
+# Map CapsLock to Ctrl. Terminate Xorg with Ctrl-Alt-Backspace.
+# Toggle between US and Swedish keymap using Right Shift + Right Control
+setxkbmap us,se -option ctrl:nocaps,terminate:ctrl_alt_bksp, grp:rctrl_rshift_toggle
+
+# The laptop is to the right of the monitor.
+# xrandr --output eDP-1 --auto --left-of HDMI-2 --auto
