@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Toggle between US and Swedish keymap.
+if setxkbmap -query | grep layout | grep se > /dev/null; then
+    setxkbmap us
+else
+    setxkbmap se
+fi
