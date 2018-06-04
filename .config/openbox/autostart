@@ -1,3 +1,10 @@
 
 # Show background image
 feh --bg-scale /home/henrik/Pictures/wallpapers/rainforest_bridge.png
+
+# Use tint2 for the panel. Polybar also looks interesting but there is
+# currently no Ubuntu package for polybar in the Ubuntu repos.
+tint2 &
+
+# Increase the keyboard repeat rate to something better for development.
+xset r rate 250 60
