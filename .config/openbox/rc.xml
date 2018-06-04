@@ -305,13 +305,28 @@
   <!-- Keybindings for running applications -->
   <keybind key="W-e">
     <action name="Execute">
-      <startupnotify>
-        <enabled>true</enabled>
-        <name>Konqueror</name>
-      </startupnotify>
-      <command>kfmclient openProfile filemanagement</command>
+      <command>bash -c "xdotool search --onlyvisible --class  Emacs windowraise windowfocus || emacsclient -c -n -q -a emacs"</command>
     </action>
   </keybind>
+
+  <keybind key="W-f">
+    <action name="Execute">
+      <command>bash -c "wmctrl -a 'Firefox' || firefox"</command>
+    </action>
+  </keybind>
+
+  <keybind key="W-t">
+    <action name="Execute">
+      <command>bash -c "xdotool search --onlyvisible --class  xterm windowraise windowfocus || uxterm"</command>
+    </action>
+  </keybind>
+
+  <keybind key="W-s">
+    <action name="Execute">
+      <command>bash -c "wmctrl -a 'Spotify' || spotify"</command>
+    </action>
+  </keybind>
+
   <!-- Launch scrot when Print is pressed -->
   <keybind key="Print">
     <action name="Execute"><command>scrot</command></action>
@@ -320,6 +335,11 @@
   <!-- Keybindings for switching keyboard layout -->
   <keybind key="W-space">
     <action name="Execute"><command>xkbmap-toggle</command></action>
+  </keybind>
+
+  <!-- Keybindings for launching menus -->
+  <keybind key="W-m">
+    <action name="ShowMenu"><menu>root-menu</menu></action>
   </keybind>
 </keyboard>
 
