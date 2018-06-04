@@ -6,10 +6,7 @@
                 file:///usr/share/openbox/menu.xsd">
 
 <menu id="root-menu" label="Openbox 3">
-  <item label="Terminal emulator">
-    <action name="Execute"><execute>x-terminal-emulator</execute></action>
-  </item>
-  <item label="uxterm">
+  <item label="Terminal">
     <action name="Execute"><execute>uxterm</execute></action>
   </item>
   <item label="Firefox">
@@ -25,6 +22,14 @@
     </item>
     <item label="Spotify">
       <action name="Execute"><execute>spotify</execute></action>
+    </item>
+  </menu>
+  <menu id="keyboard-menu" label="Keyboard Layout">
+    <item label="US">
+      <action name="Execute"><execute>setxkbmap us</execute></action>
+    </item>
+    <item label="Swedish">
+      <action name="Execute"><execute>setxkbmap se</execute></action>
     </item>
   </menu>
   <separator />
