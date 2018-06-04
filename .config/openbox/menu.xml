@@ -23,6 +23,9 @@
     <item label="Spotify">
       <action name="Execute"><execute>spotify</execute></action>
     </item>
+    <item label="Slack">
+      <action name="Execute"><execute>slack</execute></action>
+    </item>
   </menu>
   <menu id="keyboard-menu" label="Keyboard Layout">
     <item label="US">
