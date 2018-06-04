@@ -19,7 +19,7 @@ set -gx PATH $GOPATH/bin $HOME/bin $HOME/.local/bin /usr/local/sbin $HOME/.npm-g
 # set -gx VIRTUALENV_PYTHON python3
 
 # The WORKON_HOME variable is used by the pyvenv Emacs package.
-set -gx WORKON_HOME ~/.local/share/virtualenvs/
+set -gx WORKON_HOME $HOME/.virtualenvs/
 
 #
 # Directory navigation
