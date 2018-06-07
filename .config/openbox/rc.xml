@@ -390,6 +390,26 @@
   <keybind key="W-m">
     <action name="ShowMenu"><menu>root-menu</menu></action>
   </keybind>
+
+  <!-- Volume control -->
+  <keybind key="XF86AudioRaiseVolume">
+     <action name="Execute">
+       <command>bash -c "pactl set-sink-volume $(default_sound_sink) +5%"</command>
+     </action>
+  </keybind>
+
+  <keybind key="XF86AudioLowerVolume">
+    <action name="Execute">
+      <command>bash -c "pactl set-sink-volume $(default_sound_sink) -5%"</command>
+    </action>
+  </keybind>
+
+  <keybind key="XF86AudioMute">
+    <action name="Execute">
+      <command>bash -c "pactl set-sink-mute $(default_sound_sink) toggle"</command>
+    </action>
+  </keybind>
+
 </keyboard>
 
 <mouse>
@@ -703,8 +723,6 @@
        just don't make menu ids clash or, well, it'll be kind of pointless -->
 
   <!-- default menu file (or custom one in $HOME/.config/openbox/) -->
-  <!-- system menu files on Debian systems -->
-  <file>/var/lib/openbox/debian-menu.xml</file>
   <file>menu.xml</file>
   <hideDelay>200</hideDelay>
   <!-- if a press-release lasts longer than this setting (in milliseconds), the
