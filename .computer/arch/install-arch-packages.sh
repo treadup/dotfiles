@@ -41,7 +41,7 @@ pacman --needed --noconfirm -S zip unzip
 pacman --needed --noconfirm -S nodejs
 
 # Install TeX
-# Do this later since this will take a lot of time.
+pacman --needed --noconfirm -S texlive-most
 
 # Install curl and wget
 pacman --needed --noconfirm -S curl wget
