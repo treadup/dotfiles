@@ -186,5 +186,13 @@ pacman --needed --noconfirm -S tint2
 pacman --needed --noconfirm -S snapd
 systemctl enable --now snapd.socket
 
+#
+# AUR packages
+#
+
+# You are not allowed to run makepkg as root. Therefore packages
+# that need to be installed from AUR should not be installed in
+# this script.
+
 echo Finished installing packages
 echo The installation script ran successfully
