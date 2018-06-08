@@ -11,73 +11,73 @@ set -u
 pacman --noconfirm -Syu
 
 # Install git
-pacman --noconfirm -S git
+pacman --needed --noconfirm -S git
 
 # Install pass
-pacman --noconfirm -S pass pwgen
+pacman --needed --noconfirm -S pass pwgen
 
 # Install Emacs
 if [ -v DISPLAY ]; then
-    pacman --noconfirm -S emacs
+    pacman --needed --noconfirm -S emacs
 else
-    pacman --noconfirm -S emacs-nox
+    pacman --needed --noconfirm -S emacs-nox
 fi
 
 # Install Vim
 # We use the gvim package instead of the vim package because we want
 # clipboard support.
-pacman --noconfirm -S gvim
+pacman --needed --noconfirm -S gvim
 
 # Install fish
-pacman --noconfirm -S fish
+pacman --needed --noconfirm -S fish
 
 # Bash completion should go here...
 # Not sure how this is handled in Arch.
 
 # Install zip and unzip
-pacman --noconfirm -S zip unzip
+pacman --needed --noconfirm -S zip unzip
 
 # Install node
-pacman --noconfirm -S nodejs
+pacman --needed --noconfirm -S nodejs
 
 # Install TeX
 # Do this later since this will take a lot of time.
 
 # Install curl and wget
-pacman --noconfirm -S curl wget
+pacman --needed --noconfirm -S curl wget
 
 # Install httpie
-pacman --noconfirm -S httpie
+pacman --needed --noconfirm -S httpie
 
 # Install ag
-pacman --noconfirm -S the_silver_searcher
+pacman --needed --noconfirm -S the_silver_searcher
 
 # Install whois
-pacman --noconfirm -S whois
+pacman --needed --noconfirm -S whois
 
 # Install mosh
-pacman --noconfirm -S mosh
+pacman --needed --noconfirm -S mosh
 
 # Install pandoc
-pacman --noconfirm -S pandoc
+pacman --needed --noconfirm -S pandoc
 
 # Install awscli
-pacman --noconfirm -S aws-cli
+pacman --needed --noconfirm -S aws-cli
 
 # Install build essentials
-pacman --noconfirm -S base-devel
+pacman --needed --noconfirm -S base-devel
 
 # Install LLVM and clang
-pacman --noconfirm -S llvm clang
+pacman --needed --noconfirm -S llvm clang
 
 # Install gdb
-pacman --noconfirm -S gdb
+pacman --needed --noconfirm -S gdb
 
 # Install docker
-pacman --noconfirm -S docker
+pacman --needed --noconfirm -S docker
 
 # Install Java
-pacman --noconfirm -S jdk10-openjdk openjdk10-doc
+pacman --needed --noconfirm -S jdk10-openjdk openjdk10-doc
 
 # Set the JAVA_HOME environment variable. You need to log out and
 # then log back in again for the /etc/environment file to be reloaded.
@@ -85,31 +85,31 @@ JAVA_HOME="$(dirname $(dirname $(readlink -e $(which javac))))"
 printf "JAVA_HOME=$JAVA_HOME\n" >> /etc/environment
 
 # Install Steel Bank Common Lisp
-pacman --noconfirm -S sbcl
+pacman --needed --noconfirm -S sbcl
 
 # Install Gambit Scheme
-pacman --noconfirm -S gambit-c
+pacman --needed --noconfirm -S gambit-c
 
 # Install Racket
-pacman --noconfirm -S racket racket-docs
+pacman --needed --noconfirm -S racket racket-docs
 
 # Install mit-scheme
-pacman --noconfirm -S mit-scheme
+pacman --needed --noconfirm -S mit-scheme
 
 # Install Go
-pacman --noconfirm -S go
+pacman --needed --noconfirm -S go
 
 # Install Python 3
-pacman --noconfirm -S python python-pip python-setuptools python-wheel
+pacman --needed --noconfirm -S python python-pip python-setuptools python-wheel
 
 # Install Ruby
-pacman --noconfirm -S ruby
+pacman --needed --noconfirm -S ruby
 
 # Install weechat
-pacman --noconfirm -S weechat
+pacman --needed --noconfirm -S weechat
 
 # Install nginx
-pacman --noconfirm -S nginx
+pacman --needed --noconfirm -S nginx
 
 # Install direnv
 # For some reason it is not possible to install direnv using pacman. The package
@@ -117,17 +117,17 @@ pacman --noconfirm -S nginx
 # pacman --noconfirm -S direnv
 
 # Install markdown
-pacman --noconfirm -S markdown
+pacman --needed --noconfirm -S markdown
 
 #
 # Email
 #
 
 # Install msmtp
-pacman --noconfirm -S msmtp
+pacman --needed --noconfirm -S msmtp
 
 # Install isync package which contains mbsync.
-pacman --noconfirm -S isync
+pacman --needed --noconfirm -S isync
 
 #
 # Fonts
@@ -138,52 +138,52 @@ pacman --noconfirm -S isync
 # pacman --noconfirm -S otf-fira-code ttf-fira-code
 
 # Install dejavu font
-pacman --noconfirm -S ttf-dejavu
+pacman --needed --noconfirm -S ttf-dejavu
 
 # Install Liberation font
-pacman --noconfirm -S ttf-liberation
+pacman --needed --noconfirm -S ttf-liberation
 
 # Install Inconsolata font
-pacman --noconfirm -S ttf-inconsolata
+pacman --needed --noconfirm -S ttf-inconsolata
 
 # Install Adobe Source Code Pro font
-pacman --noconfirm -S adobe-source-code-pro-fonts
+pacman --needed --noconfirm -S adobe-source-code-pro-fonts
 
 # Install Powerline fonts
 # This package patches existing fonts on the system with the special symbols
 # that are needed by powerline.
 # In other words this package only modifies existing fonts.
 # It does not install any new complete fonts.
-pacman --noconfirm -S powerline-fonts
+pacman --needed --noconfirm -S powerline-fonts
 
 #
 # Window Managers
 #
 
 # Install OpenBox
-pacman --noconfirm -S openbox
+pacman --needed --noconfirm -S openbox
 
 # Install wmctrl and xdotool
-pacman --noconfirm -S wmctrl xdotool
+pacman --needed --noconfirm -S wmctrl xdotool
 
 # Install feh which is used to display a background image under X.
-pacman --noconfirm -S feh
+pacman --needed --noconfirm -S feh
 
 # Install light-locker
-pacman --noconfirm -S light-locker
+pacman --needed --noconfirm -S light-locker
 
 # Install arandr
-pacman --noconfirm -S arandr
+pacman --needed --noconfirm -S arandr
 
 # Install pasystray
 # This did not work.
 # pacman --noconfirm -S pasystray
 
 # Install tint2
-pacman --noconfirm -S tint2
+pacman --needed --noconfirm -S tint2
 
 # Install snap
-pacman --noconfirm -S snapd
+pacman --needed --noconfirm -S snapd
 systemctl enable --now snapd.socket
 
 echo Finished installing packages
