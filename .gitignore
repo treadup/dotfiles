@@ -1,0 +1,7 @@
+
+# This is the .gitignore file for the dotfiles repo.
+# It specifies which files and directories the config
+# command should ignore
+
+code/
+work/
