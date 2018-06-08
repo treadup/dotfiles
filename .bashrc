@@ -48,8 +48,14 @@ shopt -s checkwinsize
 # match all files and zero or more directories and subdirectories.
 # shopt -s globstar
 
+function __git_ps1() {
+    true;
+}
+
 # Source git-prompt
-source ~/.git-prompt.sh
+if [ -f ~/.git-prompt.sh ]; then
+    source ~/.git-prompt.sh
+fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
