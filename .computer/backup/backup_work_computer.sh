@@ -7,7 +7,10 @@ cp -r ~/.ssh ~/work/ssh
 mkdir -p ~/work/gpg
 gpg -a --export henrik@trell.se > ~/work/gpg/henrik-work-public-gpg.key
 gpg -a --export-secret-key henrik@trell.se > ~/work/gpg/henrik-work-private-gpg.key
-gpg --export-owner-trust > ~/work/gpg/henrik-work-owner-trust-gpg.txt
+gpg --export-ownertrust > ~/work/gpg/henrik-work-owner-trust-gpg.txt
+
+# Wallpapers
+cp -r ~/Pictures/wallpapers/ ~/work/wallpapers
 
 # Backup work folder
-zip ~/work_computer_backup.zip ~/work/
+zip -r ~/work_computer_backup.zip ~/work/
