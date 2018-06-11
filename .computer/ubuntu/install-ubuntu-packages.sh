@@ -201,6 +201,12 @@ apt install -y tint2
 # Snap is already available in Ubuntu without having to install anything.
 # Just use the command snap from the cli.
 
+# Install Spotify
+snap install spotify --classic
+
+# Install Slack
+snap install slack --classic
+
 #
 # The python-dbus is required by the spotify cli
 #
