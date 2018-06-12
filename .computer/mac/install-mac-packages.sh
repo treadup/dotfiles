@@ -101,5 +101,5 @@ brew tap caskroom/fonts
 brew cask install font-source-code-pro
 brew cask install font-firacode-nerd-font
 
-# Install sstp client
-brew install sstp-client
+# Install Hammerspoon
+brew cask install hammerspoon
