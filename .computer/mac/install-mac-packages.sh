@@ -95,6 +95,7 @@ brew install tldr
 brew install ispell
 brew install fd
 brew install fzf
+brew install fzy
 
 # Install fonts
 brew tap caskroom/fonts
@@ -103,3 +104,6 @@ brew cask install font-firacode-nerd-font
 
 # Install Hammerspoon
 brew cask install hammerspoon
+
+# Install lnav
+brew install lnav

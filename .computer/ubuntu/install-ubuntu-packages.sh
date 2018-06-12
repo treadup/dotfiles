@@ -131,6 +131,9 @@ apt install -y direnv
 # Install markdown
 apt install -y markdown
 
+# Install lnav
+apt install -y lnav
+
 #
 # Email
 #
