@@ -134,6 +134,9 @@ apt install -y markdown
 # Install lnav
 apt install -y lnav
 
+# Install ranger
+apt install -y ranger
+
 #
 # Email
 #

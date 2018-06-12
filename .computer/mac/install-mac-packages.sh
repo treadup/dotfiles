@@ -107,3 +107,6 @@ brew cask install hammerspoon
 
 # Install lnav
 brew install lnav
+
+# Install ranger
+brew install ranger
