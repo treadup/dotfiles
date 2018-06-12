@@ -110,3 +110,6 @@ brew install lnav
 
 # Install ranger
 brew install ranger
+
+# Install mosh
+brew install mosh
