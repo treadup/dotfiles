@@ -178,6 +178,9 @@ apt install -y fonts-powerline
 # Window Managers
 #
 
+# Gnome
+apt install -y gnome-tweak-tool
+
 # Install OpenBox
 apt install -y openbox
 
