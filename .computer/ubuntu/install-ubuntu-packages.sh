@@ -140,6 +140,9 @@ apt install -y ranger
 # Install yank
 apt install -y yank
 
+# Install fzy
+apt install -y fzy
+
 #
 # Email
 #
