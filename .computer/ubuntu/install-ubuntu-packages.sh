@@ -137,6 +137,9 @@ apt install -y lnav
 # Install ranger
 apt install -y ranger
 
+# Install yank
+apt install -y yank
+
 #
 # Email
 #

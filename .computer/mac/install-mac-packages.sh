@@ -96,6 +96,7 @@ brew install ispell
 brew install fd
 brew install fzf
 brew install fzy
+brew install yank
 
 # Install fonts
 brew tap caskroom/fonts
