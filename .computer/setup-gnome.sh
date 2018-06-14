@@ -25,8 +25,8 @@ gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', '
 #
 
 # Set the keyboard speed
-gsettings set org.gnome.desktop.peripherals.keyboard delay 150
-gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 15
+gsettings set org.gnome.desktop.peripherals.keyboard delay 170 # 150
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 20 # 15
 
 # Set the mouse speed
 gsettings set org.gnome.desktop.peripherals.mouse speed 0.4
