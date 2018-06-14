@@ -41,6 +41,7 @@ gsettings set org.gnome.shell.overrides dynamic-workspaces false
 # Use 9 workspaces
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 9
 
+# Switch to workspace using Super+1, ..., Super+9
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Super>1']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Super>2']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Super>3']"
@@ -50,6 +51,17 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-6 "['<Super>6
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-7 "['<Super>7']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-8 "['<Super>8']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-9 "['<Super>9']"
+
+# Move window to workspace using Shift+Super+1, ..., Shift+Super+9
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 "['<Shift><Super>1']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Shift><Super>2']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Shift><Super>3']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Shift><Super>4']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Shift><Super>5']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-6 "['<Shift><Super>6']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-7 "['<Shift><Super>7']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-8 "['<Shift><Super>8']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-9 "['<Shift><Super>9']"
 
 # The workspace should span all displays
 gsettings set org.gnome.shell.overrides workspaces-only-on-primary false
@@ -75,5 +87,14 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys terminal '<Super>t'
 # Use Super+b to launch a web browser
 gsettings set org.gnome.settings-daemon.plugins.media-keys www '<Super>b'
 
+#
+# Top bar
+#
+
+# Show percentage of battery left.
+gsettings set org.gnome.desktop.interface show-battery-percentage true
+
+
 # Local variables:
 # mode: shell-script-mode
+# End:
