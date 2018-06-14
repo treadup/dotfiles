@@ -67,6 +67,19 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-9 "['<Shift><Su
 gsettings set org.gnome.shell.overrides workspaces-only-on-primary false
 
 #
+# Tiling
+#
+
+# Gnome 3 seems to have horrible support for the tiling operations.
+# For example the following operations exist but are completely useless
+# when you have a workspace that spans two displays.
+
+# org.gnome.desktop.wm.keybindings move-to-corner-nw
+# org.gnome.desktop.wm.keybindings move-to-corner-ne
+# org.gnome.desktop.wm.keybindings move-to-corner-se
+# org.gnome.desktop.wm.keybindings move-to-corner-sw
+
+#
 # Navigation
 #
 
