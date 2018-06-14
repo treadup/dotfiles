@@ -15,7 +15,8 @@ gsettings set org.gnome.desktop.interface gtk-key-theme 'Emacs'
 gsettings set org.gnome.desktop.input-sources xkb-options "['ctrl:nocaps', 'caps:ctrl_modifier']"
 
 # Show minimize, maximize and close window buttons
-gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
+# gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
+gsettings set org.gnome.desktop.wm.preferences button-layout "'menu:minimize,maximize,close'"
 
 # US and Swedish as input sources
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', 'se')]"
