@@ -188,6 +188,11 @@ apt install -y fonts-powerline
 # Gnome
 apt install -y gnome-tweak-tool
 
+# Install lots of Gnome Shell Extensions
+# Some of the Gnome Shell Extensions are available as individual
+# Ubuntu packages. So you might want to look at these as well.
+apt install -y gnome-shell-extensions
+
 # Install OpenBox
 apt install -y openbox
 
