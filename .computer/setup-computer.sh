@@ -106,6 +106,10 @@ go get -u -v golang.org/x/tools/cmd/goimports
 
 # Install ppd
 go get github.com/treadup/ppd
+
+# Install dj
+go get github.com/treadup/dj
+
 echo Finished installing Go programs
 
 # Install fzf
