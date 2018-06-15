@@ -108,6 +108,11 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys www '<Super>b'
 # Show percentage of battery left.
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 
+#
+# Extensions
+#
+gsettings set org.gnome.shell enabled-extensions "['ubuntu-dock@ubuntu.com']"
+
 
 # Local variables:
 # mode: shell-script-mode
