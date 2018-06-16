@@ -119,6 +119,10 @@ apt --yes install python-pip python3-pip python3-dev python3-setuptools python3-
 # Install Ruby
 apt --yes install ruby
 
+# Install Rust
+apt --yes install rustc
+apt --yes install cargo
+
 # Install weechat
 apt --yes install weechat
 
