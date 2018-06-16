@@ -222,6 +222,9 @@ snap install spotify --classic
 # Install Slack
 snap install slack --classic
 
+# Install ripgrep
+snap install rg
+
 #
 # The python-dbus is required by the spotify cli
 #
