@@ -48,26 +48,28 @@ gsettings set org.gnome.shell.overrides dynamic-workspaces false
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 9
 
 # Switch to workspace using Super+1, ..., Super+9
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Super>1']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Super>2']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Super>3']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Super>4']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-5 "['<Super>5']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-6 "['<Super>6']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-7 "['<Super>7']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-8 "['<Super>8']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-9 "['<Super>9']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Primary><Super>1']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Primary><Super>2']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Primary><Super>3']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Primary><Super>4']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-5 "['<Primary><Super>5']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-6 "['<Primary><Super>6']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-7 "['<Primary><Super>7']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-8 "['<Primary><Super>8']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-9 "['<Primary><Super>9']"
 
 # Move window to workspace using Shift+Super+1, ..., Shift+Super+9
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 "['<Shift><Super>1']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Shift><Super>2']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Shift><Super>3']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Shift><Super>4']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Shift><Super>5']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-6 "['<Shift><Super>6']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-7 "['<Shift><Super>7']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-8 "['<Shift><Super>8']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-9 "['<Shift><Super>9']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 "['<Shift><Primary><Super>1']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Shift><Primary><Super>2']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Shift><Primary><Super>3']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Shift><Primary><Super>4']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Shift><Primary><Super>4']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Shift><Primary><Super>4']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Shift><Primary><Super>5']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-6 "['<Shift><Primary><Super>6']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-7 "['<Shift><Primary><Super>7']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-8 "['<Shift><Primary><Super>8']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-9 "['<Shift><Primary><Super>9']"
 
 # The workspace should span all displays
 gsettings set org.gnome.shell.overrides workspaces-only-on-primary false
@@ -152,7 +154,5 @@ gnome-shell-extension-tool -e caffeine@patapon.info
 # Enable move clock
 gnome-shell-extension-tool -e Move_Clock@jonathan.bluemosh.com
 
-# It should not be necessary to restart gnome-shell but if you have to you can use the
-# following command.
-#
-gnome-shell --replace
+echo You might have to restart Gnome for all the Gnome Shell Extensions to show up.
+echo Or you can restart Gnome Shell using the following command: gnome-shell --replace
