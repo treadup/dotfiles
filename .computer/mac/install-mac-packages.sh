@@ -70,6 +70,7 @@ brew install awscli
 
 # Install TeX
 brew cask install basictex
+# brew cask install mactex
 
 # Install PostgreSQL
 brew install postgresql
@@ -97,6 +98,8 @@ brew install fd
 brew install fzf
 brew install fzy
 brew install yank
+brew install fd
+brew install pick
 
 # Install fonts
 brew tap caskroom/fonts
