@@ -121,7 +121,7 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 #
 
 # Show the following applications in the dock.
-gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'emacs25.desktop', 'org.gnome.Terminal.desktop','spotify.desktop', 'shotwell.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop']"
+gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'google-chrome.desktop', 'emacs25.desktop', 'org.gnome.Terminal.desktop','spotify.desktop', 'shotwell.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop']"
 
 # Make the dock take the full height of the screen
 gsettings set org.gnome.shell.extensions.dash-to-dock extend-height true
