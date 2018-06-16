@@ -108,11 +108,21 @@ go get -u -v golang.org/x/tools/cmd/goimports
 go get github.com/treadup/ppd
 echo Finished installing Go programs
 
+# Install fzf
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    go get -u -v github.com/junegunn/fzf
+fi
+
 # Install lns
 echo Installing lns
 curl -o ~/bin/lns http://interglacial.com/~sburke/pub/lns
 chmod u+x ~/bin/lns
 echo Finished installing lns
+
+# Install fd which is an alternative to find
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    cargo install fd-find
+fi
 
 # Symplink gpg-agent.conf on macos.
 if [[ "$OSTYPE" == "darwin"* ]]; then
