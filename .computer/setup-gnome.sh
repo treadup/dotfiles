@@ -110,6 +110,9 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys www '<Super>b'
 # Top bar
 #
 
+# Disable the hot corner
+gsettings set org.gnome.shell enable-hot-corners false
+
 # Show percentage of battery left.
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 
