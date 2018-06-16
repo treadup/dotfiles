@@ -111,9 +111,27 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 #
 # Extensions
 #
-gsettings set org.gnome.shell enabled-extensions "['ubuntu-dock@ubuntu.com']"
 
+# Note that when you use the gnome-shell-extension-tool you have to specify
+# the full UUID of the extension. It is not enough to specify the part in
+# front of the @ sign.
 
-# Local variables:
-# mode: shell-script-mode
-# End:
+# Enable places menu
+gnome-shell-extension-tool -e places-menu@gnome-shell-extensions.gcampax.github.com
+
+# Enable workspace indicator
+gnome-shell-extension-tool -e workspace-indicator@gnome-shell-extensions.gcampax.github.com
+
+# Enable dash to dock
+gnome-shell-extension-tool -e dash-to-dock@micxgx.gmail.com
+
+# Enable caffeine
+gnome-shell-extension-tool -e caffeine@patapon.info
+
+# Enable move clock
+gnome-shell-extension-tool -e Move_Clock@jonathan.bluemosh.com
+
+# It should not be necessary to restart gnome-shell but if you have to you can use the
+# following command.
+#
+gnome-shell --replace

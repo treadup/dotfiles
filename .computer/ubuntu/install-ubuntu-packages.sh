@@ -192,6 +192,9 @@ apt install -y gnome-tweak-tool
 # Some of the Gnome Shell Extensions are available as individual
 # Ubuntu packages. So you might want to look at these as well.
 apt install -y gnome-shell-extensions
+apt install -y gnome-shell-extension-dashtodock
+apt install -y gnome-shell-extension-caffeine
+apt install -y gnome-shell-extension-move-clock
 
 # Install OpenBox
 apt install -y openbox
