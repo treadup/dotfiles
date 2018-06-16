@@ -129,7 +129,19 @@ gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'google-chrome.
 gsettings set org.gnome.shell.extensions.dash-to-dock extend-height true
 
 # Do not use the hotkeys Super+1, ..., Super+9 to launch applications in the dock.
-gsettings set org.gnome.shell.extensions.dash-to-dock hot-keys false
+gsettings set org.gnome.shell.extensions.dash-to-dock hot-keys true
+
+# Each workspace has its own isolated dock.
+gsettings set org.gnome.shell.extensions.dash-to-dock isolate-workspaces true
+
+# Raise the application window when clicking on the icon of a running application.
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'skip'
+
+# Launch a new instance of the application when shift clicking the application
+gsettings set org.gnome.shell.extensions.dash-to-dock shift-click-action 'launch'
+
+# Do not show animations when the user presses the show applications button
+gsettings set org.gnome.shell.extensions.dash-to-dock animate-show-apps false
 
 #
 # Extensions
