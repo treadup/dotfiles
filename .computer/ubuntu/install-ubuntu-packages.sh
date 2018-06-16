@@ -185,10 +185,13 @@ apt install -y fonts-inconsolata
 apt install -y fonts-powerline
 
 #
-# Window Managers
+# Gnome
 #
 
-# Gnome
+# To install vanilla Gnome use the following command.
+# apt install -y gnome gnome-shell
+
+# Install Gnome tweak tool
 apt install -y gnome-tweak-tool
 
 # Install lots of Gnome Shell Extensions

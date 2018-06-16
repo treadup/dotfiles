@@ -3,6 +3,11 @@
 # This file contains settings for Gnome. It is intended that you run this file once
 # and it will configure Gnome for you.
 
+# The way I find the settings to use in this file is to use the command dconf watch / which
+# will watch for changes in the root schema. Then I use Settings or Gnome Tweak Tool to make
+# changes and look at the output from dconf watch /.
+
+# Set the theme
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 
 # There is an issue with setting the backgound image from a script.
@@ -107,6 +112,19 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys www '<Super>b'
 
 # Show percentage of battery left.
 gsettings set org.gnome.desktop.interface show-battery-percentage true
+
+#
+# Dock
+#
+
+# Show the following applications in the dock.
+gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'emacs25.desktop', 'org.gnome.Terminal.desktop','spotify.desktop', 'shotwell.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop']"
+
+# Make the dock take the full height of the screen
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height true
+
+# Do not use the hotkeys Super+1, ..., Super+9 to launch applications in the dock.
+gsettings set org.gnome.shell.extensions.dash-to-dock hot-keys false
 
 #
 # Extensions
