@@ -224,6 +224,22 @@ snap install rg
 #
 # apt install -y python-dbus
 
+#
+# Google Chrome
+#
+
+# Download and install the key associated with the Google Chrome repository.
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+
+# Add the Google Chrome repo to the sources list.
+echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
+
+# Update the repository since we added a new source.
+apt update
+
+# Install Google Chrome
+apt install google-chrome-stable
+
 # Remove packages that are no longer needed
 apt --yes autoremove
 
