@@ -147,6 +147,9 @@ apt install -y yank
 # Install fzy
 apt install -y fzy
 
+# Install pick
+apt install -y pick
+
 #
 # Email
 #
