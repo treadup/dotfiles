@@ -12,7 +12,7 @@ set -gx LANG en_US.UTF-8
 set -gx GOPATH $HOME/go
 
 # Add the users bin folder to the path.
-set -gx PATH $GOPATH/bin $HOME/bin $HOME/.local/bin /usr/local/sbin $HOME/.npm-global/bin $PATH
+set -gx PATH $GOPATH/bin $HOME/bin $HOME/.local/bin $HOME/.cargo/bin/ /usr/local/sbin $HOME/.npm-global/bin $PATH
 
 # Do not do this. It breaks vex and pew
 # Use Python 3 by default when creating a virtualenv.
