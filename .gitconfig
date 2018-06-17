@@ -26,9 +26,8 @@
         # Undo a single commit. The changed files stay in the staging area.
         undo = reset --soft HEAD^
 
-        # Amends the current HEAD commit by adding the files in the staging area.
-	# amend = commit --amend -C HEAD
-        amend = commit --amend --no-edit
+        # Amends the current HEAD commit by adding the files in the staging area
+        amend = commit --amend -C HEAD
 
         # Publish the code on heroku
 	heroku = push heroku master
