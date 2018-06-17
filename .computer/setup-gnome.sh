@@ -144,6 +144,25 @@ gsettings set org.gnome.shell.extensions.dash-to-dock shift-click-action 'launch
 gsettings set org.gnome.shell.extensions.dash-to-dock animate-show-apps false
 
 #
+# Key bindings
+#
+
+# In general it would be good if we could find a way to do run or raise here instead of just run.
+# Kind of like things are done in StumpWM.
+
+# Bind Super+b to run the browser.
+gsettings set org.gnome.settings-daemon.plugins.media-keys www '<Super>b'
+
+# Bind Super+t to run the terminal.
+gsettings set org.gnome.settings-daemon.plugins.media-keys terminal '<Super>t'
+
+# Bind Super+e to run Emacs.
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "Emacs"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "emacs"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Super>e"
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+
+#
 # Extensions
 #
 
