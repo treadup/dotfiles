@@ -199,6 +199,7 @@ apt install -y gnome-tweak-tool
 # Ubuntu packages. So you might want to look at these as well.
 apt install -y gnome-shell-extensions
 apt install -y gnome-shell-extension-dashtodock
+apt install -y gnome-shell-extension-ubuntu-dock
 apt install -y gnome-shell-extension-caffeine
 apt install -y gnome-shell-extension-move-clock
 
