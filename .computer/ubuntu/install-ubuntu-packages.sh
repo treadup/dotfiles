@@ -21,6 +21,9 @@ apt --yes install language-pack-en
 # Install git
 apt --yes install git
 
+# Install GnuPG
+apt --yes install gnupg
+
 # Install password utilities
 apt --yes install pass pwgen
 
