@@ -13,6 +13,9 @@ pacman --noconfirm -Syu
 # Install git
 pacman --needed --noconfirm -S git
 
+# Install gnupg
+pacman --needed --noconfirm -S gnupg
+
 # Install pass
 pacman --needed --noconfirm -S pass pwgen
 
@@ -34,6 +37,9 @@ pacman --needed --noconfirm -S fish
 # Bash completion should go here...
 # Not sure how this is handled in Arch.
 
+# Install cli trash command
+pacman --needed --noconfirm -S trash-cli
+
 # Install zip and unzip
 pacman --needed --noconfirm -S zip unzip
 
@@ -51,6 +57,12 @@ pacman --needed --noconfirm -S httpie
 
 # Install ag
 pacman --needed --noconfirm -S the_silver_searcher
+
+# Install ripgrep
+pacman --needed --noconfirm -S ripgrep
+
+# Install tmux
+pacman --needed --noconfirm -S tmux
 
 # Install whois
 pacman --needed --noconfirm -S whois
@@ -96,6 +108,9 @@ pacman --needed --noconfirm -S racket racket-docs
 # Install mit-scheme
 pacman --needed --noconfirm -S mit-scheme
 
+# Install Gambit Scheme
+pacman --needed --noconfirm -S gambit-c
+
 # Install Go
 pacman --needed --noconfirm -S go
 
@@ -104,6 +119,9 @@ pacman --needed --noconfirm -S python python-pip python-setuptools python-wheel
 
 # Install Ruby
 pacman --needed --noconfirm -S ruby
+
+# Install Rust
+pacman --needed --noconfirm -S rust rust-docs
 
 # Install weechat
 pacman --needed --noconfirm -S weechat
@@ -118,6 +136,14 @@ pacman --needed --noconfirm -S nginx
 
 # Install markdown
 pacman --needed --noconfirm -S markdown
+
+# Install fzy
+pacman --needed --noconfirm -S fzy
+
+# Install fd
+pacman --needed --noconfirm -S fd
+
+# Install pick
 
 #
 # Email
@@ -160,31 +186,16 @@ pacman --needed --noconfirm -S powerline-fonts
 # Window Managers
 #
 
-# Install OpenBox
-pacman --needed --noconfirm -S openbox
-
-# Install wmctrl and xdotool
-pacman --needed --noconfirm -S wmctrl xdotool
-
-# Install feh which is used to display a background image under X.
-pacman --needed --noconfirm -S feh
-
-# Install light-locker
-pacman --needed --noconfirm -S light-locker
-
-# Install arandr
-pacman --needed --noconfirm -S arandr
-
-# Install pasystray
-# This did not work.
-# pacman --noconfirm -S pasystray
-
-# Install tint2
-pacman --needed --noconfirm -S tint2
+# Install lumina desktop
+# This works on Manjaro
+pacman --needed --noconfirm -S lumina-desktop
 
 # Install snap
 pacman --needed --noconfirm -S snapd
 systemctl enable --now snapd.socket
+
+# Install playerctl
+pacman --needed --noconfirm -S playerctl
 
 #
 # AUR packages
