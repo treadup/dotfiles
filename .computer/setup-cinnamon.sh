@@ -77,6 +77,65 @@ gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-9 "['<Supe
 
 echo Configuring custom keybindings
 
+# Create slots for custom keybindings custom0 through custom4.
+gsettings set org.cinnamon.desktop.keybindings custom-list "['custom0', 'custom1', 'custom2', 'custom3', 'custom4', 'custom5']"
+
+
+CUSTOM_KEYBINDINGS=org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/
+
+# Firefox
+
+# Run or raise Firefox using Ctrl+Super+b
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ name "Run or raise Firefox"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ command "run-or-raise Firefox firefox"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom0/ binding "['<Primary><Super>b']"
+
+# Launch new Firefox using Shift+Super+b
+gsettings set org.cinnamon.desktop.keybindings.media-keys www "['<Shift><Super>b']"
+
+# Spotify
+# For some reason this keybinding might not work if it is scripted but it does work
+# if you use Settings > Keyboard > Shortcuts to configure the shortcut.
+
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ name "Run or raise Spotify"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ command "run-or-raise Spotify spotify"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom1/ binding "['<Primary><Super>s']"
+
+# Terminal
+
+# Run or raise terminal using Ctrl+Super+t
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom2/ name "Run or raise Terminal"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom2/ command "run-or-raise Gnome-Terminal gnome-terminal"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom2/ binding "['<Primary><Super>t']"
+
+# Launch new terminal using Shift+Super+t
+gsettings set org.cinnamon.desktop.keybindings.media-keys terminal "['<Shift><Super>t']"
+
+# Emacs
+
+# Run or raise Emacs using Ctrl+Super+e
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom3/ name "Run or raise Emacs"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom3/ command "/home/henrik/bin/rr/emacs-run-or-raise.sh"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom3/ binding "['<Primary><Super>e']"
+
+# Chrome
+
+# Run or raise Google Chrome using Ctrl+Super+c
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom4/ name "Run or raise Google Chrome"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom4/ command "run-or-raise Google-Chrome google-chrome"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom4/ binding "['<Primary><Super>c']"
+
+# Launch Google Chrome using Shift+Super+c
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom5/ name "Launch Google Chrome"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom5/ command "google-chrome"
+gsettings set org.cinnamon.desktop.keybindings.custom-keybinding:/org/cinnamon/desktop/keybindings/custom-keybindings/custom5/ binding "['<Shift><Super>c']"
+
+#
+# Input sources
+#
+
+# English and Swedish input sources.
+gsettings set org.gnome.libgnomekbd.keyboard layouts "['us', 'se']"
 
 #
 # Keyboard
