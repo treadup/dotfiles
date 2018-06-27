@@ -8,8 +8,19 @@
 # schema.
 
 #
+# System
+#
+
+# Log out
+# Log out is already mapped to Ctrl+Alt+Delete
+
+# Lock screen using Super+l
+gsettings set org.cinnamon.desktop.keybindings.media-keys screensaver "['<Super>l']"
+
+#
 # Fonts
 #
+echo Configuring fonts
 gsettings set org.cinnamon.desktop.interface font-name 'Sans 12'
 gsettings set org.nemo.desktop font 'Noto Sans 13'
 gsettings set org.gnome.desktop.interface document-font-name 'Sans 14'
