@@ -30,14 +30,35 @@ gsettings set org.cinnamon.desktop.wm.preferences titlebar-font 'Sans Bold 12'
 #
 # Background image
 #
+echo Configuring background image
 if [ -f ~/Pictures/rainforest_bridge.png ]; then
     BACKGROUND_PATH="file://$(realpath ~/Pictures/rainforest_bridge.png)"
     gsettings set org.cinnamon.desktop.background picture-uri $BACKGROUND_PATH
 fi
 
 #
+# Windows
+#
+
+# Maximize window using Ctrl+Super+f
+gsettings set org.cinnamon.desktop.keybindings.wm toggle-maximized "['<Primary><Super>f']"
+
+# Cycle through windows of the same application using Super+Tab
+gsettings set org.cinnamon.desktop.keybindings.wm switch-group "['<Super>Tab']"
+
+# Close window using Super+w
+gsettings set org.cinnamon.desktop.keybindings.wm close "['<Primary><Super>w']"
+
+# Toggle fullscreen state using Super+f
+gsettings set org.cinnamon.desktop.keybindings.wm toggle-fullscreen "['<Super><Shift>f']"
+
+# Show desktop
+# Show desktop is already mapped to Super+d
+
+#
 # Workspaces
 #
+echo Configuring workspaces
 gsettings set org.cinnamon.desktop.wm.preferences num-workspaces 9
 
 gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-1 "['<Super>1']"
