@@ -75,17 +75,29 @@ gsettings set org.cinnamon.desktop.keybindings.wm switch-to-workspace-9 "['<Supe
 # Custom key bindings
 #
 
+echo Configuring custom keybindings
 
 
 #
 # Keyboard
 #
-# gsettings set org.gnome.libgnomekbd.keyboard options "['ctrl\tctrl:nocaps']"
-gsettings set org.gnome.libgnomekbd.keyboard options "['ctrl\tctrl:nocaps', 'grp\tgrp:win_space_toggle']"
+echo Configuring keyboard
+
+# Map Caps to Control. Switch input sources using Super+Space
+gsettings set org.gnome.libgnomekbd.keyboard options \
+	  "['ctrl\tctrl:nocaps', 'grp\tgrp:win_space_toggle']"
+
+# Set keyboard repeat delay
+gsettings set org.cinnamon.settings-daemon.peripherals.keyboard delay 550
+
+# Set keyboard repeat interval
+gsettings set org.cinnamon.settings-daemon.peripherals.keyboard repeat-interval 25
 
 #
 # Panel
 #
+
+echo Configuring panel
 
 # Move the panel to the top of the screen.
 gsettings set org.cinnamon panels-enabled "['1:0:top']"
