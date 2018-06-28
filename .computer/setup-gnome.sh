@@ -123,7 +123,7 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 #
 
 # Show the following applications in the dock.
-gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'google-chrome.desktop', 'emacs25.desktop', 'org.gnome.Terminal.desktop','spotify.desktop', 'shotwell.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop']"
+gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'google-chrome.desktop', 'emacs25.desktop', 'org.gnome.Terminal.desktop','spotify_spotify.desktop', 'slack_slack.desktop', 'shotwell.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop']"
 
 # Make the dock take the full height of the screen
 gsettings set org.gnome.shell.extensions.dash-to-dock extend-height true
@@ -202,6 +202,10 @@ fi
 
 # Enable shelltile
 gnome-shell-extension-tool -e ShellTile@emasab.it
+
+#
+# Run or Raise extension
+#
 
 echo You might have to restart Gnome for all the Gnome Shell Extensions to show up.
 echo Or you can restart Gnome Shell using the following command: gnome-shell --replace
