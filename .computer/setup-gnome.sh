@@ -185,5 +185,23 @@ gnome-shell-extension-tool -e caffeine@patapon.info
 # Enable move clock
 gnome-shell-extension-tool -e Move_Clock@jonathan.bluemosh.com
 
+#
+# Shelltile extension
+#
+
+# Create gnome shell extensions folder
+mkdir -p ~/.local/share/gnome-shell/extensions
+
+# Clone shelltile git repo
+if [ -d "$DIRECTORY" ]; then
+    echo "Shelltile repo already cloned."
+else
+    echo "Cloning shelltile repo."
+    git clone https://github.com/emasab/shelltile.git ~/.local/share/gnome-shell/extensions/ShellTile@emasab.it
+fi
+
+# Enable shelltile
+gnome-shell-extension-tool -e ShellTile@emasab.it
+
 echo You might have to restart Gnome for all the Gnome Shell Extensions to show up.
 echo Or you can restart Gnome Shell using the following command: gnome-shell --replace
