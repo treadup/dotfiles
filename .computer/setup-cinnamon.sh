@@ -10,6 +10,7 @@
 #
 # System
 #
+echo Configuring system
 
 # Log out
 # Log out is already mapped to Ctrl+Alt+Delete
@@ -160,3 +161,38 @@ echo Configuring panel
 
 # Move the panel to the top of the screen.
 gsettings set org.cinnamon panels-enabled "['1:0:top']"
+
+# The contents of the main panel is stored in the org.cinnamon.enabled-applets variable.
+
+# The format is an array of items [item1, ..., itemN]
+
+# The format of each item is a single quoted string that contains colon separated fields.
+# <panel name>:<position>:<order>:<applet id>:<sequence number>
+#
+# <panel name>: There is only one panel and it is called panel1
+# <position>: The position can be one of left, center or right
+# <order>: For each position the applets are sorted by the order number in ascending order.
+# <applet id>: This is the name of the applet
+# <sequence>: It is a bit unclear what this is but it seems to be a monotonically increasing
+#             sequence number.
+
+ENABLED_APPLETS="[\
+'panel1:right:7:systray@cinnamon.org:0', \
+'panel1:left:0:menu@cinnamon.org:1', \
+'panel1:left:2:show-desktop@cinnamon.org:2', \
+'panel1:left:4:panel-launchers@cinnamon.org:3', \
+'panel1:right:8:keyboard@cinnamon.org:5', \
+'panel1:right:9:notifications@cinnamon.org:6', \
+'panel1:right:10:removable-drives@cinnamon.org:7', \
+'panel1:right:11:user@cinnamon.org:8', \
+'panel1:right:12:network@cinnamon.org:9', \
+'panel1:right:14:power@cinnamon.org:11', \
+'panel1:right:15:calendar@cinnamon.org:12', \
+'panel1:right:16:sound@cinnamon.org:13', \
+'panel1:right:6:xrandr@cinnamon.org:14', \
+'panel1:left:3:panel-launchers@cinnamon.org:19', \
+'panel1:center:0:window-list@cinnamon.org:20', \
+'panel1:right:0:panel-launchers@cinnamon.org:21'\
+]"
+
+gsettings set org.cinnamon enabled-applets "$ENABLED_APPLETS"
