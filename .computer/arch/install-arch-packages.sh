@@ -34,8 +34,8 @@ pacman --needed --noconfirm -S gvim
 # Install fish
 pacman --needed --noconfirm -S fish
 
-# Bash completion should go here...
-# Not sure how this is handled in Arch.
+# Install bash completion
+pacman --needed --noconfirm -S bash-completion
 
 # Install cli trash command
 pacman --needed --noconfirm -S trash-cli
