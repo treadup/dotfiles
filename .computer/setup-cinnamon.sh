@@ -190,9 +190,7 @@ ENABLED_APPLETS="[\
 'panel1:right:15:calendar@cinnamon.org:12', \
 'panel1:right:16:sound@cinnamon.org:13', \
 'panel1:right:6:xrandr@cinnamon.org:14', \
-'panel1:left:3:panel-launchers@cinnamon.org:19', \
-'panel1:center:0:window-list@cinnamon.org:20', \
-'panel1:right:0:panel-launchers@cinnamon.org:21'\
+'panel1:center:0:window-list@cinnamon.org:20' \
 ]"
 
 gsettings set org.cinnamon enabled-applets "$ENABLED_APPLETS"
