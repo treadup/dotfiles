@@ -194,3 +194,16 @@ ENABLED_APPLETS="[\
 ]"
 
 gsettings set org.cinnamon enabled-applets "$ENABLED_APPLETS"
+
+FAVORITE_APPS="[\
+'firefox.desktop',\
+'google-chrome.desktop',\
+'org.gnome.Terminal.desktop',\
+'emacs25.desktop',\
+'spotify_spotify.desktop',\
+'pidgin.desktop',\
+'nemo.desktop',\
+'cinnamon-settings.desktop'\
+]"
+
+gsettings set org.cinnamon favorite-apps "$FAVORITE_APPS"
