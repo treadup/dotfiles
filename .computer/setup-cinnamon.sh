@@ -201,6 +201,7 @@ FAVORITE_APPS="[\
 'org.gnome.Terminal.desktop',\
 'emacs25.desktop',\
 'spotify_spotify.desktop',\
+'slack_slack.desktop',\
 'pidgin.desktop',\
 'nemo.desktop',\
 'cinnamon-settings.desktop'\
