@@ -7,3 +7,9 @@ code/
 work/
 notes/
 .emacs.d/
+snap/
+.cache
+.mozilla/
+.local/share/fish/generated_completions/
+.config/Slack/logs
+.config/Slack/Cache
