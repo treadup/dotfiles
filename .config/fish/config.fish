@@ -11,8 +11,31 @@ set -gx LANG en_US.UTF-8
 # Go lang
 set -gx GOPATH $HOME/go
 
-# Add the users bin folder to the path.
-set -gx PATH $GOPATH/bin $HOME/bin $HOME/.local/bin $HOME/.cargo/bin /usr/local/sbin $HOME/.npm-global/bin $PATH
+# Add Go lang bin folder to the path
+if test -d $GOPATH/bin
+    set -gx PATH $GOPATH/bin $PATH
+end
+
+# Add the Rust package manager Cargo's bin folder to the path.
+if test -d $HOME/.cargo/bin
+    set -gx PATH $HOME/.cargo/bin $PATH
+end
+
+# Add NPM global bin folder to the path.
+if test -d $HOME/.npm-global/bin
+    set -gx PATH $HOME/.npm-global/bin $PATH
+end
+
+# Add special bin folders to the path
+set -gx PATH $HOME/bin $PATH
+
+# Add .local/bin folder to the path
+if test -d $HOME/.local/bin
+    set -gx PATH $HOME/.local/bin $PATH
+end
+
+# Add sbin folder to the path
+set -gx PATH /usr/local/sbin $PATH
 
 # Do not do this. It breaks vex and pew
 # Use Python 3 by default when creating a virtualenv.
