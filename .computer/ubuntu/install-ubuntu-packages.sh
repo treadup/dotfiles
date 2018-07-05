@@ -57,7 +57,6 @@ apt --yes install zip unzip
 # The node ecosystem expects the node executable to be called node.
 # Therefore create a symlink to the correct name.
 apt --yes install nodejs npm
-ln -s /usr/bin/nodejs /usr/local/bin/node
 
 # Install texlive
 # For some reason xzdec is needed to get tlmgr to work
