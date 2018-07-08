@@ -94,6 +94,7 @@ npm install -g eslint
 npm install -g jsonlint
 npm install -g js-yaml
 npm install -g nd
+npm install -g create-react-app
 echo Finished installing node.js programs
 
 # Setup the Go workspace
