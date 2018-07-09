@@ -55,14 +55,32 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " CSS syntax file
 Plugin 'JulesWang/css.vim'
 
+"
+" Markdown
+"
+
 " Needed for the markdown plugin.
 Plugin 'godlygeek/tabular'
 
 " Markdown syntax plugin.
 Plugin 'plasticboy/vim-markdown'
 
+"
+" NGINX
+"
+
 " NGINX syntax file
 Plugin 'nginx.vim'
+
+"
+" JavaScript
+"
+
+" JavaScript indentation and syntax support.
+Plugin 'pangloss/vim-javascript'
+
+" JSX indentation and syntax support.
+Plugin 'mxw/vim-jsx'
 
 " The jshint plugin.
 Plugin 'walm/jshint.vim'
