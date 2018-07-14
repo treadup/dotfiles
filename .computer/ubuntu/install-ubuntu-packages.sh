@@ -125,6 +125,10 @@ apt --yes install ruby
 apt --yes install rustc
 apt --yes install cargo
 
+# Install Lua
+apt --yes install lua5.3
+ln -s /usr/bin/lua5.3 /usr/bin/lua
+
 # Install weechat
 apt --yes install weechat
 
