@@ -15,3 +15,7 @@ apt install -y erlang
 
 # Install RabbitMQ
 apt install -y rabbitmq-server
+
+# Install Redis
+apt install -y redis
+apt install -y redis-tools
