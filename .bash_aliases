@@ -134,3 +134,8 @@ function acp() {
 
 # tmuxp
 alias tmuxp='pew in tmuxp tmuxp'
+
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    alias open='xdg-open';
+fi

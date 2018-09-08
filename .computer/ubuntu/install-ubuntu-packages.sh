@@ -40,6 +40,11 @@ apt --yes install vim
 # Install Shells
 apt --yes install fish
 
+# Stop the /bin/open command from shadowing the fish open command.
+if [ -f /bin/open ]; then
+    mv /bin/open /bin/oldkbdopen
+fi
+
 # Install bash completion
 # This might already be installed...
 apt --yes install bash-completion
