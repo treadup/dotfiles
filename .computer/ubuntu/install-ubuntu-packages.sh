@@ -128,6 +128,15 @@ apt --yes install cargo
 # Install Lua
 apt --yes install lua5.3
 ln -s /usr/bin/lua5.3 /usr/bin/lua
+apt --yes install liblua5.3-dev
+
+# Install LuaRocks
+
+
+# Install Löve2D
+add-apt-repository --yes ppa:bartbes/love-stable
+apt --yes update
+apt install love
 
 # Install weechat
 apt --yes install weechat
