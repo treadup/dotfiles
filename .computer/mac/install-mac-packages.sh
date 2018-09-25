@@ -106,6 +106,7 @@ brew install fzy
 brew install yank
 brew install fd
 brew install pick
+brew install trash
 
 # Install fonts
 brew tap caskroom/fonts
