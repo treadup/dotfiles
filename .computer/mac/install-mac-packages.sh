@@ -124,3 +124,9 @@ brew install ranger
 
 # Install mosh
 brew install mosh
+
+# Install Redis
+brew install redis
+
+# Install memcached
+brew install memcached
