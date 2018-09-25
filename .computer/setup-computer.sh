@@ -75,11 +75,19 @@ pip3 install yamllint
 pip3 install virtualfish
 echo Finished installing Python packages
 
+#
+# Clojure
+#
+
 # Installing lein
 echo Installing lein
 curl -o ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
 chmod 755 ~/bin/lein
 echo Finished installing lein
+
+#
+# Node
+#
 
 # Install node programs
 # https://docs.npmjs.com/getting-started/fixing-npm-permissions
@@ -96,7 +104,14 @@ npm install -g js-yaml
 npm install -g nd
 npm install -g create-react-app
 npm install -g yarn
+
+npm install -g serverless
+
 echo Finished installing node.js programs
+
+#
+# Go
+#
 
 # Setup the Go workspace
 mkdir ~/go
@@ -116,6 +131,15 @@ go get github.com/treadup/ppd
 go get github.com/treadup/dj
 
 echo Finished installing Go programs
+
+#
+# Git
+#
+git config --global core.excludesfile ~/.gitignore_global
+
+#
+# Misc
+#
 
 # Install fzf
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
