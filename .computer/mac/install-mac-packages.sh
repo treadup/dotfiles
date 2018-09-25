@@ -34,6 +34,9 @@ brew install tcsh
 # Install bash completion
 brew install bash-completion
 
+# Install Spectacle
+brew cask install spectacle
+
 # Install editors
 brew cask install emacs
 brew install vim
@@ -82,7 +85,10 @@ brew install rabbitmq
 brew cask install virtualbox
 
 # Install Docker
-brew cask install docker
+# Install docker from the website. Otherwise things like docker-compose
+# will not be setup correctly.
+# brew install docker
+# brew cask install docker
 
 # Install multimarkdown
 brew install multimarkdown
