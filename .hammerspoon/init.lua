@@ -18,9 +18,10 @@ end)
 
 --[[
 Tiling
-
-When it comes to tiling it seems that Spectacle might be better. It does not have an annoying slide animation.
 --]]
+
+-- Disable animations
+hs.window.animationDuration=0
 
 -- Tile Window Left
 hs.hotkey.bind(primary, "Left", function()
@@ -50,6 +51,49 @@ hs.hotkey.bind(primary, "Right", function()
   win:setFrame(f)
 end)
 
+-- Tile Window Top
+hs.hotkey.bind(primary, "Up", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y
+  f.w = max.w
+  f.h = max.h / 2
+  win:setFrame(f)
+end)
+
+-- Tile Window Bottom
+hs.hotkey.bind(primary, "Down", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y + (max.h / 2)
+  f.w = max.w
+  f.h = max.h / 2
+  win:setFrame(f)
+end)
+
+-- Fullscreen
+hs.hotkey.bind(primary, "F", function()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+  win:setFrame(max)
+end)
+
+-- Center
+hs.hotkey.bind(primary, "C", function()
+  local win = hs.window.focusedWindow()
+  win:centerOnScreen()
+end)
+
 --[[
 Application Launchers
 
@@ -75,7 +119,7 @@ hs.hotkey.bind(primary, "G", function()
 end)
 
 -- Launch Firefox with primary+f
-hs.hotkey.bind(primary, "F", function()
+hs.hotkey.bind(primary, "B", function()
   hs.application.launchOrFocus("Firefox")
 end)
 
