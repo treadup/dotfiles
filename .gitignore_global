@@ -8,3 +8,5 @@
 # Mac files
 .DS_Store
 
+# Virtual fish python virtual env
+.venv
