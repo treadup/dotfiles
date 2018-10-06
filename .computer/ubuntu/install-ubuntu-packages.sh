@@ -259,10 +259,15 @@ echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/source
 apt update
 
 # Install Google Chrome
-apt install google-chrome-stable
+apt --yes install google-chrome-stable
 
 # Remove packages that are no longer needed
 apt --yes autoremove
+
+# Enable unattended security updates
+# See https://help.ubuntu.com/lts/serverguide/automatic-updates.html.en
+# To configure unattended upgrades of all packages see the above link.
+apt --yes install  unattended-upgrades
 
 echo Finished installing packages
 echo The installation script ran successfully.
