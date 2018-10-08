@@ -10,3 +10,6 @@
 
 # Virtual fish python virtual env
 .venv
+
+# Node modules
+node_modules/
