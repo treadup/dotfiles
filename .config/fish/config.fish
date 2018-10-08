@@ -69,4 +69,8 @@ set -gx VISUAL "emacsclient -c"         # $VISUAL opens in GUI
 # Also the first time you do this you will have to manually deactivate the
 # virtual environment to be able to test that auto enabling is working.
 
-eval (python3 -m virtualfish auto_activation)
+if which python3 > /dev/null
+    if python3 -c "import virtualfish" 2> /dev/null
+        eval (python3 -m virtualfish auto_activation)
+    end
+end
