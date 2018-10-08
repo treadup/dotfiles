@@ -105,6 +105,8 @@ npm install -g nd
 npm install -g create-react-app
 npm install -g yarn
 
+npm install -g parcel-bundler
+
 npm install -g serverless
 
 echo Finished installing node.js programs
