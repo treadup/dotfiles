@@ -84,6 +84,12 @@ brew install rabbitmq
 # Install VirtualBox
 brew cask install virtualbox
 
+# Install hyper.sh client
+brew install hyper
+
+# Install Charles Web Proxy
+brew cask install charles
+
 # Install Docker
 # Install docker from the website. Otherwise things like docker-compose
 # will not be setup correctly.
