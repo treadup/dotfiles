@@ -60,6 +60,21 @@ set -gx EDITOR "emacsclient -t"         # $EDITOR should open in terminal
 set -gx VISUAL "emacsclient -c"         # $VISUAL opens in GUI
 
 #
+# Fisher
+#
+
+# If fisher is not installed then install it.
+# https://github.com/jorgebucaran/fisher
+if not functions -q fisher
+    echo "Installing fisher for the first time..." >&2
+    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+
+    echo "Execute the command fisher to finish the installation."
+    # fisher
+end
+
+#
 # Setup virtualfish
 #
 
