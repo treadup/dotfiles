@@ -71,6 +71,10 @@ pip3 install pylint
 pip3 install flake8
 pip3 install yamllint
 
+# Install database utilities
+pip3 install pgcli
+pip3 install mycli
+
 # Install vritualfish
 pip3 install virtualfish
 echo Finished installing Python packages

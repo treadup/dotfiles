@@ -113,6 +113,8 @@ brew install yank
 brew install fd
 brew install pick
 brew install trash
+brew install htop
+brew install glances
 
 # Install fonts
 brew tap caskroom/fonts
