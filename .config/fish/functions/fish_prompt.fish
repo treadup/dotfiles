@@ -30,8 +30,12 @@ function fish_prompt
         end
 
         set_color white
-        printf "%s " (prompt_pwd)
+        printf "%s" (prompt_pwd)
         set_color normal
+
+	set_color 555
+        date +" %Y-%m-%d %H:%M:%S"
+	set_color normal
 
         # Lowercase lambda on new line
         printf "\n\u03BB "
