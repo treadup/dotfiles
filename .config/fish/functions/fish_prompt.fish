@@ -34,7 +34,7 @@ function fish_prompt
         set_color normal
 
 	set_color 555
-        date +" %Y-%m-%d %H:%M:%S"
+        printf "%s" (date +" %Y-%m-%d %H:%M:%S")
 	set_color normal
 
         # Lowercase lambda on new line
