@@ -121,6 +121,9 @@ brew tap caskroom/fonts
 brew cask install font-source-code-pro
 brew cask install font-firacode-nerd-font
 
+# Install Karabiner Elements
+brew cask install karabiner-elements
+
 # Install Hammerspoon
 brew cask install hammerspoon
 
