@@ -17,9 +17,9 @@
                     {
                         "manipulators": [
                             {
-                                "description": "Change caps_lock to command+control+option+shift.",
+                                "description": "Change left_control to command+control+option+shift.",
                                 "from": {
-                                    "key_code": "caps_lock",
+                                    "key_code": "left_control",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -143,7 +143,16 @@
             ],
             "name": "Default profile",
             "selected": true,
-            "simple_modifications": [],
+            "simple_modifications": [
+                {
+                    "from": {
+                        "key_code": "caps_lock"
+                    },
+                    "to": {
+                        "key_code": "right_control"
+                    }
+                }
+            ],
             "virtual_hid_keyboard": {
                 "country_code": 0
             }
