@@ -7,11 +7,13 @@ like Spectacle.
 https://www.hammerspoon.org/
 --]]
 
-primary = {"cmd", "alt", "ctrl"}
-secondary = {"cmd", "alt", "ctrl", "shift"}
+-- Define the hyper key chord as Crtl+Shift+Alt+Cmd. In Karabiner Elements
+-- we have a rule so that left_control will emit the hyper key chord. There
+-- is also a rule that maps caps_lock to left_ctrl.
+hyper = {"cmd", "alt", "ctrl", "shift"}
 
 -- Reload Hammerspoon configuration
-hs.hotkey.bind(primary, "R", function()
+hs.hotkey.bind(hyper, "R", function()
     hs.alert.show("Reloading Hammerspoon Configuration")
     hs.reload()
 end)
@@ -24,7 +26,7 @@ Tiling
 hs.window.animationDuration=0
 
 -- Tile Window Left
-hs.hotkey.bind(primary, "Left", function()
+hs.hotkey.bind(hyper, "Left", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -38,7 +40,7 @@ hs.hotkey.bind(primary, "Left", function()
 end)
 
 -- Tile Window Right
-hs.hotkey.bind(primary, "Right", function()
+hs.hotkey.bind(hyper, "Right", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -52,7 +54,7 @@ hs.hotkey.bind(primary, "Right", function()
 end)
 
 -- Tile Window Top
-hs.hotkey.bind(primary, "Up", function()
+hs.hotkey.bind(hyper, "Up", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -66,7 +68,7 @@ hs.hotkey.bind(primary, "Up", function()
 end)
 
 -- Tile Window Bottom
-hs.hotkey.bind(primary, "Down", function()
+hs.hotkey.bind(hyper, "Down", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -80,7 +82,7 @@ hs.hotkey.bind(primary, "Down", function()
 end)
 
 -- Fullscreen
-hs.hotkey.bind(primary, "F", function()
+hs.hotkey.bind(hyper, "F", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -89,7 +91,7 @@ hs.hotkey.bind(primary, "F", function()
 end)
 
 -- Center
-hs.hotkey.bind(primary, "C", function()
+hs.hotkey.bind(hyper, "C", function()
   local win = hs.window.focusedWindow()
   win:centerOnScreen()
 end)
@@ -97,39 +99,39 @@ end)
 --[[
 Application Launchers
 
-primary + e will launch Emacs
-primary + t will launch iTerm
-primary + g will launch Google Chrome
-primary + f will launch Firefox
+hyper + e will launch Emacs
+hyper + t will launch iTerm
+hyper + g will launch Google Chrome
+hyper + f will launch Firefox
 --]]
 
--- Launch Emacs with primary+e
-hs.hotkey.bind(primary, "E", function()
+-- Launch Emacs with hyper+e
+hs.hotkey.bind(hyper, "E", function()
   hs.application.launchOrFocus("Emacs")
 end)
 
--- Launch iTerm with primary+t
-hs.hotkey.bind(primary, "T", function()
+-- Launch iTerm with hyper+t
+hs.hotkey.bind(hyper, "T", function()
   hs.application.launchOrFocus("iTerm")
 end)
 
--- Launch Google Chrome with primary+g
-hs.hotkey.bind(primary, "G", function()
+-- Launch Google Chrome with hyper+g
+hs.hotkey.bind(hyper, "G", function()
   hs.application.launchOrFocus("Google Chrome")
 end)
 
--- Launch Firefox with primary+f
-hs.hotkey.bind(primary, "B", function()
+-- Launch Firefox with hyper+f
+hs.hotkey.bind(hyper, "B", function()
   hs.application.launchOrFocus("Firefox")
 end)
 
--- Launch Spotify with primary+M
-hs.hotkey.bind(primary, "M", function()
+-- Launch Spotify with hyper+M
+hs.hotkey.bind(hyper, "M", function()
   hs.application.launchOrFocus("Spotify")
 end)
 
--- Launch Slack with primary+S
-hs.hotkey.bind(primary, "S", function()
+-- Launch Slack with hyper+S
+hs.hotkey.bind(hyper, "S", function()
   hs.application.launchOrFocus("Slack")
 end)
 
