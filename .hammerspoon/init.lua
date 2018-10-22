@@ -40,7 +40,7 @@ function tileWest()
 end
 
 hs.hotkey.bind(hyper, "Left", tileWest)
-hs.hotkey.bind(hyper, "pad4", tileWest)
+hs.hotkey.bind(hyper, "Pad4", tileWest)
 
 -- Tile Window East
 function tileEast()
@@ -57,7 +57,7 @@ function tileEast()
 end
 
 hs.hotkey.bind(hyper, "Right", tileEast)
-hs.hotkey.bind(hyper, "pad6", tileEast)
+hs.hotkey.bind(hyper, "Pad6", tileEast)
 
 -- Tile Window North
 function tileNorth()
@@ -74,7 +74,7 @@ function tileNorth()
 end
 
 hs.hotkey.bind(hyper, "Up", tileNorth)
-hs.hotkey.bind(hyper, "pad8", tileNorth)
+hs.hotkey.bind(hyper, "Pad8", tileNorth)
 
 -- Tile Window South
 function tileSouth()
@@ -91,7 +91,74 @@ function tileSouth()
 end
 
 hs.hotkey.bind(hyper, "Down", tileSouth)
-hs.hotkey.bind(hyper, "pad2", tileSouth)
+hs.hotkey.bind(hyper, "Pad2", tileSouth)
+
+-- Tile Window Northeast
+function tileNorthEast()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x + (max.w / 2)
+  f.y = max.y
+  f.w = max.w / 2
+  f.h = max.h / 2
+  win:setFrame(f)
+end
+
+hs.hotkey.bind(hyper, "Pad9", tileNorthEast)
+
+-- Tile Window Northwest
+function tileNorthWest()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y
+  f.w = max.w / 2
+  f.h = max.h / 2
+
+  win:setFrame(f)
+end
+
+hs.hotkey.bind(hyper, "Pad7", tileNorthWest)
+
+-- Tile Window Southwest
+function tileSouthWest()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x
+  f.y = max.y + (max.h / 2)
+  f.w = max.w / 2
+  f.h = max.h / 2
+
+  win:setFrame(f)
+end
+
+hs.hotkey.bind(hyper, "Pad1", tileSouthWest)
+
+-- Tile Window Southeast
+function tileSouthEast()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+
+  f.x = max.x + (max.w / 2)
+  f.y = max.y + (max.h / 2)
+  f.w = max.w / 2
+  f.h = max.h / 2
+
+  win:setFrame(f)
+end
+
+hs.hotkey.bind(hyper, "Pad3", tileSouthEast)
 
 -- Fullscreen
 hs.hotkey.bind(hyper, "F", function()
