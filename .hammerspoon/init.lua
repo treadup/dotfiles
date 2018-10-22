@@ -25,8 +25,8 @@ Tiling
 -- Disable animations
 hs.window.animationDuration=0
 
--- Tile Window Left
-hs.hotkey.bind(hyper, "Left", function()
+-- Tile Window West
+function tileWest()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -37,10 +37,13 @@ hs.hotkey.bind(hyper, "Left", function()
   f.w = max.w / 2
   f.h = max.h
   win:setFrame(f)
-end)
+end
 
--- Tile Window Right
-hs.hotkey.bind(hyper, "Right", function()
+hs.hotkey.bind(hyper, "Left", tileWest)
+hs.hotkey.bind(hyper, "pad4", tileWest)
+
+-- Tile Window East
+function tileEast()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -51,10 +54,13 @@ hs.hotkey.bind(hyper, "Right", function()
   f.w = max.w / 2
   f.h = max.h
   win:setFrame(f)
-end)
+end
 
--- Tile Window Top
-hs.hotkey.bind(hyper, "Up", function()
+hs.hotkey.bind(hyper, "Right", tileEast)
+hs.hotkey.bind(hyper, "pad6", tileEast)
+
+-- Tile Window North
+function tileNorth()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -65,10 +71,13 @@ hs.hotkey.bind(hyper, "Up", function()
   f.w = max.w
   f.h = max.h / 2
   win:setFrame(f)
-end)
+end
 
--- Tile Window Bottom
-hs.hotkey.bind(hyper, "Down", function()
+hs.hotkey.bind(hyper, "Up", tileNorth)
+hs.hotkey.bind(hyper, "pad8", tileNorth)
+
+-- Tile Window South
+function tileSouth()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -79,7 +88,10 @@ hs.hotkey.bind(hyper, "Down", function()
   f.w = max.w
   f.h = max.h / 2
   win:setFrame(f)
-end)
+end
+
+hs.hotkey.bind(hyper, "Down", tileSouth)
+hs.hotkey.bind(hyper, "pad2", tileSouth)
 
 -- Fullscreen
 hs.hotkey.bind(hyper, "F", function()
