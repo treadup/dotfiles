@@ -126,7 +126,7 @@
         today = log --since=00:00:00 --all --no-merges --oneline --author=Treadup
 [core]
 	editor = vim
-	excludesfile = /home/henrik/.gitignore_global
+	excludesfile = ~/.gitignore_global
 
 [includeIf "gitdir:~/work/"]
 	path = .gitconfig-work
