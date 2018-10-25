@@ -3,7 +3,7 @@
 	email = henrik.treadup@gmail.com
 
 [push]
-	default = simple
+	default = current
 
 [alias]
 # Git Aliases for Humans
