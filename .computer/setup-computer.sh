@@ -70,6 +70,7 @@ pip3 install html2text
 pip3 install pylint
 pip3 install flake8
 pip3 install yamllint
+pip3 install pur
 
 # Install database utilities
 pip3 install pgcli
