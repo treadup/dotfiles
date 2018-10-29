@@ -101,7 +101,9 @@ npm install -g yarn
 
 npm install -g parcel-bundler
 
+npm install -g create-react-native-app
 npm install -g expo-cli
+
 
 npm install -g serverless
 
