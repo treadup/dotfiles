@@ -80,18 +80,6 @@ pip3 install virtualfish
 echo Finished installing Python packages
 
 #
-# Clojure
-#
-
-# Installing Leiningen
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    echo Installing lein
-    curl -o ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
-    chmod 755 ~/bin/lein
-    echo Finished installing lein
-fi
-
-#
 # Node
 #
 
@@ -116,6 +104,20 @@ npm install -g parcel-bundler
 npm install -g serverless
 
 echo Finished installing node.js programs
+
+#
+# Clojure
+#
+
+# Installing Leiningen
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    echo Installing lein
+    curl -o ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+    chmod 755 ~/bin/lein
+    echo Finished installing lein
+fi
+
+npm install -g lumo-cljs
 
 #
 # Go
