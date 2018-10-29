@@ -64,6 +64,10 @@ brew install go
 brew install ruby
 brew install sbcl
 
+# Install Clojure
+brew install clojure
+brew install leiningen
+
 # Install web server
 brew install nginx
 

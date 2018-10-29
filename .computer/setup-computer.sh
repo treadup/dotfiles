@@ -83,11 +83,13 @@ echo Finished installing Python packages
 # Clojure
 #
 
-# Installing lein
-echo Installing lein
-curl -o ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
-chmod 755 ~/bin/lein
-echo Finished installing lein
+# Installing Leiningen
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    echo Installing lein
+    curl -o ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+    chmod 755 ~/bin/lein
+    echo Finished installing lein
+fi
 
 #
 # Node
