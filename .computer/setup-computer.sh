@@ -101,6 +101,8 @@ npm install -g yarn
 
 npm install -g parcel-bundler
 
+npm install -g expo-cli
+
 npm install -g serverless
 
 echo Finished installing node.js programs
