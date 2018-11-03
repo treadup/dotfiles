@@ -98,6 +98,7 @@ npm install -g js-yaml
 npm install -g nd
 npm install -g create-react-app
 npm install -g yarn
+npm install -g tldr
 
 npm install -g parcel-bundler
 
