@@ -160,7 +160,7 @@ end
 
 hs.hotkey.bind(hyper, "Pad3", tileSouthEast)
 
--- Fullscreen
+-- Fullscreen focused window
 hs.hotkey.bind(hyper, "F", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
@@ -169,10 +169,24 @@ hs.hotkey.bind(hyper, "F", function()
   win:setFrame(max)
 end)
 
--- Center
+-- Center focused window
 hs.hotkey.bind(hyper, "C", function()
   local win = hs.window.focusedWindow()
   win:centerOnScreen()
+end)
+
+-- Move focused window to next screen
+hs.hotkey.bind(hyper, "N", function()
+  local win = hs.window.focusedWindow()
+  local screen = win:screen()
+  win:moveToScreen(screen:next())
+end)
+
+-- Move focused window to previous screen
+hs.hotkey.bind(hyper, "P", function()
+  local win = hs.window.focusedWindow()
+  local screen = win:screen()
+  win:moveToScreen(screen:previous())
 end)
 
 --[[
