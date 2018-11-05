@@ -70,6 +70,7 @@ pip3 install html2text
 pip3 install pylint
 pip3 install flake8
 pip3 install yamllint
+pip3 install yq
 
 # Install database utilities
 pip3 install pgcli
@@ -107,6 +108,8 @@ npm install -g expo-cli
 
 
 npm install -g serverless
+
+nmp install -g json
 
 echo Finished installing node.js programs
 
