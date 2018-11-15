@@ -12,11 +12,21 @@ https://www.hammerspoon.org/
 -- is also a rule that maps caps_lock to left_ctrl.
 hyper = {"cmd", "alt", "ctrl", "shift"}
 
+-- Debugging function where you can test stuff
+hs.hotkey.bind(hyper, "D", function()
+    local primaryScreen = hs.screen.primaryScreen()
+    local secondaryScreen = primaryScreen:next()
+    local allScreens = hs.screen.allScreens()
+    hs.alert.show("This is the primary screen", hs.alert.defaultStyle, primaryScreen)
+    hs.alert.show("This is the secondary screen", hs.alert.defaultStyle, secondaryScreen)
+end)
+
 -- Reload Hammerspoon configuration
 hs.hotkey.bind(hyper, "R", function()
     hs.alert.show("Reloading Hammerspoon Configuration")
     hs.reload()
 end)
+
 
 --[[
 Tiling
@@ -228,4 +238,57 @@ hs.hotkey.bind(hyper, "S", function()
   hs.application.launchOrFocus("Slack")
 end)
 
--- https://www.hammerspoon.org/go/#helloworld
+
+--[[
+Multiple displays
+--]]
+
+-- Make the give window fullscreen
+function makeFullscreen(win)
+  local f = win:frame()
+  local screen = win:screen()
+  local max = screen:frame()
+  win:setFrame(max)
+end
+
+-- Move the given window to the primary screen
+function moveToPrimaryScreen(win)
+  local screen = hs.screen.primaryScreen()
+  win:moveToScreen(screen)
+end
+
+-- Move the given window to the secondary screen
+function moveToSecondaryScreen(win)
+  local primaryScreen = hs.screen.primaryScreen()
+  local secondaryScreen = primaryScreen:next()
+  win:moveToScreen(secondaryScreen)
+end
+
+-- Move all windows to the primary screen and maximize them.
+function maximizeAllVisibleWindowsOnPrimaryScreen()
+  for i, win in ipairs(hs.window.visibleWindows()) do
+    moveToPrimaryScreen(win)
+    makeFullscreen(win)
+  end
+end
+
+-- The arrangeWindows function is called when the number of displays
+-- is changed.
+function arrangeWindows()
+    local primaryScreen = hs.screen.primaryScreen()
+    local secondaryScreen = primaryScreen:next()
+
+    local hasSingleScreen = primaryScreen == secondaryScreen
+
+    if hasSingleScreen then
+      maximizeAllVisibleWindowsOnPrimaryScreen()
+    else
+      maximizeAllVisibleWindowsOnPrimaryScreen()
+    end
+end
+hs.hotkey.bind(hyper, "A", arrangeWindows)
+
+-- Call the arrangeWindows function when the number of screens
+-- changes.
+screenWatcher = hs.screen.watcher.new(arrangeWindows)
+screenWatcher:start()
