@@ -62,6 +62,7 @@ brew cask install java
 brew install go
 brew install ruby
 brew install sbcl
+brew install lua
 
 # Install Node
 brew install node
