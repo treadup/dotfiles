@@ -151,3 +151,6 @@ brew install redis
 
 # Install memcached
 brew install memcached
+
+# Install ImageMagick
+brew install imagemagick
