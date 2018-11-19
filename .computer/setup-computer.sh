@@ -70,6 +70,7 @@ pip3 install html2text
 pip3 install pylint
 pip3 install flake8
 pip3 install yamllint
+pip3 install pur
 pip3 install yq
 
 # Install database utilities
@@ -141,6 +142,7 @@ go get -u -v github.com/rogpeppe/godef
 go get -u -v golang.org/x/tools/cmd/guru
 go get -u -v golang.org/x/tools/cmd/gorename
 go get -u -v golang.org/x/tools/cmd/goimports
+go get -u -v github.com/motemen/gore
 
 # Install ppd
 go get github.com/treadup/ppd

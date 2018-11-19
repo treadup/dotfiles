@@ -1,4 +1,4 @@
-"VIM configuration file
+" VIM configuration file
 
 " Figure out how abbreviations work in vim.
 
@@ -179,5 +179,6 @@ iabbr teh the
 " Bookmark related
 iabbr bmk {"text": "", "url": ""}<esc>12hi
 iabbr bkm {"text": "", "url": ""}<esc>12hi
-iabbr ctg {<CR>"category": "",<CR>"slug": "",<CR>"visibility": "public",<CR>"bookmarks": []<CR>},<esc>4kA
 
+iabbr cgt {<CR>"category": "",<CR>"slug": "",<CR>"visibility": "public",<CR>"bookmarks": []<CR>},<esc>4kA
+iabbr ctg {<CR>"category": "",<CR>"slug": "",<CR>"visibility": "public",<CR>"bookmarks": []<CR>},<esc>4kA
