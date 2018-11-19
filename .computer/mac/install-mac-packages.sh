@@ -59,10 +59,20 @@ brew install screen
 brew install python
 brew install python3
 brew cask install java
-brew install node
 brew install go
 brew install ruby
 brew install sbcl
+brew install lua
+
+# Install Node
+brew install node
+brew install jq
+brew install jo
+brew install gron
+
+# Install Clojure
+brew install clojure
+brew install leiningen
 
 # Install web server
 brew install nginx

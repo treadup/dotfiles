@@ -71,6 +71,7 @@ pip3 install pylint
 pip3 install flake8
 pip3 install yamllint
 pip3 install pur
+pip3 install yq
 
 # Install database utilities
 pip3 install pgcli
@@ -79,16 +80,6 @@ pip3 install mycli
 # Install vritualfish
 pip3 install virtualfish
 echo Finished installing Python packages
-
-#
-# Clojure
-#
-
-# Installing lein
-echo Installing lein
-curl -o ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
-chmod 755 ~/bin/lein
-echo Finished installing lein
 
 #
 # Node
@@ -109,12 +100,33 @@ npm install -g js-yaml
 npm install -g nd
 npm install -g create-react-app
 npm install -g yarn
+npm install -g tldr
 
 npm install -g parcel-bundler
 
+npm install -g create-react-native-app
+npm install -g expo-cli
+
+
 npm install -g serverless
 
+nmp install -g json
+
 echo Finished installing node.js programs
+
+#
+# Clojure
+#
+
+# Installing Leiningen
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    echo Installing lein
+    curl -o ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+    chmod 755 ~/bin/lein
+    echo Finished installing lein
+fi
+
+npm install -g lumo-cljs
 
 #
 # Go

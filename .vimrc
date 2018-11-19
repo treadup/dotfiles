@@ -85,11 +85,20 @@ Plugin 'mxw/vim-jsx'
 " The jshint plugin.
 Plugin 'walm/jshint.vim'
 
+"
+" Clojure
+"
+
 " Fireplace the Clojure REPL for VIM.
 Plugin 'tpope/vim-fireplace'
 
 " vim clojure static
 Plugin 'guns/vim-clojure-static'
+
+"
+" Fish
+"
+Plugin 'dag/vim-fish'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
