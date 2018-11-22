@@ -59,10 +59,13 @@ brew install screen
 brew install python
 brew install python3
 brew cask install java
-brew install go
 brew install ruby
 brew install sbcl
 brew install lua
+
+# Install Golang
+brew install go
+brew install dep
 
 # Install Node
 brew install node
