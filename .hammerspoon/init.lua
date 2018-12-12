@@ -292,3 +292,66 @@ hs.hotkey.bind(hyper, "A", arrangeWindows)
 -- changes.
 screenWatcher = hs.screen.watcher.new(arrangeWindows)
 screenWatcher:start()
+
+--[[
+Spotify
+--]]
+
+function playPauseSpotify()
+  if hs.spotify.isRunning() then
+    if hs.spotify.isPlaying() then
+      hs.spotify.pause()
+    else
+      hs.spotify.play()
+    end
+  else
+    hs.application.launchOrFocus("Spotify")
+    hs.spotify.play()
+  end
+end
+
+hs.hotkey.bind({}, "f8", playPauseSpotify)
+
+hs.hotkey.bind({}, "f9", hs.spotify.next)
+hs.hotkey.bind({}, "f7", hs.spotify.previous)
+
+--[[
+Audio volume control
+--]]
+
+-- To be able to bind the F10 and F11 keys you have to set
+-- shortcuts for show desktop and show dashboard in mission
+-- control to something else.
+-- This can be done using the keyboard shortcut preferences.
+-- https://github.com/Hammerspoon/hammerspoon/issues/901
+hs.hotkey.bind({}, "f10", function()
+  print("Mute volume")
+  hs.execute("/usr/local/bin/cliclick kp:mute")
+
+  -- This does not work when bound to f10.
+  -- hs.eventtap.keyStroke({"fn"}, "f10")
+end)
+
+hs.hotkey.bind({}, "f11", function()
+  print("Lower volume")
+  hs.execute("/usr/local/bin/cliclick kp:volume-down")
+
+  -- This does not work when bound to f11.
+  -- hs.eventtap.keyStroke({"fn"}, "f11")
+end)
+
+hs.hotkey.bind({}, "f12", function()
+  print("Raise volume")
+  hs.execute("/usr/local/bin/cliclick kp:volume-up")
+
+  -- This does not work when bound to f12
+  -- hs.eventtap.keyStroke({"fn"}, "f12")
+end)
+
+--[[
+Local config file
+--]]
+local localConfig=loadfile(hs.configdir .. "/init-local.lua")
+if localConfig then
+  localConfig()
+end
