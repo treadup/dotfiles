@@ -37,6 +37,9 @@ brew install bash-completion
 # Install Spectacle
 brew cask install spectacle
 
+# Install cliclick
+brew install cliclick
+
 # Install editors
 brew cask install emacs
 brew install vim
