@@ -117,6 +117,9 @@ apt --yes install gambc
 # Install MIT Scheme
 apt --yes install mit-scheme
 
+# Install Racket
+apt --yes install racket
+
 # Install Go
 apt --yes install golang-go
 
