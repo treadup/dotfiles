@@ -80,6 +80,9 @@ brew install gron
 brew install clojure
 brew install leiningen
 
+# Install Racket
+brew cask install racket
+
 # Install web server
 brew install nginx
 
