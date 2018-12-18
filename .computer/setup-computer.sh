@@ -40,6 +40,9 @@ echo Finished cloning Vundle repo
 # Create the bin folder.
 mkdir -p ~/bin
 
+# Create ~/code folder
+mkdir -p code/lisp code/go code/clojure code/javascript code/python code/racket code/docker
+
 #
 # Common Lisp
 #
