@@ -84,6 +84,9 @@ pip3 install mycli
 pip3 install virtualfish
 echo Finished installing Python packages
 
+# Install poetry
+curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+
 #
 # Node
 #

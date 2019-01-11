@@ -26,6 +26,11 @@ if test -d $HOME/.npm-global/bin
     set -gx PATH $HOME/.npm-global/bin $PATH
 end
 
+# Add poetry bin folder to the path
+if test -d $HOME/.poetry/bin
+    set -gx PATH $HOME/.poetry/bin $PATH
+end
+
 # Add special bin folders to the path
 set -gx PATH $HOME/bin $PATH
 
