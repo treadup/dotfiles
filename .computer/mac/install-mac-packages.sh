@@ -116,6 +116,9 @@ brew cask install charles
 # brew install docker
 # brew cask install docker
 
+# Install Packer
+brew install packer
+
 # Install multimarkdown
 brew install multimarkdown
 
