@@ -1,4 +1,4 @@
-FROM python:latest
+FROM ubuntu:latest
 
 # Install packages.
 RUN apt-get --yes update
