@@ -1,10 +1,37 @@
-FROM ubuntu:18.04
+FROM python:latest
 
-RUN apt update
-RUN apt install --yes curl
-RUN curl -o install-ubuntu-packages.sh https://raw.githubusercontent.com/treadup/dotfiles/master/computer/install-ubuntu-packages.sh
-RUN bash install-ubuntu-packages.sh
+# Install packages.
+RUN apt-get --yes update
 
-CMD ["/usr/sbin/sshd", "-D"]
+# Install git
+RUN apt-get --yes install git
 
-EXPOSE 22 443
+# Install Vim
+RUN apt-get --yes install vim
+
+# Install Shells
+RUN apt-get --yes install fish
+
+# Install pick
+RUN apt-get install -y pick
+
+# Install cli trash command
+RUN apt-get --yes install trash-cli
+
+# Install zip
+RUN apt-get --yes install zip unzip
+
+# Install http cli clients
+RUN apt-get --yes install curl wget httpie
+
+# Install ag
+RUN apt-get --yes install silversearcher-ag
+
+# Install tmux
+RUN apt-get --yes install tmux
+
+# Install aws cli command
+RUN apt-get --yes install awscli
+
+# Install Python
+# RUN apt-get --yes install python-pip python3-pip python3-dev python3-setuptools python3-wheel
