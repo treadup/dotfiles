@@ -22,7 +22,10 @@ RUN apt-get --yes install git
 # Install Vim
 RUN apt-get --yes install vim
 
-# Install Fish
+# Install bash completion
+RUN apt-get --yes install bash-completion
+
+# Install fish
 RUN apt-get --yes install fish
 
 # Install pick
