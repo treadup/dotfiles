@@ -100,6 +100,9 @@ apt --yes install gdb
 # Install docker
 apt --yes install docker.io
 
+# Install packer
+apt-get --yes install packer
+
 # Install Java8 SDK
 apt --yes install default-jdk
 
