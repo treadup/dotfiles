@@ -8,24 +8,24 @@ set -u
 
 # Install packages.
 echo Updating apt
-apt --yes update
+apt-get --yes update
 
 echo Upgrading system
-apt --yes upgrade
+apt-get --yes upgrade
 
 echo Installing packages
 
 # Install english language pack
-apt --yes install language-pack-en
+apt-get --yes install language-pack-en
 
 # Install git
-apt --yes install git
+apt-get --yes install git
 
 # Install GnuPG
-apt --yes install gnupg
+apt-get --yes install gnupg
 
 # Install password utilities
-apt --yes install pass pwgen
+apt-get --yes install pass pwgen
 
 # Install Emacs
 if [ -v DISPLAY ]; then
@@ -35,10 +35,10 @@ else
 fi
 
 # Install Vim
-apt --yes install vim
+apt-get --yes install vim
 
 # Install Shells
-apt --yes install fish
+apt-get --yes install fish
 
 # Stop the /bin/open command from shadowing the fish open command.
 if [ -f /bin/open ]; then
@@ -47,64 +47,64 @@ fi
 
 # Install bash completion
 # This might already be installed...
-apt --yes install bash-completion
+apt-get --yes install bash-completion
 
 # Install cli trash command
-apt --yes install trash-cli
+apt-get --yes install trash-cli
 
 # Install ubuntu make
-apt --yes install ubuntu-make
+apt-get --yes install ubuntu-make
 
 # Install zip
-apt --yes install zip unzip
+apt-get --yes install zip unzip
 
 # Install node and npm
 # The node ecosystem expects the node executable to be called node.
 # Therefore create a symlink to the correct name.
-apt --yes install nodejs npm
+apt-get --yes install nodejs npm
 
 # Install texlive
 # For some reason xzdec is needed to get tlmgr to work
-apt --yes install texlive-full xzdec
+apt-get --yes install texlive-full xzdec
 
 # Install http cli clients
-apt --yes install curl wget httpie aria2
+apt-get --yes install curl wget httpie aria2
 
 # Install ag
-apt --yes install silversearcher-ag
+apt-get --yes install silversearcher-ag
 
 # Install tmux
-apt --yes install tmux
+apt-get --yes install tmux
 
 # Install network tools
-apt --yes install whois
+apt-get --yes install whois
 
 # Install mosh
-apt --yes install mosh
+apt-get --yes install mosh
 
 # Install pandoc
-apt --yes install pandoc
+apt-get --yes install pandoc
 
 # Install aws cli command
-apt --yes install awscli
+apt-get --yes install awscli
 
 # Install GCC and make among other things
-apt --yes install build-essential
+apt-get --yes install build-essential
 
 ## Install LLVM and CLang
-apt --yes install llvm clang
+apt-get --yes install llvm clang
 
 # Install gdb
-apt --yes install gdb
+apt-get --yes install gdb
 
 # Install docker
-apt --yes install docker.io
+apt-get --yes install docker.io
 
 # Install packer
 apt-get --yes install packer
 
 # Install Java8 SDK
-apt --yes install default-jdk
+apt-get --yes install default-jdk
 
 # Set the JAVA_HOME environment variable. You need to log out and
 # then log back in again for the /etc/environment file to be reloaded.
@@ -112,95 +112,95 @@ JAVA_HOME="$(dirname $(dirname $(readlink -e $(which javac))))"
 printf "JAVA_HOME=$JAVA_HOME\n" >> /etc/environment
 
 # Install Steel Bank Common Lisp
-apt --yes install sbcl sbcl-doc sbcl-source
+apt-get --yes install sbcl sbcl-doc sbcl-source
 
 # Install Gambit Scheme
-apt --yes install gambc
+apt-get --yes install gambc
 
 # Install MIT Scheme
-apt --yes install mit-scheme
+apt-get --yes install mit-scheme
 
 # Install Racket
-apt --yes install racket
+apt-get --yes install racket
 
 # Install Go
-apt --yes install golang-go
+apt-get --yes install golang-go
 
 # Install Python
-apt --yes install python-pip python3-pip python3-dev python3-setuptools python3-wheel
+apt-get --yes install python-pip python3-pip python3-dev python3-setuptools python3-wheel
 
 # Install Ruby
-apt --yes install ruby
+apt-get --yes install ruby
 
 # Install Rust
-apt --yes install rustc
-apt --yes install cargo
+apt-get --yes install rustc
+apt-get --yes install cargo
 
 # Install Lua
-apt --yes install lua5.3
+apt-get --yes install lua5.3
 ln -s /usr/bin/lua5.3 /usr/bin/lua
-apt --yes install liblua5.3-dev
+apt-get --yes install liblua5.3-dev
 
 # Install LuaRocks
 
 
 # Install Löve2D
 add-apt-repository --yes ppa:bartbes/love-stable
-apt --yes update
-apt install love
+apt-get --yes update
+apt-get install love
 
 # Install weechat
-apt --yes install weechat
+apt-get --yes install weechat
 
 # Install nginx
-apt install -y nginx
+apt-get install -y nginx
 
 # Install direnv
-apt install -y direnv
+apt-get install -y direnv
 
 # Install markdown
-apt install -y markdown
+apt-get install -y markdown
 
 # Install lnav
-apt install -y lnav
+apt-get install -y lnav
 
 # Install ranger
-apt install -y ranger
+apt-get install -y ranger
 
 # Install yank
-apt install -y yank
+apt-get install -y yank
 
 # Install fzy
-apt install -y fzy
+apt-get install -y fzy
 
 # Install pick
-apt install -y pick
+apt-get install -y pick
 
 #
 # Email
 #
 
 # Install msmtp smtp client
-apt install -y msmtp
+apt-get install -y msmtp
 
 # Install isync package which contains mbsync.
-apt install -y isync
+apt-get install -y isync
 
 #
 # Fonts
 #
 
 # Install Fira Code fonts
-apt install -y fonts-firacode
+apt-get install -y fonts-firacode
 
 # Install DejaVu fonts
-apt install -y fonts-dejavu
+apt-get install -y fonts-dejavu
 
 # Install Liberation fonts
-apt install -y fonts-liberation
+apt-get install -y fonts-liberation
 
 # Install Inconsolata font
-apt install -y fonts-inconsolata
+apt-get install -y fonts-inconsolata
 
 # Install powerline fonts
 # This package provides the fonts used by powerline. This package
@@ -208,7 +208,7 @@ apt install -y fonts-inconsolata
 # available as part of other installed fonts.
 # In other words the fonts-powerline only modifies existing fonts.
 # It does not install complete new font families.
-apt install -y fonts-powerline
+apt-get install -y fonts-powerline
 
 #
 # Gnome
@@ -218,16 +218,16 @@ apt install -y fonts-powerline
 # apt install -y gnome gnome-shell
 
 # Install Gnome tweak tool
-apt install -y gnome-tweak-tool
+apt-get install -y gnome-tweak-tool
 
 # Install lots of Gnome Shell Extensions
 # Some of the Gnome Shell Extensions are available as individual
 # Ubuntu packages. So you might want to look at these as well.
-apt install -y gnome-shell-extensions
-apt install -y gnome-shell-extension-dashtodock
-apt install -y gnome-shell-extension-ubuntu-dock
-apt install -y gnome-shell-extension-caffeine
-apt install -y gnome-shell-extension-move-clock
+apt-get install -y gnome-shell-extensions
+apt-get install -y gnome-shell-extension-dashtodock
+apt-get install -y gnome-shell-extension-ubuntu-dock
+apt-get install -y gnome-shell-extension-caffeine
+apt-get install -y gnome-shell-extension-move-clock
 
 #
 # Install flatpak
@@ -262,18 +262,18 @@ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-ke
 echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
 
 # Update the repository since we added a new source.
-apt update
+apt-get update
 
 # Install Google Chrome
-apt --yes install google-chrome-stable
+apt-get --yes install google-chrome-stable
 
 # Remove packages that are no longer needed
-apt --yes autoremove
+apt-get --yes autoremove
 
 # Enable unattended security updates
 # See https://help.ubuntu.com/lts/serverguide/automatic-updates.html.en
 # To configure unattended upgrades of all packages see the above link.
-apt --yes install  unattended-upgrades
+apt-get --yes install  unattended-upgrades
 
 echo Finished installing packages
 echo The installation script ran successfully.
