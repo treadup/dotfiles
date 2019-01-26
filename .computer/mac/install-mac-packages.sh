@@ -167,3 +167,6 @@ brew install memcached
 
 # Install ImageMagick
 brew install imagemagick
+
+# Install Aerial screen saver
+brew cask install aerial
