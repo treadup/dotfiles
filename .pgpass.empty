@@ -1,0 +1,7 @@
+# This is an empty .pgpass file
+
+# This file should contain lines with the following format.
+# hostname:port:database:username:password
+
+# The above allows you to specify login information for a single database.
+# Here hostname, port, database and username can all have the wildcard * value.
