@@ -56,6 +56,11 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'JulesWang/css.vim'
 
 "
+" Python
+"
+Plugin 'ambv/black'
+
+"
 " Markdown
 "
 
