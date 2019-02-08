@@ -67,6 +67,7 @@ mkdir ~/.virtualenvs/
 
 # Install Python packages
 echo Installing Python packages
+pip3 install black
 pip3 install virtualenv
 pip3 install httpie
 pip3 install html2text
