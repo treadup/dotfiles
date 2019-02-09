@@ -56,6 +56,12 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'JulesWang/css.vim'
 
 "
+" Ale
+"
+" https://github.com/w0rp/ale
+" Plugin 'w0rp/ale'
+
+"
 " Python
 "
 Plugin 'ambv/black'
