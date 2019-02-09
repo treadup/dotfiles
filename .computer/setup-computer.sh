@@ -102,6 +102,7 @@ npm config set prefix ~/.npm-global
 
 npm install -g jshint
 npm install -g js-beautify
+npm install -g prettier
 npm install -g tern
 npm install -g eslint
 npm install -g jsonlint
