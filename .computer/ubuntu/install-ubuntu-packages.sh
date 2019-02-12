@@ -267,11 +267,6 @@ apt-get update
 # Install Google Chrome
 apt-get --yes install google-chrome-stable
 
-# Install Visual Studio Code
-# Do an unattended install. This should be run as the user and not as root.
-# umake ide visual-studio-code --accept-license ~/.local/share/umake/ide/visual-studio-code/
-# ln -s /home/henrik/.local/share/umake/ide/visual-studio-code/bin/code /home/henrik/bin/code
-
 # Remove packages that are no longer needed
 apt-get --yes autoremove
 

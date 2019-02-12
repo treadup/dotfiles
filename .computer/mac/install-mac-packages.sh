@@ -43,7 +43,6 @@ brew install cliclick
 # Install editors
 brew cask install emacs
 brew install vim
-brew cask install visual-studio-code
 # brew cask install atom
 # brew cask install sublime-text
 
