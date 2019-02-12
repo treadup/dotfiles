@@ -267,6 +267,9 @@ apt-get update
 # Install Google Chrome
 apt-get --yes install google-chrome-stable
 
+# Install Visual Studio Code
+umake ide visual-studio-code
+
 # Remove packages that are no longer needed
 apt-get --yes autoremove
 
