@@ -83,6 +83,10 @@ pip3 install yq
 pip3 install pgcli
 pip3 install mycli
 
+# Install neovim python packages
+pip2 install neovim
+pip3 install neovim
+
 # Install vritualfish
 pip3 install virtualfish
 echo Finished installing Python packages

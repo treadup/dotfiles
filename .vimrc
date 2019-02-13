@@ -116,7 +116,7 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " Enable color theme
-set term=xterm-256color
+" set term=xterm-256color
 syntax enable
 set background=dark
 
