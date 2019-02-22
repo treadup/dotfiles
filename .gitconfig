@@ -127,6 +127,10 @@
 
         # Checkout one of the recent branches by picking branches from a menu
 	pick = !git checkout $(git recent | pick)
+
+	# Shows the commit when the file was added.
+	# git whenadded -- foo.py
+	whenadded = log --diff-filter=A
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore_global

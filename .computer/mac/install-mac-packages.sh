@@ -26,6 +26,7 @@ brew install coreutils
 
 # Install Iterm2
 brew cask install iterm2
+brew cask install kitty
 
 # Install shells
 brew install fish
