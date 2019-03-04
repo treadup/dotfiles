@@ -127,7 +127,8 @@ apt-get --yes install racket
 apt-get --yes install golang-go
 
 # Install Python
-apt-get --yes install python-pip python3-pip python3-dev python3-setuptools python3-wheel
+apt-get --yes install python-pip python3-pip python3-dev \
+   python3-setuptools python3-wheel python3-venv
 
 # Install Ruby
 apt-get --yes install ruby
