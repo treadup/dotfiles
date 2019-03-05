@@ -8,3 +8,6 @@
 # The following is a good article on this.
 # https://codewithoutrules.com/2016/10/19/pylint/
 
+# One way of generating an initial pylintrc file is
+# to use the following command.
+# pylint --generate-rcfile > .pylintrc
