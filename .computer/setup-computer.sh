@@ -73,6 +73,7 @@ pip3 install httpie
 pip3 install html2text
 pip3 install pylint
 pip3 install flake8
+pip3 install flake8-bugbear
 pip3 install autopep8
 pip3 install python-language-server
 pip3 install isort
