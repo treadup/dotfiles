@@ -63,9 +63,18 @@ brew install screen
 # Install programming languages
 brew install python
 brew install python3
+brew install pyenv
+
+# Install Java
 brew cask install java
+
+# Install Ruby
 brew install ruby
+
+# Install Steel Bank Common Lisp
 brew install sbcl
+
+# Install Lua
 brew install lua
 
 # Install Golang
@@ -111,6 +120,9 @@ brew install hyper
 # Install Charles Web Proxy
 brew cask install charles
 
+# Install PyCharm Community Edition
+brew cask install pycharm-ce
+
 # Install Docker
 # Install docker from the website. Otherwise things like docker-compose
 # will not be setup correctly.
@@ -130,6 +142,7 @@ brew install the_silver_searcher
 brew install ripgrep
 brew install tldr
 brew install ispell
+bres install dict
 brew install fd
 brew install fzf
 brew install fzy
