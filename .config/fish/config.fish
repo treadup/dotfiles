@@ -82,9 +82,7 @@ end
 #
 # pyenv
 #
-
-# https://github.com/pyenv/pyenv/issues/32
-source (pyenv init -|psub)
+pyenv init - | source
 
 #
 # Setup virtualfish
