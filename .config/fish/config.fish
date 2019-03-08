@@ -11,6 +11,9 @@ set -gx LANG en_US.UTF-8
 # Go lang
 set -gx GOPATH $HOME/go
 
+# Add sbin folder to the path
+set -gx PATH /usr/local/sbin $PATH
+
 # Add Go lang bin folder to the path
 if test -d $GOPATH/bin
     set -gx PATH $GOPATH/bin $PATH
@@ -38,9 +41,6 @@ set -gx PATH $HOME/bin $PATH
 if test -d $HOME/.local/bin
     set -gx PATH $HOME/.local/bin $PATH
 end
-
-# Add sbin folder to the path
-set -gx PATH /usr/local/sbin $PATH
 
 # Do not do this. It breaks vex and pew
 # Use Python 3 by default when creating a virtualenv.
@@ -78,6 +78,13 @@ if not functions -q fisher
     echo "Execute the command fisher to finish the installation."
     # fisher
 end
+
+#
+# pyenv
+#
+
+# https://github.com/pyenv/pyenv/issues/32
+source (pyenv init -|psub)
 
 #
 # Setup virtualfish
