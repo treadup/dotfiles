@@ -187,5 +187,8 @@ brew install memcached
 # Install ImageMagick
 brew install imagemagick
 
+# Install kap screen recorder
+brew cask install kap
+
 # Install Aerial screen saver
 brew cask install aerial
