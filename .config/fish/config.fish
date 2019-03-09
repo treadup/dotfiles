@@ -82,7 +82,12 @@ end
 #
 # pyenv
 #
-pyenv init - | source
+
+# Check if we can run the command pyenv
+if type -q pyenv
+    # If we can then initialize the current fish shell with pyenv support
+    pyenv init - | source
+end
 
 #
 # Setup virtualfish
