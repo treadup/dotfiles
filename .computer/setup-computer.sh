@@ -94,8 +94,10 @@ pip3 install virtualfish
 echo Finished installing Python packages
 
 # Install poetry
-curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
-
+# Make sure that poetry uses python3 when creating new projects
+# by replacing /usr/bin/env python with /usr/bin/env python3
+curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py  | \
+    sed 's_/usr/bin/env python_/usr/bin/env python3_g' | python3
 #
 # Node
 #
