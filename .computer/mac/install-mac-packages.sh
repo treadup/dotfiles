@@ -69,6 +69,7 @@ brew install screen
 brew install python
 brew install python3
 brew install pyenv
+brew install pyenv-virtualenv
 
 # Install Java
 brew cask install java
