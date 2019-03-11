@@ -114,6 +114,9 @@ brew cask install basictex
 # Install PostgreSQL
 brew install postgresql
 
+# Install MariaDB
+brew install mariadb
+
 # Install RabbitMQ
 brew install rabbitmq
 
