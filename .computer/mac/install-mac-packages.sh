@@ -120,9 +120,6 @@ brew install rabbitmq
 # Install VirtualBox
 brew cask install virtualbox
 
-# Install hyper.sh client
-brew install hyper
-
 # Install Charles Web Proxy
 brew cask install charles
 
