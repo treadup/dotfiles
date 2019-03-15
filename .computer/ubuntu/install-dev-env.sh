@@ -5,17 +5,20 @@
 #
 
 # Update apt cache
-apt update
+apt-get update
 
 # Install PostgreSQL
-apt install -y postgresql postgresql-doc postgresql-contrib postgresql-client
+apt-get install -y postgresql postgresql-doc postgresql-contrib postgresql-client
 
 # Install Erlang
-apt install -y erlang
+apt-get install -y erlang
 
 # Install RabbitMQ
-apt install -y rabbitmq-server
+apt-get install -y rabbitmq-server
 
 # Install Redis
-apt install -y redis
-apt install -y redis-tools
+apt-get install -y redis
+apt-get install -y redis-tools
+
+# Install MariaDB
+apt-get install -y mariadb-server mariadb-client
