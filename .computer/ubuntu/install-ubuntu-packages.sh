@@ -145,7 +145,7 @@ apt-get --yes install liblua5.3-dev
 # Install Löve2D
 add-apt-repository --yes ppa:bartbes/love-stable
 apt-get --yes update
-apt-get install love
+apt-get --yes install love
 
 # Install weechat
 apt-get --yes install weechat
