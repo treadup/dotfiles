@@ -31,7 +31,6 @@ brew install coreutils
 
 # Install Iterm2
 brew cask install iterm2
-brew cask install kitty
 
 # Install shells
 brew install fish
@@ -59,10 +58,8 @@ brew install direnv
 # Install Firefox
 brew cask install firefox
 
-# Install tmux
+# Install terminal multiplexers
 brew install tmux
-
-# Network stuff
 brew install screen
 
 # Install programming languages
@@ -128,6 +125,9 @@ brew cask install charles
 
 # Install PyCharm Community Edition
 brew cask install pycharm-ce
+
+# Install Insomnia rest client
+brew cask install insomnia
 
 # Install Docker
 # Install docker from the website. Otherwise things like docker-compose
