@@ -85,8 +85,7 @@ pip3 install yq
 pip3 install pgcli
 pip3 install mycli
 
-# Install neovim python packages
-pip2 install neovim
+# Install neovim python package
 pip3 install neovim
 
 # Install vritualfish
@@ -119,16 +118,11 @@ npm install -g nd
 npm install -g create-react-app
 npm install -g yarn
 npm install -g tldr
+npm install -g json
 
-npm install -g parcel-bundler
-
+# React native
 npm install -g create-react-native-app
 npm install -g expo-cli
-
-
-npm install -g serverless
-
-nmp install -g json
 
 echo Finished installing node.js programs
 
