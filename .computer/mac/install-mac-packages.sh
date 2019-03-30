@@ -28,6 +28,7 @@ brew install pass
 brew install git
 brew install pwgen
 brew install coreutils
+brew install watch
 
 # Install Iterm2
 brew cask install iterm2
