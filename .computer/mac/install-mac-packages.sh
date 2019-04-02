@@ -197,3 +197,6 @@ brew cask install kap
 
 # Install Aerial screen saver
 brew cask install aerial
+
+# Install ngrok local port forwarding tool
+brew cask install ngrok
