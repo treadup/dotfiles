@@ -119,6 +119,7 @@ npm install -g create-react-app
 npm install -g yarn
 npm install -g tldr
 npm install -g json
+npm install -g netlify-cli
 
 # React native
 npm install -g create-react-native-app
