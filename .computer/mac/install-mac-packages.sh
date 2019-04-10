@@ -133,6 +133,9 @@ brew cask install pycharm-ce
 # Install Insomnia rest client
 brew cask install insomnia
 
+# Install CoronaSDK
+brew cask install coronasdk
+
 # Install Docker
 # Install docker from the website. Otherwise things like docker-compose
 # will not be setup correctly.
