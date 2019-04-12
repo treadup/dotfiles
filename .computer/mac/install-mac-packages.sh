@@ -134,7 +134,8 @@ brew cask install pycharm-ce
 brew cask install insomnia
 
 # Install CoronaSDK
-brew cask install coronasdk
+# Not sure that I like the licensing of the CoronaSDK product
+# brew cask install coronasdk
 
 # Install Docker
 # Install docker from the website. Otherwise things like docker-compose
