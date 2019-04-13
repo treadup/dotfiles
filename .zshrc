@@ -1,6 +1,3 @@
-# Define setenv for zsh
-function setenv() { export "$1=$2"; }
+# The zsh configuration should go here
 
-# Setup the environment
-source ~/.environment
 
