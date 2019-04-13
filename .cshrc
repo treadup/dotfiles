@@ -8,9 +8,4 @@ set    cyan="%{\033[1;36m%}"
 set   white="%{\033[0;37m%}"
 set   reset="%{\033[0m%}"
 
-if ( $?VIRTUAL_ENV ) then
-    set venvname=`basename $VIRTUAL_ENV`
-    alias precmd 'set prompt="${cyan}${venvname}${reset} ${green}%n@%m${reset} %~ \n%% "'
-else
-    alias precmd 'set prompt="${green}%n@%m${reset} %~ \n%% "'
-endif
+alias precmd 'set prompt="${green}%n@%m${reset} %~ \n%% "'
