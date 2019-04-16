@@ -63,11 +63,14 @@ brew cask install firefox
 brew install tmux
 brew install screen
 
-# Install programming languages
+# Install Python
 brew install python
 brew install python3
 brew install pyenv
 brew install pyenv-virtualenv
+
+# Install Kivy dependencies
+brew install pkg-config sdl2 sdl2_image sdl2_ttf sdl2_mixer gstreamer
 
 # Install Java
 brew cask install java
