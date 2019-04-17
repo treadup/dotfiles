@@ -50,8 +50,15 @@ brew install cliclick
 brew cask install emacs
 brew install vim
 brew install neovim
-# brew cask install atom
-# brew cask install sublime-text
+
+# Install Sublime Text
+brew cask install sublime-text
+SUBLIME_PACKAGE_DIR="$HOME/Library/Application Support/Sublime Text 3/Installed Packages"
+SUBLIME_USER_DIR="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+mkdir -p "$SUBLIME_PACKAGE_DIR"
+mkdir -p "$SUBLIME_USER_DIR"
+
+curl -o "$SUBLIME_PACKAGE_DIR/Package Control.sublime-package" https://packagecontrol.io/Package%20Control.sublime-package
 
 # Install direnv
 brew install direnv
