@@ -83,6 +83,7 @@ brew install sbcl
 
 # Install Lua
 brew install lua
+brew install luarocks
 
 # Install Golang
 brew install go
