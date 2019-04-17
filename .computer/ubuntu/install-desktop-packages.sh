@@ -12,6 +12,13 @@ apt-get --yes update
 echo Installing desktop packages
 
 #
+# Kivy
+#
+add-apt-repository --yes ppa:kivy-team/kivy
+apt-get --yes update
+apt-get install --yes python3-kivy
+
+#
 # Gnome
 #
 
