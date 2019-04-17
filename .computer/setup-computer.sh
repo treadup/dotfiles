@@ -121,9 +121,16 @@ npm install -g tldr
 npm install -g json
 npm install -g netlify-cli
 
+#
 # React native
+#
+
+# Expo
 npm install -g create-react-native-app
 npm install -g expo-cli
+
+# React Native Cli
+npm install -g react-native-cli
 
 echo Finished installing node.js programs
 
