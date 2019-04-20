@@ -120,7 +120,7 @@ npm install -g yarn
 npm install -g tldr
 npm install -g json
 npm install -g netlify-cli
-
+npm install -g @11ty/eleventy
 npm install -g cordova
 
 #
