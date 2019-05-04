@@ -108,6 +108,7 @@ brew install elm
 # Install Clojure
 brew install clojure
 brew install leiningen
+brew install boot-clj
 
 # Install Racket
 brew cask install racket
