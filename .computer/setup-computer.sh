@@ -67,6 +67,10 @@ mkdir ~/.virtualenvs/
 
 # Install Python packages
 echo Installing Python packages
+
+# Think about changing over to using pipx to install Python tools.
+python3 -m pip install pipx
+
 pip3 install black
 pip3 install virtualenv
 pip3 install httpie
