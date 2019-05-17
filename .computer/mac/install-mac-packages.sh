@@ -116,6 +116,9 @@ brew cask install racket
 # Install web server
 brew install nginx
 
+# Install Traefik
+brew install traefik
+
 # Install hosting utils
 brew install heroku
 brew install awscli
@@ -144,6 +147,9 @@ brew cask install pycharm-ce
 
 # Install Insomnia rest client
 brew cask install insomnia
+
+# Install Postman rest client
+brew cask install postman
 
 # Install CoronaSDK
 # Not sure that I like the licensing of the CoronaSDK product
