@@ -167,6 +167,9 @@ brew install packer
 # Install multimarkdown
 brew install multimarkdown
 
+# Install highlight
+brew install highlight
+
 # Install utilities
 brew install tree
 brew install wget
