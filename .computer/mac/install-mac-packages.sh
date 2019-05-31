@@ -113,6 +113,9 @@ brew install boot-clj
 # Install Racket
 brew cask install racket
 
+# Install Elixir
+brew install elixir
+
 # Install web server
 brew install nginx
 
