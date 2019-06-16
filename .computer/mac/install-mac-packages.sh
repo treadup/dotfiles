@@ -113,6 +113,9 @@ brew install boot-clj
 # Install Racket
 brew cask install racket
 
+# Install Erlang
+brew install erlang
+
 # Install Elixir
 brew install elixir
 
