@@ -3,6 +3,7 @@
 	email = henrik.treadup@gmail.com
 
 [push]
+# https://git-scm.com/docs/git-config#git-config-pushdefault
 	default = current
 
 [alias]
@@ -67,6 +68,9 @@
 
         # List git commit history
         history = log -10 --format=format:'%Cgreen%h %Creset%s (%aN, %ar)'
+
+	# List git commit history in a different way
+	hist = log --pretty='format:"%h %ad | %s%d [%an]"' --graph --date=short
 
         # Create a new branch
         new-branch = checkout -b
