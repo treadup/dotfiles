@@ -67,3 +67,11 @@ indent_size = 4
 [*.elm]
 indent_style = space
 indent_size = 2
+
+[*.{erl,hrl}]
+indent_style = space
+indend_size = 4
+
+[*.{ex,exs}]
+indent_style = space
+indent_size = 2
