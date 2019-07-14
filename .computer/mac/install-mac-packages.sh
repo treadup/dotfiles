@@ -70,6 +70,9 @@ brew cask install firefox
 brew install tmux
 brew install screen
 
+# Install telnet
+brew install telnet
+
 # Install Python
 brew install python
 brew install python3
