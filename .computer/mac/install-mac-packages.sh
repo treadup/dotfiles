@@ -116,9 +116,7 @@ brew cask install racket
 
 # Install Erlang
 brew install erlang
-
-# Install Elixir
-brew install elixir
+brew install rebar3
 
 # Install web server
 brew install nginx
