@@ -94,6 +94,7 @@ brew install sbcl
 # Install Lua
 brew install lua
 brew install luarocks
+brew cask install love
 
 # Install Golang
 brew install go
