@@ -106,9 +106,6 @@ brew install jq
 brew install jo
 brew install gron
 
-# Install Elm
-brew install elm
-
 # Install Clojure
 brew install clojure
 brew install leiningen
