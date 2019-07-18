@@ -97,6 +97,9 @@ apt-get --yes install llvm clang
 # Install gdb
 apt-get --yes install gdb
 
+# Install cmake
+sudo apt-get install cmake cmake-doc
+
 # Install docker
 apt-get --yes install docker.io
 
