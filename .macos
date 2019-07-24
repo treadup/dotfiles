@@ -12,3 +12,6 @@
 # It is also possible to have your Spectacle configuration as a dotfile.
 # Perhaps it can even be stored in the .config directory.
 # https://github.com/mathiasbynens/dotfiles/blob/master/init/spectacle.json
+
+# Disable popup showing accented characters when a key is pressed down.
+defaults write -g ApplePressAndHoldEnabled -bool false
