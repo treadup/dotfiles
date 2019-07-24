@@ -83,7 +83,7 @@ brew install pyenv-virtualenv
 brew install pkg-config sdl2 sdl2_image sdl2_ttf sdl2_mixer gstreamer
 
 # Install Java
-brew cask install java
+brew cask install adoptopenjdk
 
 # Install Ruby
 brew install ruby
@@ -124,8 +124,11 @@ brew install nginx
 # Install Traefik
 brew install traefik
 
-# Install hosting utils
+# Install Heroku CLI
+brew tap heroku/brew
 brew install heroku
+
+# Install awscli
 brew install awscli
 
 # Install TeX
@@ -146,9 +149,6 @@ brew cask install virtualbox
 
 # Install Charles Web Proxy
 brew cask install charles
-
-# Install PyCharm Community Edition
-brew cask install pycharm-ce
 
 # Install Insomnia rest client
 brew cask install insomnia
