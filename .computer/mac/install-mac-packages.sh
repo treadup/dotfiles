@@ -49,7 +49,6 @@ brew install cliclick
 # Install editors
 brew cask install emacs
 brew install vim
-brew install neovim
 
 # Install Sublime Text
 brew cask install sublime-text
@@ -79,9 +78,6 @@ brew install python3
 brew install pyenv
 brew install pyenv-virtualenv
 
-# Install Kivy dependencies
-brew install pkg-config sdl2 sdl2_image sdl2_ttf sdl2_mixer gstreamer
-
 # Install Java
 brew cask install adoptopenjdk
 
@@ -109,7 +105,6 @@ brew install gron
 # Install Clojure
 brew install clojure
 brew install leiningen
-brew install boot-clj
 
 # Install Racket
 brew cask install racket
@@ -166,17 +161,8 @@ brew cask install postman
 # brew install docker
 # brew cask install docker
 
-# Install Packer
-brew install packer
-
 # Install Ansible
 brew install ansible
-
-# Install Kubernetes CLI
-brew install kubernetes-cli
-
-# Install minikube
-brew cask install minikube
 
 # Install multimarkdown
 brew install multimarkdown
@@ -227,9 +213,6 @@ brew install redis
 
 # Install memcached
 brew install memcached
-
-# Install ImageMagick
-brew install imagemagick
 
 # Install kap screen recorder
 brew cask install kap
