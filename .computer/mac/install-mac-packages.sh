@@ -169,6 +169,15 @@ brew cask install postman
 # Install Packer
 brew install packer
 
+# Install Ansible
+brew install ansible
+
+# Install Kubernetes CLI
+brew install kubernetes-cli
+
+# Install minikube
+brew cask install minikube
+
 # Install multimarkdown
 brew install multimarkdown
 
