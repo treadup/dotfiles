@@ -106,6 +106,9 @@ apt-get --yes install docker.io
 # Install packer
 apt-get --yes install packer
 
+# Install Ansible
+apt-get --yes install ansible
+
 # Install Java8 SDK
 apt-get --yes install default-jdk
 
