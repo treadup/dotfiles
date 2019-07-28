@@ -113,6 +113,9 @@ brew cask install racket
 brew install erlang
 brew install rebar3
 
+# Install CMake
+brew install cmake
+
 # Install web server
 brew install nginx
 
