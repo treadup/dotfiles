@@ -138,9 +138,6 @@ npm install -g expo-cli
 # React Native Cli
 npm install -g react-native-cli
 
-# Proton Native
-npm install -g create-proton-app
-
 echo Finished installing node.js programs
 
 #
