@@ -154,6 +154,9 @@ brew cask install insomnia
 # Install Postman rest client
 brew cask install postman
 
+# Install Godot
+brew cask install godot
+
 # Install CoronaSDK
 # Not sure that I like the licensing of the CoronaSDK product
 # brew cask install coronasdk
