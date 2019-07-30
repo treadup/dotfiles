@@ -139,9 +139,9 @@ apt-get --yes install python-pip python3-pip python3-dev \
 # Install Ruby
 apt-get --yes install ruby
 
-# Install Rust
-apt-get --yes install rustc
-apt-get --yes install cargo
+# Install Rust using rustup in setup-computer.sh instead
+# apt-get --yes install rustc
+# apt-get --yes install cargo
 
 # Install Lua
 apt-get --yes install lua5.3

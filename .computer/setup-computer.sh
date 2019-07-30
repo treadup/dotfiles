@@ -155,6 +155,15 @@ fi
 npm install -g lumo-cljs
 
 #
+# Rust
+#
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    echo Installing rust
+    curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
+    echo Finished installing rust
+fi
+
+#
 # Go
 #
 
