@@ -113,6 +113,10 @@ brew cask install racket
 brew install erlang
 brew install rebar3
 
+# Install Rust
+brew install rustup
+rustup-init -y --no-modify-path
+
 # Install CMake
 brew install cmake
 
