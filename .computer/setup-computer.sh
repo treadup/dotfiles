@@ -141,6 +141,13 @@ npm install -g react-native-cli
 echo Finished installing node.js programs
 
 #
+# Vue
+#
+
+# Install Vue cli
+npm install -g @vue/cli
+
+#
 # Clojure
 #
 
