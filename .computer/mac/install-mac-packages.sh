@@ -88,6 +88,9 @@ brew install ruby
 # Install Steel Bank Common Lisp
 brew install sbcl
 
+# Install CLISP
+brew install clisp
+
 # Install Lua
 brew install lua
 brew install luarocks
