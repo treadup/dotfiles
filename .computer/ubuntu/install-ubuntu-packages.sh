@@ -181,6 +181,13 @@ apt-get install -y fzy
 apt-get install -y pick
 
 #
+# Logging
+#
+
+# Install multitail
+apt-get install -y multitail
+
+#
 # Email
 #
 
