@@ -238,9 +238,20 @@ brew cask install aerial
 # Install ngrok local port forwarding tool
 brew cask install ngrok
 
+#
+# Graphics programming
+#
+
 # Install glfw
 # This is needed to build raylib from source
 brew install glfw
 
 # Install raylib
 brew install raylib
+
+# Install SDL2
+brew install sdl2
+
+# Install glslang
+# This provides the glslangValidator program
+brew install glslang
