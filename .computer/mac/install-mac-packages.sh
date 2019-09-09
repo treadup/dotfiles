@@ -214,9 +214,6 @@ brew cask install karabiner-elements
 # Install Hammerspoon
 brew cask install hammerspoon
 
-# Install lnav
-brew install lnav
-
 # Install ranger
 brew install ranger
 
@@ -237,6 +234,16 @@ brew cask install aerial
 
 # Install ngrok local port forwarding tool
 brew cask install ngrok
+
+#
+# Logging
+#
+
+# Install lnav
+brew install lnav
+
+# Install multitail
+brew install multitail
 
 #
 # Graphics programming
