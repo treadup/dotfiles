@@ -111,14 +111,22 @@ apt-get --yes install ansible
 
 # Install Java8 SDK
 apt-get --yes install default-jdk
+# apt-get --yes install openjdk-8-jdk
 
 # Set the JAVA_HOME environment variable. You need to log out and
 # then log back in again for the /etc/environment file to be reloaded.
 JAVA_HOME="$(dirname $(dirname $(readlink -e $(which javac))))"
 printf "JAVA_HOME=$JAVA_HOME\n" >> /etc/environment
 
+#
+# Lisp
+#
+
 # Install Steel Bank Common Lisp
 apt-get --yes install sbcl sbcl-doc sbcl-source
+
+# Install CLISP
+apt-get --yes install clisp
 
 # Install Gambit Scheme
 apt-get --yes install gambc
@@ -129,19 +137,39 @@ apt-get --yes install mit-scheme
 # Install Racket
 apt-get --yes install racket
 
+#
+# Go
+#
+
 # Install Go
 apt-get --yes install golang-go
+
+#
+# Python
+#
 
 # Install Python
 apt-get --yes install python-pip python3-pip python3-dev \
    python3-setuptools python3-wheel python3-venv
 
+#
+# Ruby
+#
+
 # Install Ruby
 apt-get --yes install ruby
+
+#
+# Rust
+#
 
 # Install Rust using rustup in setup-computer.sh instead
 # apt-get --yes install rustc
 # apt-get --yes install cargo
+
+#
+# Lua
+#
 
 # Install Lua
 apt-get --yes install lua5.3
@@ -152,6 +180,10 @@ apt-get --yes install liblua5.3-dev
 add-apt-repository --yes ppa:bartbes/love-stable
 apt-get --yes update
 apt-get --yes install love
+
+#
+# Other
+#
 
 # Install weechat
 apt-get --yes install weechat
