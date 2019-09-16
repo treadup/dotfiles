@@ -235,15 +235,15 @@ brew cask install aerial
 # Install ngrok local port forwarding tool
 brew cask install ngrok
 
+# Install cookiecutter
+brew install cookiecutter
+
 #
 # Logging
 #
 
 # Install lnav
 brew install lnav
-
-# Install multitail
-brew install multitail
 
 #
 # Graphics programming
