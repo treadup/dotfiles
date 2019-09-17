@@ -47,6 +47,10 @@ brew install bash-completion
 # Install cliclick
 brew install cliclick
 
+#
+# Editors
+#
+
 # Install editors
 brew cask install emacs
 brew install vim
@@ -74,17 +78,35 @@ brew install screen
 # Install telnet
 brew install telnet
 
+#
+# Python
+#
+
 # Install Python
 brew install python
 brew install python3
 brew install pyenv
 brew install pyenv-virtualenv
 
+#
+# Java
+#
+
 # Install Java
 brew cask install adoptopenjdk
+brew cask install intellij-idea-ce
+brew install maven
+
+#
+# Ruby
+#
 
 # Install Ruby
 brew install ruby
+
+#
+# Lisp
+#
 
 # Install Steel Bank Common Lisp
 brew install sbcl
@@ -92,14 +114,29 @@ brew install sbcl
 # Install CLISP
 brew install clisp
 
+# Install Racket
+brew cask install racket
+
+#
+# Lua
+#
+
 # Install Lua
 brew install lua
 brew install luarocks
 brew cask install love
 
+#
+# Go
+#
+
 # Install Golang
 brew install go
 brew install dep
+
+#
+# Node
+#
 
 # Install Node
 brew install node
@@ -107,16 +144,25 @@ brew install jq
 brew install jo
 brew install gron
 
+#
+# Clojure
+#
+
 # Install Clojure
 brew install clojure
 brew install leiningen
 
-# Install Racket
-brew cask install racket
+#
+# Erlang
+#
 
 # Install Erlang
 brew install erlang
 brew install rebar3
+
+#
+# Rust
+#
 
 # Install Rust
 brew install rustup
