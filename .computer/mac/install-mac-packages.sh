@@ -96,6 +96,7 @@ brew install pyenv-virtualenv
 brew cask install adoptopenjdk
 brew cask install intellij-idea-ce
 brew install maven
+brew install gradle
 
 #
 # Ruby
