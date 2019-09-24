@@ -13,3 +13,6 @@
 
 # Node modules
 node_modules/
+
+# Visual Studio Code project files
+.vscode/
