@@ -18,6 +18,13 @@ function box
     end
 end
 
+function _box_compose
+    if test -e ~/work/flowbox/localignore-docker-compose.yml
+	docker-compose -f ~/work/flowbox/localignore-docker-compose.yml $argv
+    else
+	docker-compose -f ~/work/flowbox/docker-compose.yml $argv
+    end
+end
 
 function _box_start
     switch "$argv[1]"
