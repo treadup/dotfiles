@@ -111,3 +111,10 @@ if which python3 > /dev/null
         eval (python3 -m virtualfish auto_activation)
     end
 end
+
+# Files placed in the .config/fish/conf.d/ folder will be sourced
+# automatically. This is preferable to sorucing files in this script.
+
+for WORK_FISH_FILE in ~/.config/fish/work_conf.d/*.fish
+    source $WORK_FISH_FILE
+end
