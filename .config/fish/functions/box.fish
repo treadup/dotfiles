@@ -6,6 +6,8 @@ function box
 	    _box_start $argv[2..-1]
 	case "deploy"
 	    _box_deploy $argv[2..-1]
+	case "local"
+	    _box_local $argv[2..-1]
 	case ""
 	    echo "Usage: box <command>"
 	    echo "where <command> can be one of the following."
@@ -15,6 +17,21 @@ function box
 	case "*"
 	    # echo "Unknown command: $argv[1]"
 	    eval "cd ~/work/flowbox/ && make $argv"
+    end
+end
+
+function _box_local
+    switch "$argv[1]"
+	case "clean"
+	    echo "Cleaning up localignore files"
+	    rm -f ~/work/flowbox/localignore-docker-compose.yml
+	    rm -f ~/work/flowbox/flask-app/localignore_Dockerfile
+	    rm -f ~/work/flowbox/flask-app/localignore-docker-entrypoint.sh
+	case "patch"
+	    _box_local clean
+	    echo "Creating patched localignore files"
+	    _box_patch_docker_compose_yml
+	    _box_patch_check_poetry_dependencies
     end
 end
 
