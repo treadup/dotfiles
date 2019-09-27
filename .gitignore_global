@@ -14,8 +14,12 @@
 # Node modules
 node_modules/
 
-# Visual Studio Code project files
+# Visual Studio Code files
 .vscode/
+*.code-workspace
 
-# Ingore all files and folders prefixed with localignore
+# Ignore all files and folders prefixed with localignore
 localignore*
+
+# Ignore pyenv version file
+.python-version
