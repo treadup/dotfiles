@@ -46,7 +46,8 @@ end
 function _box_start
     switch "$argv[1]"
 	case "frontend"
-	    eval "cd ~/work/frontend && yarn check --integrity && yarn start"
+	    # eval "cd ~/work/frontend && yarn check --integrity && yarn start"
+	    eval "cd ~/work/frontend && yarn start"
 	case "backend"
 	    eval "cd ~/work/flowbox && docker-compose up flask-app"
 	case ""
