@@ -23,15 +23,21 @@ end
 function _box_local
     switch "$argv[1]"
 	case "clean"
-	    echo "Cleaning up localignore files"
-	    rm -f ~/work/flowbox/localignore-docker-compose.yml
-	    rm -f ~/work/flowbox/flask-app/localignore_Dockerfile
-	    rm -f ~/work/flowbox/flask-app/localignore-docker-entrypoint.sh
+	    echo "Removing local patches"
+	    git checkout ~/work/flowbox/flask-app/docker-entrypoint.sh
 	case "patch"
 	    _box_local clean
-	    echo "Creating patched localignore files"
-	    _box_patch_docker_compose_yml
-	    _box_patch_check_poetry_dependencies
+	    echo "Applying local patches"
+	    cat ~/bin/check_packages_and_database_versions.sh > ~/work/flowbox/flask-app/localignore-docker-entrypoint.sh
+	    cat ~/work/flowbox/flask-app/docker-entrypoint.sh >> ~/work/flowbox/flask-app/localignore-docker-entrypoint.sh
+	    mv ~/work/flowbox/flask-app/localignore-docker-entrypoint.sh ~/work/flowbox/flask-app/docker-entrypoint.sh
+	case ""
+	    echo "Usage: box local <command>"
+	    echo "where <command> can be one of the following."
+	    echo "clean - clean up the local patched files"
+	    echo "patch - apply patches to local files"
+	case "*"
+	    echo "Unknown command: $argv[1]"
     end
 end
 
