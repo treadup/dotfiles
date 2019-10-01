@@ -20,6 +20,7 @@ function box
     end
 end
 
+
 function _box_local
     switch "$argv[1]"
 	case "clean"
@@ -41,21 +42,15 @@ function _box_local
     end
 end
 
-function _box_compose
-    if test -e ~/work/flowbox/localignore-docker-compose.yml
-	docker-compose -f ~/work/flowbox/localignore-docker-compose.yml $argv
-    else
-	docker-compose -f ~/work/flowbox/docker-compose.yml $argv
-    end
-end
 
 function _box_start
     switch "$argv[1]"
 	case "frontend"
-	    # eval "cd ~/work/frontend && yarn check --integrity && yarn start"
-	    eval "cd ~/work/frontend && yarn start"
+	    # Checking integrity is now done in the main project
+	    # yarn --cwd ~/work/frontend check --integrity && yarn --cwd ~/work/frontend start
+	    yarn --cwd ~/work/frontend start
 	case "backend"
-	    eval "cd ~/work/flowbox && docker-compose up flask-app"
+	    docker-compose -f ~/work/flowbox/docker-compose.yml up flask-app
 	case ""
 	    echo "Usage: box start <command>"
 	    echo "where <command> can be one of the following."
@@ -77,10 +72,10 @@ function _box_deploy
 	    eval "cd ~/work/flowbox/flask-app/ && fab live celery deploy"
 	case "webtest"
 	    echo "Deploying web to test"
-	    eval "cd ~/work/flowbox/flask-app/ && fab test web deploy "
+	    eval "cd ~/work/flowbox/flask-app/ && fab test web deploy"
 	case "webprod"
 	    echo "Deploying web to production"
-	    eval "cd ~/work/flowbox/flask-app/ && fab live web deploy "
+	    eval "cd ~/work/flowbox/flask-app/ && fab live web deploy"
 	case ""
 	    echo "Usage: box deploy <command>"
 	    echo "where <command> can be one of the following."
@@ -105,8 +100,9 @@ function _box_db
 	case ""
 	    echo "Usage: box db <command>"
 	    echo "where <command> can be one of the following."
-	    echo "psqltest - connect to the test database"
-	    echo "pdqlprod - connect to the production database"
+	    echo "psql - use psql to connect to a server"
+	    echo "upgrade - upgrade the database"
+	    echo "downgrade - downgrade the databse"
 	case "*"
 	    echo "Unknown db command: $argv[1]"
     end
