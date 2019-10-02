@@ -75,6 +75,9 @@ brew cask install firefox
 brew install tmux
 brew install screen
 
+# Install parallel ssh
+brew install pssh
+
 # Install telnet
 brew install telnet
 
