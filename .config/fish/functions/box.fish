@@ -4,10 +4,16 @@ function box
 	    _box_db $argv[2..-1]
 	case "start"
 	    _box_start $argv[2..-1]
+	case "stop"
+	    _box_stop $argv[2..-1]
 	case "deploy"
 	    _box_deploy $argv[2..-1]
 	case "local"
 	    _box_local $argv[2..-1]
+	case "cd"
+	    _box_cd $argv[2..-1]
+	case "log"
+	    _box_log $argv[2..-1]
 	case ""
 	    echo "Usage: box <command>"
 	    echo "where <command> can be one of the following."
@@ -15,11 +21,29 @@ function box
 	    echo "deploy - perform deploy commands"
 	    echo "start  - perform start commands"
 	case "*"
-	    # echo "Unknown command: $argv[1]"
-	    eval "cd ~/work/flowbox/ && make $argv"
+	    echo "Unknown command: $argv[1]"
+	    # eval "cd ~/work/flowbox/ && make $argv"
     end
 end
 
+function _box_cd
+    switch "argv[1]"
+	case "embed"
+	    cd ~/work/frontend-external/embed/
+	case "frontend"
+	    cd ~/work/frontend/
+	case "backend"
+	    cd ~/work/flowbox/
+	case ""
+	    echo "Usage: box cd <project>"
+	    echo "where <project> can be one of the following."
+	    echo "frontend"
+	    echo "backend"
+	    echo "embed"
+	case "*"
+	    echo "Unknonw project: $argv[1]"
+    end
+end
 
 function _box_local
     switch "$argv[1]"
@@ -59,6 +83,11 @@ function _box_start
 	case "*"
 	    echo "Unknown start command: $argv[1]"
     end
+end
+
+
+function _box_stop
+    echo "box stop is not implemented yet"
 end
 
 
@@ -105,5 +134,37 @@ function _box_db
 	    echo "downgrade - downgrade the databse"
 	case "*"
 	    echo "Unknown db command: $argv[1]"
+    end
+end
+
+
+function _box_log
+    switch "$argv[1]"
+	case "celeryprod"
+	    if set -q argv[2]
+		pssh -t0 -H "prod-celery1 prod-celery2 prod-celery3" -P "tail -F /var/log/celeryd/worker-celery.log | grep --line-buffered '$argv[2]'"
+	    else
+		pssh -t0 -H "prod-celery1 prod-celery2 prod-celery3" -P "tail -F /var/log/celeryd/worker-celery.log"
+	    end
+	case "webprod"
+	    if set -q argv[2]
+		pssh -t0 -H "prod-gunicorn1 prod-gunicorn2" -P "tail -F /var/log/gunicorn.log | grep --line-buffered '$argv[2]'"
+	    else
+		pssh -t0 -H "prod-gunicorn1 prod-gunicorn2" -P 'tail -F /var/log/gunicorn.log'
+	    end
+	case "webtest"
+	    if set -q argv[2]
+		pssh -t0 -H "test-gunicorn1 test-gunicorn2" -P "tail -F /var/log/gunicorn.log | grep --line-buffered '$argv[2]'"
+	    else
+		pssh -t0 -H "test-gunicorn1 test-gunicorn2" -P 'tail -F /var/log/gunicorn.log'
+	    end
+	case ""
+	    echo "Usage: box log <command>"
+	    echo "where <command> can be one of the following."
+	    echo "webprod"
+	    echo "celeryprod"
+	    echo "webtest"
+	case "*"
+	    echo "Unknown log command: $argv[1]"
     end
 end
