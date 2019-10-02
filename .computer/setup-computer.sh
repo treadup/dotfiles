@@ -37,8 +37,10 @@ echo Finished cloning Vundle repo
 # vim +PluginInstall +qall # Install all the plugins
 # This is done using the :PluginInstall command inside Vim.
 
-# Create the bin folder.
+# Create the user bin, lib and include folders.
 mkdir -p ~/bin
+mkdir -p ~/lib
+mkdir -p ~/include
 
 # Create ~/code folder
 mkdir -p code/lisp code/go code/clojure code/javascript code/python code/racket code/docker
