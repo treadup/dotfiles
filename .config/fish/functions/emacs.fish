@@ -1,25 +1,54 @@
-
-# The emacs function opens the given arguments in Emacs
-# using a new frame.
-
-# Currently this script only works if you are running Emacs
-# in a window-system. It will break things if you try to run
-# it from the terminal.
-
-# The values that make sense for the alternate editor are
-# emacs and "".
-
-# When you use emacs it will start a new instance of emacs.
-# This will in turn start the server.
-
-# When you use the empty string as the alternate editor and
-# you are unable to connect start emacs in daemon mode and
-# try to connect again.
-
 function emacs
-    # -c    Create a new frame
-    # -q    Show no messages on success
-    # -a    If the emacs server cannot be found run emacs.
-    # -n    Do not wait for the emacs server to return.
-    emacsclient -c -n -q -a emacs $argv
+    # Check if the Emacs process is started. If not then
+    # start it. Wait for the Emacs server to be available.
+    # Use emacsclient to connect to the server.
+    switch (uname)
+	case Linux
+            if not _is_emacs_process_started
+                command emacs
+            end
+	    _wait_for_emacs_server
+	    emacsclient -n -q -a false $argv
+	case Darwin
+	    if not _is_emacs_process_started
+		open -a Emacs
+	    end
+	    _wait_for_emacs_server
+	    emacsclient -n -q -a false $argv
+	case '*'
+	    echo "I do not know how to run Emacs on this operating system"
+    end
+end
+
+# Check if the emacs server is up and running
+function _is_emacs_server_started
+    emacsclient -q --eval 't' --alternate-editor false 1> /dev/null 2> /dev/null
+end
+
+# Check if the emacs process is up and running
+function _is_emacs_process_started
+    switch (uname)
+	case Linux
+	    ps -A | grep [e]macs
+	case Darwin
+	    ps -A | grep [/]Applications[/]Emacs.app[/] > /dev/null
+	case '*'
+	    echo "I do not know how to check if Emacs is running on this operating system"
+    end
+end
+
+# Wait for the emacs server to be up and running.
+# Timeout after 7 seconds.
+function _wait_for_emacs_server
+    for i in (seq 1 7)
+	if _is_emacs_server_started
+            # echo "Emacs server is started"
+	    return 0
+	else
+            # echo "Emacs server is not started"
+	    sleep 1
+	end
+    end
+    echo "Could not connect to the Emacs server. Timing out."
+    return 1
 end
