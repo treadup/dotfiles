@@ -4,13 +4,18 @@ function emacs
     # Use emacsclient to connect to the server.
     switch (uname)
 	case Linux
+	    # Start Emacs if not started.
             if not _is_emacs_process_started
                 fish -c 'command emacs &'
             end
+	    # Use emacsclient to pass arguments to Emacs
 	    if test -n "$argv"
 		_wait_for_emacs_server
 		emacsclient -n -q -a false $argv
 	    end
+	    # Use wmctrl to bring the Emacs window to the foreground
+	    set -l WINDOWID (wmctrl -lx | grep emacs.Emacs | cut -f1 -d' ')
+	    wmctrl -ia $WINDOWID
 	case Darwin
 	    if not _is_emacs_process_started
 		open -a Emacs
@@ -33,7 +38,7 @@ end
 function _is_emacs_process_started
     switch (uname)
 	case Linux
-	    ps -A | grep [e]macs
+	    ps -A | grep [e]macs > /dev/null
 	case Darwin
 	    ps -A | grep [/]Applications[/]Emacs.app[/] > /dev/null
 	case '*'
