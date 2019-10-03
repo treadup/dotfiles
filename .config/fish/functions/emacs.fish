@@ -5,16 +5,20 @@ function emacs
     switch (uname)
 	case Linux
             if not _is_emacs_process_started
-                command emacs
+                fish -c 'command emacs &'
             end
-	    _wait_for_emacs_server
-	    emacsclient -n -q -a false $argv
+	    if test -n "$argv"
+		_wait_for_emacs_server
+		emacsclient -n -q -a false $argv
+	    end
 	case Darwin
 	    if not _is_emacs_process_started
 		open -a Emacs
 	    end
-	    _wait_for_emacs_server
-	    emacsclient -n -q -a false $argv
+	    if test -n "$argv"
+		_wait_for_emacs_server
+		emacsclient -n -q -a false $argv
+	    end
 	case '*'
 	    echo "I do not know how to run Emacs on this operating system"
     end
