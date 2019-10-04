@@ -296,18 +296,19 @@ brew install cookiecutter
 brew install lnav
 
 #
-# Graphics programming
+# Game programming
 #
-
-# Install glfw
-# This is needed to build raylib from source
-brew install glfw
-
-# Install raylib
-brew install raylib
 
 # Install SDL2
 brew install sdl2
+
+#
+# Graphics programming
+#
+
+# Install OpenGL related libraries
+brew install glfw
+brew install glew
 
 # Install glslang
 # This provides the glslangValidator program
