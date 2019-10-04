@@ -1,25 +1,35 @@
 function box
     switch "$argv[1]"
+	case "build"
+	    _box_build
+	case "cd"
+	    _box_cd $argv[2..-1]
 	case "db"
 	    _box_db $argv[2..-1]
-	case "start"
-	    _box_start $argv[2..-1]
-	case "stop"
-	    _box_stop $argv[2..-1]
 	case "deploy"
 	    _box_deploy $argv[2..-1]
 	case "local"
 	    _box_local $argv[2..-1]
-	case "cd"
-	    _box_cd $argv[2..-1]
 	case "log"
 	    _box_log $argv[2..-1]
+	case "shell"
+	    _box_shell $argv[2..-1]
+	case "start"
+	    _box_start $argv[2..-1]
+	case "stop"
+	    _box_stop $argv[2..-1]
 	case ""
 	    echo "Usage: box <command>"
 	    echo "where <command> can be one of the following."
+	    echo "build  - build the docker image"
+	    echo "cd     - change to project folders"
 	    echo "db     - perform database commands"
 	    echo "deploy - perform deploy commands"
+	    echo "local  - perform local patching commands"
+	    echo "log    - view logs"
+	    echo "shell  - start shell"
 	    echo "start  - perform start commands"
+	    echo "stop   - perform stop commands"
 	case "*"
 	    echo "Unknown command: $argv[1]"
 	    # eval "cd ~/work/flowbox/ && make $argv"
@@ -87,7 +97,14 @@ end
 
 
 function _box_stop
-    echo "box stop is not implemented yet"
+    switch "$argv[1]"
+	case "backend"
+	case ""
+	    echo "Usage: box stop <command>"
+	    echo "where <command> can be one of the following."
+	    echo "backend - stop the backend application"
+	case "*"
+	    echo "Unknown stop command: $argv[1]"
 end
 
 
@@ -167,4 +184,25 @@ function _box_log
 	case "*"
 	    echo "Unknown log command: $argv[1]"
     end
+end
+
+
+function _box_shell
+    switch "$argv[1]"
+	case "python"
+	    docker-compose -f ~/work/flowbox/docker-compose.yml exec flask-app python manage.py shell
+	case "bash"
+	    docker-compose -f ~/work/flowbox/docker-compose.yml exec flask-app bash
+	case ""
+	    echo "Usage: box shell <shell>"
+	    echo "where <shell> can be one of the following."
+	    echo "shell"
+	    echo "bash"
+	case "*"
+	    echo "Unknown shell: $argv[1]"
+    end
+end
+
+function _box_build
+    docker-compose -f ~/work/flowbox/docker-compose.yml build flask-app
 end
