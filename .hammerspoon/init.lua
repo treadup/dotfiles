@@ -205,7 +205,8 @@ Application Launchers
 hyper + e will launch Emacs
 hyper + t will launch iTerm
 hyper + g will launch Google Chrome
-hyper + f will launch Firefox
+hyper + b will launch Firefox
+hyper + x will launch XCode
 --]]
 
 -- Launch Emacs with hyper+e
@@ -228,14 +229,19 @@ hs.hotkey.bind(hyper, "B", function()
   hs.application.launchOrFocus("Firefox")
 end)
 
--- Launch Spotify with hyper+M
-hs.hotkey.bind(hyper, "M", function()
+-- Launch Spotify with hyper+S
+hs.hotkey.bind(hyper, "S", function()
   hs.application.launchOrFocus("Spotify")
 end)
 
--- Launch Slack with hyper+S
-hs.hotkey.bind(hyper, "S", function()
+-- Launch Slack with hyper+C
+hs.hotkey.bind(hyper, "C", function()
   hs.application.launchOrFocus("Slack")
+end)
+
+-- Launch XCode with hyper+X
+hs.hotkey.bind(hyper, "X", function()
+  hs.application.launchOrFocus("Xcode")
 end)
 
 
