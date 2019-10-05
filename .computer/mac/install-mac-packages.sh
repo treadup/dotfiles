@@ -309,6 +309,7 @@ brew install sdl2
 # Install OpenGL related libraries
 brew install glfw
 brew install glew
+brew install libepoxy
 
 # Install glslang
 # This provides the glslangValidator program
