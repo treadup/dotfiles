@@ -59,13 +59,15 @@ function _box_local
     switch "$argv[1]"
 	case "clean"
 	    echo "Removing local patches"
-	    git checkout ~/work/flowbox/flask-app/docker-entrypoint.sh
+	    cd ~/work/flowbox/flask-app
+	    git checkout Dockerfile
 	case "patch"
-	    _box_local clean
 	    echo "Applying local patches"
-	    cat ~/bin/check_packages_and_database_versions.sh > ~/work/flowbox/flask-app/localignore-docker-entrypoint.sh
-	    cat ~/work/flowbox/flask-app/docker-entrypoint.sh >> ~/work/flowbox/flask-app/localignore-docker-entrypoint.sh
-	    mv ~/work/flowbox/flask-app/localignore-docker-entrypoint.sh ~/work/flowbox/flask-app/docker-entrypoint.sh
+	    echo "Patching Dockerfile"
+	    cd ~/work/flowbox/flask-app
+	    git checkout Dockerfile
+	    sed '/WORKDIR/ r Dockerfile.patch' Dockerfile > localignore_Dockerfile
+	    mv localignore_Dockerfile Dockerfile
 	case ""
 	    echo "Usage: box local <command>"
 	    echo "where <command> can be one of the following."
@@ -105,6 +107,7 @@ function _box_stop
 	    echo "backend - stop the backend application"
 	case "*"
 	    echo "Unknown stop command: $argv[1]"
+    end
 end
 
 
