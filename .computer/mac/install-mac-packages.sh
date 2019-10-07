@@ -54,6 +54,7 @@ brew install cliclick
 # Install editors
 brew cask install emacs
 brew install vim
+brew install neovim
 brew cask install vscodium
 
 # Install Sublime Text
