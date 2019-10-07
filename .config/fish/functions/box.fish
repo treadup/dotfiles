@@ -12,6 +12,8 @@ function box
 	    _box_local $argv[2..-1]
 	case "log"
 	    _box_log $argv[2..-1]
+	case "open"
+	    _box_open $argv[2..-1]
 	case "shell"
 	    _box_shell $argv[2..-1]
 	case "start"
@@ -53,6 +55,10 @@ function _box_cd
 	case "*"
 	    echo "Unknonw project: $argv[1]"
     end
+end
+
+function _box_open
+    google-chrome https://localhost:5000/engage
 end
 
 function _box_local
