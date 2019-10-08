@@ -4,6 +4,8 @@ function box
 	    _box_build
 	case "cd"
 	    _box_cd $argv[2..-1]
+        case "ctags"
+            _box_ctags $argv[2..-1]
 	case "db"
 	    _box_db $argv[2..-1]
 	case "deploy"
@@ -55,6 +57,11 @@ function _box_cd
 	case "*"
 	    echo "Unknonw project: $argv[1]"
     end
+end
+
+function _box_ctags
+    cd ~/work/flowbox/flask-app
+    ctags -R .
 end
 
 function _box_open
