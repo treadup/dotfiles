@@ -18,8 +18,12 @@ node_modules/
 .vscode/
 *.code-workspace
 
-# Ignore all files and folders prefixed with localignore
-localignore*
-
 # Ignore pyenv version file
 .python-version
+
+
+# If you want to ignore files in a git project locally then you can
+# use the .git/info/exclude file. This file follows the same syntax as
+# a .gitignore file. This file is never checked into the repo. This means
+# that the rules specified in the .git/info/exclude file will only have
+# an effect locally and never on the remote repo.
