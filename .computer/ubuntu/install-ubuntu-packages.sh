@@ -222,6 +222,9 @@ apt-get install -y cookiecutter
 # Install SDL 1.2
 apt-get install -y libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev
 
+# Install SDL 2
+apt-get install -y libsdl2-dev
+
 #
 # Email
 #
