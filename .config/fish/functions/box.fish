@@ -155,6 +155,8 @@ function _box_db
     switch "$argv[1]"
 	case "psql"
 	    _box_db_psql $argv[2..-1]
+        case "mysql"
+            _box_db_mysql $argv[2..-1]
 	case "upgrade"
 	    eval "cd ~/work/flowbox/ && docker-compose exec flask-app python manage.py db upgrade"
 	case "downgrade"
@@ -163,6 +165,7 @@ function _box_db
 	    echo "Usage: box db <command>"
 	    echo "where <command> can be one of the following."
 	    echo "psql - use psql to connect to a server"
+            echo "mysql - use mysql to connect to a server"
 	    echo "upgrade - upgrade the database"
 	    echo "downgrade - downgrade the databse"
 	case "*"
