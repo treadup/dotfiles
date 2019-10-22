@@ -22,3 +22,28 @@ syntax enable
 " This theme was downloaded from here. 
 " https://github.com/sjl/badwolf/blob/master/colors/goodwolf.vim
 colorscheme goodwolf
+
+" Set the maximum text width. The purpose is to wrap lines automatically.
+set textwidth=80
+
+" Make backspace behave in a more sane manner.
+set backspace=indent,eol,start
+
+" Disable the bell.
+set belloff=all
+
+" No backup files
+set nobackup
+
+" No swap files. We have enough memory
+set noswapfile
+
+" Turn off the startup message.
+set shortmess+=I
+
+" Open new splits on the right or below.
+set splitbelow
+set splitright
+
+" Make it so that files that are opened are fully unfolded.
+set foldlevelstart=99
