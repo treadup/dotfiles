@@ -38,7 +38,10 @@
 	untracked = ls-files --others --exclude-standard
 
         # Show the log containing the commits that I have made.
-        henrik = log --author Treadup
+        mine = log --author Treadup
+
+        # Show number of commits per month
+        statistics = !git log --author Treadup --pretty=format:'%cD' | cut -d' ' -f 3 -f 4 | uniq -c
 
         # Perform a hard reset and then delete the untracked files.
         nevermind = !git reset --hard HEAD; and git clean -d -f
