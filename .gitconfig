@@ -41,7 +41,10 @@
         mine = log --author Treadup
 
         # Show number of commits per month
-        statistics = !git log --author Treadup --pretty=format:'%cD' | cut -d' ' -f 3 -f 4 | uniq -c
+        stats-monthly = !git log --date=format:'%Y-%m' --author Treadup --pretty=format:'%cd' | uniq -c
+
+        # Show number of commits per week
+        stats-weekly = !git log --date=format:'%Yv%W' --author Treadup --pretty=format:'%cd' | uniq -c
 
         # Perform a hard reset and then delete the untracked files.
         nevermind = !git reset --hard HEAD; and git clean -d -f
