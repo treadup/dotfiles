@@ -90,7 +90,7 @@ apt-get --yes install bash-completion
 apt-get --yes install trash-cli
 
 # Install lns
-sudo -u henrik bash <<EOF
+sudo -u henrik bash <<"EOF"
 echo Installing lns
 curl -o /home/henrik/bin/lns http://interglacial.com/~sburke/pub/lns
 chmod u+x /home/henrik/bin/lns
@@ -212,7 +212,7 @@ apt-get --yes install ruby
 # apt-get --yes install rustc
 # apt-get --yes install cargo
 
-sudo -u henrik bash <<EOF
+sudo -u henrik bash <<"EOF"
 echo Installing rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
 echo Finished installing rust
@@ -325,7 +325,7 @@ echo Cloning dotfiles repo
 echo ---------------------------------
 # The following is to get around the fact that we cannot clone into a non empty directory.
 # Use a here document for this instead
-sudo -u henrik bash <<EOF
+sudo -u henrik bash <<"EOF"
 echo Cloning dot files repo
 git clone --separate-git-dir=/home/henrik/.dotconf https://github.com/treadup/dotfiles.git /home/henrik/dotconf-tmp
 rm -r /home/henrik/dotconf-tmp/
@@ -341,7 +341,7 @@ EOF
 echo ---------------------------------
 echo Cloning dotfiles repo
 echo ---------------------------------
-sudo -u henrik bash <<EOF
+sudo -u henrik bash <<"EOF"
 # Download .emacs.d repo
 echo Cloning Emacs init file repo
 git clone https://github.com/treadup/.emacs.d.git /home/henrik/.emacs.d
@@ -351,22 +351,21 @@ EOF
 echo ---------------------------------
 echo Creating standard folders
 echo ---------------------------------
-sudo -u henrik bash <<EOF
+sudo -u henrik bash <<"EOF"
 # Create the user bin, lib and include folders.
-mkdir -p /home/henrik/bin
-mkdir -p /home/henrik/lib
-mkdir -p /home/henrik/include
+mkdir -p $HOME/bin
+mkdir -p $HOME/lib
+mkdir -p $HOME/include
 
 # Create code folder
-mkdir -p /home/henrik/code/lisp /home/code/go /home/henrik/code/clojure
-mkdir -p /home/henrik/code/javascript /home/henrik/code/python
-mkdir -p /home/henrik/code/racket /home/henrik/code/docker
+mkdir -p ~/code/lisp ~/code/go ~/code/clojure ~/code/javascript ~/code/python
+mkdir -p ~/code/racket ~/code/docker
 EOF
 
 echo ---------------------------------
 echo Setting up Common Lisp
 echo ---------------------------------
-sudo -u henrik bash <<EOF
+sudo -u henrik bash <<"EOF"
 # Install Quicklisp
 curl -o /home/henrik/.quicklisp/quicklisp.lisp https://beta.quicklisp.org/quicklisp.lisp
 curl -o /home/henrik/.quicklisp/quicklisp.lisp.asc https://beta.quicklisp.org/quicklisp.lisp.asc
@@ -382,7 +381,11 @@ EOF
 echo ---------------------------------
 echo Setting up Python
 echo ---------------------------------
-sudo -u henrik bash <<EOF
+# Quoting the limit string makes it so that the characters
+# in the here doc are escaped. In other words this means
+# that you can use $PATH in your here doc and it will
+# be the path of the user henrik and not root.
+sudo -u henrik bash <<"EOF"
 # Create folder for Python virutal environments.
 mkdir -p /home/henrik/.virtualenvs/
 
@@ -390,6 +393,7 @@ mkdir -p /home/henrik/.virtualenvs/
 echo Installing Python packages
 
 echo Installing pipx
+export PATH=$HOME/.local/bin:$PATH
 python3 -m pip install pipx
 python3 -m pipx ensurepath
 
@@ -426,11 +430,12 @@ EOF
 echo ---------------------------------
 echo Setting up Node
 echo ---------------------------------
-sudo -u henrik bash <<EOF
+sudo -u henrik bash <<"EOF"
 
-# Install node programs
-# https://docs.npmjs.com/getting-started/fixing-npm-permissions
 echo Installing node.js programs
+cd $HOME
+
+# https://docs.npmjs.com/getting-started/fixing-npm-permissions
 mkdir -p /home/henrik/.npm-global
 npm config set prefix /home/henrik/.npm-global
 
@@ -460,11 +465,12 @@ npm install -g react-native-cli
 npm install -g @vue/cli
 
 echo Finished installing node.js programs
+EOF
 
 echo ---------------------------------
 echo Setting up Clojure
 echo ---------------------------------
-sudo -u henrik bash <<EOF
+sudo -u henrik bash <<"EOF"
 
 # Installing Leiningen
 echo Installing lein
@@ -476,7 +482,7 @@ EOF
 echo ---------------------------------
 echo Setting up Go
 echo ---------------------------------
-sudo -u henrik bash <<EOF
+sudo -u henrik bash <<"EOF"
 # Setup the Go workspace
 mkdir /home/henrik/go
 
