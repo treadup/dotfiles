@@ -34,7 +34,6 @@ if [ $(id -u henrik) ]; then
 else
    echo Creating user henrik
    useradd -G sudo,docker henrik
-   passwd henrik
 fi
 
 echo ---------------------------------
@@ -225,7 +224,6 @@ EOF
 
 # Install Lua
 apt-get --yes install lua5.3
-ln -s /usr/bin/lua5.3 /usr/bin/lua
 apt-get --yes install liblua5.3-dev
 
 # Install Löve2D
