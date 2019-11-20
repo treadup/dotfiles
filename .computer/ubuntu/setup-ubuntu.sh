@@ -56,7 +56,7 @@ apt-get --yes install language-pack-en
 
 # Install git
 apt-get --yes install git
-git config --global core.excludesfile ~/.gitignore_global
+git config --global core.excludesfile /home/henrik/.gitignore_global
 
 # Install GnuPG
 apt-get --yes install gnupg
@@ -92,8 +92,8 @@ apt-get --yes install trash-cli
 # Install lns
 sudo -u henrik bash <<EOF
 echo Installing lns
-curl -o ~/bin/lns http://interglacial.com/~sburke/pub/lns
-chmod u+x ~/bin/lns
+curl -o /home/henrik/bin/lns http://interglacial.com/~sburke/pub/lns
+chmod u+x /home/henrik/bin/lns
 echo Finished installing lns
 EOF
 
@@ -327,8 +327,8 @@ echo ---------------------------------
 # Use a here document for this instead
 sudo -u henrik bash <<EOF
 echo Cloning dot files repo
-git clone --separate-git-dir=/home/henrik/.dotconf https://github.com/treadup/dotfiles.git ~/dotconf-tmp
-rm -r ~/dotconf-tmp/
+git clone --separate-git-dir=/home/henrik/.dotconf https://github.com/treadup/dotfiles.git /home/henrik/dotconf-tmp
+rm -r /home/henrik/dotconf-tmp/
 /usr/bin/git --git-dir=/home/henrik/.dotconf/ --work-tree=/home/henrik config status.showUntrackedFiles no
 /usr/bin/git --git-dir=/home/henrik/.dotconf/ --work-tree=/home/henrik checkout .
 echo Finished cloning dot files repo
@@ -357,7 +357,7 @@ mkdir -p /home/henrik/bin
 mkdir -p /home/henrik/lib
 mkdir -p /home/henrik/include
 
-# Create ~/code folder
+# Create code folder
 mkdir -p /home/henrik/code/lisp /home/code/go /home/henrik/code/clojure
 mkdir -p /home/henrik/code/javascript /home/henrik/code/python
 mkdir -p /home/henrik/code/racket /home/henrik/code/docker
@@ -431,8 +431,8 @@ sudo -u henrik bash <<EOF
 # Install node programs
 # https://docs.npmjs.com/getting-started/fixing-npm-permissions
 echo Installing node.js programs
-mkdir -p ~/.npm-global
-npm config set prefix ~/.npm-global
+mkdir -p /home/henrik/.npm-global
+npm config set prefix /home/henrik/.npm-global
 
 npm install -g jshint
 npm install -g js-beautify
@@ -468,8 +468,8 @@ sudo -u henrik bash <<EOF
 
 # Installing Leiningen
 echo Installing lein
-curl -o ~/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
-chmod 755 ~/bin/lein
+curl -o /home/henrik/bin/lein https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+chmod 755 /home/henrik/bin/lein
 echo Finished installing lein
 EOF
 
