@@ -34,6 +34,7 @@ if [ $(id -u henrik) ]; then
 else
    echo Creating user henrik
    useradd -G sudo,docker henrik
+   passwd henrik
 fi
 
 echo ---------------------------------
@@ -143,7 +144,7 @@ apt-get --yes install llvm clang
 apt-get --yes install gdb
 
 # Install cmake
-sudo apt-get install cmake cmake-doc
+apt-get --yes install cmake cmake-doc
 
 # Install docker
 apt-get --yes install docker.io
@@ -361,7 +362,7 @@ mkdir -p /home/henrik/include
 
 # Create ~/code folder
 mkdir -p /home/henrik/code/lisp /home/code/go /home/henrik/code/clojure
-mkdir -p /home/henrik/code/javascript /home/henrik/code/python 
+mkdir -p /home/henrik/code/javascript /home/henrik/code/python
 mkdir -p /home/henrik/code/racket /home/henrik/code/docker
 EOF
 
@@ -527,7 +528,3 @@ echo     pass git init
 echo
 echo Use the email address associated with the GPG key that should be used.
 echo
-
-echo Create password for user henrik
-passwd henrik
-
