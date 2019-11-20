@@ -33,7 +33,7 @@ if [ $(id -u henrik) ]; then
    echo User henrik already exists
 else
    echo Creating user henrik
-   useradd -G sudo,docker henrik
+   useradd -G sudo,docker -m henrik
 fi
 
 echo ---------------------------------
