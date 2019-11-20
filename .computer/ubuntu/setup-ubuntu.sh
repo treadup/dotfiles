@@ -336,8 +336,7 @@ rm -r ~/dotconf-tmp/
 echo Finished cloning dot files repo
 
 echo Downloading git prompt
-curl
-https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o /home/henrik/.git-prompt.sh
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o /home/henrik/.git-prompt.sh
 echo Finished downloading git prompt
 EOF
 
