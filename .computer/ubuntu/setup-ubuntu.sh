@@ -373,7 +373,7 @@ echo Finished downloading git prompt
 EOF
 
 echo ---------------------------------
-echo Cloning dotfiles repo
+echo Cloning Emacs configuration repo
 echo ---------------------------------
 sudo -u henrik bash <<"EOF"
 set -e
@@ -436,10 +436,6 @@ pipx install isort
 pipx install yamllint
 pipx install pur
 pipx install yq
-
-# Install database utilities
-pipx install pgcli
-pipx install mycli
 
 # Install vritualfish
 pipx install virtualfish
