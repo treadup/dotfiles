@@ -56,7 +56,7 @@ apt-get --yes install language-pack-en
 
 # Install git
 apt-get --yes install git
-git config --global core.excludesfile /home/henrik/.gitignore_global
+sudo -u henrik git config --global core.excludesfile /home/henrik/.gitignore_global
 
 # Install GnuPG
 apt-get --yes install gnupg
@@ -91,6 +91,9 @@ apt-get --yes install trash-cli
 
 # Install lns
 sudo -u henrik bash <<"EOF"
+set -e
+set -u
+
 echo Installing lns
 curl -o /home/henrik/bin/lns http://interglacial.com/~sburke/pub/lns
 chmod u+x /home/henrik/bin/lns
@@ -213,6 +216,8 @@ apt-get --yes install ruby
 # apt-get --yes install cargo
 
 sudo -u henrik bash <<"EOF"
+set -e
+set -u
 echo Installing rust
 curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
 echo Finished installing rust
@@ -326,6 +331,8 @@ echo ---------------------------------
 # The following is to get around the fact that we cannot clone into a non empty directory.
 # Use a here document for this instead
 sudo -u henrik bash <<"EOF"
+set -e
+set -u
 echo Cloning dot files repo
 git clone --separate-git-dir=/home/henrik/.dotconf https://github.com/treadup/dotfiles.git /home/henrik/dotconf-tmp
 rm -r /home/henrik/dotconf-tmp/
@@ -342,6 +349,8 @@ echo ---------------------------------
 echo Cloning dotfiles repo
 echo ---------------------------------
 sudo -u henrik bash <<"EOF"
+set -e
+set -u
 # Download .emacs.d repo
 echo Cloning Emacs init file repo
 git clone https://github.com/treadup/.emacs.d.git /home/henrik/.emacs.d
@@ -352,6 +361,9 @@ echo ---------------------------------
 echo Creating standard folders
 echo ---------------------------------
 sudo -u henrik bash <<"EOF"
+set -e
+set -u
+
 # Create the user bin, lib and include folders.
 mkdir -p $HOME/bin
 mkdir -p $HOME/lib
@@ -366,6 +378,9 @@ echo ---------------------------------
 echo Setting up Common Lisp
 echo ---------------------------------
 sudo -u henrik bash <<"EOF"
+set -e
+set -u
+
 # Install Quicklisp
 curl -o /home/henrik/.quicklisp/quicklisp.lisp https://beta.quicklisp.org/quicklisp.lisp
 curl -o /home/henrik/.quicklisp/quicklisp.lisp.asc https://beta.quicklisp.org/quicklisp.lisp.asc
@@ -386,6 +401,9 @@ echo ---------------------------------
 # that you can use $PATH in your here doc and it will
 # be the path of the user henrik and not root.
 sudo -u henrik bash <<"EOF"
+set -e
+set -u
+
 # Create folder for Python virutal environments.
 mkdir -p /home/henrik/.virtualenvs/
 
@@ -431,6 +449,8 @@ echo ---------------------------------
 echo Setting up Node
 echo ---------------------------------
 sudo -u henrik bash <<"EOF"
+set -e
+set -u
 
 echo Installing node.js programs
 cd $HOME
@@ -471,6 +491,8 @@ echo ---------------------------------
 echo Setting up Clojure
 echo ---------------------------------
 sudo -u henrik bash <<"EOF"
+set -e
+set -u
 
 # Installing Leiningen
 echo Installing lein
@@ -483,6 +505,9 @@ echo ---------------------------------
 echo Setting up Go
 echo ---------------------------------
 sudo -u henrik bash <<"EOF"
+set -e
+set -u
+
 # Setup the Go workspace
 mkdir /home/henrik/go
 
