@@ -97,6 +97,13 @@ if type -q pyenv-virtualenv-init
 end
 
 #
+# pipenv
+#
+
+# Use the --fancy option by default when starting pipenv shell
+set -gx PIPENV_SHELL_FANCY 1
+
+#
 # Setup virtualfish
 #
 

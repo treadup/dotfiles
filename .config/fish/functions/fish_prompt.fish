@@ -9,9 +9,15 @@ function fish_prompt
             set_color cyan
             printf '%s ' (basename $CONDA_DEFAULT_ENV)
             set_color normal
-        end
-
-        if test -n "$VIRTUAL_ENV"
+        else if test -n "$PIPENV_ACTIVE"
+	    # When running pipenv shell you want to use `pipenv shell --fancy`
+	    # By setting PIPENV_SHELL_FANCY=1 pipenv will use the --fancy option by default.
+	    if test -n "$VIRTUAL_ENV"
+                set_color cyan
+	        printf '%s ' (basename $VIRTUAL_ENV | rev | cut -d"-" -f2-  | rev)
+	        set_color normal
+            end
+        else if test -n "$VIRTUAL_ENV"
             set_color cyan
             printf '%s ' (basename $VIRTUAL_ENV)
             set_color normal
