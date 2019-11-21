@@ -40,14 +40,12 @@ echo ---------------------------------
 echo Installing packages
 echo ---------------------------------
 
+# Change to the user home folder. Being in the /root folder
+# causes issues when executing commands with sudo -u henrik
+cd /home/henrik
+
 echo Installing sudo
-apt-get install sudo
-
-echo Updating apt
-apt-get --yes update
-
-echo Upgrading system
-apt-get --yes upgrade
+apt-get --yes install sudo
 
 echo Installing packages
 
