@@ -182,14 +182,16 @@ printf "JAVA_HOME=$JAVA_HOME\n" >> /etc/environment
 #
 
 # Install PostgreSQL
-apt-get install -y postgresql postgresql-doc postgresql-contrib postgresql-client
+apt-get install --yes postgresql postgresql-doc postgresql-contrib postgresql-client
+sudo apt-get install --yes pgcli
 
 # Install Redis
-apt-get install -y redis
-apt-get install -y redis-tools
+apt-get install --yes redis
+apt-get install --yes redis-tools
 
 # Install MariaDB
-apt-get install -y mariadb-server mariadb-client
+apt-get install --yes mariadb-server mariadb-client
+apt-get install --yes mycli
 
 #
 # Lisp
