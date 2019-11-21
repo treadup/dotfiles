@@ -114,9 +114,6 @@ chmod u+x ~/bin/lns
 echo Finished installing lns
 EOF
 
-# Install ubuntu make
-apt-get --yes install ubuntu-make
-
 # Install zip
 apt-get --yes install zip unzip
 
@@ -179,6 +176,20 @@ apt-get --yes install default-jdk
 # then log back in again for the /etc/environment file to be reloaded.
 JAVA_HOME="$(dirname $(dirname $(readlink -e $(which javac))))"
 printf "JAVA_HOME=$JAVA_HOME\n" >> /etc/environment
+
+#
+# Databases
+#
+
+# Install PostgreSQL
+apt-get install -y postgresql postgresql-doc postgresql-contrib postgresql-client
+
+# Install Redis
+apt-get install -y redis
+apt-get install -y redis-tools
+
+# Install MariaDB
+apt-get install -y mariadb-server mariadb-client
 
 #
 # Lisp
@@ -410,7 +421,6 @@ echo Installing Python packages
 echo Installing pipx
 export PATH=$HOME/.local/bin:$PATH
 python3 -m pip install pipx
-python3 -m pipx ensurepath
 
 pipx install black
 pipx install virtualenv
@@ -418,7 +428,6 @@ pipx install httpie
 pipx install html2text
 pipx install pylint
 pipx install flake8
-pipx install flake8-bugbear
 pipx install autopep8
 pipx install python-language-server
 pipx install isort
