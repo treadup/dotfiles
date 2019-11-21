@@ -37,6 +37,22 @@ else
 fi
 
 echo ---------------------------------
+echo Creating standard folders
+echo ---------------------------------
+sudo -u henrik bash <<"EOF"
+set -e
+set -u
+
+# Create the user bin, lib and include folders.
+mkdir -p ~/bin ~/lib ~/include
+
+# Create code folder
+mkdir -p ~/code/lisp ~/code/go ~/code/clojure
+mkdir -p ~/code/javascript ~/code/python
+mkdir -p ~/code/racket ~/code/docker
+EOF
+
+echo ---------------------------------
 echo Installing packages
 echo ---------------------------------
 
@@ -93,8 +109,8 @@ set -e
 set -u
 
 echo Installing lns
-curl -o /home/henrik/bin/lns http://interglacial.com/~sburke/pub/lns
-chmod u+x /home/henrik/bin/lns
+curl -o ~/bin/lns http://interglacial.com/~sburke/pub/lns
+chmod u+x ~/bin/lns
 echo Finished installing lns
 EOF
 
@@ -353,23 +369,6 @@ set -u
 echo Cloning Emacs init file repo
 git clone https://github.com/treadup/.emacs.d.git /home/henrik/.emacs.d
 echo Finished cloning Emacs init file repo
-EOF
-
-echo ---------------------------------
-echo Creating standard folders
-echo ---------------------------------
-sudo -u henrik bash <<"EOF"
-set -e
-set -u
-
-# Create the user bin, lib and include folders.
-mkdir -p $HOME/bin
-mkdir -p $HOME/lib
-mkdir -p $HOME/include
-
-# Create code folder
-mkdir -p ~/code/lisp ~/code/go ~/code/clojure ~/code/javascript ~/code/python
-mkdir -p ~/code/racket ~/code/docker
 EOF
 
 echo ---------------------------------
