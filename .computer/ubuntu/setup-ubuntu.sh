@@ -438,7 +438,7 @@ pipx install pur
 pipx install yq
 
 # Install vritualfish
-pipx install virtualfish
+pip3 install virtualfish
 
 # Install poetry
 # Make sure that poetry uses python3 when creating new projects
@@ -508,17 +508,18 @@ EOF
 echo ---------------------------------
 echo Setting up Go
 echo ---------------------------------
-sudo -u henrik bash <<"EOF"
+export GOPATH=/home/henrik/go
+
+sudo -E -u henrik bash <<"EOF"
 set -e
 set -u
 
 # Setup the Go workspace
-mkdir /home/henrik/go
-
-export GOPATH=/home/henrik/go
+mkdir -p ~/go
 
 # Install Go programs
 echo Installing Go programs
+cd ~/
 go get -u -v github.com/nsf/gocode
 go get -u -v github.com/rogpeppe/godef
 go get -u -v golang.org/x/tools/cmd/guru
