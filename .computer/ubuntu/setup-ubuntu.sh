@@ -510,16 +510,20 @@ echo Setting up Go
 echo ---------------------------------
 export GOPATH=/home/henrik/go
 
+# The -E flag is needed for go get to work inside a sudo call
 sudo -E -u henrik bash <<"EOF"
 set -e
 set -u
 
+# This is needed since we are using the -E flag in the sudo call
+export HOME=/home/henrik
+
 # Setup the Go workspace
-mkdir -p ~/go
+mkdir -p /home/henrik/go
 
 # Install Go programs
 echo Installing Go programs
-cd ~/
+cd /home/henrik
 go get -u -v github.com/nsf/gocode
 go get -u -v github.com/rogpeppe/godef
 go get -u -v golang.org/x/tools/cmd/guru
