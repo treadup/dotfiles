@@ -40,6 +40,8 @@ mkdir -p ~/bin
 mkdir -p ~/lib
 mkdir -p ~/include
 
+export PATH=$HOME/bin:$PATH
+
 # Create ~/code folder
 mkdir -p code/lisp code/go code/clojure code/javascript code/python code/racket code/docker
 
@@ -370,8 +372,8 @@ echo Installing Python packages
 
 # Think about changing over to using pipx to install Python tools.
 echo Installing pipx
-python3 -m pip install --user pipx
-python3 -m pipx ensurepath
+export PATH=$HOME/.local/bin:$PATH
+python3 -m pip install pipx
 
 pipx install black
 pipx install virtualenv
@@ -379,8 +381,6 @@ pipx install httpie
 pipx install html2text
 pipx install pylint
 pipx install flake8
-pipx install flake8-bugbear
-pipx install flake8-logging-format
 pipx install autopep8
 pipx install python-language-server
 pipx install isort
@@ -388,12 +388,8 @@ pipx install yamllint
 pipx install pur
 pipx install yq
 
-# Install database utilities
-pipx install pgcli
-pipx install mycli
-
 # Install vritualfish
-pipx install virtualfish
+pip3 install virtualfish
 
 # Install poetry
 # Make sure that poetry uses python3 when creating new projects
