@@ -442,7 +442,7 @@ echo Finished installing node.js programs
 export GOPATH=$HOME/go
 
 # Add the users bin folder to the path.
-export PATH=$GOPATH/bin:$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.poetry/bin:/usr/local/sbin:$HOME/.npm-global/bin:$PATH
+export PATH=$GOPATH/bin:$PATH
 
 echo --------------------------------------------------------
 echo Setting up Go
