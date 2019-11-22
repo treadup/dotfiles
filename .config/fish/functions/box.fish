@@ -138,6 +138,20 @@ function _box_deploy
 	case "webprod"
 	    echo "Deploying web to production"
 	    eval "cd ~/work/flowbox/flask-app/ && fab live web deploy"
+	case "embedtest"
+	    echo "Deploying embed to test"
+	    cd ~/work/frontend-external/embed
+	    rm -rf dist
+	    yarn build:test
+	    git checkout -- dist/index.html
+	    fab test deploy
+	case "embedprod"
+	    echo "Deploying embed to live"
+	    cd ~/work/frontend-external/embed
+	    rm -rf dist
+	    yarn build:live
+	    git checkout -- dist/index.html
+	    fab live deploy
 	case ""
 	    echo "Usage: box deploy <command>"
 	    echo "where <command> can be one of the following."
@@ -145,6 +159,8 @@ function _box_deploy
 	    echo "celeryprod - deploy celery to prod"
 	    echo "webtest    - deploy web to test"
 	    echo "webprod    - deploy web to prod"
+	    echo "embedtest  - deploy embed to test"
+	    echo "embedprod  - deploy embed to prod"
 	case "*"
 	    echo "Unknown deploy command: $argv[1]"
     end
