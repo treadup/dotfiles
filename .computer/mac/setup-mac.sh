@@ -33,6 +33,17 @@ brew tap caskroom/cask
 export PATH=/usr/local/bin:$PATH
 
 echo --------------------------------------------------------
+echo Creating standard folders
+echo --------------------------------------------------------
+# Create the user bin, lib and include folders.
+mkdir -p ~/bin
+mkdir -p ~/lib
+mkdir -p ~/include
+
+# Create ~/code folder
+mkdir -p code/lisp code/go code/clojure code/javascript code/python code/racket code/docker
+
+echo --------------------------------------------------------
 echo Installing packages
 echo --------------------------------------------------------
 
@@ -333,17 +344,6 @@ echo --------------------------------------------------------
 echo Cloning Emacs configuration repo
 git clone https://github.com/treadup/.emacs.d.git ~/.emacs.d
 echo Finished cloning Emacs configuration repo
-
-echo --------------------------------------------------------
-echo Creating standard folders
-echo --------------------------------------------------------
-# Create the user bin, lib and include folders.
-mkdir -p ~/bin
-mkdir -p ~/lib
-mkdir -p ~/include
-
-# Create ~/code folder
-mkdir -p code/lisp code/go code/clojure code/javascript code/python code/racket code/docker
 
 echo --------------------------------------------------------
 echo Setting up Common Lisp
