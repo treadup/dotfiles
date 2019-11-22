@@ -17,6 +17,9 @@ echo ---------------------------------
 echo Upgrading system
 echo ---------------------------------
 
+# Run all Ubuntu commands non interactively
+export DEBIAN_FRONTEND=noninteractive
+
 echo Updating apt
 apt-get --yes update
 
