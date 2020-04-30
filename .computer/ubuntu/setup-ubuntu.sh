@@ -548,6 +548,15 @@ echo ---------------------------------
 
 sudo -u henrik /home/henrik/.cargo/bin/cargo install fd-find
 
+echo -------------------------------------
+echo Setup authorized_keys for user henrik
+echo -------------------------------------
+
+if [ -f /root/.ssh/authorized_keys ]; then
+    cp /root/.ssh/authorized_keys /home/henrik/.ssh/
+    chown henrik:henrik /home/henrik/.ssh/authorized_keys
+fi
+
 echo ---------------------------------
 echo End notes
 echo ---------------------------------
