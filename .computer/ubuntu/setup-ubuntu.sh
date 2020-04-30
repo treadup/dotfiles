@@ -227,8 +227,7 @@ apt-get --yes install golang-go
 #
 
 # Install Python
-apt-get --yes install python-pip python3-pip python3-dev \
-   python3-setuptools python3-wheel python3-venv
+apt-get --yes install python3-pip python3-dev python3-setuptools python3-wheel python3-venv
 
 #
 # Ruby
@@ -296,9 +295,6 @@ apt-get install -y fzy
 
 # Install pick
 apt-get install -y pick
-
-# Install cookiecutter
-apt-get install -y cookiecutter
 
 #
 # Graphics
