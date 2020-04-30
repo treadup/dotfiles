@@ -557,6 +557,18 @@ if [ -f /root/.ssh/authorized_keys ]; then
     chown henrik:henrik /home/henrik/.ssh/authorized_keys
 fi
 
+echo --------------------------------------
+echo Configure fish shell
+echo --------------------------------------
+
+# Install virtualfish for activating Python virtual environments
+
+# For some reason we cannot run fish as the user henrik if we are not
+# in a folder that is readable by the user henrik
+cd /home/henrik
+sudo -u henrik fish -c 'vf install'
+cd /root
+
 echo ---------------------------------
 echo End notes
 echo ---------------------------------
