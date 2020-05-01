@@ -227,8 +227,7 @@ apt-get --yes install golang-go
 #
 
 # Install Python
-apt-get --yes install python-pip python3-pip python3-dev \
-   python3-setuptools python3-wheel python3-venv
+apt-get --yes install python3-pip python3-dev python3-setuptools python3-wheel python3-venv
 
 #
 # Ruby
@@ -296,9 +295,6 @@ apt-get install -y fzy
 
 # Install pick
 apt-get install -y pick
-
-# Install cookiecutter
-apt-get install -y cookiecutter
 
 #
 # Graphics
@@ -551,6 +547,27 @@ echo Setting up Rust
 echo ---------------------------------
 
 sudo -u henrik /home/henrik/.cargo/bin/cargo install fd-find
+
+echo -------------------------------------
+echo Setup authorized_keys for user henrik
+echo -------------------------------------
+
+if [ -f /root/.ssh/authorized_keys ]; then
+    cp /root/.ssh/authorized_keys /home/henrik/.ssh/
+    chown henrik:henrik /home/henrik/.ssh/authorized_keys
+fi
+
+echo --------------------------------------
+echo Configure fish shell
+echo --------------------------------------
+
+# Install virtualfish for activating Python virtual environments
+
+# For some reason we cannot run fish as the user henrik if we are not
+# in a folder that is readable by the user henrik
+cd /home/henrik
+sudo -u henrik fish -c 'vf install'
+cd /root
 
 echo ---------------------------------
 echo End notes
