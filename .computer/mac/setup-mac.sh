@@ -302,9 +302,6 @@ brew install redis
 # Install memcached
 brew install memcached
 
-# Install kap screen recorder
-brew cask install kap
-
 # Install Aerial screen saver
 brew cask install aerial
 
