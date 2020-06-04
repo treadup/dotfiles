@@ -89,7 +89,7 @@ brew install cliclick
 brew cask install emacs
 brew install vim
 brew install neovim
-brew cask install vscodium
+brew cask install visual-studio-code
 
 # Install direnv
 brew install direnv
