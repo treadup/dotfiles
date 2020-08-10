@@ -27,6 +27,13 @@ hs.hotkey.bind(hyper, "R", function()
     hs.reload()
 end)
 
+--[[
+Send system key
+--]]
+function sendSystemKey(key)
+  hs.eventtap.event.newSystemKeyEvent(key, true):post()
+  hs.eventtap.event.newSystemKeyEvent(key, false):post()
+end
 
 --[[
 Tiling
@@ -332,26 +339,17 @@ Audio volume control
 -- https://github.com/Hammerspoon/hammerspoon/issues/901
 hs.hotkey.bind({}, "f10", function()
   print("Mute volume")
-  hs.execute("/usr/local/bin/cliclick kp:mute")
-
-  -- This does not work when bound to f10.
-  -- hs.eventtap.keyStroke({"fn"}, "f10")
+  sendSystemKey('MUTE')
 end)
 
 hs.hotkey.bind({}, "f11", function()
   print("Lower volume")
-  hs.execute("/usr/local/bin/cliclick kp:volume-down")
-
-  -- This does not work when bound to f11.
-  -- hs.eventtap.keyStroke({"fn"}, "f11")
+  sendSystemKey('SOUND_DOWN')
 end)
 
 hs.hotkey.bind({}, "f12", function()
   print("Raise volume")
-  hs.execute("/usr/local/bin/cliclick kp:volume-up")
-
-  -- This does not work when bound to f12
-  -- hs.eventtap.keyStroke({"fn"}, "f12")
+  sendSystemKey('SOUND_UP')
 end)
 
 --[[
