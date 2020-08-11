@@ -331,26 +331,29 @@ hs.hotkey.bind({}, "f7", hs.spotify.previous)
 --[[
 Audio volume control
 --]]
+function volumeUp()
+  print("Raise volume")
+  sendSystemKey('SOUND_UP')
+end
+
+function volumeDown()
+  print("Lower volume")
+  sendSystemKey('SOUND_DOWN')
+end
+
+function toggleMute()
+  print("Mute volume")
+  sendSystemKey('MUTE')
+end
 
 -- To be able to bind the F10 and F11 keys you have to set
 -- shortcuts for show desktop and show dashboard in mission
 -- control to something else.
 -- This can be done using the keyboard shortcut preferences.
 -- https://github.com/Hammerspoon/hammerspoon/issues/901
-hs.hotkey.bind({}, "f10", function()
-  print("Mute volume")
-  sendSystemKey('MUTE')
-end)
-
-hs.hotkey.bind({}, "f11", function()
-  print("Lower volume")
-  sendSystemKey('SOUND_DOWN')
-end)
-
-hs.hotkey.bind({}, "f12", function()
-  print("Raise volume")
-  sendSystemKey('SOUND_UP')
-end)
+hs.hotkey.bind({}, "f10", toggleMute)
+hs.hotkey.bind({}, "f11", volumeDown, nil, volumeDown)
+hs.hotkey.bind({}, "f12", volumeUp, nil, volumeUp)
 
 --[[
 Local config file
