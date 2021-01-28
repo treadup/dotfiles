@@ -103,22 +103,6 @@ end
 # Use the --fancy option by default when starting pipenv shell
 set -gx PIPENV_SHELL_FANCY 1
 
-#
-# Setup virtualfish
-#
-
-# Use the command vf connect to connect a virtual environment to a specific
-# folder in the filesystem. To do this you have to have manually activated
-# the virtual environment and be in the folder that you want to connect.
-# Also the first time you do this you will have to manually deactivate the
-# virtual environment to be able to test that auto enabling is working.
-
-if which python3 > /dev/null
-    if python3 -c "import virtualfish" 2> /dev/null
-        eval (python3 -m virtualfish auto_activation)
-    end
-end
-
 # Files placed in the .config/fish/conf.d/ folder will be sourced
 # automatically. This is preferable to sorucing files in this script.
 
