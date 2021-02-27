@@ -39,6 +39,10 @@ else
    useradd -G sudo,docker -m henrik
 fi
 
+# Change to the user home folder. Being in the /root folder
+# causes issues when executing commands with sudo -u henrik
+cd /home/henrik
+
 echo ---------------------------------
 echo Creating standard folders
 echo ---------------------------------
@@ -46,34 +50,30 @@ sudo -u henrik bash <<"EOF"
 set -e
 set -u
 
-# Create the user bin, lib and include folders.
-mkdir -p ~/bin ~/lib ~/include
+echo Create the user bin, lib and include folders.
+mkdir -p /home/henrik/{bin,lib,include}
 
-# Create code folder
-mkdir -p ~/code/lisp ~/code/go ~/code/clojure
-mkdir -p ~/code/javascript ~/code/python
-mkdir -p ~/code/racket ~/code/docker
+echo Create code folder
+mkdir -p ~/code/{clojure,docker,lisp,go,javascript,python,ruby}
 EOF
 
 echo ---------------------------------
-echo Installing packages
+echo Installing base packages
 echo ---------------------------------
 
-# Change to the user home folder. Being in the /root folder
-# causes issues when executing commands with sudo -u henrik
-cd /home/henrik
+echo Install english language pack
+apt-get --yes install language-pack-en
+
+echo Install git
+apt-get --yes install git
+sudo -u henrik git config --global core.excludesfile /home/henrik/.gitignore_global
+
+echo ---------------------------------
+echo Installing security packages
+echo ---------------------------------
 
 echo Installing sudo
 apt-get --yes install sudo
-
-echo Installing packages
-
-# Install english language pack
-apt-get --yes install language-pack-en
-
-# Install git
-apt-get --yes install git
-sudo -u henrik git config --global core.excludesfile /home/henrik/.gitignore_global
 
 # Install GnuPG
 apt-get --yes install gnupg
@@ -81,97 +81,151 @@ apt-get --yes install gnupg
 # Install password utilities
 apt-get --yes install pass pwgen
 
-# Install Emacs
+echo ---------------------------------
+echo Installing editors
+echo ---------------------------------
+
+echo Installing Emacs
 if [ -v DISPLAY ]; then
     apt --yes install emacs
 else
     apt --yes install emacs-nox
 fi
 
-# Install Vim
+echo Installing Vim
 apt-get --yes install vim
 
-# Install Shells
+echo ---------------------------------
+echo Installing Shells
+echo ---------------------------------
+
+echo Installing fish shell
 apt-get --yes install fish
 
-# Stop the /bin/open command from shadowing the fish open command.
+echo Stop the /bin/open command from shadowing the fish open command.
 if [ -f /bin/open ]; then
     mv /bin/open /bin/oldkbdopen
 fi
 
-# Install bash completion
+echo Installing bash completion
 # This might already be installed...
 apt-get --yes install bash-completion
 
-# Install cli trash command
+echo Installing direnv
+apt-get install -y direnv
+
+echo ---------------------------------
+echo Installing command line tools
+echo ---------------------------------
+
+echo Installing cli trash command
 apt-get --yes install trash-cli
 
-# Install lns
-sudo -u henrik bash <<"EOF"
-set -e
-set -u
-
-echo Installing lns
-curl -o ~/bin/lns http://interglacial.com/~sburke/pub/lns
-chmod u+x ~/bin/lns
-echo Finished installing lns
-EOF
-
-# Install zip
+echo Installing zip
 apt-get --yes install zip unzip
 
-# Install node and npm
+echo Installing http cli clients
+apt-get --yes install curl wget httpie aria2
+
+echo Installing ag
+apt-get --yes install silversearcher-ag
+
+echo Installing fzy
+apt-get install -y fzy
+
+echo Installing pick
+apt-get install -y pick
+
+echo ---------------------------------
+echo Installing network tools
+echo ---------------------------------
+
+echo Installing tmux
+apt-get --yes install tmux
+
+echo Installing network tools
+apt-get --yes install whois
+
+echo Installing mosh
+apt-get --yes install mosh
+
+echo -------------------------------------------------
+echo Installing Document Tools
+echo -------------------------------------------------
+
+echo Installing TeX and LaTex
+# For some reason xzdec is needed to get tlmgr to work
+apt-get --yes install texlive-full xzdec
+
+echo Install pandoc
+apt-get --yes install pandoc
+
+echo Installing markdown
+apt-get install -y markdown
+
+echo ---------------------------------
+echo Installing Node
+echo ---------------------------------
+
+echo Installing node and npm
 # The node ecosystem expects the node executable to be called node.
 # Therefore create a symlink to the correct name.
 apt-get --yes install nodejs npm
 
-# Install texlive
-# For some reason xzdec is needed to get tlmgr to work
-apt-get --yes install texlive-full xzdec
+echo ---------------------------------
+echo Installing Cloud Provider tools
+echo ---------------------------------
 
-# Install http cli clients
-apt-get --yes install curl wget httpie aria2
-
-# Install ag
-apt-get --yes install silversearcher-ag
-
-# Install tmux
-apt-get --yes install tmux
-
-# Install network tools
-apt-get --yes install whois
-
-# Install mosh
-apt-get --yes install mosh
-
-# Install pandoc
-apt-get --yes install pandoc
-
-# Install aws cli command
+echo Installing aws cli command
 apt-get --yes install awscli
 
-# Install GCC and make among other things
+echo ---------------------------------
+echo Installing C programming tools
+echo ---------------------------------
+
+echo Installing GCC and make among other things
 apt-get --yes install build-essential
 
-## Install LLVM and CLang
+echo Installing LLVM and CLang
 apt-get --yes install llvm clang
 
-# Install gdb
+echo Installing gdb
 apt-get --yes install gdb
 
-# Install cmake
+echo Installing cmake
 apt-get --yes install cmake cmake-doc
 
-# Install docker
+echo --------------------------------------
+echo Installing SDL and SDL2
+echo --------------------------------------
+
+echo Installing SDL 1.2
+apt-get install -y libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev
+
+echo Installing SDL 2
+apt-get install -y libsdl2-dev
+
+echo ---------------------------------
+echo Installing container tools
+echo ---------------------------------
+echo Installing docker
 apt-get --yes install docker.io
 
-# Install packer
+echo Installing packer
 apt-get --yes install packer
 
-# Install Ansible
+echo --------------------------------------------
+echo Installing contfiguration management tools
+echo --------------------------------------------
+
+echo Installing Ansible
 apt-get --yes install ansible
 
-# Install Java8 SDK
+echo ---------------------------------
+echo Installing Java tools
+echo ---------------------------------
+
+echo Installing Java8 SDK
 apt-get --yes install default-jdk
 # apt-get --yes install openjdk-8-jdk
 
@@ -180,65 +234,68 @@ apt-get --yes install default-jdk
 JAVA_HOME="$(dirname $(dirname $(readlink -e $(which javac))))"
 printf "JAVA_HOME=$JAVA_HOME\n" >> /etc/environment
 
-#
-# Databases
-#
+echo ---------------------------------
+echo Installing Databases
+echo ---------------------------------
 
-# Install PostgreSQL
+echo Installing PostgreSQL
 apt-get install --yes postgresql postgresql-doc postgresql-contrib postgresql-client
 sudo apt-get install --yes pgcli
 
-# Install Redis
+echo Installing Redis
 apt-get install --yes redis
 apt-get install --yes redis-tools
 
+echo Installing sqlite3
+apt-get install --yes sqlite3
+
 # Install MariaDB
-apt-get install --yes mariadb-server mariadb-client
-apt-get install --yes mycli
+# apt-get install --yes mariadb-server mariadb-client
+# apt-get install --yes mycli
 
-#
-# Lisp
-#
+echo ---------------------------------
+echo Installing Lisps
+echo ---------------------------------
 
-# Install Steel Bank Common Lisp
+echo Installing Steel Bank Common Lisp
 apt-get --yes install sbcl sbcl-doc sbcl-source
 
 # Install CLISP
 apt-get --yes install clisp
 
 # Install Gambit Scheme
-apt-get --yes install gambc
+# apt-get --yes install gambc
 
 # Install MIT Scheme
-apt-get --yes install mit-scheme
+# apt-get --yes install mit-scheme
 
 # Install Racket
-apt-get --yes install racket
+# apt-get --yes install racket
 
-#
-# Go
-#
+echo ---------------------------------
+echo Installing Go
+echo ---------------------------------
 
-# Install Go
+echo Installing Go
 apt-get --yes install golang-go
 
-#
-# Python
-#
+echo ---------------------------------
+echo Installing Python
+echo ---------------------------------
 
-# Install Python
+echo Installing Python
 apt-get --yes install python3-pip python3-dev python3-setuptools python3-wheel python3-venv
 
-#
-# Ruby
-#
+echo ---------------------------------
+echo Installing Ruby
+echo ---------------------------------
 
-# Install Ruby
+echo Installing Ruby
 apt-get --yes install ruby
 
-#
-# Rust
-#
+echo ---------------------------------
+echo Installing Rust
+echo ---------------------------------
 
 # Install Rust using rustup in instead
 # apt-get --yes install rustc
@@ -252,73 +309,29 @@ curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path
 echo Finished installing rust
 EOF
 
-#
-# Lua
-#
+echo ---------------------------------
+echo Installing Lua
+echo ---------------------------------
 
-# Install Lua
+echo Installing Lua
 apt-get --yes install lua5.3
 apt-get --yes install liblua5.3-dev
 
-# Install Löve2D
-add-apt-repository --yes ppa:bartbes/love-stable
-apt-get --yes update
-apt-get --yes install love
+# echo Install Löve2D
+# add-apt-repository --yes ppa:bartbes/love-stable
+# apt-get --yes update
+# apt-get --yes install love
 
-#
-# Other
-#
+echo -----------------------------------
+echo Installing webservers
+echo -----------------------------------
 
-# Install weechat
-apt-get --yes install weechat
-
-# Install nginx
+echo Installing nginx
 apt-get install -y nginx
 
-# Install direnv
-apt-get install -y direnv
-
-# Install markdown
-apt-get install -y markdown
-
-# Install lnav
-apt-get install -y lnav
-
-# Install ranger
-apt-get install -y ranger
-
-# Install yank
-apt-get install -y yank
-
-# Install fzy
-apt-get install -y fzy
-
-# Install pick
-apt-get install -y pick
-
-#
-# Graphics
-#
-
-# Install SDL 1.2
-apt-get install -y libsdl1.2-dev libsdl-image1.2-dev libsdl-mixer1.2-dev libsdl-ttf2.0-dev
-
-# Install SDL 2
-apt-get install -y libsdl2-dev
-
-#
-# Email
-#
-
-# Install msmtp smtp client
-apt-get install -y msmtp
-
-# Install isync package which contains mbsync.
-apt-get install -y isync
-
-#
-# Fonts
-#
+echo ------------------------------------
+echo Installing Fonts
+echo ------------------------------------
 
 # Install Fira Code fonts
 apt-get install -y fonts-firacode
@@ -340,16 +353,19 @@ apt-get install -y fonts-inconsolata
 # It does not install complete new font families.
 apt-get install -y fonts-powerline
 
-# Remove packages that are no longer needed
+echo -----------------------------------
+echo Finishing package installation
+echo -----------------------------------
+
+echo  Remove packages that are no longer needed
 apt-get --yes autoremove
 
-# Enable unattended security updates
+echo Enable unattended security updates
+apt-get --yes install  unattended-upgrades
 # See https://help.ubuntu.com/lts/serverguide/automatic-updates.html.en
 # To configure unattended upgrades of all packages see the above link.
-apt-get --yes install  unattended-upgrades
 
 echo Finished installing packages
-# echo The installation script ran successfully.
 
 echo ---------------------------------
 echo Cloning dotfiles repo
@@ -359,12 +375,16 @@ echo ---------------------------------
 sudo -u henrik bash <<"EOF"
 set -e
 set -u
-echo Cloning dot files repo
-git clone --separate-git-dir=/home/henrik/.dotconf https://github.com/treadup/dotfiles.git /home/henrik/dotconf-tmp
-rm -r /home/henrik/dotconf-tmp/
-/usr/bin/git --git-dir=/home/henrik/.dotconf/ --work-tree=/home/henrik config status.showUntrackedFiles no
-/usr/bin/git --git-dir=/home/henrik/.dotconf/ --work-tree=/home/henrik checkout .
-echo Finished cloning dot files repo
+if [ ! -d /home/henrik/.dotconf/ ]; then
+    echo Cloning dot files repo
+    git clone --separate-git-dir=/home/henrik/.dotconf https://github.com/treadup/dotfiles.git /home/henrik/dotconf-tmp
+    rm -r /home/henrik/dotconf-tmp/
+    /usr/bin/git --git-dir=/home/henrik/.dotconf/ --work-tree=/home/henrik config status.showUntrackedFiles no
+    /usr/bin/git --git-dir=/home/henrik/.dotconf/ --work-tree=/home/henrik checkout .
+    echo Finished cloning dot files repo
+else
+    echo The dot files repo already exists
+fi
 
 echo Downloading git prompt
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -o /home/henrik/.git-prompt.sh
@@ -377,10 +397,15 @@ echo ---------------------------------
 sudo -u henrik bash <<"EOF"
 set -e
 set -u
-# Download .emacs.d repo
-echo Cloning Emacs init file repo
-git clone https://github.com/treadup/.emacs.d.git /home/henrik/.emacs.d
-echo Finished cloning Emacs init file repo
+
+if [ ! -d /home/henrik/.emacs.d/ ]; then
+    # Download .emacs.d repo
+    echo Cloning Emacs init file repo
+    git clone https://github.com/treadup/.emacs.d.git /home/henrik/.emacs.d
+    echo Finished cloning Emacs config file repo
+else
+    echo The emacs config repo already exists
+fi
 EOF
 
 echo ---------------------------------
@@ -391,15 +416,17 @@ set -e
 set -u
 
 # Install Quicklisp
-curl -o /home/henrik/.quicklisp/quicklisp.lisp https://beta.quicklisp.org/quicklisp.lisp
-curl -o /home/henrik/.quicklisp/quicklisp.lisp.asc https://beta.quicklisp.org/quicklisp.lisp.asc
-sbcl --script /home/henrik/.quicklisp/install-quicklisp.lisp
+if [ ! -f /home/henrik/.quicklisp/quicklisp.lisp ]; then
+    curl -o /home/henrik/.quicklisp/quicklisp.lisp https://beta.quicklisp.org/quicklisp.lisp
+    curl -o /home/henrik/.quicklisp/quicklisp.lisp.asc https://beta.quicklisp.org/quicklisp.lisp.asc
+    sbcl --script /home/henrik/.quicklisp/install-quicklisp.lisp
 
-# Install quicklisp-slime-helper
-sbcl --eval '(ql:quickload :quicklisp-slime-helper)' --quit
+    # Install quicklisp-slime-helper
+    sbcl --eval '(ql:quickload :quicklisp-slime-helper)' --quit
 
-# Install Swank
-sbcl --eval '(ql:quickload "swank")' --quit
+    # Install Swank
+    sbcl --eval '(ql:quickload "swank")' --quit
+fi
 EOF
 
 echo ---------------------------------
@@ -416,34 +443,8 @@ set -u
 # Create folder for Python virutal environments.
 mkdir -p /home/henrik/.virtualenvs/
 
-# Install Python packages
-echo Installing Python packages
-
-echo Installing pipx
-export PATH=$HOME/.local/bin:$PATH
-python3 -m pip install pipx
-
-pipx install black
-pipx install virtualenv
-pipx install httpie
-pipx install html2text
-pipx install pylint
-pipx install flake8
-pipx install autopep8
-pipx install python-language-server
-pipx install isort
-pipx install yamllint
-pipx install pur
-pipx install yq
-
-# Install vritualfish
+echo Installing vritualfish
 pip3 install virtualfish
-
-# Install poetry
-# Make sure that poetry uses python3 when creating new projects
-# by replacing /usr/bin/env python with /usr/bin/env python3
-curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py  | \
-    sed 's_/usr/bin/env python_/usr/bin/env python3_g' | python3
 
 echo Finished installing Python packages
 EOF
@@ -462,30 +463,8 @@ cd $HOME
 mkdir -p /home/henrik/.npm-global
 npm config set prefix /home/henrik/.npm-global
 
-npm install -g jshint
-npm install -g js-beautify
-npm install -g prettier
-npm install -g tern
-npm install -g eslint
 npm install -g jsonlint
-npm install -g js-yaml
-npm install -g nd
-npm install -g create-react-app
 npm install -g yarn
-npm install -g tldr
-npm install -g json
-npm install -g netlify-cli
-npm install -g @11ty/eleventy
-
-# Expo
-npm install -g create-react-native-app
-npm install -g expo-cli
-
-# React Native Cli
-npm install -g react-native-cli
-
-# Install Vue cli
-npm install -g @vue/cli
 
 echo Finished installing node.js programs
 EOF
@@ -529,7 +508,6 @@ go get -u -v golang.org/x/tools/cmd/guru
 go get -u -v golang.org/x/tools/cmd/gorename
 go get -u -v golang.org/x/tools/cmd/goimports
 go get -u -v golang.org/x/tools/cmd/godoc
-go get -u -v golang.org/x/net/websocket
 go get -u -v github.com/motemen/gore
 go get -u -v github.com/junegunn/fzf
 
@@ -546,6 +524,7 @@ echo ---------------------------------
 echo Setting up Rust
 echo ---------------------------------
 
+echo Installing fd
 sudo -u henrik /home/henrik/.cargo/bin/cargo install fd-find
 
 echo -------------------------------------
@@ -553,6 +532,7 @@ echo Setup authorized_keys for user henrik
 echo -------------------------------------
 
 if [ -f /root/.ssh/authorized_keys ]; then
+    echo Using root authorized_keys file for user henrik
     cp /root/.ssh/authorized_keys /home/henrik/.ssh/
     chown henrik:henrik /home/henrik/.ssh/authorized_keys
 fi
