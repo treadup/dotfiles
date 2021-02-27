@@ -247,7 +247,7 @@ apt-get install --yes redis
 apt-get install --yes redis-tools
 
 echo Installing sqlite3
-apt-get install --yes sqlite3
+apt-get install --yes sqlite3 libsqlite3-dev
 
 # Install MariaDB
 # apt-get install --yes mariadb-server mariadb-client
@@ -291,7 +291,7 @@ echo Installing Ruby
 echo ---------------------------------
 
 echo Installing Ruby
-apt-get --yes install ruby
+apt-get --yes install ruby ruby-dev
 
 echo ---------------------------------
 echo Installing Rust
