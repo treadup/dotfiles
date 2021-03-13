@@ -46,32 +46,39 @@ export PATH=$HOME/bin:$PATH
 mkdir -p code/lisp code/go code/clojure code/javascript code/python code/racket code/docker
 
 echo --------------------------------------------------------
-echo Installing packages
+echo Installing base packages
 echo --------------------------------------------------------
 
-# Install Git
+echo Installing Git
 brew install git
 git config --global core.excludesfile ~/.gitignore_global
 
-# Install GPG
+echo Installing coreutils
+brew install coreutils
+
+echo --------------------------------------------------------
+echo Installing security packages
+echo --------------------------------------------------------
+
+echo Installing GPG
 brew install gnupg2
 brew install pinentry-mac
 ln -s $HOME/.gnupg/gpg-agent.conf.macos $HOME/.gnupg/gpg-agent.conf
 
-# Install core stuff
+echo Installing pass
 brew install pass
+
+echo Installing pwgen
 brew install pwgen
-brew install coreutils
-brew install watch
 
-# Install Iterm2
-brew cask install iterm2
+echo --------------------------------------------------------
+echo Installing shells
+echo --------------------------------------------------------
 
-# Install shells
+echo Installing Fish shell
 brew install fish
-brew install tcsh
 
-# Install bash completion
+echo Installing bash completion
 brew install bash-completion
 
 #
