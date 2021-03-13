@@ -214,6 +214,9 @@ apt-get --yes install docker.io
 echo Installing packer
 apt-get --yes install packer
 
+echo Installing nomad
+apt-get --yes install nomad
+
 echo --------------------------------------------
 echo Installing contfiguration management tools
 echo --------------------------------------------
