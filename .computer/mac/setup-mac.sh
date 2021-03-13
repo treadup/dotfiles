@@ -74,13 +74,6 @@ brew install tcsh
 # Install bash completion
 brew install bash-completion
 
-# Install Spectacle
-# I use hammerspoon for this instead.
-# brew cask install spectacle
-
-# Install cliclick
-brew install cliclick
-
 #
 # Editors
 #
@@ -192,15 +185,6 @@ brew install rabbitmq
 # Install VirtualBox
 brew cask install virtualbox
 
-# Install Charles Web Proxy
-brew cask install charles
-
-# Install Insomnia rest client
-brew cask install insomnia
-
-# Install Postman rest client
-brew cask install postman
-
 # Install JetBrains Toolbox
 brew cask install jetbrains-toolbox
 
@@ -209,9 +193,6 @@ brew cask install jetbrains-toolbox
 # will not be setup correctly.
 # brew install docker
 # brew cask install docker
-
-# Install Ansible
-brew install ansible
 
 # Install multimarkdown
 brew install multimarkdown
@@ -238,11 +219,6 @@ brew install htop
 brew install glances
 brew install httpie
 
-echo Installing lns
-curl -o ~/bin/lns http://interglacial.com/~sburke/pub/lns
-chmod u+x ~/bin/lns
-echo Finished installing lns
-
 # Install fonts
 brew tap caskroom/fonts
 brew cask install font-source-code-pro
@@ -263,21 +239,11 @@ brew install redis
 # Install memcached
 brew install memcached
 
-# Install Aerial screen saver
-brew cask install aerial
-
 # Install ngrok local port forwarding tool
 brew cask install ngrok
 
 # Install cookiecutter
 brew install cookiecutter
-
-#
-# Logging
-#
-
-# Install lnav
-brew install lnav
 
 echo --------------------------------------------------------
 echo Cloning dot files
