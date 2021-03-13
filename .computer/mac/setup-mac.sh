@@ -124,18 +124,6 @@ brew install gradle
 # Install Ruby
 brew install ruby
 
-#
-# Lisp
-#
-
-# Install Steel Bank Common Lisp
-brew install sbcl
-
-# Install CLISP
-brew install clisp
-
-# Install Racket
-brew cask install racket
 
 #
 # Lua
@@ -318,17 +306,21 @@ git clone https://github.com/treadup/.emacs.d.git ~/.emacs.d
 echo Finished cloning Emacs configuration repo
 
 echo --------------------------------------------------------
-echo Setting up Common Lisp
+echo Installing Common Lisp
 echo --------------------------------------------------------
-# Install Quicklisp
+
+echo Installing Steel Bank Common Lisp
+brew install sbcl
+
+echo Installing Quicklisp
 curl -o ~/.quicklisp/quicklisp.lisp https://beta.quicklisp.org/quicklisp.lisp
 curl -o ~/.quicklisp/quicklisp.lisp.asc https://beta.quicklisp.org/quicklisp.lisp.asc
 sbcl --script ~/.quicklisp/install-quicklisp.lisp
 
-# Install quicklisp-slime-helper
+echo Installing quicklisp-slime-helper
 sbcl --eval '(ql:quickload :quicklisp-slime-helper)' --quit
 
-# Install Swank
+echo Installing Swank
 sbcl --eval '(ql:quickload "swank")' --quit
 
 echo --------------------------------------------------------
