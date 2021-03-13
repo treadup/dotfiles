@@ -413,24 +413,9 @@ npm install -g tern
 npm install -g eslint
 npm install -g jsonlint
 npm install -g js-yaml
-npm install -g nd
-npm install -g create-react-app
 npm install -g yarn
-npm install -g tldr
 npm install -g json
 npm install -g netlify-cli
-npm install -g @11ty/eleventy
-npm install -g cordova
-
-# Expo
-npm install -g create-react-native-app
-npm install -g expo-cli
-
-# React Native Cli
-npm install -g react-native-cli
-
-# Vue
-npm install -g @vue/cli
 
 echo Finished installing node.js programs
 
