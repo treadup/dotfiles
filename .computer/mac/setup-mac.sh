@@ -113,59 +113,56 @@ brew install telnet
 echo Installing Firefox
 brew cask install firefox
 
-#
-# Java
-#
+echo --------------------------------------------------------
+echo Installing Java
+echo --------------------------------------------------------
 
-# Install Java
+echo Installing Java
 brew cask install adoptopenjdk
-# brew cask install intellij-idea-ce
-brew install maven
-brew install gradle
 
-#
-# Ruby
-#
+echo --------------------------------------------------------
+echo Installing Clojure
+echo --------------------------------------------------------
 
-# Install Ruby
-brew install ruby
-
-
-#
-# Lua
-#
-
-# Install Lua
-brew install lua
-brew install luarocks
-brew cask install love
-
-#
-# Clojure
-#
-
-# Install Clojure
+echo Install Clojure
 brew install clojure
 brew install leiningen
 
-#
-# Erlang
-#
+echo --------------------------------------------------------
+echo Installing Ruby
+echo --------------------------------------------------------
 
-# Install Erlang
+echo Installing Ruby
+brew install ruby
+
+echo --------------------------------------------------------
+echo Installing Lua
+echo --------------------------------------------------------
+
+echo Installing Lua
+brew installing lua
+brew install luarocks
+
+echo Installing Löve2D
+brew cask install love
+
+echo --------------------------------------------------------
+echo Installing Erlang
+echo --------------------------------------------------------
+
+echo Installing Erlang
 brew install erlang
+
+echo Installing rebar3
 brew install rebar3
 
-#
-# Rust
-#
+echo --------------------------------------------------------
+echo Installing Rust
+echo --------------------------------------------------------
 
-# Install Rust
+echo Installing Rust
 brew install rustup
 rustup-init -y --no-modify-path
-
-# Install CMake
-brew install cmake
 
 # Install web server
 brew install nginx
