@@ -94,6 +94,9 @@ brew cask install emacs
 echo Installing Vim
 brew install vim
 
+echo Installing JetBrains Toolbox
+brew cask install jetbrains-toolbox
+
 echo --------------------------------------------------------
 echo Installing Network Tools
 echo --------------------------------------------------------
@@ -109,6 +112,12 @@ brew install pssh
 
 echo Install telnet
 brew install telnet
+
+echo Installing mosh
+brew install mosh
+
+echo Installing ngrok local port forwarding tool
+brew cask install ngrok
 
 echo Installing Firefox
 brew cask install firefox
@@ -164,39 +173,62 @@ echo Installing Rust
 brew install rustup
 rustup-init -y --no-modify-path
 
-# Install web server
+echo ---------------------------------------------------------
+echo Installing Servers
+echo ---------------------------------------------------------
+
+echo Installing nginx server
 brew install nginx
 
-# Install Traefik
+echo Installing Traefik
 brew install traefik
 
-# Install Heroku CLI
-brew tap heroku/brew
-brew install heroku
+echo Installing RabbitMQ
+brew install rabbitmq
 
-# Install awscli
-brew install awscli
+echo Installing Redis
+brew install redis
 
-# Install TeX
-brew cask install basictex
-# brew cask install mactex
+# echo Installing memcached
+# brew install memcached
 
-# Install PostgreSQL
+echo ---------------------------------------------------------
+echo Installing Databases
+echo ---------------------------------------------------------
+
+echo Installing PostgreSQL
 brew install postgresql
 brew install pgcli
 
-# Install MariaDB
+echo Installing MariaDB
 brew install mariadb
 brew install mycli
 
-# Install RabbitMQ
-brew install rabbitmq
+echo ---------------------------------------------------------
+echo Installing Cloud Tools
+echo ---------------------------------------------------------
+
+echo Installing Heroku CLI
+brew tap heroku/brew
+brew install heroku
+
+echo Installing awscli
+brew install awscli
+
+echo ---------------------------------------------------------
+echo Installing Document Tools
+echo ---------------------------------------------------------
+
+echo Installing TeX
+brew cask install basictex
+# brew cask install mactex
+
+echo Installing multimarkdown
+brew install multimarkdown
+
 
 # Install VirtualBox
 brew cask install virtualbox
-
-# Install JetBrains Toolbox
-brew cask install jetbrains-toolbox
 
 # Install Docker
 # Install docker from the website. Otherwise things like docker-compose
@@ -204,8 +236,6 @@ brew cask install jetbrains-toolbox
 # brew install docker
 # brew cask install docker
 
-# Install multimarkdown
-brew install multimarkdown
 
 # Install highlight
 brew install highlight
@@ -239,18 +269,6 @@ brew cask install karabiner-elements
 
 # Install Hammerspoon
 brew cask install hammerspoon
-
-# Install mosh
-brew install mosh
-
-# Install Redis
-brew install redis
-
-# Install memcached
-brew install memcached
-
-# Install ngrok local port forwarding tool
-brew cask install ngrok
 
 # Install cookiecutter
 brew install cookiecutter
