@@ -147,16 +147,6 @@ brew install luarocks
 brew cask install love
 
 #
-# Node
-#
-
-# Install Node
-brew install node
-brew install jq
-brew install jo
-brew install gron
-
-#
 # Clojure
 #
 
@@ -366,26 +356,23 @@ python -m pip install virtualfish
 echo Finished installing Python packages
 
 echo --------------------------------------------------------
-echo Setting up Node
+echo Installing Node
 echo --------------------------------------------------------
-# Install node programs
+
+echo Installing node
+brew install node
+
+# Fix npm permissions issue
 # https://docs.npmjs.com/getting-started/fixing-npm-permissions
-echo Installing node.js programs
 mkdir -p ~/.npm-global
 npm config set prefix ~/.npm-global
 
-npm install -g jshint
-npm install -g js-beautify
-npm install -g prettier
-npm install -g tern
-npm install -g eslint
+echo Installing node programs
 npm install -g jsonlint
-npm install -g js-yaml
 npm install -g yarn
 npm install -g json
-npm install -g netlify-cli
 
-echo Finished installing node.js programs
+echo Finished installing node programs
 
 echo --------------------------------------------------------
 echo Installing Golang
