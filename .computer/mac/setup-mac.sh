@@ -226,8 +226,11 @@ brew cask install basictex
 echo Installing multimarkdown
 brew install multimarkdown
 
+echo ---------------------------------------------------------
+echo Installing Container Tools
+echo ---------------------------------------------------------
 
-# Install VirtualBox
+echo Installing VirtualBox
 brew cask install virtualbox
 
 # Install Docker
@@ -236,11 +239,14 @@ brew cask install virtualbox
 # brew install docker
 # brew cask install docker
 
+# echo Installing Nomad
+# brew tap hashicorp/tap
+# brew install hashicorp/tap/nomad
 
-# Install highlight
-brew install highlight
+echo ---------------------------------------------------------
+echo Installing Command Line Tools
+echo ---------------------------------------------------------
 
-# Install utilities
 brew install tree
 brew install wget
 brew install the_silver_searcher
@@ -252,26 +258,30 @@ brew install fd
 brew install fzf
 brew install fzy
 brew install yank
-brew install fd
 brew install pick
 brew install trash
 brew install htop
 brew install glances
 brew install httpie
 
-# Install fonts
+echo ---------------------------------------------------------
+echo Installing Fonts
+echo ---------------------------------------------------------
+
+echo Installing fonts
 brew tap caskroom/fonts
 brew cask install font-source-code-pro
 brew cask install font-firacode-nerd-font
 
-# Install Karabiner Elements
+echo ---------------------------------------------------------
+echo Installing Accessability Tools
+echo ---------------------------------------------------------
+
+echo Installing Karabiner Elements
 brew cask install karabiner-elements
 
-# Install Hammerspoon
+echo Installing Hammerspoon
 brew cask install hammerspoon
-
-# Install cookiecutter
-brew install cookiecutter
 
 echo --------------------------------------------------------
 echo Cloning dot files
