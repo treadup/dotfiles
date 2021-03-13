@@ -108,16 +108,6 @@ brew install pssh
 brew install telnet
 
 #
-# Python
-#
-
-# Install Python
-brew install python
-brew install python3
-brew install pyenv
-brew install pyenv-virtualenv
-
-#
 # Java
 #
 
@@ -268,6 +258,7 @@ brew install pick
 brew install trash
 brew install htop
 brew install glances
+brew install httpie
 
 echo Installing lns
 curl -o ~/bin/lns http://interglacial.com/~sburke/pub/lns
@@ -351,43 +342,28 @@ sbcl --eval '(ql:quickload :quicklisp-slime-helper)' --quit
 sbcl --eval '(ql:quickload "swank")' --quit
 
 echo --------------------------------------------------------
-echo Setting up Python
+echo Installing Python
 echo --------------------------------------------------------
+
+echo Installing python
+brew install python
+
+echo Installing python3
+brew install python3
+
 # Create folder for Python virutal environments.
 mkdir ~/.virtualenvs/
 
-# Install Python packages
-echo Installing Python packages
-
-# Think about changing over to using pipx to install Python tools.
-echo Installing pipx
-export PATH=$HOME/.local/bin:$PATH
-python3 -m pip install pipx
-
-pipx install black
-pipx install virtualenv
-pipx install httpie
-pipx install html2text
-pipx install pylint
-pipx install flake8
-pipx install autopep8
-pipx install python-language-server
-pipx install isort
-pipx install yamllint
-pipx install pur
-pipx install yq
-
-# Install vritualfish
-pip3 install virtualfish
+echo Installing virtualfish
+python -m pip install virtualfish
 
 # Install poetry
 # Make sure that poetry uses python3 when creating new projects
 # by replacing /usr/bin/env python with /usr/bin/env python3
-curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py  | \
-    sed 's_/usr/bin/env python_/usr/bin/env python3_g' | python3
+# curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py  | \
+#    sed 's_/usr/bin/env python_/usr/bin/env python3_g' | python3
 
 echo Finished installing Python packages
-
 
 echo --------------------------------------------------------
 echo Setting up Node
@@ -416,8 +392,8 @@ echo Installing Golang
 echo --------------------------------------------------------
 
 echo Installing Go
-
 brew install go
+
 export GOPATH=$HOME/go
 
 # Add the users bin folder to the path.
@@ -428,8 +404,6 @@ mkdir -p ~/go
 
 # Install Go programs
 echo Installing Go programs
-go get -u -v github.com/nsf/gocode
-go get -u -v github.com/rogpeppe/godef
 go get -u -v golang.org/x/tools/cmd/guru
 go get -u -v golang.org/x/tools/cmd/gorename
 go get -u -v golang.org/x/tools/cmd/goimports
