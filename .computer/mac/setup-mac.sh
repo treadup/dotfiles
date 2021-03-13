@@ -157,14 +157,6 @@ brew install luarocks
 brew cask install love
 
 #
-# Go
-#
-
-# Install Golang
-brew install go
-brew install dep
-
-#
 # Node
 #
 
@@ -419,16 +411,13 @@ npm install -g netlify-cli
 
 echo Finished installing node.js programs
 
-
-# Go lang
-export GOPATH=$HOME/go
-
-# Add the users bin folder to the path.
-export PATH=$GOPATH/bin:$PATH
-
 echo --------------------------------------------------------
-echo Setting up Go
+echo Installing Golang
 echo --------------------------------------------------------
+
+echo Installing Go
+
+brew install go
 export GOPATH=$HOME/go
 
 # Add the users bin folder to the path.
@@ -445,8 +434,6 @@ go get -u -v golang.org/x/tools/cmd/guru
 go get -u -v golang.org/x/tools/cmd/gorename
 go get -u -v golang.org/x/tools/cmd/goimports
 go get -u -v golang.org/x/tools/cmd/godoc
-go get -u -v golang.org/x/net/websocket
-go get -u -v github.com/motemen/gore
 
 # Install ppd
 go get github.com/treadup/ppd
