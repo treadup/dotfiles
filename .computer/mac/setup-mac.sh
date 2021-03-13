@@ -46,7 +46,7 @@ export PATH=$HOME/bin:$PATH
 mkdir -p code/lisp code/go code/clojure code/javascript code/python code/racket code/docker
 
 echo --------------------------------------------------------
-echo Installing base packages
+echo Installing Base Packages
 echo --------------------------------------------------------
 
 echo Installing Git
@@ -57,7 +57,7 @@ echo Installing coreutils
 brew install coreutils
 
 echo --------------------------------------------------------
-echo Installing security packages
+echo Installing Security Packages
 echo --------------------------------------------------------
 
 echo Installing GPG
@@ -72,7 +72,7 @@ echo Installing pwgen
 brew install pwgen
 
 echo --------------------------------------------------------
-echo Installing shells
+echo Installing Shells
 echo --------------------------------------------------------
 
 echo Installing Fish shell
@@ -81,31 +81,37 @@ brew install fish
 echo Installing bash completion
 brew install bash-completion
 
-#
-# Editors
-#
-
-# Install editors
-brew cask install emacs
-brew install vim
-brew install neovim
-brew cask install visual-studio-code
-
-# Install direnv
+echo Installing direnv
 brew install direnv
 
-# Install Firefox
-brew cask install firefox
+echo --------------------------------------------------------
+echo Installing Editors
+echo --------------------------------------------------------
 
-# Install terminal multiplexers
+echo Installing Emacs
+brew cask install emacs
+
+echo Installing Vim
+brew install vim
+
+echo --------------------------------------------------------
+echo Installing Network Tools
+echo --------------------------------------------------------
+
+echo Installing tmux
 brew install tmux
+
+echo Installing screen
 brew install screen
 
-# Install parallel ssh
+echo Installing parallel ssh
 brew install pssh
 
-# Install telnet
+echo Install telnet
 brew install telnet
+
+echo Installing Firefox
+brew cask install firefox
 
 #
 # Java
