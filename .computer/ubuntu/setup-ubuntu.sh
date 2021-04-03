@@ -289,6 +289,9 @@ echo ---------------------------------
 echo Installing Python
 apt-get --yes install python3-pip python3-dev python3-setuptools python3-wheel python3-venv
 
+echo Installing pipenv
+sudo apt-get -y install pipenv
+
 echo ---------------------------------
 echo Installing Ruby
 echo ---------------------------------
