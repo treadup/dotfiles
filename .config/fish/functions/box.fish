@@ -10,8 +10,6 @@ function box
 	    _box_db $argv[2..-1]
 	case "deploy"
 	    _box_deploy $argv[2..-1]
-	case "local"
-	    _box_local $argv[2..-1]
 	case "log"
 	    _box_log $argv[2..-1]
 	case "open"
@@ -29,7 +27,6 @@ function box
 	    echo "cd     - change to project folders"
 	    echo "db     - perform database commands"
 	    echo "deploy - perform deploy commands"
-	    echo "local  - perform local patching commands"
 	    echo "log    - view logs"
 	    echo "shell  - start shell"
 	    echo "start  - perform start commands"
@@ -65,32 +62,8 @@ function _box_ctags
 end
 
 function _box_open
-    google-chrome https://localhost:5000/engage
+    google-chrome https://localhost:5000/
 end
-
-function _box_local
-    switch "$argv[1]"
-	case "clean"
-	    echo "Removing local patches"
-	    cd ~/work/flowbox/flask-app
-	    git checkout Dockerfile
-	case "patch"
-	    echo "Applying local patches"
-	    echo "Patching Dockerfile"
-	    cd ~/work/flowbox/flask-app
-	    git checkout Dockerfile
-	    sed '/WORKDIR/ r Dockerfile.patch' Dockerfile > localignore_Dockerfile
-	    mv localignore_Dockerfile Dockerfile
-	case ""
-	    echo "Usage: box local <command>"
-	    echo "where <command> can be one of the following."
-	    echo "clean - clean up the local patched files"
-	    echo "patch - apply patches to local files"
-	case "*"
-	    echo "Unknown command: $argv[1]"
-    end
-end
-
 
 function _box_start
     switch "$argv[1]"
