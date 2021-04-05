@@ -136,8 +136,6 @@ function _box_db
     switch "$argv[1]"
 	case "psql"
 	    _box_db_psql $argv[2..-1]
-        case "mysql"
-            _box_db_mysql $argv[2..-1]
 	case "upgrade"
 	    eval "cd ~/work/flowbox/ && docker-compose exec flask-app python manage.py db upgrade"
 	case "downgrade"
@@ -154,6 +152,24 @@ function _box_db
     end
 end
 
+function _box_db_psql
+    switch "$argv[1]"
+	case "test"
+	    ssh bastion-test -t psql -U test-database-user -h test-db-hostname test-database-name $argv[2..-1]
+	case "prod"
+	    ssh bastion-prod -t psql -U prod-database-user -h prod-db-hostname prod-database-name $argv[2..-1]
+	case "local"
+	    psql -h localhost -p 5433 -U local-user local-database-name $argv[2..-1]
+        case ""
+	    echo "Usage: box db psql <server>"
+	    echo "where <server> can be one of the following"
+	    echo "test - connect to the test server"
+	    echo "prod - connect to the production server"
+	    echo "local - connect to the local server"
+	case "*"
+	    echo "Unknown server: $argv[1]"
+    end
+end
 
 function _box_log
     switch "$argv[1]"
