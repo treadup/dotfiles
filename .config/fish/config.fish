@@ -103,6 +103,11 @@ end
 # Use the --fancy option by default when starting pipenv shell
 set -gx PIPENV_SHELL_FANCY 1
 
+#
+# direnv
+#
+direnv hook fish | source
+
 # Files placed in the .config/fish/conf.d/ folder will be sourced
 # automatically. This is preferable to sorucing files in this script.
 
