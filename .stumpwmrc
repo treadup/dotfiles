@@ -1,3 +1,6 @@
+;; -*- mode: Lisp -*-
+;; The line above tells Emacs to use Lisp mode for this file.
+
 ;; This is the user configuration file for StumpVM.
 
 ;;
@@ -28,8 +31,25 @@
 (define-key *root-map* (kbd "M-q") "quit")
 (define-key *root-map* (kbd "q") "quit")
 
+;; Disable startup message
+(setq *startup-message* nil)
+
 ;; It would be good if we had some way of reloading the init file.
 ;; Kind of like eval-buffer in Emacs.
+
+;;
+;; Xorg
+;;
+
+;; Set the cursor for the root window to be the left pointer
+(stumpwm:run-shell-command "xsetroot -cursor_name left_ptr")
+
+;; Set CapsLock to act as Ctrl
+;; setxkbmap -option "ctrl:nocaps"
+(stumpwm:run-shell-command "setxkbmap -option ctrl:nocaps")
+
+;; Set desktop background
+(stumpwm:run-shell-command "feh --bg-scale ~/wallpapers/path_redwood_forest.jpg")
 
 ;;
 ;; Mode line
@@ -49,23 +69,17 @@
 
 (define-key *root-map* (kbd "f") "firefox")
 
-;; Spotify
-(defcommand spotify () ()
-  (run-or-raise "spotify" '(:class "Spotify")))
-
-(define-key *root-map* (kbd "s") "spotify")
-
 ;; Google Chrome
 (defcommand chrome () ()
   (run-or-raise "google-chrome" '(:class "Google-chrome")))
 
 (define-key *root-map* (kbd "g") "chrome")
 
-;; VLC
-(defcommand vlc () ()
-  (run-or-raise "vlc" '(:class "Vlc")))
+;; Terminal
+(defcommand terminal () ()
+  (run-or-raise "xterm" '(:class "XTerm")))
 
-(define-key *root-map* (kbd "v") "vlc")
+(define-key *root-map* (kbd "t") "terminal")
 
 ;;
 ;; Modules
