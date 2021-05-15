@@ -328,6 +328,16 @@ apt-get --yes install liblua5.3-dev
 # apt-get --yes update
 # apt-get --yes install love
 
+echo ---------------------------------
+echo Installing Erlang and Elixir
+echo ---------------------------------
+
+# I'm not sure if I should be using Erlang from Erlang Solutions
+# or Erlang that comes with Ubuntu.
+
+echo Installing Elixir
+apt-get --yes install elixir
+
 echo -----------------------------------
 echo Installing webservers
 echo -----------------------------------
@@ -339,13 +349,13 @@ echo ------------------------------------
 echo Installing Fonts
 echo ------------------------------------
 
-# Install Fira Code fonts
+echo Installing Fira Code fonts
 apt-get install -y fonts-firacode
 
-# Install DejaVu fonts
+echo Installing DejaVu fonts
 apt-get install -y fonts-dejavu
 
-# Install Liberation fonts
+echo Installing Liberation fonts
 apt-get install -y fonts-liberation
 
 # Install Inconsolata font
