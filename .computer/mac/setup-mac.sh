@@ -277,11 +277,8 @@ echo ---------------------------------------------------------
 echo Installing Accessability Tools
 echo ---------------------------------------------------------
 
-echo Installing Karabiner Elements
-brew cask install karabiner-elements
-
-echo Installing Hammerspoon
-brew cask install hammerspoon
+echo Installing Rectangle
+brew install --cask rectangle
 
 echo --------------------------------------------------------
 echo Cloning dot files
