@@ -18,14 +18,9 @@ else
     exit
 fi
 
-# In Mojave the system headers are no longer installed to /usr/include
-# To install the headers to /usr/include you need to execute the following command.
-# https://developer.apple.com/documentation/xcode_release_notes/xcode_10_release_notes#3035624
-installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
-
 # Install Homebrew
 echo Installing Homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Update homebrew
 brew update
