@@ -89,7 +89,7 @@ echo Installing Editors
 echo --------------------------------------------------------
 
 echo Installing Emacs
-brew cask install emacs
+brew install --no-quarantine homebrew/cask/emacs
 
 echo Installing Vim
 brew install vim
