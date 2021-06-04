@@ -10,10 +10,13 @@ set -u
 cd ~/
 
 # To use this script you have to have at least the XCode command line tools installed.
-# The following command will install XCode command line tools if they are not already
-# installed.
-echo Installing Xcode
-xcode-select --install
+if xcode-select -p 2> /dev/null 1> /dev/null; then
+    echo Xcode command line tools are installed
+else
+    echo Xcode command line tools are not installed
+    echo Install them using the xcode-select --install command.
+    exit
+fi
 
 # In Mojave the system headers are no longer installed to /usr/include
 # To install the headers to /usr/include you need to execute the following command.
