@@ -27,9 +27,6 @@ echo Installing Homebrew
 # Update homebrew
 brew update
 
-# Install Cask
-brew tap caskroom/cask
-
 export PATH=/usr/local/bin:$PATH
 
 echo --------------------------------------------------------
