@@ -89,9 +89,6 @@ brew install --no-quarantine homebrew/cask/emacs
 echo Installing Vim
 brew install vim
 
-echo Installing JetBrains Toolbox
-brew cask install jetbrains-toolbox
-
 echo --------------------------------------------------------
 echo Installing Network Tools
 echo --------------------------------------------------------
