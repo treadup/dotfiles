@@ -80,23 +80,6 @@ if not functions -q fisher
 end
 
 #
-# pyenv
-#
-
-# Check if we can run the command pyenv
-if type -q pyenv
-    # If we can then initialize the current fish shell with pyenv support
-    pyenv init - | source
-end
-
-# Check if pyenv virutalenv is installed and initialize it if it is
-if type -q pyenv-virtualenv-init
-    # If pyenv virtualenv is installed then initialize the current fish shell
-    # with pyenv virtualenv support
-    pyenv virtualenv-init - | source
-end
-
-#
 # pipenv
 #
 
