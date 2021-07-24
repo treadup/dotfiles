@@ -154,3 +154,5 @@
 
 [url "https://github.com/treadup/"]
     insteadOf = ght:
+[init]
+	defaultBranch = main
