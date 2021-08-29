@@ -97,3 +97,8 @@ direnv hook fish | source
 for WORK_FISH_FILE in ~/.config/fish/work_conf.d/*.fish
     source $WORK_FISH_FILE
 end
+
+# The next line updates PATH for the Google Cloud SDK.
+# This assumes that the google cloud sdk is installed in the google-cloud-sdk directory
+# in the home directory.
+if [ -f "$HOME/google-cloud-sdk/path.fish.inc" ]; . "$HOME/google-cloud-sdk/path.fish.inc"; end
