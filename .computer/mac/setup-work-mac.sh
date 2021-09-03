@@ -95,13 +95,6 @@ brew install screen
 echo Installing mosh
 brew install mosh
 
-echo --------------------------------------------------------
-echo Installing Java
-echo --------------------------------------------------------
-
-echo Installing Java
-brew cask install adoptopenjdk
-
 echo ---------------------------------------------------------
 echo Installing Servers
 echo ---------------------------------------------------------
@@ -131,7 +124,7 @@ brew install wget
 brew install the_silver_searcher
 brew install ripgrep
 brew install ispell
-bres install dict
+brew install dict
 brew install fd
 brew install fzf
 brew install fzy
@@ -145,8 +138,10 @@ echo Installing Fonts
 echo ---------------------------------------------------------
 
 echo Installing fonts
-brew tap caskroom/fonts
-brew cask install font-source-code-pro
+brew tap homebrew/cask-fonts
+# Subversion is needed to be able to clone the remote font repo
+brew install svn
+brew install --cask font-source-code-pro
 
 echo ---------------------------------------------------------
 echo Installing Accessability Tools
@@ -193,20 +188,5 @@ echo --------------------------------------------------------
 echo Installation finished
 echo --------------------------------------------------------
 echo
-echo Either generate a new GPG key or import an existing GPG key.
-echo To generate a new GPG key use the following command.
-echo
-echo    gpg --gen-key
-echo
-echo Next initialize pass by executing the following commands.
-echo
-echo     pass init \<email\>
-echo     pass git init
-echo
-echo Use the email address associated with the GPG key that should be used.
-echo
-echo Remember to configure the keyboard.
-echo Use F1, F2, etc keys as function keys
-echo Key Repeat should be Fast
-echo Delay Until Repeat should be Short
-echo Modifier Keys use Caps Lock as Control
+echo IMPORTANT! Remember to change your work email address in
+echo the ~/.gitconfig-work file
