@@ -52,9 +52,11 @@ echo Installing Security Packages
 echo --------------------------------------------------------
 
 echo Installing GPG
-brew install gnupg2
+brew install gnupg
 brew install pinentry-mac
-ln -s $HOME/.gnupg/gpg-agent.conf.macos $HOME/.gnupg/gpg-agent.conf
+cp $HOME/.gnupg/gpg-agent.conf.macos $HOME/.gnupg/gpg-agent.conf
+chmod 700 $HOME/.gnupg/
+chmod 600 $HOME/.gnupg/*
 
 echo Installing pass
 brew install pass
