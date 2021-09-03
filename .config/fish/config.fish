@@ -49,6 +49,9 @@ end
 # The WORKON_HOME variable is used by the pyvenv Emacs package.
 set -gx WORKON_HOME $HOME/.virtualenvs/
 
+alias python "python3"
+alias pip "pip3"
+
 #
 # Directory navigation
 #
