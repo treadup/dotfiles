@@ -134,6 +134,7 @@ brew install yank
 brew install pick
 brew install trash
 brew install htop
+brew install direnv
 
 echo ---------------------------------------------------------
 echo Installing Fonts
