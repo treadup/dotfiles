@@ -1,3 +1,3 @@
 function oak
-    mosh oak /usr/bin/fish
+    mosh henrik@oak.mountainrainforest.org /usr/bin/fish
 end
