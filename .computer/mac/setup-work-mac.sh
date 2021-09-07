@@ -84,6 +84,9 @@ brew install --no-quarantine homebrew/cask/emacs
 echo Installing Vim
 brew install vim
 
+echo Installing Visual Studio Code
+brew install --cask visual-studio-code
+
 echo --------------------------------------------------------
 echo Installing Network Tools
 echo --------------------------------------------------------
