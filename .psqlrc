@@ -1,0 +1,16 @@
+-- Be quiet while running the following commands
+\set QUIET 1
+
+-- Show NULL as (null)
+\pset null '(null)'
+
+-- Display timing information for all queries
+-- \timing
+
+-- Use less as the pager and configure less to be able
+-- to handle long lines.
+\setenv LESS '-S'
+\setenv PAGER less
+
+-- We are done so no go back to not being quiet.
+\unset QUIET
