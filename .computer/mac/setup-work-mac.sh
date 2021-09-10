@@ -192,6 +192,14 @@ echo --------------------------------------------------------
 echo Installing Python
 echo --------------------------------------------------------
 
+echo Creating folder for virtual envionments
+mkdir -p ~/.virtualenvs
+
+echo Configuring virtualfish
+python -m venv ~/.virtualenvs/virtualfish
+~/.virtualenvs/virtualfish/bin/python -m pip install virtualfish
+ln -s ~/.virtualenvs/virtualfish/bin/vf ~/bin/vf
+
 echo --------------------------------------------------------
 echo Installing Golang
 echo --------------------------------------------------------
@@ -202,3 +210,8 @@ echo --------------------------------------------------------
 echo
 echo IMPORTANT! Remember to change your work email address in
 echo the ~/.gitconfig-work file
+echo
+echo You need to run the following command to finish the installation
+echo of virtualfish.
+echo
+echo vf install
