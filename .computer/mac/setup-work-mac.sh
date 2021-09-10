@@ -111,6 +111,9 @@ echo ---------------------------------------------------------
 echo Installing Postgres
 brew install postgres
 
+echo Installing pgcli
+brew install pgcli
+
 echo ---------------------------------------------------------
 echo Installing Cloud Tools
 echo ---------------------------------------------------------
