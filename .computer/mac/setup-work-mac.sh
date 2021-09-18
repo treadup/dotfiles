@@ -214,4 +214,8 @@ echo
 echo You need to run the following command to finish the installation
 echo of virtualfish.
 echo
-echo vf install
+echo vf install auto_activation
+echo
+echo You can also add auto_activation later using the following command.
+echo
+echo vf addplugins auto_activation
