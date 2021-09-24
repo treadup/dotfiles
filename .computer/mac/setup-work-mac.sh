@@ -192,13 +192,17 @@ echo --------------------------------------------------------
 echo Installing Python
 echo --------------------------------------------------------
 
+echo Install python v3.7
+brew install python@3.7
+
 echo Creating folder for virtual envionments
 mkdir -p ~/.virtualenvs
 
-echo Configuring virtualfish
+echo Installing virtualfish
 python -m venv ~/.virtualenvs/virtualfish
 ~/.virtualenvs/virtualfish/bin/python -m pip install virtualfish
 ln -s ~/.virtualenvs/virtualfish/bin/vf ~/bin/vf
+vf install auto_activation
 
 echo --------------------------------------------------------
 echo Installing Golang
