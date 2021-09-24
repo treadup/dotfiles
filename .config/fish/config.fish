@@ -97,7 +97,7 @@ direnv hook fish | source
 # Files placed in the .config/fish/conf.d/ folder will be sourced
 # automatically. This is preferable to sorucing files in this script.
 
-for WORK_FISH_FILE in ~/.config/fish/work_conf.d/*.fish
+for WORK_FISH_FILE in ~/work/config/fish/functions/*.fish
     source $WORK_FISH_FILE
 end
 
