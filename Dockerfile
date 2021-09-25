@@ -109,5 +109,5 @@ COPY .tmux.conf .
 # Postgres
 COPY .psqlrc .
 
-RUN python3 --version
-RUN pip3 --version
+# Keep this container running until you stop it.
+# CMD ["sleep", "infinity"]
