@@ -26,7 +26,7 @@
         uncommit = reset --mixed HEAD~
 
         # Undo a single commit. The changed files stay in the staging area.
-        undo = reset --soft HEAD^
+	undo = reset --soft HEAD^
 
         # Amends the current HEAD commit by adding the files in the staging area
         amend = commit --amend -C HEAD
@@ -35,7 +35,7 @@
 	heroku = push heroku master
 
         # List untracked files
-	untracked = ls-files --others --exclude-standard
+        untracked = ls-files --others --exclude-standard
 
         # Show the log containing the commits that I have made.
         mine = log --author Treadup
@@ -161,3 +161,5 @@
     insteadOf = ght:
 [init]
 	defaultBranch = main
+[pull]
+	rebase = true
