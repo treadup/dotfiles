@@ -1,0 +1,9 @@
+.rustup
+go
+.cargo
+.virtualenvs
+.local
+.cache
+.npm
+.quicklisp
+.slime
