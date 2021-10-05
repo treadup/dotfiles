@@ -34,14 +34,6 @@ function venv() {
 # Week of year
 alias week='date +%W'
 
-# Git aliases
-# TODO: I should put these in the .gitconfig file instead of recreating them each time.
-git config --global alias.last 'log -1 HEAD'
-git config --global alias.unstage 'reset HEAD --'
-git config --global alias.undo 'reset --soft HEAD^'
-git config --global alias.amend 'commit --amend -C HEAD'
-git config --global alias.heroku 'push heroku master'
-
 function apt-installed() {
   (zcat $(ls -tr /var/log/apt/history.log*.gz); cat /var/log/apt/history.log) 2>/dev/null | \
   egrep '^(Start-Date:|Commandline:)' | \
