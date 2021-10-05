@@ -109,7 +109,7 @@ echo Installing Databases
 echo ---------------------------------------------------------
 
 echo Installing Postgres
-brew install postgres
+brew install postgresql@9.5
 
 echo Installing pgcli
 brew install pgcli

@@ -42,6 +42,10 @@ if test -d $HOME/.local/bin
     set -gx PATH $HOME/.local/bin $PATH
 end
 
+if test -d '/usr/local/opt/postgresql@9.5/bin/'
+    fish_add_path /usr/local/opt/postgresql@9.5/bin
+end
+
 # Do not do this. It breaks vex and pew
 # Use Python 3 by default when creating a virtualenv.
 # set -gx VIRTUALENV_PYTHON python3
