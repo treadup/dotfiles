@@ -144,6 +144,7 @@ brew install pick
 brew install trash
 brew install htop
 brew install direnv
+brew install gh
 
 echo ---------------------------------------------------------
 echo Installing Fonts
