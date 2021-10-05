@@ -203,7 +203,7 @@ echo Installing virtualfish
 python -m venv ~/.virtualenvs/virtualfish
 ~/.virtualenvs/virtualfish/bin/python -m pip install virtualfish
 ln -s ~/.virtualenvs/virtualfish/bin/vf ~/bin/vf
-vf install auto_activation
+vf install auto_activation environment
 
 echo --------------------------------------------------------
 echo Installing Golang
@@ -219,8 +219,9 @@ echo
 echo You need to run the following command to finish the installation
 echo of virtualfish.
 echo
-echo vf install auto_activation
+echo vf install auto_activation environment
 echo
 echo You can also add auto_activation later using the following command.
 echo
 echo vf addplugins auto_activation
+echo vf addplugins environment
