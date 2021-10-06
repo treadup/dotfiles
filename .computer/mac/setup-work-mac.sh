@@ -110,9 +110,14 @@ echo ---------------------------------------------------------
 
 echo Installing Postgres
 brew install postgresql@9.5
+brew services start postgresql@9.5
 
 echo Installing pgcli
 brew install pgcli
+
+echo Installing Redis
+brew install redis@4.0
+brew services start redis@4.0
 
 echo ---------------------------------------------------------
 echo Installing Cloud Tools
