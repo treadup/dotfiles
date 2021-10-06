@@ -11,40 +11,38 @@ set -gx LANG en_US.UTF-8
 # Go lang
 set -gx GOPATH $HOME/go
 
+function add_to_user_path
+    if test -d $argv[1]
+	set -gx PATH $argv[1] $PATH
+    end
+end
+
 # Add sbin folder to the path
-set -gx PATH /usr/local/sbin $PATH
+add_to_user_path /usr/local/sbin
 
 # Add Go lang bin folder to the path
-if test -d $GOPATH/bin
-    set -gx PATH $GOPATH/bin $PATH
-end
+add_to_user_path $GOPATH/bin
 
 # Add the Rust package manager Cargo's bin folder to the path.
-if test -d $HOME/.cargo/bin
-    set -gx PATH $HOME/.cargo/bin $PATH
-end
+add_to_user_path $HOME/.cargo/bin
 
 # Add NPM global bin folder to the path.
-if test -d $HOME/.npm-global/bin
-    set -gx PATH $HOME/.npm-global/bin $PATH
-end
+add_to_user_path $HOME/.npm-global/bin
 
 # Add poetry bin folder to the path
-if test -d $HOME/.poetry/bin
-    set -gx PATH $HOME/.poetry/bin $PATH
-end
+add_to_user_path $HOME/.poetry/bin
 
-# Add special bin folders to the path
-set -gx PATH $HOME/bin $PATH
+# Add user bin folder to the path
+add_to_user_path $HOME/bin
 
-# Add .local/bin folder to the path
-if test -d $HOME/.local/bin
-    set -gx PATH $HOME/.local/bin $PATH
-end
+# Add local bin folder to the path
+add_to_user_path $HOME/.local/bin
 
-if test -d '/usr/local/opt/postgresql@9.5/bin/'
-    fish_add_path /usr/local/opt/postgresql@9.5/bin
-end
+# Add postgres 9.5 bin folder to the path
+add_to_user_path /usr/local/opt/postgresql@9.5/bin
+
+# Add redis 4.0 bin folder to the path
+add_to_user_path /usr/local/opt/redis@4.0/bin
 
 # Do not do this. It breaks vex and pew
 # Use Python 3 by default when creating a virtualenv.
