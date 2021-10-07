@@ -37,6 +37,9 @@
         # List untracked files
         untracked = ls-files --others --exclude-standard
 
+	# Show a changelog
+	changelog = log --pretty='- %s' --no-merges
+
         # Show the log containing the commits that I have made.
         mine = log --author Treadup
 
