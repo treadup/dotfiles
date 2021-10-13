@@ -3,7 +3,7 @@ set nocompatible
 
 " Each time we edit a new or existing file the type of the file is recognized
 " and the filetype option is set. The FileType event is sent. This event can
-" be used to enable file specific syntax highlighting or loading of options 
+" be used to enable file specific syntax highlighting or loading of options
 " specific to that file type.
 filetype on
 
@@ -12,6 +12,9 @@ filetype on
 " that are specific to a certain file type.
 filetype plugin on
 
+" Use utf-8 as the file encoding
+set encoding=utf-8
+
 " Show line numbers
 set number
 
@@ -19,7 +22,7 @@ set number
 syntax enable
 
 " Use the goodwolf colorscheme found in ~/.vim.d/colors/goodwolf.vim
-" This theme was downloaded from here. 
+" This theme was downloaded from here.
 " https://github.com/sjl/badwolf/blob/master/colors/goodwolf.vim
 " colorscheme goodwolf
 
