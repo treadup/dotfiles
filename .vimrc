@@ -48,6 +48,14 @@ set shortmess+=I
 set splitbelow
 set splitright
 
+" Navigate splits using Ctrl plus one of h,j,k,l
+" Press Ctrl plus the standard Vim movement key to move to
+" the pane in that direction.
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 " Make it so that files that are opened are fully unfolded.
 set foldlevelstart=99
 
