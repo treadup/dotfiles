@@ -58,6 +58,9 @@ call plug#begin('~/.vim/plugged')
 "Install EditorConfig plugin
 Plug 'editorconfig/editorconfig-vim'
 
+" Install SimplyFold to improve folding of python code.
+Plug 'tmhedberg/SimpylFold'
+
 " Initialize plugin system
 call plug#end()
 
