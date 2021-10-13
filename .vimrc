@@ -27,7 +27,7 @@ syntax enable
 " colorscheme goodwolf
 
 " Set the maximum text width. The purpose is to wrap lines automatically.
-set textwidth=80
+set textwidth=120
 
 " Make backspace behave in a more sane manner.
 set backspace=indent,eol,start
