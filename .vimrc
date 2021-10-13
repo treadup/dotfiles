@@ -21,7 +21,7 @@ syntax enable
 " Use the goodwolf colorscheme found in ~/.vim.d/colors/goodwolf.vim
 " This theme was downloaded from here. 
 " https://github.com/sjl/badwolf/blob/master/colors/goodwolf.vim
-colorscheme goodwolf
+" colorscheme goodwolf
 
 " Set the maximum text width. The purpose is to wrap lines automatically.
 set textwidth=80
@@ -47,3 +47,15 @@ set splitright
 
 " Make it so that files that are opened are fully unfolded.
 set foldlevelstart=99
+
+
+" Specify a directory for plugins
+" This should not be a standard directory like 'plugins'
+call plug#begin('~/.vim/plugged')
+
+" Initialize plugin system
+call plug#end()
+
+" Set color scheme
+" https://github.com/tomasr/molokai
+colorscheme molokai
