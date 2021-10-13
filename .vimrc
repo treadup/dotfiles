@@ -64,3 +64,12 @@ call plug#end()
 " Set color scheme
 " https://github.com/tomasr/molokai
 colorscheme molokai
+
+" Enable file type plugins.
+" Enable filetype specific indent files to do automatic language-dependent indenting.
+" The plugins should be placed in the ~/.vim/ftplugins/ and ~/.vim/after/ftplugins/
+" directories. The ~/.vim/indent/ folder is used for file type specific indentation code.
+" :help filetype
+" :help filetype-plugins
+" :help ftplugin-overrule
+filetype plugin indent on
