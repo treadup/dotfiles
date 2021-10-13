@@ -51,10 +51,12 @@ set splitright
 " Make it so that files that are opened are fully unfolded.
 set foldlevelstart=99
 
-
 " Specify a directory for plugins
 " This should not be a standard directory like 'plugins'
 call plug#begin('~/.vim/plugged')
+
+"Install EditorConfig plugin
+Plug 'editorconfig/editorconfig-vim'
 
 " Initialize plugin system
 call plug#end()
