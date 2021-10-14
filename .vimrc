@@ -66,6 +66,10 @@ call plug#begin('~/.vim/plugged')
 "Install EditorConfig plugin
 Plug 'editorconfig/editorconfig-vim'
 
+" Install vim-virtualenv plugin to handle Python virtualenvs.
+" :help virtualenv
+Plug 'jmcantrell/vim-virtualenv'
+
 " Install SimplyFold to improve folding of python code.
 Plug 'tmhedberg/SimpylFold'
 
