@@ -214,6 +214,19 @@ echo --------------------------------------------------------
 echo Installing Golang
 echo --------------------------------------------------------
 
+echo Installing Go
+brew install go
+
+export GOPATH=$HOME/go
+
+# Add the users bin folder to the path.
+export PATH=$GOPATH/bin:$PATH
+
+# Setup the Go workspace
+mkdir -p ~/go
+
+echo Finished installing Go programs
+
 echo --------------------------------------------------------
 echo Installation finished
 echo --------------------------------------------------------
