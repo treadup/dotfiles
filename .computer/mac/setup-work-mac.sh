@@ -225,6 +225,9 @@ export PATH=$GOPATH/bin:$PATH
 # Setup the Go workspace
 mkdir -p ~/go
 
+echo Installing gopls
+go install golang.org/x/tools/gopls@latest
+
 echo Finished installing Go programs
 
 echo --------------------------------------------------------
