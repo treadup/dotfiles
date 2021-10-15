@@ -15,3 +15,5 @@ code --install-extension bmalehorn.vscode-fish
 # https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker
 code --install-extension ms-azuretools.vscode-docker
 
+# https://marketplace.visualstudio.com/items?itemName=golang.go
+code --install-extension golang.go
