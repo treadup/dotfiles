@@ -77,6 +77,9 @@ Plug 'jmcantrell/vim-virtualenv'
 " Install SimplyFold to improve folding of python code.
 Plug 'tmhedberg/SimpylFold'
 
+" Install Go language support
+Plug 'fatih/vim-go'
+
 " Initialize plugin system
 call plug#end()
 
