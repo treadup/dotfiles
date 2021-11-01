@@ -35,6 +35,10 @@ set backspace=indent,eol,start
 " Disable the bell.
 set belloff=all
 
+" Disable showing matching parenthesis and brackets
+" See :help matchparen for more info
+let loaded_matchparen=1
+
 " No backup files
 set nobackup
 
