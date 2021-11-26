@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+set -u
+
+RELEASE=$(git latest-release)
+COMMIT=$(git rev-list -n 1 $RELEASE)
+
+echo "Latest release is $RELEASE on commit $COMMIT"
+git log --pretty='- %s' --no-merges $COMMIT..
