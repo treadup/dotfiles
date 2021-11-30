@@ -1,4 +1,4 @@
-function create_encrypted_backup
+function create_encrypted_backup_and_upload
   set -l BACKUP_FILENAME /backup/backup_(hostname)_(date +"%Y%m%d_%H%M").tgz.gpg
   cd $HOME
   tar -cpz \
