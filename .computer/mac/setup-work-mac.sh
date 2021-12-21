@@ -231,6 +231,23 @@ go install golang.org/x/tools/gopls@latest
 echo Finished installing Go programs
 
 echo --------------------------------------------------------
+echo Installing Node
+echo --------------------------------------------------------
+
+echo Installing node
+brew install node
+
+# Fix npm permissions issue
+# https://docs.npmjs.com/getting-started/fixing-npm-permissions
+mkdir -p ~/.npm-global
+npm config set prefix ~/.npm-global
+
+echo Installing node programs
+npm install -g yarn
+
+echo Finished installing node programs
+
+echo --------------------------------------------------------
 echo Installation finished
 echo --------------------------------------------------------
 echo
