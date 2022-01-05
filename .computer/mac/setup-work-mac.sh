@@ -119,6 +119,9 @@ echo Installing Redis
 brew install redis@4.0
 brew services start redis@4.0
 
+echo Installing Beekeeper Studio
+brew install --cask beekeeper-studio
+
 echo ---------------------------------------------------------
 echo Installing Cloud Tools
 echo ---------------------------------------------------------
