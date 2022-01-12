@@ -44,6 +44,9 @@ add_to_user_path /usr/local/opt/postgresql@9.5/bin
 # Add redis 4.0 bin folder to the path
 add_to_user_path /usr/local/opt/redis@4.0/bin
 
+# Add homebrew bin folder to path
+add_to_user_path /opt/homebrew/bin
+
 # Do not do this. It breaks vex and pew
 # Use Python 3 by default when creating a virtualenv.
 # set -gx VIRTUALENV_PYTHON python3

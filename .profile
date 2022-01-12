@@ -8,7 +8,7 @@ export LANG=en_US.UTF-8
 export GOPATH=$HOME/go
 
 # Add the users bin folder to the path.
-export PATH=$GOPATH/bin:$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.poetry/bin:/usr/local/sbin:$HOME/.npm-global/bin:$PATH
+export PATH=/opt/homebrew/bin/:$GOPATH/bin:$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.poetry/bin:/usr/local/sbin:$HOME/.npm-global/bin:$PATH
 
 # Do not do this. It breaks vex and pew
 # Use Python 3 by default when creating a virtualenv.
