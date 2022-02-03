@@ -87,6 +87,9 @@ call plug#end()
 " https://github.com/tomasr/molokai
 colorscheme molokai
 
+" Use lightgrey as the color for comments
+highlight Comment ctermfg=lightgrey
+
 " Enable file type plugins.
 " Enable filetype specific indent files to do automatic language-dependent indenting.
 " The plugins should be placed in the ~/.vim/ftplugins/ and ~/.vim/after/ftplugins/
