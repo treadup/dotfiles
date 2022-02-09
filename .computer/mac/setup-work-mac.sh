@@ -100,6 +100,9 @@ brew install screen
 echo Installing mosh
 brew install mosh
 
+echo Installing Paw
+brew install --cask paw
+
 echo ---------------------------------------------------------
 echo Installing Servers
 echo ---------------------------------------------------------
