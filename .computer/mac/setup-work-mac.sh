@@ -130,6 +130,17 @@ echo Installing Cloud Tools
 echo ---------------------------------------------------------
 
 echo ---------------------------------------------------------
+echo Installing Infrastructure Tools
+echo ---------------------------------------------------------
+
+echo Installing Terraform
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
+
+echo Installing Terragrunt
+brew install terragrunt
+
+echo ---------------------------------------------------------
 echo Installing Document Tools
 echo ---------------------------------------------------------
 
