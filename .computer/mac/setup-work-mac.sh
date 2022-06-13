@@ -87,6 +87,9 @@ brew install vim
 echo Installing Visual Studio Code
 brew install --cask visual-studio-code
 
+echo Installing GoLand
+brew install --cask goland
+
 echo --------------------------------------------------------
 echo Installing Network Tools
 echo --------------------------------------------------------
