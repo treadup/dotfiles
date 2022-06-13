@@ -103,8 +103,8 @@ brew install screen
 echo Installing mosh
 brew install mosh
 
-echo Installing Paw
-brew install --cask paw
+echo Installing Insomnia
+brew install --cask insomnia
 
 echo ---------------------------------------------------------
 echo Installing Servers
