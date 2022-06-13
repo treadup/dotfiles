@@ -245,6 +245,9 @@ mkdir -p ~/go
 echo Installing gopls
 go install golang.org/x/tools/gopls@latest
 
+echo Installing golangci-lint
+brew install golangci-lint
+
 echo Finished installing Go programs
 
 echo --------------------------------------------------------
