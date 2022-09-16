@@ -11,6 +11,11 @@ set -gx LANG en_US.UTF-8
 # Go lang
 set -gx GOPATH $HOME/go
 
+# Bypass the Go proxy for the following repos.
+# See https://goproxy.io for more information.
+set -gx GOPRIVATE "github.com/treadup,github.com/Volumental"
+
+# Adds a path to the users pats
 function add_to_user_path
     if test -d $argv[1]
 	set -gx PATH $argv[1] $PATH
