@@ -43,6 +43,9 @@ add_to_user_path $HOME/bin
 # Add local bin folder to the path
 add_to_user_path $HOME/.local/bin
 
+# Add Python 3.9 bin folder to the path
+add_to_user_path $HOME/Library/Python/3.9/bin/
+
 # Add postgres 9.5 bin folder to the path
 add_to_user_path /usr/local/opt/postgresql@9.5/bin
 
