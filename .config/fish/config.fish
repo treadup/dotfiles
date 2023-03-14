@@ -15,7 +15,7 @@ set -gx GOPATH $HOME/go
 # See https://goproxy.io for more information.
 set -gx GOPRIVATE "github.com/treadup,github.com/Volumental"
 
-# Adds a path to the users pats
+# Adds a path to the users path
 function add_to_user_path
     if test -d $argv[1]
 	set -gx PATH $argv[1] $PATH
@@ -54,6 +54,12 @@ add_to_user_path /usr/local/opt/redis@4.0/bin
 
 # Add homebrew bin folder to path
 add_to_user_path /opt/homebrew/bin
+
+#
+# Change CDPATH to include the ~/.marks directory
+# This is part of the bookmarking system.
+#
+set -gx CDPATH .:$HOME/.marks/
 
 # Do not do this. It breaks vex and pew
 # Use Python 3 by default when creating a virtualenv.
@@ -105,7 +111,7 @@ set -gx PIPENV_SHELL_FANCY 1
 #
 # direnv
 #
-direnv hook fish | source
+# direnv hook fish | source
 
 # Files placed in the .config/fish/conf.d/ folder will be sourced
 # automatically. This is preferable to sorucing files in this script.

@@ -36,6 +36,9 @@ mkdir -p ~/bin
 
 export PATH=$HOME/bin:$PATH
 
+echo Create bookmarks folder
+mkdir -p ~/.marks
+
 echo --------------------------------------------------------
 echo Installing Base Packages
 echo --------------------------------------------------------
