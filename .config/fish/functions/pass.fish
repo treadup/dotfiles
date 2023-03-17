@@ -1,7 +1,7 @@
 function pass
-    if [ $argv[1] = "lj" ]
-        echo Not available
-    else
+    if count $argv > /dev/null ]
         command pass $argv
+    else
+        command pass
     end
 end
