@@ -1,0 +1,6 @@
+go/pkg
+go/src
+Library/*
+Music/*
+Pictures/*
+node_modules
