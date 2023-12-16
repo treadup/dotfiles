@@ -55,6 +55,12 @@ add_to_user_path /usr/local/opt/redis@4.0/bin
 # Add homebrew bin folder to path
 add_to_user_path /opt/homebrew/bin
 
+# Tell gcc about the homebrew include directory location
+set -gx CPATH /opt/homebrew/include
+
+# Tell gcc about the homebrew lib directory location
+set -gx LIBRARY_PATH /opt/homebrew/lib
+
 #
 # Change CDPATH to include the ~/.marks directory
 # This is part of the bookmarking system.
