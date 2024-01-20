@@ -1,3 +1,3 @@
 function oak
-    mosh henrik@oak.mountainrainforest.org /usr/bin/fish
+    ssh root@oak.henriktreadup.com
 end
