@@ -77,6 +77,11 @@ set -gx WORKON_HOME $HOME/.virtualenvs/
 alias python "python3"
 alias pip "pip3"
 
+# Do not allow pip to install packages unless a virtual environment
+# is activated.
+# https://docs.python-guide.org/dev/pip-virtualenv/
+set -gx PIP_REQUIRE_VIRTUALENV true
+
 #
 # Directory navigation
 #
