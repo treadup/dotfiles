@@ -226,7 +226,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias lc='ls -F'
 
-alias config='/usr/bin/git --git-dir=$HOME/.dotconf/ --work-tree=$HOME'
+# Alias for handling the dotfiles git repo
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotconf/ --work-tree=$HOME'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
