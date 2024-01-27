@@ -4,10 +4,20 @@
 # Just add new locations in the code below.
 function to
     switch "$argv[1]"
+        case "bookmark"
+            cd ~/code/python/personal-website/website/templates/website/bookmarks/
+        case "code"
+            cd ~/code
+        case "c"
+            cd ~/code/C
+        case "fish"
+	    cd ~/.config/fish/functions
+        case "notes"
+            cd ~/notes
+        case python
+            cd ~/code/python
 	case "website"
 	    cd ~/code/python/personal-website
-	case "fish"
-	    cd ~/.config/fish/functions
 	case ""
 	    echo "Usage: to <location>"
 	    echo "where <location> can be one of the following."
