@@ -152,7 +152,6 @@
 	whenadded = log --diff-filter=A
 [core]
 	editor = vim
-	excludesfile = ~/.gitignore_global
 
 # Use URL replacement to only use SSH when communicating with GitHub, GitLab and Bitbucket.
 # This solves an issue where Go otherwise complains that "terminal prompts disabled".
