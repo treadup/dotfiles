@@ -14,14 +14,19 @@ function to
 	    cd ~/.config/fish/functions
         case "notes"
             cd ~/notes
-        case python
+        case "python"
             cd ~/code/python
 	case "website"
 	    cd ~/code/python/personal-website
 	case ""
-	    echo "Usage: to <location>"
-	    echo "where <location> can be one of the following."
-	    echo "fish"
+            echo "Usage: to <location>"
+            echo "where <location> can be one of the following."
+            echo "bookmark"
+            echo "c"
+            echo "code"
+            echo "fish"
+            echo "notes"
+            echo "python"
 	    echo "website"
 	case "*"
 	    echo "Unknown location: $argv[1]"
