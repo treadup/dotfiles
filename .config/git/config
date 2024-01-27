@@ -167,6 +167,3 @@
         defaultBranch = main
 [pull]
 	rebase = true
-
-[includeIf "gitdir:~/work/"]
-	path = .gitconfig-work
