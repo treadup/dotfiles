@@ -13,6 +13,15 @@
 # https://github.com/GitAlias/gitalias
 # https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
 
+        # Show added staged lines
+        added = !git diff --cached --unified=0 | grep '^[+][^+]' | sed 's/^[+]//g'
+
+        # Show added (and modified?) staged lines in python files
+        # addedpy = !git diff --cached --unified=0 -- '*.py' | grep '^[+][^+]' | sed 's/^[+]//g'
+
+        # Show list of staged files
+        staged = !git diff --cached --stat --stat-width=1000 | cut -d'|' -f1 | awk 'NR > 1 { print prev } { prev = $0 }'
+
         # Discard changes to a file or folder
         discard = checkout --
 
