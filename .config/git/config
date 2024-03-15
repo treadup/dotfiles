@@ -97,8 +97,26 @@
         # Delete the given branch
         delete-branch = branch -D
 
+        # Current branch
+        current-branch = branch --show-current
+
         # Set the remote branch that this branch should track
         track = branch --set-upstream-to
+
+        # Shows the remote url. (To be more specific shows the remote url to push to.)
+        remote-url = !git remote -v | grep origin | grep '(push)' | awk '{ print $2 }'
+
+        # Shows the remote repo name
+        remote-name = !basename $(git remote-url) .git
+
+        # Shows the repo url
+        url = !echo https://github.com/treadup/$(git remote-name)
+
+        # Shows the URL for creating a PR for the current branch
+        pr-url = !echo $(git url)/pull/new/$(git current-branch)
+
+        # Open create pull request page in browser
+        pr = !open $(git pr-url)
 
         # List unmerged branches
         unmerged = branch --no-merged
@@ -154,7 +172,7 @@
 	pick = !git checkout $(git recent | pick)
 
         # Open the website for the remote repo.
-        website = !open $(git remote -v | awk '/origin.*push/ {print $2}' | sed 's!:!/!g' | sed 's/.git$//g' | sed 's!git@!https://!g')
+        web = !open $(git url)
 
 	# Shows the commit when the file was added.
 	# git whenadded -- foo.py
