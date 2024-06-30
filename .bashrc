@@ -255,3 +255,23 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+function to {
+    case $1 in
+        "notes")
+            cd ~/notes
+            ;;
+        "code")
+            cd ~/code
+            ;;
+        "website")
+            cd ~/code/python/personal-website
+            ;;
+        "")
+            echo "Usage: to <location>"
+            ;;
+        *)
+            echo "Unknown location: $1"
+            ;;
+    esac
+}
